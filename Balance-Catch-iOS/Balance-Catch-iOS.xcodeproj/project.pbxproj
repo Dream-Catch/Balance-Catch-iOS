@@ -14,7 +14,7 @@
 		5624C4BF29BFF7D2008C7898 /* Balance_Catch_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4BE29BFF7D2008C7898 /* Balance_Catch_iOSTests.swift */; };
 		5624C4C929BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4C829BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift */; };
 		5624C4CB29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */; };
-		56E2E49C29C037160023095C /* BalanceCatchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49B29C037160023095C /* BalanceCatchButton.swift */; };
+		56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49B29C037160023095C /* RoundedBlueButton.swift */; };
 		56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49E29C03B050023095C /* CGFloat+.swift */; };
 		56E2E4A129C03BB30023095C /* ShapeStyle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A029C03BB30023095C /* ShapeStyle+.swift */; };
 		56E2E4A329C03C900023095C /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A229C03C900023095C /* String+.swift */; };
@@ -51,7 +51,7 @@
 		5624C4C429BFF7D2008C7898 /* Balance-Catch-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Balance-Catch-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5624C4C829BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance_Catch_iOSUITests.swift; sourceTree = "<group>"; };
 		5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance_Catch_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		56E2E49B29C037160023095C /* BalanceCatchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCatchButton.swift; sourceTree = "<group>"; };
+		56E2E49B29C037160023095C /* RoundedBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBlueButton.swift; sourceTree = "<group>"; };
 		56E2E49E29C03B050023095C /* CGFloat+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+.swift"; sourceTree = "<group>"; };
 		56E2E4A029C03BB30023095C /* ShapeStyle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeStyle+.swift"; sourceTree = "<group>"; };
 		56E2E4A229C03C900023095C /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		56E2E49A29C037000023095C /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				56E2E49B29C037160023095C /* BalanceCatchButton.swift */,
+				56E2E49B29C037160023095C /* RoundedBlueButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 				56E2E4A629C03E040023095C /* Font+.swift in Sources */,
 				56E2E4A129C03BB30023095C /* ShapeStyle+.swift in Sources */,
 				56E2E4A929C055730023095C /* View2.swift in Sources */,
-				56E2E49C29C037160023095C /* BalanceCatchButton.swift in Sources */,
+				56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */,
 				5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */,
 				56E2E4A329C03C900023095C /* String+.swift in Sources */,
 				56E2E4AB29C056BE0023095C /* View3.swift in Sources */,
