@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BeforePlayRuleDescView: View {
+struct BeforePlayRuleDescriptionView: View {
     var body: some View {
         ZStack {
             NavigationLink("Next") {
@@ -18,8 +18,8 @@ struct BeforePlayRuleDescView: View {
     }
 }
 
-struct BeforePlayRuleDescView_Previews: PreviewProvider {
+struct BeforePlayRuleDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        BeforePlayRuleDescView()
+        BeforePlayRuleDescriptionView()
     }
 }
