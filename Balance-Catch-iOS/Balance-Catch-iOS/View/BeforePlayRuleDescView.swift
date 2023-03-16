@@ -1,5 +1,5 @@
 //
-//  View4.swift
+//  View2.swift
 //  Balance-Catch-iOS
 //
 //  Created by SeungMin on 2023/03/14.
@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct View3: View {
+struct BeforePlayRuleDescView: View {
     var body: some View {
         ZStack {
             NavigationLink("Next") {
-                
+                PlayerNumInputView()
             }
             .buttonStyle(RoundedBlueButton())
         }
     }
 }
 
-struct View3_Previews: PreviewProvider {
+struct BeforePlayRuleDescView_Previews: PreviewProvider {
     static var previews: some View {
-        View3()
+        BeforePlayRuleDescView()
     }
 }
