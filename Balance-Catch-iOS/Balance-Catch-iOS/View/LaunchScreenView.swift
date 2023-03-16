@@ -22,7 +22,7 @@ struct LaunchScreenView: View {
                                    alignment: .center)
                             .padding(.bottom, 74)
                         NavigationLink("Start!") {
-                            BeforePlayRuleDescView()
+                            BeforePlayRuleDescriptionView()
                         }
                         .buttonStyle(RoundedBlueButton())
                     }
