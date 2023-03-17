@@ -22,7 +22,7 @@
 		56E2E4A329C03C900023095C /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A229C03C900023095C /* String+.swift */; };
 		56E2E4A629C03E040023095C /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A529C03E040023095C /* Font+.swift */; };
 		56E2E4A929C055730023095C /* BeforePlayRuleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A829C055730023095C /* BeforePlayRuleDescriptionView.swift */; };
-		56E2E4AB29C056BE0023095C /* PlayerNumInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4AA29C056BE0023095C /* PlayerNumInputView.swift */; };
+		56E2E4AB29C056BE0023095C /* PlayerNumberInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,7 @@
 		56E2E4A229C03C900023095C /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		56E2E4A529C03E040023095C /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		56E2E4A829C055730023095C /* BeforePlayRuleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforePlayRuleDescriptionView.swift; sourceTree = "<group>"; };
-		56E2E4AA29C056BE0023095C /* PlayerNumInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNumInputView.swift; sourceTree = "<group>"; };
+		56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNumberInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +171,7 @@
 			children = (
 				5624C4AF29BFF7CE008C7898 /* LaunchScreenView.swift */,
 				56E2E4A829C055730023095C /* BeforePlayRuleDescriptionView.swift */,
-				56E2E4AA29C056BE0023095C /* PlayerNumInputView.swift */,
+				56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */,
 				53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */,
 				53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */,
 			);
@@ -317,7 +317,7 @@
 				53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */,
 				5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */,
 				56E2E4A329C03C900023095C /* String+.swift in Sources */,
-				56E2E4AB29C056BE0023095C /* PlayerNumInputView.swift in Sources */,
+				56E2E4AB29C056BE0023095C /* PlayerNumberInputView.swift in Sources */,
 				5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

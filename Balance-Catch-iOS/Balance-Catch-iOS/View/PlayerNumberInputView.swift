@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PlayerNumInputView: View {
+struct PlayerNumberInputView: View {
     var body: some View {
         ZStack {
             NavigationLink("Next") {
@@ -18,8 +18,8 @@ struct PlayerNumInputView: View {
     }
 }
 
-struct PlayerNumInputView_Previews: PreviewProvider {
+struct PlayerNumberInputView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerNumInputView()
+        PlayerNumberInputView()
     }
 }

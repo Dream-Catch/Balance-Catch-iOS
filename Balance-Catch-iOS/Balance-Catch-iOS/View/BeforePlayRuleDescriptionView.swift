@@ -11,7 +11,7 @@ struct BeforePlayRuleDescriptionView: View {
     var body: some View {
         ZStack {
             NavigationLink("Next") {
-                PlayerNumInputView()
+                PlayerNumberInputView()
             }
             .buttonStyle(RoundedBlueButton())
         }
