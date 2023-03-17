@@ -1,25 +1,25 @@
 //
-//  View4.swift
+//  PlayerNameInputView.swift
 //  Balance-Catch-iOS
 //
-//  Created by SeungMin on 2023/03/14.
+//  Created by Keith on 2023/03/16.
 //
 
 import SwiftUI
 
-struct View3: View {
+struct PlayerNameInputView: View {
     var body: some View {
         ZStack {
             NavigationLink("Next") {
-                
+                SelectQuestionThemeView()
             }
             .buttonStyle(RoundedBlueButton())
         }
     }
 }
 
-struct View3_Previews: PreviewProvider {
+struct PlayerNameInputView_Previews: PreviewProvider {
     static var previews: some View {
-        View3()
+        PlayerNameInputView()
     }
 }

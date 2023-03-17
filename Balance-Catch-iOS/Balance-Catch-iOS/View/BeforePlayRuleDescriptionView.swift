@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct View2: View {
+struct BeforePlayRuleDescriptionView: View {
     var body: some View {
         ZStack {
             NavigationLink("Next") {
-                View3()
+                PlayerNumberInputView()
             }
             .buttonStyle(RoundedBlueButton())
         }
     }
 }
 
-struct View2_Previews: PreviewProvider {
+struct BeforePlayRuleDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        View2()
+        BeforePlayRuleDescriptionView()
     }
 }
