@@ -11,7 +11,7 @@ struct SelectQuestionThemeView: View {
     var body: some View {
         ZStack {
             NavigationLink("Next") {
-                
+                SelectQuestionView()
             }
             .buttonStyle(RoundedBlueButton())
         }
