@@ -39,7 +39,7 @@ struct SelectQuestionThemeView: View {
                 
                 
                 NavigationLink("Next") {
-//                    SelectTypeView()
+                    SelectTypeView()
                 }
                 .buttonStyle(RoundedBlueButton())
             }
