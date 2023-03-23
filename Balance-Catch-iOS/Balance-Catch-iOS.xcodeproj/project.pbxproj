@@ -117,7 +117,6 @@
 				56E2E49A29C037000023095C /* Custom */,
 				5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */,
 				5624C4B129BFF7D2008C7898 /* Assets.xcassets */,
-				5624C4B329BFF7D2008C7898 /* Preview Content */,
 			);
 			path = "Balance-Catch-iOS";
 			sourceTree = "<group>";
@@ -141,6 +140,7 @@
 		5624C4C729BFF7D2008C7898 /* Balance-Catch-iOSUITests */ = {
 			isa = PBXGroup;
 			children = (
+				5624C4B329BFF7D2008C7898 /* Preview Content */,
 				5624C4C829BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift */,
 				5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */,
 			);

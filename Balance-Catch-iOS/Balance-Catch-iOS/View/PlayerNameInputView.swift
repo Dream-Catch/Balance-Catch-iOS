@@ -8,18 +8,51 @@
 import SwiftUI
 
 struct PlayerNameInputView: View {
+    let numberOfPeople: Int
+    
     var body: some View {
         ZStack {
-            NavigationLink("Next") {
-                SelectQuestionThemeView()
+            VStack {
+                Spacer()
+                
+                Text("각자 이름을 입력해주세요")
+                    .font(Font.custom("Arial", size: 24))
+                
+                Spacer()
+                
+                ForEach(0 ..< numberOfPeople) { index in
+                    VStack{
+                        Text("Player \(index + 1)")
+                            .font(Font.custom("Arial", size: 19))
+                        TextField("Name", text: .constant(""))
+                            .font(Font.custom("Arial", size: 19))
+                                .textFieldStyle(.roundedBorder)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 45.0)
+                                .padding(.vertical, 30.0)
+                                .background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 5))
+                    }
+                    .padding(.horizontal, 45.0)
+                }
+                
+                Spacer()
+                
+                NavigationLink("Next") {
+                    SelectQuestionThemeView()
+                }
+                .buttonStyle(RoundedBlueButton())
+                
+                Spacer()
             }
-            .buttonStyle(RoundedBlueButton())
         }
     }
+    
 }
+
+
 
 struct PlayerNameInputView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerNameInputView()
+        PlayerNameInputView(numberOfPeople: 4)
     }
 }
