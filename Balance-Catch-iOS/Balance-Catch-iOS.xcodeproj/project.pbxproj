@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< Updated upstream
 		3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657829CC93AF00A9C925 /* SelectTypeView.swift */; };
 		3950657B29CC940700A9C925 /* UserFirstSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657A29CC940700A9C925 /* UserFirstSelectView.swift */; };
 		3950657D29CC943B00A9C925 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657C29CC943B00A9C925 /* TimerView.swift */; };
@@ -14,6 +15,15 @@
 		3950658129CC949600A9C925 /* SelectBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658029CC949600A9C925 /* SelectBox.swift */; };
 		3950658329CC94AF00A9C925 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658229CC94AF00A9C925 /* SelectButton.swift */; };
 		3950658529CC961300A9C925 /* TimerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658429CC961300A9C925 /* TimerCode.swift */; };
+=======
+		33A83C7F29CA375700C0FA16 /* RecommandOrNotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */; };
+		33E60C9529CB6768005EC0AF /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9429CB6768005EC0AF /* RoundedButton.swift */; };
+		33E60C9729CC1B28005EC0AF /* PublicPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9629CC1B28005EC0AF /* PublicPickView.swift */; };
+		33E60C9D29CC2FC4005EC0AF /* PercentageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9C29CC2FC3005EC0AF /* PercentageBar.swift */; };
+		33E60C9F29CC6F3B005EC0AF /* WhoIsLoserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9E29CC6F3B005EC0AF /* WhoIsLoserView.swift */; };
+		33E60CA129CC736C005EC0AF /* BiggerRoundBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */; };
+		33E60CA329CC88DE005EC0AF /* NameBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */; };
+>>>>>>> Stashed changes
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
 		53A7B0AF29C334B000B99211 /* SelectQuestionThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */; };
 		5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */; };
@@ -50,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< Updated upstream
 		3950657829CC93AF00A9C925 /* SelectTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTypeView.swift; sourceTree = "<group>"; };
 		3950657A29CC940700A9C925 /* UserFirstSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirstSelectView.swift; sourceTree = "<group>"; };
 		3950657C29CC943B00A9C925 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -57,6 +68,15 @@
 		3950658029CC949600A9C925 /* SelectBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBox.swift; sourceTree = "<group>"; };
 		3950658229CC94AF00A9C925 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		3950658429CC961300A9C925 /* TimerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCode.swift; sourceTree = "<group>"; };
+=======
+		33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandOrNotView.swift; sourceTree = "<group>"; };
+		33E60C9429CB6768005EC0AF /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		33E60C9629CC1B28005EC0AF /* PublicPickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicPickView.swift; sourceTree = "<group>"; };
+		33E60C9C29CC2FC3005EC0AF /* PercentageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageBar.swift; sourceTree = "<group>"; };
+		33E60C9E29CC6F3B005EC0AF /* WhoIsLoserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoIsLoserView.swift; sourceTree = "<group>"; };
+		33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiggerRoundBlueButton.swift; sourceTree = "<group>"; };
+		33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameBoxButton.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
 		53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionThemeView.swift; sourceTree = "<group>"; };
 		5624C4AA29BFF7CE008C7898 /* Balance-Catch-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balance-Catch-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,9 +185,16 @@
 			isa = PBXGroup;
 			children = (
 				56E2E49B29C037160023095C /* RoundedBlueButton.swift */,
+<<<<<<< Updated upstream
 				3950658029CC949600A9C925 /* SelectBox.swift */,
 				3950658229CC94AF00A9C925 /* SelectButton.swift */,
 				3950658429CC961300A9C925 /* TimerCode.swift */,
+=======
+				33E60C9429CB6768005EC0AF /* RoundedButton.swift */,
+				33E60C9C29CC2FC3005EC0AF /* PercentageBar.swift */,
+				33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */,
+				33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */,
+>>>>>>> Stashed changes
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -191,10 +218,16 @@
 				56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */,
 				53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */,
 				53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */,
+<<<<<<< Updated upstream
 				3950657829CC93AF00A9C925 /* SelectTypeView.swift */,
 				3950657A29CC940700A9C925 /* UserFirstSelectView.swift */,
 				3950657C29CC943B00A9C925 /* TimerView.swift */,
 				3950657E29CC945E00A9C925 /* UserFinalSelectView.swift */,
+=======
+				33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */,
+				33E60C9629CC1B28005EC0AF /* PublicPickView.swift */,
+				33E60C9E29CC6F3B005EC0AF /* WhoIsLoserView.swift */,
+>>>>>>> Stashed changes
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -332,21 +365,31 @@
 				3950657D29CC943B00A9C925 /* TimerView.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
 				56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */,
+<<<<<<< Updated upstream
 				3950658129CC949600A9C925 /* SelectBox.swift in Sources */,
 				3950657B29CC940700A9C925 /* UserFirstSelectView.swift in Sources */,
 				3950658329CC94AF00A9C925 /* SelectButton.swift in Sources */,
+=======
+				33E60CA129CC736C005EC0AF /* BiggerRoundBlueButton.swift in Sources */,
+				33E60C9D29CC2FC4005EC0AF /* PercentageBar.swift in Sources */,
+>>>>>>> Stashed changes
 				56E2E4A629C03E040023095C /* Font+.swift in Sources */,
+				33A83C7F29CA375700C0FA16 /* RecommandOrNotView.swift in Sources */,
 				56E2E4A129C03BB30023095C /* ShapeStyle+.swift in Sources */,
 				3950657F29CC945E00A9C925 /* UserFinalSelectView.swift in Sources */,
 				56E2E4A929C055730023095C /* BeforePlayRuleDescriptionView.swift in Sources */,
 				56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */,
 				53A7B0AF29C334B000B99211 /* SelectQuestionThemeView.swift in Sources */,
 				53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */,
+				33E60CA329CC88DE005EC0AF /* NameBoxButton.swift in Sources */,
+				33E60C9F29CC6F3B005EC0AF /* WhoIsLoserView.swift in Sources */,
 				5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */,
 				56E2E4A329C03C900023095C /* String+.swift in Sources */,
+				33E60C9729CC1B28005EC0AF /* PublicPickView.swift in Sources */,
 				56E2E4AB29C056BE0023095C /* PlayerNumberInputView.swift in Sources */,
 				3950658529CC961300A9C925 /* TimerCode.swift in Sources */,
 				5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */,
+				33E60C9529CB6768005EC0AF /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
