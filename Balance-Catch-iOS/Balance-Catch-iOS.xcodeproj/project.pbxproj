@@ -112,6 +112,7 @@
 		5624C4AC29BFF7CE008C7898 /* Balance-Catch-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				5624C4B329BFF7D2008C7898 /* Preview Content */,
 				56E2E4A729C054350023095C /* View */,
 				56E2E49D29C03AC90023095C /* Extension */,
 				56E2E49A29C037000023095C /* Custom */,
@@ -140,7 +141,6 @@
 		5624C4C729BFF7D2008C7898 /* Balance-Catch-iOSUITests */ = {
 			isa = PBXGroup;
 			children = (
-				5624C4B329BFF7D2008C7898 /* Preview Content */,
 				5624C4C829BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift */,
 				5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */,
 			);
