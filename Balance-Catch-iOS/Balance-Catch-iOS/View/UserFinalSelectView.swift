@@ -89,7 +89,7 @@ struct UserFinalSelectView: View {
             }
             
             NavigationLink("Next") {
-                TimerView()
+                RecommandOrNotView()
             }
             .buttonStyle(RoundedBlueButton())
             
