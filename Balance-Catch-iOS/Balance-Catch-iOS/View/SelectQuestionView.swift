@@ -9,24 +9,18 @@ import SwiftUI
 
 struct SelectQuestionView: View {
     var questions: [Question] = getNewQuestionList()
+    @State var isRandomPick: Bool
     @State private var selectedQuestion: Question = Question(text: QuestionTexts().list[4])
     
     var body: some View {
         VStack(spacing: 16) {
             QuestionScrollView(questions: questions, selectedQuestion: $selectedQuestion)
             
-            
             NavigationLink("Next") {
-                
+                UserFirstSelectView()
             }
             .buttonStyle(RoundedBlueButton())
         }
-    }
-}
-
-struct SelectQuestionView_Previews: PreviewProvider {
-    static var previews: some View {
-        SelectQuestionView()
     }
 }
 
@@ -39,4 +33,10 @@ func getNewQuestionList() -> [Question] {
         newQuestionList.append(newQuestion)
     }
     return newQuestionList
+}
+
+struct SelectQuestionView_Previews: PreviewProvider {
+    static var previews: some View {
+        SelectQuestionView(isRandomPick: false)
+    }
 }
