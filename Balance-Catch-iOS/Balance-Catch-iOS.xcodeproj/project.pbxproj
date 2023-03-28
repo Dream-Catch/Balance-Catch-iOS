@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657829CC93AF00A9C925 /* SelectTypeView.swift */; };
-		3950657B29CC940700A9C925 /* UserFirstSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657A29CC940700A9C925 /* UserFirstSelectView.swift */; };
-		3950657D29CC943B00A9C925 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657C29CC943B00A9C925 /* TimerView.swift */; };
-		3950657F29CC945E00A9C925 /* UserFinalSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657E29CC945E00A9C925 /* UserFinalSelectView.swift */; };
-		3950658129CC949600A9C925 /* SelectBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658029CC949600A9C925 /* SelectBox.swift */; };
-		3950658329CC94AF00A9C925 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658229CC94AF00A9C925 /* SelectButton.swift */; };
-		3950658529CC961300A9C925 /* TimerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658429CC961300A9C925 /* TimerCode.swift */; };
 		33A83C7F29CA375700C0FA16 /* RecommandOrNotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */; };
 		33E60C9529CB6768005EC0AF /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9429CB6768005EC0AF /* RoundedButton.swift */; };
 		33E60C9729CC1B28005EC0AF /* PublicPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9629CC1B28005EC0AF /* PublicPickView.swift */; };
@@ -21,6 +14,13 @@
 		33E60C9F29CC6F3B005EC0AF /* WhoIsLoserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9E29CC6F3B005EC0AF /* WhoIsLoserView.swift */; };
 		33E60CA129CC736C005EC0AF /* BiggerRoundBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */; };
 		33E60CA329CC88DE005EC0AF /* NameBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */; };
+		3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657829CC93AF00A9C925 /* SelectTypeView.swift */; };
+		3950657B29CC940700A9C925 /* UserFirstSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657A29CC940700A9C925 /* UserFirstSelectView.swift */; };
+		3950657D29CC943B00A9C925 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657C29CC943B00A9C925 /* TimerView.swift */; };
+		3950657F29CC945E00A9C925 /* UserFinalSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657E29CC945E00A9C925 /* UserFinalSelectView.swift */; };
+		3950658129CC949600A9C925 /* SelectBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658029CC949600A9C925 /* SelectBox.swift */; };
+		3950658329CC94AF00A9C925 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658229CC94AF00A9C925 /* SelectButton.swift */; };
+		3950658529CC961300A9C925 /* TimerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658429CC961300A9C925 /* TimerCode.swift */; };
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
 		53A7B0AF29C334B000B99211 /* SelectQuestionThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */; };
 		5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */; };
@@ -30,6 +30,11 @@
 		5624C4BF29BFF7D2008C7898 /* Balance_Catch_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4BE29BFF7D2008C7898 /* Balance_Catch_iOSTests.swift */; };
 		5624C4C929BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4C829BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift */; };
 		5624C4CB29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */; };
+		563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBD4A29C9444400847390 /* SelectQuestionView.swift */; };
+		563FBD5C29C96F3500847390 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBD5B29C96F3500847390 /* Question.swift */; };
+		563FBD6429C990EC00847390 /* QuestionScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBD6329C990EC00847390 /* QuestionScrollView.swift */; };
+		56807DBB29CAE36E005441D4 /* QuestionTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56807DBA29CAE36E005441D4 /* QuestionTexts.swift */; };
+		56D2730E29CACA6E00E4EF76 /* QuestionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */; };
 		56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49B29C037160023095C /* RoundedBlueButton.swift */; };
 		56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49E29C03B050023095C /* CGFloat+.swift */; };
 		56E2E4A129C03BB30023095C /* ShapeStyle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A029C03BB30023095C /* ShapeStyle+.swift */; };
@@ -57,13 +62,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3950657829CC93AF00A9C925 /* SelectTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTypeView.swift; sourceTree = "<group>"; };
-		3950657A29CC940700A9C925 /* UserFirstSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirstSelectView.swift; sourceTree = "<group>"; };
-		3950657C29CC943B00A9C925 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		3950657E29CC945E00A9C925 /* UserFinalSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFinalSelectView.swift; sourceTree = "<group>"; };
-		3950658029CC949600A9C925 /* SelectBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBox.swift; sourceTree = "<group>"; };
-		3950658229CC94AF00A9C925 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
-		3950658429CC961300A9C925 /* TimerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCode.swift; sourceTree = "<group>"; };
 		33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandOrNotView.swift; sourceTree = "<group>"; };
 		33E60C9429CB6768005EC0AF /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		33E60C9629CC1B28005EC0AF /* PublicPickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicPickView.swift; sourceTree = "<group>"; };
@@ -71,6 +69,13 @@
 		33E60C9E29CC6F3B005EC0AF /* WhoIsLoserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoIsLoserView.swift; sourceTree = "<group>"; };
 		33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiggerRoundBlueButton.swift; sourceTree = "<group>"; };
 		33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameBoxButton.swift; sourceTree = "<group>"; };
+		3950657829CC93AF00A9C925 /* SelectTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTypeView.swift; sourceTree = "<group>"; };
+		3950657A29CC940700A9C925 /* UserFirstSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirstSelectView.swift; sourceTree = "<group>"; };
+		3950657C29CC943B00A9C925 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		3950657E29CC945E00A9C925 /* UserFinalSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFinalSelectView.swift; sourceTree = "<group>"; };
+		3950658029CC949600A9C925 /* SelectBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBox.swift; sourceTree = "<group>"; };
+		3950658229CC94AF00A9C925 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
+		3950658429CC961300A9C925 /* TimerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCode.swift; sourceTree = "<group>"; };
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
 		53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionThemeView.swift; sourceTree = "<group>"; };
 		5624C4AA29BFF7CE008C7898 /* Balance-Catch-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balance-Catch-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +88,11 @@
 		5624C4C429BFF7D2008C7898 /* Balance-Catch-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Balance-Catch-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5624C4C829BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance_Catch_iOSUITests.swift; sourceTree = "<group>"; };
 		5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance_Catch_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		563FBD4A29C9444400847390 /* SelectQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionView.swift; sourceTree = "<group>"; };
+		563FBD5B29C96F3500847390 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		563FBD6329C990EC00847390 /* QuestionScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionScrollView.swift; sourceTree = "<group>"; };
+		56807DBA29CAE36E005441D4 /* QuestionTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTexts.swift; sourceTree = "<group>"; };
+		56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemView.swift; sourceTree = "<group>"; };
 		56E2E49B29C037160023095C /* RoundedBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBlueButton.swift; sourceTree = "<group>"; };
 		56E2E49E29C03B050023095C /* CGFloat+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+.swift"; sourceTree = "<group>"; };
 		56E2E4A029C03BB30023095C /* ShapeStyle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeStyle+.swift"; sourceTree = "<group>"; };
@@ -140,6 +150,8 @@
 		5624C4AC29BFF7CE008C7898 /* Balance-Catch-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				56807DB929CAE366005441D4 /* Strings */,
+				563FBD5929C96F1B00847390 /* Model */,
 				5624C4B329BFF7D2008C7898 /* Preview Content */,
 				56E2E4A729C054350023095C /* View */,
 				56E2E49D29C03AC90023095C /* Extension */,
@@ -175,9 +187,35 @@
 			path = "Balance-Catch-iOSUITests";
 			sourceTree = "<group>";
 		};
+		563FBD5929C96F1B00847390 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				563FBD5B29C96F3500847390 /* Question.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56807DB929CAE366005441D4 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				56807DBA29CAE36E005441D4 /* QuestionTexts.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		56D2730C29CAC8DD00E4EF76 /* WheelStylePicker */ = {
+			isa = PBXGroup;
+			children = (
+				56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */,
+				563FBD6329C990EC00847390 /* QuestionScrollView.swift */,
+			);
+			path = WheelStylePicker;
+			sourceTree = "<group>";
+		};
 		56E2E49A29C037000023095C /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				56D2730C29CAC8DD00E4EF76 /* WheelStylePicker */,
 				56E2E49B29C037160023095C /* RoundedBlueButton.swift */,
 				3950658029CC949600A9C925 /* SelectBox.swift */,
 				3950658229CC94AF00A9C925 /* SelectButton.swift */,
@@ -209,6 +247,7 @@
 				56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */,
 				53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */,
 				53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */,
+				563FBD4A29C9444400847390 /* SelectQuestionView.swift */,
 				3950657829CC93AF00A9C925 /* SelectTypeView.swift */,
 				3950657A29CC940700A9C925 /* UserFirstSelectView.swift */,
 				3950657C29CC943B00A9C925 /* TimerView.swift */,
@@ -353,6 +392,8 @@
 				3950657D29CC943B00A9C925 /* TimerView.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
 				56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */,
+				563FBD5C29C96F3500847390 /* Question.swift in Sources */,
+				56D2730E29CACA6E00E4EF76 /* QuestionItemView.swift in Sources */,
 				3950658129CC949600A9C925 /* SelectBox.swift in Sources */,
 				3950657B29CC940700A9C925 /* UserFirstSelectView.swift in Sources */,
 				3950658329CC94AF00A9C925 /* SelectButton.swift in Sources */,
@@ -365,7 +406,10 @@
 				56E2E4A929C055730023095C /* BeforePlayRuleDescriptionView.swift in Sources */,
 				56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */,
 				53A7B0AF29C334B000B99211 /* SelectQuestionThemeView.swift in Sources */,
+				563FBD6429C990EC00847390 /* QuestionScrollView.swift in Sources */,
+				563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */,
 				53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */,
+				56807DBB29CAE36E005441D4 /* QuestionTexts.swift in Sources */,
 				33E60CA329CC88DE005EC0AF /* NameBoxButton.swift in Sources */,
 				33E60C9F29CC6F3B005EC0AF /* WhoIsLoserView.swift in Sources */,
 				5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */,
@@ -415,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -475,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

@@ -11,7 +11,7 @@ struct SelectButton: ButtonStyle {
     
     @Binding var isActivated :Bool
     
-    init(isActivated: Binding<Bool> = .constant(false)){
+    init(isActivated: Binding<Bool> = .constant(false)) {
         _isActivated = isActivated
     }
     

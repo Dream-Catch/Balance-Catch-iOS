@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LaunchScreenView: View {
     var body: some View {
-        
         GeometryReader { geometry in
             NavigationView {
                 ZStack(alignment: .center) {
