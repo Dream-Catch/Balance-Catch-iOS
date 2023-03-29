@@ -32,6 +32,7 @@ struct SelectTypeView: View {
             }){
                 Text("질문 랜덤 배정")
                     .font(.system(size:24))
+                    .fontWeight(.bold)
             }.buttonStyle(SelectButton(isActivated: $isActivated1))
                 .padding(.bottom,23)
             
@@ -42,6 +43,7 @@ struct SelectTypeView: View {
             }){
                 Text("질문 고르기")
                     .font(.system(size:24))
+                    .fontWeight(.bold)
             }
             .buttonStyle(SelectButton(isActivated: $isActivated2))
             
