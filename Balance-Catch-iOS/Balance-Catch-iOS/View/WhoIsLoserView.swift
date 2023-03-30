@@ -13,7 +13,7 @@ struct WhoIsLoserView: View {
         {
             Text("벌칙 당첨자💣")
                 .font(.system(size: 36, weight: .bold))
-                .bold()
+                .shadow(color:.gray,radius:2,x:3,y:3)
                 .padding(.bottom,96)
             HStack{
                 Text("player 2")
@@ -28,6 +28,7 @@ struct WhoIsLoserView: View {
                     {
                         
                     }
+                    
                 }
                 .frame(width: 150, height: 62, alignment: .center)
                 .overlay(RoundedRectangle(cornerRadius: 20)

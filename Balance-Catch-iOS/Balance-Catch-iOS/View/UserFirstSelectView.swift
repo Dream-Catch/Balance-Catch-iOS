@@ -6,13 +6,34 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct UserFirstSelectView: View {
-    
+    let selectedQuestion: Question
+    var questions: [Question] = getNewQuestionList()
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
     
+    
+    init(selectedQuestion: Question) {
+        self.selectedQuestion = selectedQuestion
+        questionArray = selectedQuestion.text.components(separatedBy: "vs")
+    }
+    
+    var questionArray: [String]
+  
+    mutating func onAppear() {
+        questionArray = selectedQuestion.text.components(separatedBy: "vs")
+    }
+    
+    var first: String {
+            questionArray.first ?? ""
+    }
+    var second: String {
+        questionArray.last ?? ""
+    }
+
     var body: some View {
         VStack{
             Text("1차 선택")
@@ -42,6 +63,7 @@ struct UserFirstSelectView: View {
             }.padding(.bottom, 40)
             
             
+            
             ZStack{
                 
                 VStack{
@@ -55,7 +77,7 @@ struct UserFirstSelectView: View {
                         }
                     })
                     {
-                        Text("잠수이별")
+                        Text("\(first)")
                             .font(.system(size: 27))
                             .fontWeight(.bold)
                     }
@@ -74,7 +96,7 @@ struct UserFirstSelectView: View {
                         
                         self.isActivated2.toggle()
                     }) {
-                        Text("환승이별")
+                        Text("\(second)")
                             .font(.system(size: 27))
                             .fontWeight(.bold)
                         
@@ -104,13 +126,16 @@ struct UserFirstSelectView: View {
                 showingSubview.toggle()
             }
         }
+        
         .padding(.top,100)
         .padding(.bottom,100) //임시값
     }
+    
 }
+
 
 struct UserFirstSelect_Previews: PreviewProvider {
     static var previews: some View {
-        UserFirstSelectView()
+        UserFirstSelectView(selectedQuestion: .init(text: "test"))
     }
 }

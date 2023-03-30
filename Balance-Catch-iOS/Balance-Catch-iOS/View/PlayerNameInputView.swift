@@ -17,6 +17,8 @@ struct PlayerNameInputView: View {
                 
                 Text("각자 이름을 입력해주세요")
                     .font(Font.custom("Arial", size: 24))
+                    .fontWeight(.bold)
+                    .shadow(color:.gray,radius:2,x:3,y:3)
                 
                 Spacer()
                 
@@ -24,6 +26,8 @@ struct PlayerNameInputView: View {
                     VStack{
                         Text("Player \(index + 1)")
                             .font(Font.custom("Arial", size: 19))
+                            .fontWeight(.bold)
+                            .shadow(color:.gray,radius:2,x:3,y:3)
                         TextField("Name", text: .constant(""))
                             .font(Font.custom("Arial", size: 19))
                                 .textFieldStyle(.roundedBorder)

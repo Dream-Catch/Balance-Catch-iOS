@@ -15,14 +15,18 @@ struct SelectQuestionView: View {
     var body: some View {
         VStack(spacing: 16) {
             QuestionScrollView(questions: questions, selectedQuestion: $selectedQuestion)
-            
             NavigationLink("Next") {
-                UserFirstSelectView()
+                UserFirstSelectView(selectedQuestion: selectedQuestion)
             }
             .buttonStyle(RoundedBlueButton())
         }
+        
     }
+    
+    
 }
+
+
 
 func getNewQuestionList() -> [Question] {
     let qustionTexts = QuestionTexts().list

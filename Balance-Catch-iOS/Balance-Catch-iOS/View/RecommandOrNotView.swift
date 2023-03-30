@@ -13,7 +13,9 @@ struct RecommandOrNotView: View {
         VStack{
             
             Text("잠수이별 VS 환승이별")
-                .font(.subTitle)
+                .font(.system(size:24))
+                .fontWeight(.bold)
+                .shadow(color:.gray,radius:2,x:3,y:3)
                 .padding()
             Text("재미있는 질문이였나요?")
                 .font(.subTitle)
