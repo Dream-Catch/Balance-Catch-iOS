@@ -32,8 +32,8 @@
 		5624C4CB29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */; };
 		563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBD4A29C9444400847390 /* SelectQuestionView.swift */; };
 		563FBD5C29C96F3500847390 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBD5B29C96F3500847390 /* Question.swift */; };
-		563FBD6429C990EC00847390 /* QuestionScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBD6329C990EC00847390 /* QuestionScrollView.swift */; };
 		56807DBB29CAE36E005441D4 /* QuestionTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56807DBA29CAE36E005441D4 /* QuestionTexts.swift */; };
+		56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56930FD229D59861006CEA3F /* QuestionPickerView.swift */; };
 		56D2730E29CACA6E00E4EF76 /* QuestionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */; };
 		56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49B29C037160023095C /* RoundedBlueButton.swift */; };
 		56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49E29C03B050023095C /* CGFloat+.swift */; };
@@ -90,8 +90,8 @@
 		5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance_Catch_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		563FBD4A29C9444400847390 /* SelectQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionView.swift; sourceTree = "<group>"; };
 		563FBD5B29C96F3500847390 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		563FBD6329C990EC00847390 /* QuestionScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionScrollView.swift; sourceTree = "<group>"; };
 		56807DBA29CAE36E005441D4 /* QuestionTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTexts.swift; sourceTree = "<group>"; };
+		56930FD229D59861006CEA3F /* QuestionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPickerView.swift; sourceTree = "<group>"; };
 		56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemView.swift; sourceTree = "<group>"; };
 		56E2E49B29C037160023095C /* RoundedBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBlueButton.swift; sourceTree = "<group>"; };
 		56E2E49E29C03B050023095C /* CGFloat+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+.swift"; sourceTree = "<group>"; };
@@ -152,12 +152,12 @@
 			children = (
 				56807DB929CAE366005441D4 /* Strings */,
 				563FBD5929C96F1B00847390 /* Model */,
-				5624C4B329BFF7D2008C7898 /* Preview Content */,
 				56E2E4A729C054350023095C /* View */,
 				56E2E49D29C03AC90023095C /* Extension */,
 				56E2E49A29C037000023095C /* Custom */,
 				5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */,
 				5624C4B129BFF7D2008C7898 /* Assets.xcassets */,
+				5624C4B329BFF7D2008C7898 /* Preview Content */,
 			);
 			path = "Balance-Catch-iOS";
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */,
-				563FBD6329C990EC00847390 /* QuestionScrollView.swift */,
+				56930FD229D59861006CEA3F /* QuestionPickerView.swift */,
 			);
 			path = WheelStylePicker;
 			sourceTree = "<group>";
@@ -389,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */,
 				3950657D29CC943B00A9C925 /* TimerView.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
 				56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */,
@@ -406,7 +407,6 @@
 				56E2E4A929C055730023095C /* BeforePlayRuleDescriptionView.swift in Sources */,
 				56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */,
 				53A7B0AF29C334B000B99211 /* SelectQuestionThemeView.swift in Sources */,
-				563FBD6429C990EC00847390 /* QuestionScrollView.swift in Sources */,
 				563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */,
 				53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */,
 				56807DBB29CAE36E005441D4 /* QuestionTexts.swift in Sources */,

@@ -49,7 +49,7 @@ struct SelectTypeView: View {
             
             
             NavigationLink {
-                SelectQuestionView(isRandomPick: isActivated1 ? isActivated1 : isActivated2)
+                SelectQuestionView(isRandomPick: isActivated1)
             } label: {
                 Text("Next")
             }
