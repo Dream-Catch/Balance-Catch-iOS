@@ -9,17 +9,40 @@ import SwiftUI
 
 struct SelectQuestionView: View {
     var questions: [Question] = getNewQuestionList()
+    
     @State var isRandomPick: Bool
-    @State private var selectedQuestion: Question = Question(text: QuestionTexts().list[4])
+    @State var selectedIndex: Int
+    @State var isRetryButtonEnabled = true
+    @State var questionViewId = UUID()
+    
+    init(isRandomPick: Bool, selectedIndex: Int = 0) {
+        _isRandomPick = State(initialValue: isRandomPick)
+        _selectedIndex = State(initialValue: isRandomPick ? (0..<questions.count).randomElement()! : 0)
+    }
     
     var body: some View {
         VStack(spacing: 16) {
-            QuestionScrollView(questions: questions, selectedQuestion: $selectedQuestion)
+            QuestionPickerView(questions: questions, selectedIndex: $selectedIndex)
+                .id(questionViewId)
             
-            NavigationLink("Next") {
-                UserFirstSelectView()
+            HStack(alignment: .center, spacing: 20) {
+                isRandomPick ?
+                Button("Reset") {
+                    isRetryButtonEnabled = false
+                    selectedIndex = (0..<questions.count).randomElement()!
+                    questionViewId = UUID()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        isRetryButtonEnabled = true
+                    }
+                }
+                .buttonStyle(RoundedBlueButton())
+                .disabled(!isRetryButtonEnabled) : nil
+                
+                NavigationLink("Next") {
+                    UserFirstSelectView()
+                }
+                .buttonStyle(RoundedBlueButton())
             }
-            .buttonStyle(RoundedBlueButton())
         }
     }
 }
@@ -37,6 +60,6 @@ func getNewQuestionList() -> [Question] {
 
 struct SelectQuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectQuestionView(isRandomPick: false)
+        SelectQuestionView(isRandomPick: true)
     }
 }
