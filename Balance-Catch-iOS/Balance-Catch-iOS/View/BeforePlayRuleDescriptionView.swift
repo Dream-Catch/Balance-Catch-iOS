@@ -35,12 +35,6 @@ struct BeforePlayRuleDescriptionView: View {
     }
 }
 
-struct GeometryReaderDetailView: View {
-    var body: some View {
-       Rectangle()
-    }
-}
-
 struct BeforePlayRuleDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
         BeforePlayRuleDescriptionView()
