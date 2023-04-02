@@ -49,6 +49,8 @@ struct WhoIsLoserView: View {
                 .foregroundColor(.black)
             }
             .padding(.bottom,56)
+            
+            // 고치기~~~~~~~~~~~~~~~~  
             HStack{
                 ZStack {
                     NavigationLink("New Game") {
