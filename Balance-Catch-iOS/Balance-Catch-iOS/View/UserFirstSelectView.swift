@@ -10,7 +10,7 @@ import Foundation
 
 struct UserFirstSelectView: View {
     let selectedQuestion: Question
-    var questions: [Question] = getNewQuestionList()
+    //var questions: [Question] = getNewQuestionList()
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
@@ -132,6 +132,17 @@ struct UserFirstSelectView: View {
     }
     
 }
+
+//func getNewQuestionList() -> [Question] {
+//    let qustionTexts = QuestionTexts().list
+//    var newQuestionList: [Question] = []
+//
+//    qustionTexts.forEach { questionText in
+//        let newQuestion = Question(text: questionText)
+//        newQuestionList.append(newQuestion)
+//    }
+//    return newQuestionList
+//}
 
 
 struct UserFirstSelect_Previews: PreviewProvider {

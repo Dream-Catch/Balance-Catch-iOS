@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct LaunchScreenView: View {
+    init() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             NavigationView {
