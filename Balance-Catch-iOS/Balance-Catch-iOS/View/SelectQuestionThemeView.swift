@@ -30,6 +30,8 @@ struct SelectQuestionThemeView: View {
                 
                 Text("질문 테마를 선택 해주세요")
                     .font(Font.custom("Arial", size: 24))
+                    .fontWeight(.bold)
+                    .shadow(color:.gray,radius:2,x:3,y:3)
                 
                 Spacer()
                 
@@ -55,6 +57,7 @@ struct ThemeView: View {
         VStack {
             Text(title)
                 .font(Font.custom("Arial", size: 24))
+                .fontWeight(.bold)
         }
         .frame(width: 293, height: 62)
         .padding(.horizontal, 20)
