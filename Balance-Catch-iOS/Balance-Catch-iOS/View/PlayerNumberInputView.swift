@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlayerNumberInputView: View {
     @State private var numberOfPeople = 2
+    
     var body: some View {
         ZStack {
             VStack{

@@ -7,21 +7,8 @@
 
 import SwiftUI
 
-struct QuestionTheme: Identifiable {
-    let id = UUID()
-    let title: String
-}
-
 struct SelectQuestionThemeView: View {
-    
-    let QuestionsThemes = [
-        QuestionTheme(title: "커플"),
-        QuestionTheme(title: "직장인"),
-        QuestionTheme(title: "솔로"),
-        QuestionTheme(title: "음식"),
-        QuestionTheme(title: "학생"),
-        QuestionTheme(title: "극과극")
-    ]
+    let QuestionsThemes = ["커플", "직장인", "솔로", "음식", "학생", "극과극", "생활"]
     
     var body: some View {
         ZStack {
@@ -35,40 +22,53 @@ struct SelectQuestionThemeView: View {
                 
                 Spacer()
                 
-                List(QuestionsThemes) { theme in
-                    ThemeView(title: theme.title)
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        ForEach(QuestionsThemes, id: \.self) { theme in
+                            ThemeView(title: theme)
+                        }
+                    }
                 }
                 
-                
+                Spacer()
+
                 NavigationLink("Next") {
                     SelectTypeView()
                 }
                 .buttonStyle(RoundedBlueButton())
             }
-        }
+        }.padding()
     }
 }
 
+
 struct ThemeView: View {
-    
+    @State private var selectedTheme: String = ""
+    @State private var showSelectTypeView: Bool = false
     let title: String
     
     var body: some View {
-        VStack {
+        Button(action: {
+            selectedTheme = title
+            if (showSelectTypeView) {
+                showSelectTypeView = false
+            } else {
+                showSelectTypeView = true
+            }
+        }) {
             Text(title)
                 .font(Font.custom("Arial", size: 24))
                 .fontWeight(.bold)
         }
-        .frame(width: 293, height: 62)
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 20.0)
         .padding(.vertical, 10)
-        .background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 4))
+        .buttonStyle(SelectThemeButton(isActivated: $showSelectTypeView))
     }
 }
 
 
 struct SelectQuestionThemeView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectQuestionThemeView()
+        return SelectQuestionThemeView()
     }
 }
