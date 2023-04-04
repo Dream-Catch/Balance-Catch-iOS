@@ -60,7 +60,7 @@ struct PublicPickView: View {
             .frame(width: 300, height: 130, alignment: .leading)
             .overlay(RoundedRectangle(cornerRadius: 20)
                 .stroke(Color.balanceCatchBlue, lineWidth: 4))
-            .onReceive(timer) { _ in //
+            .onReceive(timer) { _ in
                 if firstIncreAmount < firstAmount {
                     firstIncreAmount += 5
                 }
