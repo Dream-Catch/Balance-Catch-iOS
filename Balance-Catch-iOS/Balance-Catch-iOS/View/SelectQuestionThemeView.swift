@@ -7,65 +7,65 @@
 
 import SwiftUI
 
-struct SelectQuestionThemeView: View {
-    let QuestionsThemes = ["커플", "직장인", "솔로", "음식", "학생", "극과극", "생활"]
+struct ThemeButton: View {
+    let theme: String
+    let isSelected: Bool
+    let action: () -> Void
     
     var body: some View {
-        ZStack {
-            VStack{
-                Spacer()
-                
-                Text("질문 테마를 선택 해주세요")
-                    .font(Font.custom("Arial", size: 24))
-                    .fontWeight(.bold)
-                    .shadow(color:.gray,radius:2,x:3,y:3)
-                
-                Spacer()
-                
-                ScrollView {
-                    VStack(alignment: .leading) {
-                        ForEach(QuestionsThemes, id: \.self) { theme in
-                            ThemeView(title: theme)
+        Button(action: action) {
+            Text(theme)
+                .font(.system(size: 20))
+                .fontWeight(.bold)
+        }
+        .frame(width: 295, height: 75)
+        .foregroundColor(.black)
+        .padding(.horizontal, 16)
+        .background(isSelected ? Color("LightBlue") : Color.white)
+        .cornerRadius(20)
+        .shadow(color:.gray,radius:2,x:3,y:4)
+        .overlay(RoundedRectangle(cornerRadius: 20)
+            .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
+    }
+}
+
+struct SelectQuestionThemeView: View {
+    let questionsThemes = ["커플", "직장인", "솔로", "음식", "학생", "극과극", "생활"]
+    @State private var selectedTheme: String?
+    
+    var body: some View {
+        VStack {
+            Text("질문 테마를 선택 해주세요")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(.bottom, 16)
+            
+            Spacer()
+            
+            ScrollView {
+                VStack(spacing: 20) {
+                    ForEach(questionsThemes, id: \.self) { theme in
+                        ThemeButton(theme: theme, isSelected: self.selectedTheme == theme) {
+                            self.selectedTheme = theme
                         }
                     }
                 }
-                
-                Spacer()
-
-                NavigationLink("Next") {
-                    SelectTypeView()
-                }
-                .buttonStyle(RoundedBlueButton())
+                .padding()
             }
-        }.padding()
-    }
-}
-
-
-struct ThemeView: View {
-    @State private var selectedTheme: String = ""
-    @State private var showSelectTypeView: Bool = false
-    let title: String
     
-    var body: some View {
-        Button(action: {
-            selectedTheme = title
-            if (showSelectTypeView) {
-                showSelectTypeView = false
-            } else {
-                showSelectTypeView = true
+            Spacer()
+            
+//            Mark: NavigationLink(destination: SelectTypeView(selectedTheme: selectedTheme))
+            NavigationLink(destination: SelectTypeView(selectedTheme: selectedTheme ?? "")) {
+                let _ = print(selectedTheme ?? "")
+                Text("Next")
             }
-        }) {
-            Text(title)
-                .font(Font.custom("Arial", size: 24))
-                .fontWeight(.bold)
+            .buttonStyle(RoundedBlueButton())
+            .disabled(selectedTheme == nil)
         }
-        .padding(.horizontal, 20.0)
-        .padding(.vertical, 10)
-        .buttonStyle(SelectThemeButton(isActivated: $showSelectTypeView))
+        .padding()
     }
 }
-
 
 struct SelectQuestionThemeView_Previews: PreviewProvider {
     static var previews: some View {
