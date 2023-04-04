@@ -21,7 +21,7 @@ struct TimerView: View {
                 TimerCode()
                 
                 NavigationLink("Next") {
-                    UserFinalSelectView()
+                    FinalSpeakingView()
                 }
                 .buttonStyle(RoundedBlueButton())
             }//Vstack
@@ -31,7 +31,7 @@ struct TimerView: View {
 }
 
 
-struct TiimerView_Previews: PreviewProvider {
+struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView()
     }

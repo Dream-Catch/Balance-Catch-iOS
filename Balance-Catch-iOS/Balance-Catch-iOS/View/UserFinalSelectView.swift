@@ -63,6 +63,7 @@ struct UserFinalSelectView: View {
                     .buttonStyle(SelectButton(isActivated: $isActivated1))
                     .zIndex(0)
                     .offset(x:-90)
+                    .padding(.bottom, 23)
                     
                     
                     
@@ -87,11 +88,11 @@ struct UserFinalSelectView: View {
                     
                 }
                 
-                Text("VS")
-                    .font(.system(size:64))
-                    .fontWeight(.black)
-                    .shadow(color:.gray,radius:2, x: 3, y:3)
-                    .zIndex(1)
+                StrokeText(text: "VS",width: 2, color: Color("BalanceCatchBlue"))
+                    .foregroundColor(.black)
+                    .font(.system(size: 64, weight: .black))
+                    .shadow(color:.gray,radius:2, x: 1, y:1)
+                    .padding(.bottom, 25)
             }
             
             NavigationLink("Next") {
