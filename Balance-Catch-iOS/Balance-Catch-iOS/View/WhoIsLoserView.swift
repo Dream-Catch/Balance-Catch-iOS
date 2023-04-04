@@ -61,7 +61,7 @@ struct WhoIsLoserView: View {
                 }
                 ZStack {
                     NavigationLink("Replay") {
-//                        SelectQuestionThemeView()
+                        SelectQuestionThemeView()
                     }
                     .buttonStyle(BiggerRoundedBlueButton())
                 }
