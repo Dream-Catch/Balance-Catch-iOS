@@ -10,7 +10,6 @@ import Foundation
 
 struct UserFirstSelectView: View {
     let selectedQuestion: Question
-    //var questions: [Question] = getNewQuestionList()
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
@@ -85,6 +84,7 @@ struct UserFirstSelectView: View {
                     .buttonStyle(SelectButton(isActivated: $isActivated1))
                     .zIndex(0)
                     .offset(x:-90)
+                    .padding(.bottom, 23)
                     
                     
                     
@@ -107,13 +107,16 @@ struct UserFirstSelectView: View {
                     .offset(x: 90)
                     .offset(x: showingSubview ? 0 : 150, y: 0)
                     
+                    
                 }
                 
-                Text("VS")
-                    .font(.system(size:64))
-                    .fontWeight(.black)
-                    .shadow(color:.gray,radius:2, x: 3, y:3)
-                    .zIndex(1)
+                StrokeText(text: "VS",width: 2, color: Color("BalanceCatchBlue"))
+                    .foregroundColor(.black)
+                    .font(.system(size: 64, weight: .black))
+                    .shadow(color:.gray,radius:2, x: 1, y:1)
+                    .padding(.bottom, 25)
+                
+                
             }
             
             NavigationLink("Next") {
@@ -132,18 +135,6 @@ struct UserFirstSelectView: View {
     }
     
 }
-
-//func getNewQuestionList() -> [Question] {
-//    let qustionTexts = QuestionTexts().list
-//    var newQuestionList: [Question] = []
-//
-//    qustionTexts.forEach { questionText in
-//        let newQuestion = Question(text: questionText)
-//        newQuestionList.append(newQuestion)
-//    }
-//    return newQuestionList
-//}
-
 
 struct UserFirstSelect_Previews: PreviewProvider {
     static var previews: some View {

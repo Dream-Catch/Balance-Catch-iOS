@@ -21,6 +21,8 @@
 		3950658129CC949600A9C925 /* SelectBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658029CC949600A9C925 /* SelectBox.swift */; };
 		3950658329CC94AF00A9C925 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658229CC94AF00A9C925 /* SelectButton.swift */; };
 		3950658529CC961300A9C925 /* TimerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658429CC961300A9C925 /* TimerCode.swift */; };
+		39A1561829DC0F7F000968CA /* FinalSpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561729DC0F7F000968CA /* FinalSpeakingView.swift */; };
+		39A1561A29DC1899000968CA /* VSstyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561929DC1899000968CA /* VSstyle.swift */; };
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
 		53A7B0AF29C334B000B99211 /* SelectQuestionThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */; };
 		5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */; };
@@ -76,6 +78,8 @@
 		3950658029CC949600A9C925 /* SelectBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBox.swift; sourceTree = "<group>"; };
 		3950658229CC94AF00A9C925 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		3950658429CC961300A9C925 /* TimerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCode.swift; sourceTree = "<group>"; };
+		39A1561729DC0F7F000968CA /* FinalSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSpeakingView.swift; sourceTree = "<group>"; };
+		39A1561929DC1899000968CA /* VSstyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSstyle.swift; sourceTree = "<group>"; };
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
 		53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionThemeView.swift; sourceTree = "<group>"; };
 		5624C4AA29BFF7CE008C7898 /* Balance-Catch-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balance-Catch-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +228,7 @@
 				33E60C9C29CC2FC3005EC0AF /* PercentageBar.swift */,
 				33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */,
 				33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */,
+				39A1561929DC1899000968CA /* VSstyle.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */,
 				33E60C9629CC1B28005EC0AF /* PublicPickView.swift */,
 				33E60C9E29CC6F3B005EC0AF /* WhoIsLoserView.swift */,
+				39A1561729DC0F7F000968CA /* FinalSpeakingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 			files = (
 				56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */,
 				3950657D29CC943B00A9C925 /* TimerView.swift in Sources */,
+				39A1561A29DC1899000968CA /* VSstyle.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
 				56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */,
 				563FBD5C29C96F3500847390 /* Question.swift in Sources */,
@@ -401,6 +408,7 @@
 				33E60CA129CC736C005EC0AF /* BiggerRoundBlueButton.swift in Sources */,
 				33E60C9D29CC2FC4005EC0AF /* PercentageBar.swift in Sources */,
 				56E2E4A629C03E040023095C /* Font+.swift in Sources */,
+				39A1561829DC0F7F000968CA /* FinalSpeakingView.swift in Sources */,
 				33A83C7F29CA375700C0FA16 /* RecommandOrNotView.swift in Sources */,
 				56E2E4A129C03BB30023095C /* ShapeStyle+.swift in Sources */,
 				3950657F29CC945E00A9C925 /* UserFinalSelectView.swift in Sources */,
