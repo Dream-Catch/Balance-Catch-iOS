@@ -55,7 +55,6 @@ struct PlayerNameInputView: View {
                         
                     }
                     .padding(.horizontal, 45.0)
-                    .padding(.bottom)
                     .background(
                         GeometryReader { geometry in
                             Color.clear
