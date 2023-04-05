@@ -21,6 +21,7 @@
 		3950658129CC949600A9C925 /* SelectBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658029CC949600A9C925 /* SelectBox.swift */; };
 		3950658329CC94AF00A9C925 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658229CC94AF00A9C925 /* SelectButton.swift */; };
 		3950658529CC961300A9C925 /* TimerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658429CC961300A9C925 /* TimerCode.swift */; };
+		538F769C29DD4BCB00686010 /* ThemeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F769B29DD4BCB00686010 /* ThemeButtonStyle.swift */; };
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
 		53A7B0AF29C334B000B99211 /* SelectQuestionThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */; };
 		53D1488529D9672D003EAD5A /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D1488429D9672C003EAD5A /* PlayerModel.swift */; };
@@ -77,6 +78,7 @@
 		3950658029CC949600A9C925 /* SelectBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBox.swift; sourceTree = "<group>"; };
 		3950658229CC94AF00A9C925 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		3950658429CC961300A9C925 /* TimerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCode.swift; sourceTree = "<group>"; };
+		538F769B29DD4BCB00686010 /* ThemeButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButtonStyle.swift; sourceTree = "<group>"; };
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
 		53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionThemeView.swift; sourceTree = "<group>"; };
 		53D1488429D9672C003EAD5A /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				33E60C9C29CC2FC3005EC0AF /* PercentageBar.swift */,
 				33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */,
 				33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */,
+				538F769B29DD4BCB00686010 /* ThemeButtonStyle.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				56E2E4A129C03BB30023095C /* ShapeStyle+.swift in Sources */,
 				3950657F29CC945E00A9C925 /* UserFinalSelectView.swift in Sources */,
 				56E2E4A929C055730023095C /* BeforePlayRuleDescriptionView.swift in Sources */,
+				538F769C29DD4BCB00686010 /* ThemeButtonStyle.swift in Sources */,
 				56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */,
 				53A7B0AF29C334B000B99211 /* SelectQuestionThemeView.swift in Sources */,
 				563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */,
