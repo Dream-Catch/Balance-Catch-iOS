@@ -36,9 +36,9 @@ struct SelectQuestionThemeView: View {
     var body: some View {
         VStack {
             Text("질문 테마를 선택 해주세요")
-                .font(.title)
+                .font(Font.custom("Arial", size: 24))
                 .fontWeight(.bold)
-                .padding(.bottom, 16)
+                .shadow(color:.gray,radius:2,x:3,y:3)
             
             Spacer()
             
