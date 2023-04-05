@@ -17,40 +17,42 @@ struct PlayerNameInputView: View {
     var body: some View {
         ZStack {
             VStack {
-                Spacer()
-                
                 Text("각자 이름을 입력해주세요")
                     .font(Font.custom("Arial", size: 24))
                     .fontWeight(.bold)
                     .shadow(color:.gray,radius:2,x:3,y:3)
                 
-                Spacer()
+                Spacer().frame(height: 22)
                 
                 ScrollView(.vertical) {
-                    VStack {
+                    VStack(spacing: 22) {
                         ForEach(0 ..< playerNames.count, id: \.self) { index in
                             VStack {
                                 Text("Player \(index + 1)")
                                     .font(Font.custom("Arial", size: 19))
                                     .fontWeight(.bold)
                                     .multilineTextAlignment(.leading)
-                                    .padding(.top, 20.0)
                                     .padding(.bottom, 7)
                                     .shadow(color:.gray,radius:2,x:3,y:3)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 
                                 TextField("Player \(index + 1)", text: self.$playerNames[index])
                                     .multilineTextAlignment(.leading)
-                                    .padding(.horizontal, 45.0)
+                                    .padding(.horizontal, 30.0)
                                     .padding(.vertical, 30.0)
+                                    .cornerRadius(20)
                                     .background(
-                                        RoundedRectangle(cornerRadius: 20).stroke(
-                                            self.playerNames[index].isEmpty ? Color.gray:
-                                                    .balanceCatchBlue, lineWidth: 5
-                                        )
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .inset(by: 3)
+                                            .stroke(
+                                                self.playerNames[index].isEmpty ? Color.gray:
+                                                        .balanceCatchBlue,
+                                                lineWidth: 5
+                                            )
                                     )
                             }
                         }
+                        
                     }
                     .padding(.horizontal, 45.0)
                     .padding(.bottom)
@@ -67,16 +69,14 @@ struct PlayerNameInputView: View {
                     }
                 }
                 .frame(maxHeight: scrollViewHeight)
-
-                Spacer()
+                
+                if scrollViewHeight == ViewHeightKey.maxValue { Spacer() }
+                else { Spacer().frame(height: 34) }
                 
                 NavigationLink(destination: SelectQuestionThemeView()) {
                     Text("Next")
                 }
                 .buttonStyle(RoundedBlueButton())
-                
-                Spacer()
-                    
             }
         }
         .onAppear {
@@ -87,8 +87,10 @@ struct PlayerNameInputView: View {
 
 struct ViewHeightKey: PreferenceKey {
     static var defaultValue: CGFloat = 0
+    static let maxValue = CGFloat.superViewFrameHeight * 2 / 3
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = max(value, nextValue())
+        let newValue = max(value, nextValue())
+        value = maxValue >= newValue ? newValue : maxValue
     }
 }
 
