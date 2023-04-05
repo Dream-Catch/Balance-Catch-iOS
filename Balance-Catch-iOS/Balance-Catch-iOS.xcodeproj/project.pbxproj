@@ -80,7 +80,6 @@
 		3950658029CC949600A9C925 /* SelectBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBox.swift; sourceTree = "<group>"; };
 		3950658229CC94AF00A9C925 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		3950658429CC961300A9C925 /* TimerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCode.swift; sourceTree = "<group>"; };
-		538F769B29DD4BCB00686010 /* ThemeButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButtonStyle.swift; sourceTree = "<group>"; };
 		39A1561729DC0F7F000968CA /* FinalSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSpeakingView.swift; sourceTree = "<group>"; };
 		39A1561929DC1899000968CA /* VSstyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSstyle.swift; sourceTree = "<group>"; };
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
@@ -233,7 +232,6 @@
 				33E60C9C29CC2FC3005EC0AF /* PercentageBar.swift */,
 				33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */,
 				33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */,
-				538F769B29DD4BCB00686010 /* ThemeButtonStyle.swift */,
 				39A1561929DC1899000968CA /* VSstyle.swift */,
 			);
 			path = Custom;
