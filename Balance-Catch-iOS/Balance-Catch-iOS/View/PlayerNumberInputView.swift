@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlayerNumberInputView: View {
     @State private var numberOfPeople = 2
+    @State private var showAlert = false
     
     var body: some View {
         ZStack {
@@ -33,6 +34,19 @@ struct PlayerNumberInputView: View {
                     Text("Next")
                 }
                 .buttonStyle(RoundedBlueButton())
+                .disabled(numberOfPeople <= 0)
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("인원 수 부족"),
+                        message: Text("인원 수에 0이하의 값을 넣었습니다."),
+                        dismissButton: .default(Text("OK"))
+                    )
+                }
+                .onTapGesture {
+                    if numberOfPeople <= 0 {
+                        showAlert = true
+                    }
+                }
             }
         }
     }

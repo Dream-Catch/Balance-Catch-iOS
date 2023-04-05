@@ -26,52 +26,47 @@ struct PlayerNameInputView: View {
                 
                 Spacer()
                 
-                if numberOfPeople <= 0 {
-                    Text("Please enter a valid number of people")
-                        .foregroundColor(.red)
-                } else {
-                    ScrollView(.vertical) {
-                        VStack {
-                            ForEach(0 ..< playerNames.count, id: \.self) { index in
-                                VStack {
-                                    Text("Player \(index + 1)")
-                                        .font(Font.custom("Arial", size: 19))
-                                        .fontWeight(.bold)
-                                        .multilineTextAlignment(.leading)
-                                        .padding(.top, 20.0)
-                                        .padding(.bottom, 7)
-                                        .shadow(color:.gray,radius:2,x:3,y:3)
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                    
-                                    TextField("Player \(index + 1)", text: self.$playerNames[index])
-                                        .multilineTextAlignment(.leading)
-                                        .padding(.horizontal, 45.0)
-                                        .padding(.vertical, 30.0)
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 20).stroke(
-                                                self.playerNames[index].isEmpty ? Color.gray:
-                                                        .balanceCatchBlue, lineWidth: 5
-                                            )
+                ScrollView(.vertical) {
+                    VStack {
+                        ForEach(0 ..< playerNames.count, id: \.self) { index in
+                            VStack {
+                                Text("Player \(index + 1)")
+                                    .font(Font.custom("Arial", size: 19))
+                                    .fontWeight(.bold)
+                                    .multilineTextAlignment(.leading)
+                                    .padding(.top, 20.0)
+                                    .padding(.bottom, 7)
+                                    .shadow(color:.gray,radius:2,x:3,y:3)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                
+                                TextField("Player \(index + 1)", text: self.$playerNames[index])
+                                    .multilineTextAlignment(.leading)
+                                    .padding(.horizontal, 45.0)
+                                    .padding(.vertical, 30.0)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 20).stroke(
+                                            self.playerNames[index].isEmpty ? Color.gray:
+                                                    .balanceCatchBlue, lineWidth: 5
                                         )
-                                }
+                                    )
                             }
                         }
-                        .padding(.horizontal, 45.0)
-                        .padding(.bottom)
-                        .background(
-                            GeometryReader { geometry in
-                                Color.clear
-                                    .preference(key: ViewHeightKey.self, value: geometry.size.height)
-                            }
-                        )
                     }
-                    .onPreferenceChange(ViewHeightKey.self) { height in
-                        DispatchQueue.main.async {
-                            self.scrollViewHeight = height
+                    .padding(.horizontal, 45.0)
+                    .padding(.bottom)
+                    .background(
+                        GeometryReader { geometry in
+                            Color.clear
+                                .preference(key: ViewHeightKey.self, value: geometry.size.height)
                         }
-                    }
-                    .frame(maxHeight: scrollViewHeight)
+                    )
                 }
+                .onPreferenceChange(ViewHeightKey.self) { height in
+                    DispatchQueue.main.async {
+                        self.scrollViewHeight = height
+                    }
+                }
+                .frame(maxHeight: scrollViewHeight)
 
                 Spacer()
                 
