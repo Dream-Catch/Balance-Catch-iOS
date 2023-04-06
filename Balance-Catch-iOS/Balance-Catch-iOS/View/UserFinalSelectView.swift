@@ -55,9 +55,11 @@ struct UserFinalSelectView: View {
                         }
                     })
                     {
-                        Text("잠수이별")
-                            .font(.system(size: 27))
-                            .fontWeight(.bold)
+                        Text("받아온 질문")
+                            .font(.system(size: 27, weight: .bold))
+                            .minimumScaleFactor(0.5)
+                            .padding(.leading, 30)
+                            .frame(width:250,height:150)
                     }
                     .offset(x: showingSubview ? 0 : -150, y: 0)
                     .buttonStyle(SelectButton(isActivated: $isActivated1))
@@ -75,9 +77,11 @@ struct UserFinalSelectView: View {
                         
                         self.isActivated2.toggle()
                     }) {
-                        Text("환승이별")
-                            .font(.system(size: 27))
-                            .fontWeight(.bold)
+                        Text("받아온 질문")
+                            .font(.system(size: 27, weight: .bold))
+                            .minimumScaleFactor(0.5)
+                            .padding(.trailing, 30)
+                            .frame(width:250,height:150)
                         
                     }
                     .buttonStyle(SelectButton(isActivated: $isActivated2))
