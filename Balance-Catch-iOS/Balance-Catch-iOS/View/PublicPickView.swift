@@ -42,7 +42,7 @@ struct PublicPickView: View {
                 
                 HStack(alignment: .center){
                     ProgressView("", value: firstIncreAmount, total: 100)
-                        .progressViewStyle(LBProgressView())
+                        .progressViewStyle(CustomProgressView(isWin: firstAmount > secondAmount))
                         .padding(.top,20)
                         .padding(.trailing,10)
                         .padding(.bottom,28)
@@ -84,7 +84,7 @@ struct PublicPickView: View {
                 
                 HStack(alignment: .center){
                     ProgressView("", value: secondIncreAmount, total: 100)
-                        .progressViewStyle(BBProgressView())
+                        .progressViewStyle(CustomProgressView(isWin: firstAmount < secondAmount))
                         .padding(.top,20)
                         .padding(.trailing,10)
                         .padding(.bottom,28)
@@ -116,15 +116,12 @@ struct PublicPickView: View {
             
             ZStack {
                 NavigationLink("Next") {
-                   WhoIsLoserView()
+                    WhoIsLoserView()
                 }
                 .buttonStyle(RoundedBlueButton())
             }
-            
-            
         }
     }
-    
 }
 
 struct PublicPickView_Previews: PreviewProvider {

@@ -13,7 +13,7 @@
 		33E60C9F29CC6F3B005EC0AF /* WhoIsLoserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9E29CC6F3B005EC0AF /* WhoIsLoserView.swift */; };
 		33E60CA129CC736C005EC0AF /* BiggerRoundBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */; };
 		33E60CA329CC88DE005EC0AF /* NameBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */; };
-		33FCD2AB29E07AFD006E2131 /* PercentageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCD2AA29E07AFD006E2131 /* PercentageBar.swift */; };
+		33FCD2AB29E07AFD006E2131 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCD2AA29E07AFD006E2131 /* CustomProgressView.swift */; };
 		3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657829CC93AF00A9C925 /* SelectTypeView.swift */; };
 		3950657B29CC940700A9C925 /* UserFirstSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657A29CC940700A9C925 /* UserFirstSelectView.swift */; };
 		3950657D29CC943B00A9C925 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950657C29CC943B00A9C925 /* TimerView.swift */; };
@@ -68,7 +68,7 @@
 		33E60C9E29CC6F3B005EC0AF /* WhoIsLoserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoIsLoserView.swift; sourceTree = "<group>"; };
 		33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiggerRoundBlueButton.swift; sourceTree = "<group>"; };
 		33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameBoxButton.swift; sourceTree = "<group>"; };
-		33FCD2AA29E07AFD006E2131 /* PercentageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageBar.swift; sourceTree = "<group>"; };
+		33FCD2AA29E07AFD006E2131 /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		3950657829CC93AF00A9C925 /* SelectTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTypeView.swift; sourceTree = "<group>"; };
 		3950657A29CC940700A9C925 /* UserFirstSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirstSelectView.swift; sourceTree = "<group>"; };
 		3950657C29CC943B00A9C925 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 				33E60C9429CB6768005EC0AF /* RoundedButton.swift */,
 				33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */,
 				33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */,
-				33FCD2AA29E07AFD006E2131 /* PercentageBar.swift */,
+				33FCD2AA29E07AFD006E2131 /* CustomProgressView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -391,7 +391,7 @@
 			files = (
 				56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */,
 				3950657D29CC943B00A9C925 /* TimerView.swift in Sources */,
-				33FCD2AB29E07AFD006E2131 /* PercentageBar.swift in Sources */,
+				33FCD2AB29E07AFD006E2131 /* CustomProgressView.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
 				56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */,
 				563FBD5C29C96F3500847390 /* Question.swift in Sources */,
