@@ -42,10 +42,11 @@ struct PublicPickView: View {
                 
                 HStack(alignment: .center){
                     ProgressView("", value: firstIncreAmount, total: 100)
-                        .padding(.top,3)
+                        .progressViewStyle(LBProgressView())
+                        .padding(.top,20)
                         .padding(.trailing,10)
                         .padding(.bottom,28)
-                        .accentColor(Color.balanceCatchBlue)
+                        .accentColor(firstAmount > secondAmount ? Color.balanceCatchBlue : Color.lightBlue)
                         .scaleEffect(CGSize(width: 1.0, height: 3.5))
                     
                     Text("\(Int(firstAmount))%")
@@ -59,10 +60,10 @@ struct PublicPickView: View {
             }
             .frame(width: 300, height: 130, alignment: .leading)
             .overlay(RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.balanceCatchBlue, lineWidth: 4))
+                .stroke(firstAmount > secondAmount ? Color.balanceCatchBlue : Color.lightBlue, lineWidth: 4))
             .onReceive(timer) { _ in
                 if firstIncreAmount < firstAmount {
-                    firstIncreAmount += 5
+                    firstIncreAmount += 8
                 }
                 if animationAmount < 1.2 {
                     animationAmount += 0.02
@@ -70,7 +71,7 @@ struct PublicPickView: View {
             }
             .overlay(Text(firstAmount > secondAmount ? "WIN" : "LOSE" ).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
             .scaleEffect(firstAmount > secondAmount ? animationAmount : 1)
-            .animation(.easeIn(duration: 1).delay(1))
+            .animation(.easeIn(duration: 1).delay(1), value: animationAmount)
             .padding(30)
             
             
@@ -83,10 +84,11 @@ struct PublicPickView: View {
                 
                 HStack(alignment: .center){
                     ProgressView("", value: secondIncreAmount, total: 100)
-                        .padding(.top,3)
+                        .progressViewStyle(BBProgressView())
+                        .padding(.top,20)
                         .padding(.trailing,10)
                         .padding(.bottom,28)
-                        .accentColor(Color.balanceCatchBlue)
+                        .accentColor(firstAmount < secondAmount ? Color.balanceCatchBlue : Color.lightBlue)
                         .scaleEffect(CGSize(width: 1.0, height: 3.5))
                     
                     Text("\(Int(secondAmount))%")
@@ -100,13 +102,13 @@ struct PublicPickView: View {
             }
             .frame(width: 300, height: 130, alignment: .leading)
             .overlay(RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.balanceCatchBlue, lineWidth: 4))
+                .stroke(firstAmount < secondAmount ? Color.balanceCatchBlue : Color.lightBlue, lineWidth: 4))
             .overlay(Text(firstAmount < secondAmount ? "WIN" : "LOSE" ).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
             .scaleEffect(firstAmount < secondAmount ? animationAmount : 1)
-            .animation(.easeIn(duration: 1).delay(1))
+            .animation(.easeIn(duration: 1).delay(1), value: animationAmount)
             .onReceive(timer) { _ in
                 if secondIncreAmount < secondAmount {
-                    secondIncreAmount += 5
+                    secondIncreAmount += 8
                 }
             }
             .padding(30)

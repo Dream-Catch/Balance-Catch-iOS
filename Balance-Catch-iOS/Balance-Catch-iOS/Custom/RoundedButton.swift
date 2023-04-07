@@ -12,10 +12,10 @@ struct RoundedButton: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(.vertical, 17)
-            .padding(.horizontal, 65)
+            .padding(.vertical, 6)
+            .padding(.horizontal, 53)
             .overlay(RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.balanceCatchBlue, lineWidth: 4))
+                .stroke(Color.balanceCatchBlue, lineWidth: 5))
             .frame(width: 150,
                    height: 56,
                    alignment: .center
