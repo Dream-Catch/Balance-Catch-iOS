@@ -38,8 +38,8 @@ struct SelectQuestionThemeView: View {
 
             Spacer()
             
-            NavigationLink(destination: SelectTypeView(selectedTheme: selectedTheme ?? "")) {
-                let _ = print(selectedTheme ?? "")
+            NavigationLink(destination: SelectTypeView(selectedTheme: selectedTheme)) {
+                let _ = print(selectedTheme)
                 Text("Next")
             }
             .buttonStyle(RoundedBlueButton())

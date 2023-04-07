@@ -21,7 +21,6 @@
 		3950658129CC949600A9C925 /* SelectBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658029CC949600A9C925 /* SelectBox.swift */; };
 		3950658329CC94AF00A9C925 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658229CC94AF00A9C925 /* SelectButton.swift */; };
 		3950658529CC961300A9C925 /* TimerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658429CC961300A9C925 /* TimerCode.swift */; };
-		538F769C29DD4BCB00686010 /* ThemeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538F769B29DD4BCB00686010 /* ThemeButtonStyle.swift */; };
 		39A1561829DC0F7F000968CA /* FinalSpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561729DC0F7F000968CA /* FinalSpeakingView.swift */; };
 		39A1561A29DC1899000968CA /* VSstyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561929DC1899000968CA /* VSstyle.swift */; };
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
@@ -46,6 +45,7 @@
 		56E2E4A629C03E040023095C /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A529C03E040023095C /* Font+.swift */; };
 		56E2E4A929C055730023095C /* BeforePlayRuleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A829C055730023095C /* BeforePlayRuleDescriptionView.swift */; };
 		56E2E4AB29C056BE0023095C /* PlayerNumberInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */; };
+		56EC27AA29DFEF4B00951070 /* ThemeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC27A929DFEF4B00951070 /* ThemeButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +107,7 @@
 		56E2E4A529C03E040023095C /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		56E2E4A829C055730023095C /* BeforePlayRuleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforePlayRuleDescriptionView.swift; sourceTree = "<group>"; };
 		56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNumberInputView.swift; sourceTree = "<group>"; };
+		56EC27A929DFEF4B00951070 /* ThemeButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				56D2730C29CAC8DD00E4EF76 /* WheelStylePicker */,
+				56EC27A929DFEF4B00951070 /* ThemeButtonStyle.swift */,
 				56E2E49B29C037160023095C /* RoundedBlueButton.swift */,
 				3950658029CC949600A9C925 /* SelectBox.swift */,
 				3950658229CC94AF00A9C925 /* SelectButton.swift */,
@@ -418,10 +420,10 @@
 				56E2E4A129C03BB30023095C /* ShapeStyle+.swift in Sources */,
 				3950657F29CC945E00A9C925 /* UserFinalSelectView.swift in Sources */,
 				56E2E4A929C055730023095C /* BeforePlayRuleDescriptionView.swift in Sources */,
-				538F769C29DD4BCB00686010 /* ThemeButtonStyle.swift in Sources */,
 				56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */,
 				53A7B0AF29C334B000B99211 /* SelectQuestionThemeView.swift in Sources */,
 				563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */,
+				56EC27AA29DFEF4B00951070 /* ThemeButtonStyle.swift in Sources */,
 				53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */,
 				56807DBB29CAE36E005441D4 /* QuestionTexts.swift in Sources */,
 				33E60CA329CC88DE005EC0AF /* NameBoxButton.swift in Sources */,
