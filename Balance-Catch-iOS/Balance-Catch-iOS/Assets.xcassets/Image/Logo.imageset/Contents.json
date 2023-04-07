@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "로고-1.png",
       "idiom" : "iphone",
       "scale" : "2x"
     },
     {
+      "filename" : "로고-2.png",
       "idiom" : "iphone",
       "scale" : "3x"
     }
