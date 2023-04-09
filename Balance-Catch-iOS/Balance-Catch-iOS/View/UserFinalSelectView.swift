@@ -106,7 +106,7 @@ struct UserFinalSelectView: View {
         }
         .task {
             withAnimation(.easeInOut(duration: 1)) {
-                showingSubview.toggle()
+                showingSubview = true
             }
         }
         .padding(.top,100)

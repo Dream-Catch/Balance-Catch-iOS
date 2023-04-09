@@ -135,7 +135,7 @@ struct UserFirstSelectView: View {
         }
         .task {
             withAnimation(.easeInOut(duration: 1)) {
-                showingSubview.toggle()
+                showingSubview = true
             }
         }
         

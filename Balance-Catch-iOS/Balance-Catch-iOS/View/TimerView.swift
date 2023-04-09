@@ -16,9 +16,11 @@ struct TimerView: View {
                     .font(.system(size:36))
                     .fontWeight(.bold)
                     .shadow(color:.gray,radius:2,x:3,y:3)
-                    .padding(.bottom, 5)
+                    .padding(.bottom, 45)
                 
-                TimerCode()
+                //TimerCode()
+                CircleTimer()
+                    .padding(.bottom, 50)
                 
                 NavigationLink("Next") {
                     FinalSpeakingView()
