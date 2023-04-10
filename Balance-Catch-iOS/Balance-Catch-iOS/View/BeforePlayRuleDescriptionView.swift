@@ -9,24 +9,29 @@ import SwiftUI
 
 struct BeforePlayRuleDescriptionView: View {
     var body: some View {
-        ZStack {
-            VStack{
-                Spacer()
-                
-                Text("룰 설명")
-                
-                Spacer()
-                
-                NavigationLink("Next") {
-                    PlayerNumberInputView()
+        GeometryReader { geometry in
+            ZStack(alignment: .center) {
+                VStack(spacing: 16) {
+                    
+                    Spacer()
+                    
+                    Text("룰 설명")
+                    
+                    Spacer()
+                    
+                    NavigationLink("Next") {
+                        PlayerNumberInputView()
+                    }
+                    .buttonStyle(RoundedBlueButton())
+                    
+                    Spacer()
                 }
-                .buttonStyle(RoundedBlueButton())
+                .frame (width: geometry.size.width * 0.9)
+                .background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 4))
+                .frame (width: geometry.size.width, height: geometry.size.height)
                 
-                Spacer()
             }
-            .frame(width: 342, height: 700)
-            .background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 4))
-        }.lineLimit(1)
+        }
     }
 }
 

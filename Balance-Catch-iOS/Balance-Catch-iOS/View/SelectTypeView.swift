@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SelectTypeView: View {
+    @State public var selectedTheme: String
     
     @State
     private var isActivated1: Bool = false
@@ -15,7 +16,7 @@ struct SelectTypeView: View {
     private var isActivated2: Bool = false
     
     var body: some View {
-        
+        let _ = print("이동 후: " + selectedTheme)
         VStack{
             
             
@@ -62,6 +63,6 @@ struct SelectTypeView: View {
 
 struct SelectTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectTypeView()
+        SelectTypeView(selectedTheme:"커플")
     }
 }

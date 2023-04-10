@@ -40,7 +40,7 @@ struct FinalSpeakingView: View {
                     
                 }.padding(.bottom, 40)
                 
-                TimerCode()
+                FinalCircleTimer()
                 
                 NavigationLink("Next") {
                     UserFinalSelectView()
