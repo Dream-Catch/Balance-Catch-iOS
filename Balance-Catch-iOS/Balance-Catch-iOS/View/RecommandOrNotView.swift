@@ -23,18 +23,21 @@ struct RecommandOrNotView: View {
             
             HStack{
                 ZStack{
-                    NavigationLink("👍🏻"){
+                    NavigationLink(destination: PublicPickView()){
+                        Text("👍🏻")
+                            .font(.system(size: 35, weight: .bold))
                         let _ = print("좋아요")
-                        PublicPickView()
+            
                     }
                        
                     .buttonStyle(RoundedButton())
                 }
                 
                 ZStack{
-                    NavigationLink("👎🏻"){
+                    NavigationLink(destination: PublicPickView()){
+                        Text("👎🏻")
+                            .font(.system(size: 35, weight: .bold))
                         let _ = print("싫어요")
-                        PublicPickView()
                     }
                     .buttonStyle(RoundedButton())
                 }

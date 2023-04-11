@@ -24,11 +24,8 @@ struct WhoIsLoserView: View {
                             x: 0,
                             y: 4)
                 ZStack{
-                    Button("윌")
-                    {
-                        
-                    }
-                    
+                    Text("윌")
+                        .font(.system(size: 24, weight: .bold))
                 }
                 .frame(width: 150, height: 62, alignment: .center)
                 .overlay(RoundedRectangle(cornerRadius: 20)
@@ -40,9 +37,10 @@ struct WhoIsLoserView: View {
                 
                     .padding(21)
                     .font(.subTitle)
+                
                 ZStack{
-                    Button("소낙")
-                    {}
+                    Text("소낙")
+                        .font(.system(size: 24, weight: .bold))
                 }
                 .frame(width: 150, height: 62, alignment: .center)
                 .overlay(RoundedRectangle(cornerRadius: 20)
@@ -55,7 +53,7 @@ struct WhoIsLoserView: View {
             HStack{
                 ZStack {
                     NavigationLink("New Game") {
-                        PlayerNumberInputView()
+                        
                     }
                     .buttonStyle(BiggerRoundedBlueButton())
                 }
