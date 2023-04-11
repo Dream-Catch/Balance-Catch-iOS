@@ -77,8 +77,12 @@ struct UserFirstSelectView: View {
                     })
                     {
                         Text("\(first)")
-                            .font(.system(size: 27))
-                            .fontWeight(.bold)
+                            .font(.system(size: 27, weight: .bold))
+                            .minimumScaleFactor(0.5)
+                            .padding(.leading, 35)
+                            .padding(.bottom, 10)
+                            .padding(.top, 10)
+                            .frame(width:250,height:150)
                     }
                     .offset(x: showingSubview ? 0 : -150, y: 0)
                     .buttonStyle(SelectButton(isActivated: $isActivated1))
@@ -97,8 +101,13 @@ struct UserFirstSelectView: View {
                         self.isActivated2.toggle()
                     }) {
                         Text("\(second)")
-                            .font(.system(size: 27))
-                            .fontWeight(.bold)
+                            .font(.system(size: 27, weight: .bold))
+                            .minimumScaleFactor(0.5)
+                            .padding(.trailing, 35)
+                            .padding(.bottom, 10)
+                            .padding(.top, 10)
+
+                            .frame(width:250,height:150)
                         
                     }
                     .buttonStyle(SelectButton(isActivated: $isActivated2))
@@ -126,7 +135,7 @@ struct UserFirstSelectView: View {
         }
         .task {
             withAnimation(.easeInOut(duration: 1)) {
-                showingSubview.toggle()
+                showingSubview = true
             }
         }
         
