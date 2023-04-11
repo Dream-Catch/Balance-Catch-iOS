@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct SelectQuestionView: View {
-    var questions: [Question] = getNewQuestionList()
     
     @State var isRandomPick: Bool
     @State var selectedIndex: Int
     @State var isRetryButtonEnabled = true
     @State var questionViewId = UUID()
+    
+    var questions: [Question] = getNewQuestionList()
     
     init(isRandomPick: Bool, selectedIndex: Int = 0) {
         _isRandomPick = State(initialValue: isRandomPick)
@@ -22,6 +23,7 @@ struct SelectQuestionView: View {
     
     var body: some View {
         VStack(spacing: 16) {
+            
             QuestionPickerView(questions: questions, selectedIndex: $selectedIndex)
                 .id(questionViewId)
             
@@ -39,13 +41,16 @@ struct SelectQuestionView: View {
                 .disabled(!isRetryButtonEnabled) : nil
                 
                 NavigationLink("Next") {
-                    UserFirstSelectView()
+                    UserFirstSelectView(selectedQuestion: questions[selectedIndex])
                 }
                 .buttonStyle(RoundedBlueButton())
+                
             }
         }
     }
+    
 }
+
 
 func getNewQuestionList() -> [Question] {
     let qustionTexts = QuestionTexts().list

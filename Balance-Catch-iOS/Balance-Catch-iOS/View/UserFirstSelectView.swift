@@ -6,13 +6,33 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct UserFirstSelectView: View {
-    
+    let selectedQuestion: Question
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
     
+    
+    init(selectedQuestion: Question) {
+        self.selectedQuestion = selectedQuestion
+        questionArray = selectedQuestion.text.components(separatedBy: "vs")
+    }
+    
+    var questionArray: [String]
+  
+    mutating func onAppear() {
+        questionArray = selectedQuestion.text.components(separatedBy: "vs")
+    }
+    
+    var first: String {
+            questionArray.first ?? ""
+    }
+    var second: String {
+        questionArray.last ?? ""
+    }
+
     var body: some View {
         VStack{
             Text("1차 선택")
@@ -42,6 +62,7 @@ struct UserFirstSelectView: View {
             }.padding(.bottom, 40)
             
             
+            
             ZStack{
                 
                 VStack{
@@ -55,7 +76,7 @@ struct UserFirstSelectView: View {
                         }
                     })
                     {
-                        Text("잠수이별")
+                        Text("\(first)")
                             .font(.system(size: 27))
                             .fontWeight(.bold)
                     }
@@ -63,6 +84,7 @@ struct UserFirstSelectView: View {
                     .buttonStyle(SelectButton(isActivated: $isActivated1))
                     .zIndex(0)
                     .offset(x:-90)
+                    .padding(.bottom, 23)
                     
                     
                     
@@ -74,7 +96,7 @@ struct UserFirstSelectView: View {
                         
                         self.isActivated2.toggle()
                     }) {
-                        Text("환승이별")
+                        Text("\(second)")
                             .font(.system(size: 27))
                             .fontWeight(.bold)
                         
@@ -85,13 +107,16 @@ struct UserFirstSelectView: View {
                     .offset(x: 90)
                     .offset(x: showingSubview ? 0 : 150, y: 0)
                     
+                    
                 }
                 
-                Text("VS")
-                    .font(.system(size:64))
-                    .fontWeight(.black)
-                    .shadow(color:.gray,radius:2, x: 3, y:3)
-                    .zIndex(1)
+                StrokeText(text: "VS",width: 2, color: Color("BalanceCatchBlue"))
+                    .foregroundColor(.black)
+                    .font(.system(size: 64, weight: .black))
+                    .shadow(color:.gray,radius:2, x: 1, y:1)
+                    .padding(.bottom, 25)
+                
+                
             }
             
             NavigationLink("Next") {
@@ -104,13 +129,15 @@ struct UserFirstSelectView: View {
                 showingSubview.toggle()
             }
         }
+        
         .padding(.top,100)
         .padding(.bottom,100) //임시값
     }
+    
 }
 
 struct UserFirstSelect_Previews: PreviewProvider {
     static var previews: some View {
-        UserFirstSelectView()
+        UserFirstSelectView(selectedQuestion: .init(text: "test"))
     }
 }

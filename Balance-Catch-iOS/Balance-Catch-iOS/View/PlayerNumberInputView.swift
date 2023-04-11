@@ -9,11 +9,15 @@ import SwiftUI
 
 struct PlayerNumberInputView: View {
     @State private var numberOfPeople = 2
+    @State private var showAlert = false
+    
     var body: some View {
         ZStack {
             VStack{
                 Text("인원을 입력해주세요.")
                     .font(Font.custom("Arial", size: 24))
+                    .fontWeight(.bold)
+                    .shadow(color:.gray,radius:2,x:3,y:3)
                 
                 TextField(
                     "",
@@ -30,6 +34,19 @@ struct PlayerNumberInputView: View {
                     Text("Next")
                 }
                 .buttonStyle(RoundedBlueButton())
+                .disabled(numberOfPeople <= 0)
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("인원 수 부족"),
+                        message: Text("인원 수에 0이하의 값을 넣었습니다."),
+                        dismissButton: .default(Text("OK"))
+                    )
+                }
+                .onTapGesture {
+                    if numberOfPeople <= 0 {
+                        showAlert = true
+                    }
+                }
             }
         }
     }

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct SelectBox: View {
     
-    @Binding
-    var isActivated: Bool
+    @Binding var isActivated: Bool
     
     init(isActivated: Binding<Bool> = .constant(false)){
         _isActivated = isActivated
