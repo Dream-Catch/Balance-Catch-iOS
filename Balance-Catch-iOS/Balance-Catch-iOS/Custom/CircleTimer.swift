@@ -13,7 +13,7 @@ struct CircleTimer: View {
     @State var to : CGFloat = 0
     @State var count = 25 // 사람 수 * 일정 시간 을 받아와서 시간 설정을 해야할 듯
     @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State private var showingAlert = false
+    @State var showingAlert = false
     @State var tag : Int? = nil
     
     var body: some View {
@@ -43,7 +43,7 @@ struct CircleTimer: View {
                 
             }
             
-            NavigationLink(destination: FinalSpeakingView(),tag: 1, selection: self.$tag ) {}
+            NavigationLink(destination: FirstTeamSpeakingView(),tag: 1, selection: self.$tag ) {}
         }
         .onReceive(self.time) { (_) in
             
