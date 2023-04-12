@@ -68,7 +68,7 @@ struct CircleTimer: View {
         }
         .onReceive(timerManager.objectWillChange) { _ in
             withAnimation(.default){
-                self.to = CGFloat(timerManager.counter) / CGFloat(self.totalTime) // 총 시간 (초) 를 넣어줘야함
+                self.to = CGFloat(timerManager.counter) / CGFloat(self.totalTime) // 0 ~ 1사이의 값을 할당해야함
             }
             
             if timerManager.counter == 0 {
