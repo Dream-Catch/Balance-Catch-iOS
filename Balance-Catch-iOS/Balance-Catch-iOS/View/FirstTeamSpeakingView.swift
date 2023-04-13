@@ -1,5 +1,5 @@
 //
-//  FinalSpeakingView.swift
+//  FirstTeamSpeakingView.swift
 //  Balance-Catch-iOS
 //
 //  Created by 민지은 on 2023/04/04.
@@ -9,14 +9,8 @@ import SwiftUI
 
 struct FirstTeamSpeakingView: View {
     
-    @State var start = false
-    @State var to : CGFloat = 0
-    @State var count = 15 // 사람 수 * 일정 시간 을 받아와서 시간 설정을 해야할 듯
-    @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var showingAlert = false
-    @State var tag : Int? = nil
-    @State var startButtonPressed = false
-    @State var nextButtonPressed = false
+    @State var isStartButtonPressed = false
+    @State var isNextButtonPressed = false
     
     
     var body: some View{
@@ -54,75 +48,28 @@ struct FirstTeamSpeakingView: View {
                 
             }.padding(.bottom, 40)
             
-            ZStack { //타이머 관련 코드
-                
-                VStack{
-                    
-                    ZStack{
-                        Circle() // 전체 시간 원
-                            .trim(from: 0, to: 1)
-                            .stroke(Color.black.opacity(0.09), style: StrokeStyle(lineWidth: 35,lineCap: .round))
-                            .frame(width: 280, height: 280)
-                        
-                        Circle() // 시간 줄어드는 원
-                            .trim(from: 0, to: self.to)
-                            .stroke(count > 5 ? Color("BalanceCatchBlue") : Color.red, style: StrokeStyle(lineWidth: 35,lineCap: .round)) // 5초 밑으로 떨어지면 색상 변경
-                            .frame(width: 280, height: 280)
-                            .rotationEffect(.init(degrees: -90))
-                        
-                        VStack{
-                            Text(String(format:"%02i:%02i",self.count/60,self.count%60))
-                                .font(.system(size: 65, weight: .bold))
-                        }
-                    }
-                    
-                    
-                }
-                
-                NavigationLink(destination: SecondTeamSpeakingView(),tag: 1, selection: self.$tag ) {}
-            }
-            .onReceive(self.time) { (_) in
-                if startButtonPressed {
-                    if self.count != 0 {
-                        self.count -= 1
-                        
-                        withAnimation(.default){
-                            self.to = CGFloat(self.count) / 15 // 총 시간 (초) 를 넣어줘야함
-                            
-                        }
-                    }
-                    if self.count == 0 {
-                        if tag != nil { //tag가 nill이 아닐 경우
-                            self.showingAlert = false
-                        }else{
-                            if self.nextButtonPressed == false {
-                                self.showingAlert = true
-                            }
-                        }
-                    }
-                }
-            }.alert(isPresented: $showingAlert) {
-                Alert(title: Text("해당 의견의 최후 변론 종료!"),
-                      message: Text("반대 의견의 최후 변론으로 넘어갑니다"),
-                      dismissButton: .default(Text("Close"),
-                                              action: {
-                    self.nextButtonPressed = true
-                    self.tag = 1
-                }))
-            }.padding(.bottom, 50)
+            CircleTimer(timerManager: TimerManager(counter: 15),
+                        isStartButtonPressed: $isStartButtonPressed,
+                        isNextButtonPressed: $isNextButtonPressed,
+                        alertMessageType: .firstTeam)
+            .id(UUID())
+            .padding(.bottom, 50)
             
-            Button(action: {
-                if(self.startButtonPressed == false){
-                    self.startButtonPressed = true
+            Button(isStartButtonPressed ? "Next" : "Start") {
+                if(!self.isStartButtonPressed){
+                    self.isStartButtonPressed = true
                 } else {
-                    self.tag = 1
-                    self.nextButtonPressed = true
+                    self.isNextButtonPressed = true
                 }
-            }, label : {
-                Text(startButtonPressed ? "Next" : "Start")
-            })
+            }
             .buttonStyle(RoundedBlueButton())
+            
+            NavigationLink("", destination: SecondTeamSpeakingView(), isActive: $isNextButtonPressed)
         }//Vstack
+        .onAppear() {
+            isStartButtonPressed = false
+            isNextButtonPressed = false
+        }
         
         Spacer()
         
