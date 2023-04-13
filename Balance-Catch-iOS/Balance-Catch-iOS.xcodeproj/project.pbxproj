@@ -266,16 +266,16 @@
 				56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */,
 				53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */,
 				53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */,
-				563FBD4A29C9444400847390 /* SelectQuestionView.swift */,
 				3950657829CC93AF00A9C925 /* SelectTypeView.swift */,
+				563FBD4A29C9444400847390 /* SelectQuestionView.swift */,
 				3950657A29CC940700A9C925 /* UserFirstSelectView.swift */,
 				3950657C29CC943B00A9C925 /* TimerView.swift */,
+				39A1561729DC0F7F000968CA /* FirstTeamSpeakingView.swift */,
+				39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */,
 				3950657E29CC945E00A9C925 /* UserFinalSelectView.swift */,
 				33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */,
 				33E60C9629CC1B28005EC0AF /* PublicPickView.swift */,
 				33E60C9E29CC6F3B005EC0AF /* WhoIsLoserView.swift */,
-				39A1561729DC0F7F000968CA /* FirstTeamSpeakingView.swift */,
-				39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
