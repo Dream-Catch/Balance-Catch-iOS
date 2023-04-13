@@ -102,6 +102,7 @@ struct UserFinalSelectView: View {
             NavigationLink("Next") {
                 RecommandOrNotView()
             }
+            .disabled(!isActivated1 && !isActivated2)
             .buttonStyle(RoundedBlueButton())
         }
         .task {

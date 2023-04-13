@@ -14,25 +14,24 @@ struct UserFirstSelectView: View {
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
     
-    
     init(selectedQuestion: Question) {
         self.selectedQuestion = selectedQuestion
         questionArray = selectedQuestion.text.components(separatedBy: "vs")
     }
     
     var questionArray: [String]
-  
+    
     mutating func onAppear() {
         questionArray = selectedQuestion.text.components(separatedBy: "vs")
     }
     
     var first: String {
-            questionArray.first ?? ""
+        questionArray.first ?? ""
     }
     var second: String {
         questionArray.last ?? ""
     }
-
+    
     var body: some View {
         VStack{
             Text("1차 선택")
@@ -97,7 +96,6 @@ struct UserFirstSelectView: View {
                         if isActivated1 {
                             self.isActivated1 = false
                         }
-                        
                         self.isActivated2.toggle()
                     }) {
                         Text("\(second)")
@@ -106,7 +104,7 @@ struct UserFirstSelectView: View {
                             .padding(.trailing, 35)
                             .padding(.bottom, 10)
                             .padding(.top, 10)
-
+                        
                             .frame(width:250,height:150)
                         
                     }
@@ -131,7 +129,11 @@ struct UserFirstSelectView: View {
             NavigationLink("Next") {
                 TimerView()
             }
+            .disabled(!isActivated1 && !isActivated2)
             .buttonStyle(RoundedBlueButton())
+            
+            
+            
         }
         .task {
             withAnimation(.easeInOut(duration: 1)) {
@@ -144,6 +146,8 @@ struct UserFirstSelectView: View {
     }
     
 }
+
+
 
 struct UserFirstSelect_Previews: PreviewProvider {
     static var previews: some View {
