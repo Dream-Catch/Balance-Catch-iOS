@@ -13,13 +13,13 @@ struct PublicPickView: View {
     @State private var firstIncreAmount : Double = 0.0
     @State private var secondIncreAmount : Double = 0.0
     
-    @State var firstQuestion = (question: "잠수이별", amount: 10.0)
+    @State var firstQuestion = (question: "잠수이별", amount: 40.0)
     @State var secondQuestion = (question: "환승이별", amount: 60.0)
     
     
   
     
-//    func whatIsWinner(firstPer:Int ,secondPer:Int )->(
+//    func whatIsPick(firstPer:Int,secondPer:Int )->Double
 //    {
 //        if firstAmount>secondAmount {
 //            return firstAmount
@@ -28,7 +28,6 @@ struct PublicPickView: View {
 //            return secondAmount
 //        }
 //    }
-    
     
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
@@ -69,7 +68,7 @@ struct PublicPickView: View {
                 .shadow(color: .black.opacity(0.25), radius: 20, x: 0, y: 100)
             )
             .onReceive(timer) { _ in
-                if firstIncreAmount < (firstQuestion.amount > secondQuestion.amount ? firstQuestion.amount : secondQuestion.amount) {
+                if firstIncreAmount < (firstQuestion.amount > secondQuestion.amount ? firstQuestion.amount : secondQuestion.amount){
                     firstIncreAmount += 8
                 }
                 if animationAmount < 1.2 {
@@ -118,7 +117,7 @@ struct PublicPickView: View {
             .scaleEffect(1)
             .animation(.easeIn(duration: 1).delay(1), value: animationAmount)
             .onReceive(timer) { _ in
-                if secondIncreAmount < (firstQuestion.amount > secondQuestion.amount ? secondQuestion.amount : firstQuestion.amount) {
+                if secondIncreAmount < (firstQuestion.amount < secondQuestion.amount ? firstQuestion.amount : secondQuestion.amount) {
                     secondIncreAmount += 8
                 }
             }
