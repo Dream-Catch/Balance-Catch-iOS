@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SelectQuestionView: View {
-    
     @State var isRandomPick: Bool
     @State var selectedIndex: Int
     @State var isRetryButtonEnabled = true
@@ -18,24 +17,21 @@ struct SelectQuestionView: View {
     
     init(isRandomPick: Bool, selectedIndex: Int = 0) {
         _isRandomPick = State(initialValue: isRandomPick)
-        _selectedIndex = State(initialValue: isRandomPick ? (0..<questions.count).randomElement()! : 0)
+        _selectedIndex = State(initialValue: isRandomPick ? (0..<questions.count).randomElement() ?? 0 : 0)
     }
     
     var body: some View {
         VStack(spacing: 16) {
             
-            QuestionPickerView(questions: questions, selectedIndex: $selectedIndex)
+            QuestionPickerView(questions: questions,
+                               isRandomPick: isRandomPick,
+                               selectedIndex: $selectedIndex)
                 .id(questionViewId)
             
             HStack(alignment: .center, spacing: 20) {
                 isRandomPick ?
                 Button("Reset") {
-                    isRetryButtonEnabled = false
-                    selectedIndex = (0..<questions.count).randomElement()!
-                    questionViewId = UUID()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        isRetryButtonEnabled = true
-                    }
+                    tappedResetButton()
                 }
                 .buttonStyle(RoundedBlueButton())
                 .disabled(!isRetryButtonEnabled) : nil
@@ -49,6 +45,15 @@ struct SelectQuestionView: View {
         }
     }
     
+    private func tappedResetButton() {
+        isRetryButtonEnabled = false
+        selectedIndex = (0..<questions.count).randomElement() ?? 0
+        questionViewId = UUID()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            isRetryButtonEnabled = true
+        }
+    }
 }
 
 
