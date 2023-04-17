@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SelectQuestionThemeView: View {
     let questionThemes = ["커플", "직장인", "솔로", "음식", "학생", "극과극", "생활"]
-    @State private var selectedTheme: String = ""
 
     var body: some View {
         VStack {
@@ -38,7 +37,7 @@ struct SelectQuestionThemeView: View {
 
             Spacer()
             
-            NavigationLink(destination: SelectTypeView(selectedTheme: selectedTheme)) {
+            NavigationLink(destination: SelectTypeView()) {
                 let _ = print(selectedTheme)
                 Text("Next")
             }

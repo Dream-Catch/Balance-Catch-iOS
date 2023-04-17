@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct SelectTypeView: View {
-    @State public var selectedTheme: String
-    
-    @State
-    private var isActivated1: Bool = false
-    @State
-    private var isActivated2: Bool = false
+    @EnvironmentObject var playerList: PlayerList
+    @State private var isActivated1: Bool = false
+    @State private var isActivated2: Bool = false
     
     var body: some View {
-        let _ = print("이동 후: " + selectedTheme)
         VStack{
-            
+            VStack {
+                ForEach(playerList.players, id: \.id) { player in
+                    Text(player.name)
+                }
+            }
             
             Text("질문 선택하기")
                 .font(.system(size:24))
@@ -63,6 +63,7 @@ struct SelectTypeView: View {
 
 struct SelectTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectTypeView(selectedTheme:"커플")
+        SelectTypeView()
+            .environmentObject(PlayerList(players: [Player(name: "Player 1"), Player(name: "Player 2")]))
     }
 }

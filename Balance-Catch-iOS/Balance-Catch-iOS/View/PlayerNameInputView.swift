@@ -12,7 +12,7 @@ struct PlayerNameInputView: View {
     @State private var playerNames: [String] = []
     @State private var scrollViewHeight: CGFloat = 0
     
-    @ObservedObject var playerList = PlayerList()
+    @EnvironmentObject var playerList: PlayerList
     
     var body: some View {
         ZStack {
@@ -72,14 +72,26 @@ struct PlayerNameInputView: View {
                 if scrollViewHeight == ViewHeightKey.maxValue { Spacer() }
                 else { Spacer().frame(height: 34) }
                 
-                NavigationLink(destination: SelectQuestionThemeView()) {
+                NavigationLink(destination: SelectTypeView()) {
                     Text("Next")
                 }
                 .buttonStyle(RoundedBlueButton())
             }
         }
         .onAppear {
+            self.playerList.players = []
             self.playerNames = Array(repeating: "", count: numberOfPeople)
+            print(playerNames)
+            if playerNames.allSatisfy({ $0.isEmpty == false }){
+                for name in playerNames {
+                    playerList.addPlayer(name: name)
+                }
+            } else {
+                for i in 1...numberOfPeople {
+                    let playerName = "Player \(i)"
+                    playerList.addPlayer(name: playerName)
+                }
+            }
         }
     }
 }

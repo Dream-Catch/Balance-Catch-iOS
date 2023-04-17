@@ -9,11 +9,12 @@ import SwiftUI
 import Foundation
 
 struct UserFirstSelectView: View {
+// MARK: - Player 데이터 가져오기
+    @EnvironmentObject var playerList: PlayerList
     let selectedQuestion: Question
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
-    
     
     init(selectedQuestion: Question) {
         self.selectedQuestion = selectedQuestion
@@ -42,6 +43,13 @@ struct UserFirstSelectView: View {
                 .padding(.bottom, 51)
             
             // Player 1 제리
+            
+// MARK: - Player 데이터 가져오기
+            VStack {
+                ForEach(playerList.players, id: \.id) { player in
+                    Text(player.name)
+                }
+            }
             HStack{
                 Text("Player 1")
                     .font(.system(size:24))
