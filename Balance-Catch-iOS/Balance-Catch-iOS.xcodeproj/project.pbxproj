@@ -39,6 +39,7 @@
 		563DF23029E64A0100297A43 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DF22F29E64A0100297A43 /* TimerManager.swift */; };
 		563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBD4A29C9444400847390 /* SelectQuestionView.swift */; };
 		563FBD5C29C96F3500847390 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBD5B29C96F3500847390 /* Question.swift */; };
+		565FCBD729ED149300A27305 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FCBD629ED149300A27305 /* Route.swift */; };
 		56807DBB29CAE36E005441D4 /* QuestionTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56807DBA29CAE36E005441D4 /* QuestionTexts.swift */; };
 		56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56930FD229D59861006CEA3F /* QuestionPickerView.swift */; };
 		56D2730E29CACA6E00E4EF76 /* QuestionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */; };
@@ -105,6 +106,7 @@
 		563DF22F29E64A0100297A43 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		563FBD4A29C9444400847390 /* SelectQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionView.swift; sourceTree = "<group>"; };
 		563FBD5B29C96F3500847390 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		565FCBD629ED149300A27305 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		56807DBA29CAE36E005441D4 /* QuestionTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTexts.swift; sourceTree = "<group>"; };
 		56930FD229D59861006CEA3F /* QuestionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPickerView.swift; sourceTree = "<group>"; };
 		56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		5624C4AC29BFF7CE008C7898 /* Balance-Catch-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				565FCBD529ED148600A27305 /* Route */,
 				56807DB929CAE366005441D4 /* Strings */,
 				563FBD5929C96F1B00847390 /* Model */,
 				56E2E4A729C054350023095C /* View */,
@@ -219,6 +222,14 @@
 				53D1488429D9672C003EAD5A /* PlayerModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		565FCBD529ED148600A27305 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				565FCBD629ED149300A27305 /* Route.swift */,
+			);
+			path = Route;
 			sourceTree = "<group>";
 		};
 		56807DB929CAE366005441D4 /* Strings */ = {
@@ -455,6 +466,7 @@
 				39A1565329E3CB84000968CA /* FinalCircleTimer.swift in Sources */,
 				33E60C9729CC1B28005EC0AF /* PublicPickView.swift in Sources */,
 				56E2E4AB29C056BE0023095C /* PlayerNumberInputView.swift in Sources */,
+				565FCBD729ED149300A27305 /* Route.swift in Sources */,
 				3950658529CC961300A9C925 /* TimerCode.swift in Sources */,
 				5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */,
 				33E60C9529CB6768005EC0AF /* RoundedButton.swift in Sources */,
@@ -546,7 +558,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -601,7 +613,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

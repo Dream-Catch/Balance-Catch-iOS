@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WhoIsLoserView: View {
+    @Binding var path: [Route]
+    
     var body: some View {
         VStack
         {
@@ -49,28 +51,32 @@ struct WhoIsLoserView: View {
             }
             .padding(.bottom,56)
             
-            // 고치기~~~~~~~~~~~~~~~~  
+            // 고치기~~~~~~~~~~~~~~~~
             HStack{
-                ZStack {
-                    NavigationLink("New Game") {
-                        
-                    }
-                    .buttonStyle(BiggerRoundedBlueButton())
+                Button("New Game") {
+                    moveToPlayerNumberInputView()
                 }
-                ZStack {
-                    NavigationLink("Replay") {
-                        SelectQuestionThemeView()
-                    }
-                    .buttonStyle(BiggerRoundedBlueButton())
+                .buttonStyle(BiggerRoundedBlueButton())
+                Button("Replay") {
+                    moveToSelectTypeView()
                 }
+                .buttonStyle(BiggerRoundedBlueButton())
             }
         }
         
+    }
+    
+    private func moveToPlayerNumberInputView() {
+        path.removeLast(12)
+    }
+    
+    private func moveToSelectTypeView() {
+        path.removeLast(9)
     }
 }
 
 struct WhoIsLoserView_Previews: PreviewProvider {
     static var previews: some View {
-        WhoIsLoserView()
+        WhoIsLoserView(path: Binding.constant([]))
     }
 }

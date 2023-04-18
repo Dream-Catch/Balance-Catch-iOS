@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct FirstTeamSpeakingView: View {
+    @Binding var path: [Route]
     
     @State var isStartButtonPressed = false
-    @State var isNextButtonPressed = false
-    
+    @State var circleTimerId = UUID()
     
     var body: some View{
         
@@ -30,8 +30,8 @@ struct FirstTeamSpeakingView: View {
                     .font(.system(size:28))
                     .fontWeight(.bold)
                     .shadow(color:.gray,radius:3,x:2,y:2)
-            
-               Text("제리") // 나중에 질문 값 받아와야 함
+                
+                Text("제리") // 나중에 질문 값 받아와야 함
                     .font(.system(size: 22, weight: .bold))
                     .minimumScaleFactor(0.5)
                     .padding(.bottom, 10)
@@ -48,27 +48,26 @@ struct FirstTeamSpeakingView: View {
                 
             }.padding(.bottom, 40)
             
-            CircleTimer(timerManager: TimerManager(counter: 15),
-                        isStartButtonPressed: $isStartButtonPressed,
-                        isNextButtonPressed: $isNextButtonPressed,
-                        alertMessageType: .firstTeam)
-            .id(UUID())
+            CircleTimer(timerManager: TimerManager(totalTime: 15),
+                        nextPath: Route.secondTeamSpeakingView,
+                        alertMessageType: .firstTeam,
+                        isStartButtonPressed: $isStartButtonPressed)
+            .id(circleTimerId)
             .padding(.bottom, 50)
             
-            Button(isStartButtonPressed ? "Next" : "Start") {
-                if(!self.isStartButtonPressed){
+            if !isStartButtonPressed {
+                Button("Start") {
                     self.isStartButtonPressed = true
-                } else {
-                    self.isNextButtonPressed = true
+                    circleTimerId = UUID()
                 }
+                .buttonStyle(RoundedBlueButton())
+            } else {
+                NavigationLink("Next", value: Route.secondTeamSpeakingView)
+                    .buttonStyle(RoundedBlueButton())
             }
-            .buttonStyle(RoundedBlueButton())
-            
-            NavigationLink("", destination: SecondTeamSpeakingView(), isActive: $isNextButtonPressed)
         }//Vstack
         .onAppear() {
             isStartButtonPressed = false
-            isNextButtonPressed = false
         }
         
         Spacer()
@@ -80,6 +79,6 @@ struct FirstTeamSpeakingView: View {
 
 struct FirstTeamSpeakingView_Previews: PreviewProvider {
     static var previews: some View {
-        FirstTeamSpeakingView()
+        FirstTeamSpeakingView(path: Binding.constant([]))
     }
 }

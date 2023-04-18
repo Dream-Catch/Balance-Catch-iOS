@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct PublicPickView: View {
-    
     @State private var animationAmount:CGFloat = 1
     @State private var firstAmount : Double = 30.0
     @State private var secondAmount : Double = 70.0
     @State private var firstIncreAmount : Double = 0.0
     @State private var secondIncreAmount : Double = 0.0
+    @Binding var path: [Route]
     
     func whatIsPick(firstPer:Int,secondPer:Int )->Double
     {
@@ -115,10 +115,8 @@ struct PublicPickView: View {
             
             
             ZStack {
-                NavigationLink("Next") {
-                    WhoIsLoserView()
-                }
-                .buttonStyle(RoundedBlueButton())
+                NavigationLink("Next", value: Route.whoIsLoserView)
+                    .buttonStyle(RoundedBlueButton())
             }
         }
     }
@@ -126,6 +124,6 @@ struct PublicPickView: View {
 
 struct PublicPickView_Previews: PreviewProvider {
     static var previews: some View {
-        PublicPickView()
+        PublicPickView(path: Binding.constant([]))
     }
 }
