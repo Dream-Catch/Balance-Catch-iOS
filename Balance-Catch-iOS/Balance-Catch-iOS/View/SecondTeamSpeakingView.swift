@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SecondTeamSpeakingView: View {
+    @Binding var path: [Route]
     
     @State var isStartButtonPressed = false
-    @State var isNextButtonPressed = false
-    
+    @State var circleTimerId = UUID()
     
     var body: some View{
         
@@ -48,27 +48,26 @@ struct SecondTeamSpeakingView: View {
                 
             }.padding(.bottom, 40)
             
-            CircleTimer(timerManager: TimerManager(counter: 15),
-                        isStartButtonPressed: $isStartButtonPressed,
-                        isNextButtonPressed: $isNextButtonPressed,
-                        alertMessageType: .secondTeam)
-            .id(UUID())
+            CircleTimer(timerManager: TimerManager(totalTime: 15),
+                        nextPath: Route.userFinalSelectView,
+                        alertMessageType: .secondTeam,
+                        isStartButtonPressed: $isStartButtonPressed)
+            .id(circleTimerId)
             .padding(.bottom, 50)
             
-            Button(isStartButtonPressed ? "Next" : "Start") {
-                if(!self.isStartButtonPressed){
+            if !isStartButtonPressed {
+                Button("Start") {
                     self.isStartButtonPressed = true
-                } else {
-                    self.isNextButtonPressed = true
+                    circleTimerId = UUID()
                 }
+                .buttonStyle(RoundedBlueButton())
+            } else {
+                NavigationLink("Next", value: Route.userFinalSelectView)
+                    .buttonStyle(RoundedBlueButton())
             }
-            .buttonStyle(RoundedBlueButton())
-            
-            NavigationLink("", destination: UserFinalSelectView(), isActive: $isNextButtonPressed)
         }//Vstack
         .onAppear() {
             isStartButtonPressed = false
-            isNextButtonPressed = false
         }
         
         Spacer()
@@ -80,6 +79,6 @@ struct SecondTeamSpeakingView: View {
 
 struct SecondTeamSpeakingView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondTeamSpeakingView()
+        SecondTeamSpeakingView(path: Binding.constant([]))
     }
 }

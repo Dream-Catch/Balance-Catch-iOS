@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RecommandOrNotView: View {
     @State  var tag:Int? = nil
+    @Binding var path: [Route]
+    
     var body: some View {
         VStack{
             
@@ -23,33 +25,25 @@ struct RecommandOrNotView: View {
             
             HStack{
                 ZStack{
-                    NavigationLink(destination: PublicPickView()){
-                        Text("👍🏻")
-                            .font(.system(size: 35, weight: .bold))
-                        let _ = print("좋아요")
-            
-                    }
-                       
-                    .buttonStyle(RoundedButton())
+                    NavigationLink("👍🏻", value: Route.publicPickView)
+                        .font(.system(size: 35, weight: .bold))
+                        .buttonStyle(RoundedButton())
                 }
                 
                 ZStack{
-                    NavigationLink(destination: PublicPickView()){
-                        Text("👎🏻")
-                            .font(.system(size: 35, weight: .bold))
-                        let _ = print("싫어요")
-                    }
-                    .buttonStyle(RoundedButton())
+                    NavigationLink("👎🏻", value: Route.publicPickView)
+                        .font(.system(size: 35, weight: .bold))
+                        .buttonStyle(RoundedButton())
                 }
                 
             }
-
+            
         }
     }
 }
 
 struct RecommandOrNotView_Previews: PreviewProvider {
     static var previews: some View {
-        RecommandOrNotView()
+        RecommandOrNotView(path: Binding.constant([]))
     }
 }

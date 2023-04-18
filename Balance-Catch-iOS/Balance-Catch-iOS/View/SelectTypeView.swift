@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct SelectTypeView: View {
-    @EnvironmentObject var playerList: PlayerList
-    @State private var isActivated1: Bool = false
-    @State private var isActivated2: Bool = false
+    @State
+    public var selectedTheme: String
+    @Binding var path: [Route]
+    
+    @State
+    private var isActivated1: Bool = false
+    @State
+    private var isActivated2: Bool = false
     
     var body: some View {
+        //        let _ = print("이동 후: " + selectedTheme)
         VStack{
             VStack {
                 ForEach(playerList.players, id: \.id) { player in
@@ -49,11 +55,8 @@ struct SelectTypeView: View {
             .buttonStyle(SelectButton(isActivated: $isActivated2))
             
             
-            NavigationLink {
-                SelectQuestionView(isRandomPick: isActivated1)
-            } label: {
-                Text("Next")
-            }
+            NavigationLink("Next",
+                           value: Route.selectQuestionView(isRandomPick: isActivated1))
             .padding(.top, 27)
             .buttonStyle(RoundedBlueButton())
             .disabled(!isActivated1 && !isActivated2)
@@ -63,7 +66,6 @@ struct SelectTypeView: View {
 
 struct SelectTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectTypeView()
-            .environmentObject(PlayerList(players: [Player(name: "Player 1"), Player(name: "Player 2")]))
+        SelectTypeView(selectedTheme:"커플", path: Binding.constant([]))
     }
 }

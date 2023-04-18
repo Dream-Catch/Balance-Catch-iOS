@@ -11,6 +11,7 @@ struct PlayerNameInputView: View {
     @State public var numberOfPeople: Int
     @State private var playerNames: [String] = []
     @State private var scrollViewHeight: CGFloat = 0
+    @Binding var path: [Route]
     
     @EnvironmentObject var playerList: PlayerList
     
@@ -72,10 +73,8 @@ struct PlayerNameInputView: View {
                 if scrollViewHeight == ViewHeightKey.maxValue { Spacer() }
                 else { Spacer().frame(height: 34) }
                 
-                NavigationLink(destination: SelectTypeView()) {
-                    Text("Next")
-                }
-                .buttonStyle(RoundedBlueButton())
+                NavigationLink("Next", value: Route.selectQuestionThemeView)
+                    .buttonStyle(RoundedBlueButton())
             }
         }
         .onAppear {
@@ -107,6 +106,6 @@ struct ViewHeightKey: PreferenceKey {
 
 struct PlayerNameInputView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerNameInputView(numberOfPeople: 5)
+        PlayerNameInputView(numberOfPeople: 5, path: Binding.constant([]))
     }
 }

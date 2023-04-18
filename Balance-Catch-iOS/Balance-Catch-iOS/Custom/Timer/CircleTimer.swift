@@ -36,13 +36,11 @@ enum AlertMessageType {
 struct CircleTimer: View {
     
     @StateObject var timerManager: TimerManager
-    @Binding var isStartButtonPressed: Bool
-    @Binding var isNextButtonPressed: Bool
+    var nextPath: Route
     var alertMessageType: AlertMessageType
+    @Binding var isStartButtonPressed: Bool
     
-    @State var totalTime = 0
-    @State var to : CGFloat = 0
-    @State var shouldShowAlert = false
+    @State var shouldShowAlert: Bool = false
     
     var body: some View {
         ZStack {
@@ -54,37 +52,35 @@ struct CircleTimer: View {
                         .frame(width: 280, height: 280)
                     
                     Circle() // 시간 줄어드는 원
-                        .trim(from: 0, to: self.to)
+                        .trim(from: 0, to: CGFloat(timerManager.counter) / CGFloat(timerManager.totalTime))
                         .stroke(timerManager.counter > 10 ? Color("BalanceCatchBlue") : Color.red, style: StrokeStyle(lineWidth: 35,lineCap: .round)) // 10초 밑으로 떨어지면 색상 변경
                         .frame(width: 280, height: 280)
                         .rotationEffect(.init(degrees: -90))
                     
                     VStack{
-                        Text(String(format:"%02i:%02i",self.timerManager.counter/60,self.timerManager.counter%60))
+                        Text(String(format:"%02i:%02i",timerManager.counter/60,timerManager.counter%60))
                             .font(.system(size: 65, weight: .bold))
                     }
                 }
             }
         }
-        .onReceive(timerManager.objectWillChange) { _ in
-            withAnimation(.default){
-                self.to = CGFloat(timerManager.counter) / CGFloat(self.totalTime) // 0 ~ 1사이의 값을 할당해야함
-            }
-            
-            if timerManager.counter == 0 {
+        .onReceive(timerManager.$shouldShowAlert) { shouldShowAlert in
+            if shouldShowAlert {
                 timerManager.pause()
-                shouldShowAlert.toggle()
+                self.shouldShowAlert = true
             }
-        }.alert(isPresented: $shouldShowAlert) {
-            Alert(title: Text(alertMessageType.title),
-                  message: Text(alertMessageType.message),
-                  dismissButton: .default(Text("Close"),
-                                          action: {
-                isNextButtonPressed = true
-            }))
+        }.alert(alertMessageType.title,
+                isPresented: Binding.constant(timerManager.shouldShowAlert),
+                presenting: alertMessageType) { _ in
+            NavigationLink("Close", value: nextPath)
+        } message: { alertMessageType in
+            Text(alertMessageType.title)
         }
         .onAppear() {
-            totalTime = timerManager.counter
+            timerManager.counter = 0
+            timerManager.shouldShowAlert = false
+            shouldShowAlert = false
+            
             timerManager.pause()
             if isStartButtonPressed { timerManager.start() }
         }
