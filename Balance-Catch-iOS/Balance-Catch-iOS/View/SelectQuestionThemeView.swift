@@ -10,16 +10,17 @@ import SwiftUI
 struct SelectQuestionThemeView: View {
     let questionThemes = ["커플", "직장인", "솔로", "음식", "학생", "극과극", "생활"]
     @State private var selectedTheme: String = ""
-
+    @Binding var path: [Route]
+    
     var body: some View {
         VStack {
             Text("질문 테마를 선택 해주세요")
                 .font(Font.custom("Arial", size: 24))
                 .fontWeight(.bold)
                 .shadow(color:.gray,radius:2,x:3,y:3)
-
+            
             Spacer()
-
+            
             ScrollView {
                 LazyVStack(spacing: 20) {
                     ForEach(questionThemes, id: \.self) { theme in
@@ -35,15 +36,12 @@ struct SelectQuestionThemeView: View {
                 }
                 .padding()
             }
-
+            
             Spacer()
             
-            NavigationLink(destination: SelectTypeView(selectedTheme: selectedTheme)) {
-                let _ = print(selectedTheme)
-                Text("Next")
-            }
-            .buttonStyle(RoundedBlueButton())
-            .disabled(selectedTheme.isEmpty)
+            NavigationLink("Next", value: Route.selectTypeView)
+                .buttonStyle(RoundedBlueButton())
+                .disabled(selectedTheme.isEmpty)
         }
         .padding()
     }
@@ -52,6 +50,6 @@ struct SelectQuestionThemeView: View {
 
 struct SelectQuestionThemeView_Previews: PreviewProvider {
     static var previews: some View {
-        return SelectQuestionThemeView()
+        return SelectQuestionThemeView(path: Binding.constant([]))
     }
 }

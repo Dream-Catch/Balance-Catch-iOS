@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SelectTypeView: View {
-    @State public var selectedTheme: String
+    @State
+    public var selectedTheme: String
+    @Binding var path: [Route]
     
     @State
     private var isActivated1: Bool = false
@@ -16,7 +18,7 @@ struct SelectTypeView: View {
     private var isActivated2: Bool = false
     
     var body: some View {
-        let _ = print("이동 후: " + selectedTheme)
+        //        let _ = print("이동 후: " + selectedTheme)
         VStack{
             
             
@@ -49,11 +51,8 @@ struct SelectTypeView: View {
             .buttonStyle(SelectButton(isActivated: $isActivated2))
             
             
-            NavigationLink {
-                SelectQuestionView(isRandomPick: isActivated1)
-            } label: {
-                Text("Next")
-            }
+            NavigationLink("Next",
+                           value: Route.selectQuestionView(isRandomPick: isActivated1))
             .padding(.top, 27)
             .buttonStyle(RoundedBlueButton())
             .disabled(!isActivated1 && !isActivated2)
@@ -63,6 +62,6 @@ struct SelectTypeView: View {
 
 struct SelectTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectTypeView(selectedTheme:"커플")
+        SelectTypeView(selectedTheme:"커플", path: Binding.constant([]))
     }
 }

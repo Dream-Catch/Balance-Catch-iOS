@@ -12,35 +12,36 @@ struct SelectQuestionView: View {
     @State var selectedIndex: Int
     @State var isRetryButtonEnabled = true
     @State var questionViewId = UUID()
+    @Binding var path: [Route]
     
     var questions: [Question] = getNewQuestionList()
     
-    init(isRandomPick: Bool, selectedIndex: Int = 0) {
+    init(isRandomPick: Bool, selectedIndex: Int = 0, path: Binding<[Route]>) {
         _isRandomPick = State(initialValue: isRandomPick)
         _selectedIndex = State(initialValue: isRandomPick ? (0..<questions.count).randomElement() ?? 0 : 0)
+        _path = path
     }
     
     var body: some View {
         VStack(spacing: 16) {
-            
             QuestionPickerView(questions: questions,
                                isRandomPick: isRandomPick,
                                selectedIndex: $selectedIndex)
-                .id(questionViewId)
+            .id(questionViewId)
             
             HStack(alignment: .center, spacing: 20) {
                 isRandomPick ?
                 Button("Reset") {
+                    questionViewId = UUID()
                     tappedResetButton()
                 }
                 .buttonStyle(RoundedBlueButton())
                 .disabled(!isRetryButtonEnabled) : nil
                 
-                NavigationLink("Next") {
-                    UserFirstSelectView(selectedQuestion: questions[selectedIndex])
-                }
+                NavigationLink("Next",
+                               value:
+                                Route.userFirstSelectView(selectedQuestion: questions[selectedIndex]))
                 .buttonStyle(RoundedBlueButton())
-                
             }
         }
     }
@@ -48,7 +49,6 @@ struct SelectQuestionView: View {
     private func tappedResetButton() {
         isRetryButtonEnabled = false
         selectedIndex = (0..<questions.count).randomElement() ?? 0
-        questionViewId = UUID()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             isRetryButtonEnabled = true
@@ -70,6 +70,6 @@ func getNewQuestionList() -> [Question] {
 
 struct SelectQuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectQuestionView(isRandomPick: true)
+        SelectQuestionView(isRandomPick: true, path: Binding.constant([]))
     }
 }

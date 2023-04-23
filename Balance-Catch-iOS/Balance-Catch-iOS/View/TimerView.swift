@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct TimerView: View {
+    @Binding var path: [Route]
     
     @State var isStartButtonPressed = false
-    @State var isNextButtonPressed = false
-    
+    @State var circleTimerId = UUID()
     
     var body: some View{
         
@@ -22,27 +22,26 @@ struct TimerView: View {
                 .shadow(color:.gray,radius:2,x:3,y:3)
                 .padding(.bottom, 45)
             
-            CircleTimer(timerManager: TimerManager(counter: 25),
-                        isStartButtonPressed: $isStartButtonPressed,
-                        isNextButtonPressed: $isNextButtonPressed,
-                        alertMessageType: .whole)
-            .id(UUID())
+            CircleTimer(timerManager: TimerManager(totalTime: 25),
+                        nextPath: Route.firstTeamSpeakingView,
+                        alertMessageType: .whole,
+                        isStartButtonPressed: $isStartButtonPressed)
+            .id(circleTimerId)
             .padding(.bottom, 50)
             
-            Button(isStartButtonPressed ? "Next" : "Start") {
-                if(!self.isStartButtonPressed){
+            if !isStartButtonPressed {
+                Button("Start") {
                     self.isStartButtonPressed = true
-                } else {
-                    self.isNextButtonPressed = true
+                    circleTimerId = UUID()
                 }
+                .buttonStyle(RoundedBlueButton())
+            } else {
+                NavigationLink("Next", value: Route.firstTeamSpeakingView)
+                    .buttonStyle(RoundedBlueButton())
             }
-            .buttonStyle(RoundedBlueButton())
-            
-            NavigationLink("", destination: FirstTeamSpeakingView(), isActive: $isNextButtonPressed)
         }//Vstack
         .onAppear() {
             isStartButtonPressed = false
-            isNextButtonPressed = false
         }
     }
 }
@@ -50,6 +49,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
+        TimerView(path: Binding.constant([]))
     }
 }
