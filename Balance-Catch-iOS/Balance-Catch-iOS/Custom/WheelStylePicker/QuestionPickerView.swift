@@ -29,7 +29,6 @@ struct QuestionPickerView: View {
                             selectedIndex = index
                         }
                     }
-                    .id(questions[index])
             }
         }
         .onAppear() {
