@@ -8,47 +8,52 @@
 import SwiftUI
 
 struct SelectQuestionView: View {
-    
     @State var isRandomPick: Bool
     @State var selectedIndex: Int
     @State var isRetryButtonEnabled = true
     @State var questionViewId = UUID()
+    @Binding var path: [Route]
     
     var questions: [Question] = getNewQuestionList()
     
-    init(isRandomPick: Bool, selectedIndex: Int = 0) {
+    init(isRandomPick: Bool, selectedIndex: Int = 0, path: Binding<[Route]>) {
         _isRandomPick = State(initialValue: isRandomPick)
-        _selectedIndex = State(initialValue: isRandomPick ? (0..<questions.count).randomElement()! : 0)
+        _selectedIndex = State(initialValue: isRandomPick ? (0..<questions.count).randomElement() ?? 0 : 0)
+        _path = path
     }
     
     var body: some View {
         VStack(spacing: 16) {
-            
-            QuestionPickerView(questions: questions, selectedIndex: $selectedIndex)
-                .id(questionViewId)
+            QuestionPickerView(questions: questions,
+                               isRandomPick: isRandomPick,
+                               selectedIndex: $selectedIndex)
+            .id(questionViewId)
             
             HStack(alignment: .center, spacing: 20) {
                 isRandomPick ?
                 Button("Reset") {
-                    isRetryButtonEnabled = false
-                    selectedIndex = (0..<questions.count).randomElement()!
                     questionViewId = UUID()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        isRetryButtonEnabled = true
-                    }
+                    tappedResetButton()
                 }
                 .buttonStyle(RoundedBlueButton())
                 .disabled(!isRetryButtonEnabled) : nil
                 
-                NavigationLink("Next") {
-                    UserFirstSelectView(selectedQuestion: questions[selectedIndex])
-                }
+                NavigationLink("Next",
+                               value:
+                                Route.userFirstSelectView(selectedQuestion: questions[selectedIndex]))
                 .buttonStyle(RoundedBlueButton())
-                
             }
         }
     }
     
+    private func tappedResetButton() {
+        isRetryButtonEnabled = false
+        selectedIndex = (0..<questions.count).randomElement() ?? 0
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            isRetryButtonEnabled = true
+        }
+    }
 }
 
 
@@ -65,6 +70,6 @@ func getNewQuestionList() -> [Question] {
 
 struct SelectQuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectQuestionView(isRandomPick: true)
+        SelectQuestionView(isRandomPick: true, path: Binding.constant([]))
     }
 }
