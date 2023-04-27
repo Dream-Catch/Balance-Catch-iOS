@@ -50,9 +50,9 @@ struct PlayerNumberInputView: View {
                     }
             }
         }
-//        .balanceCatchBackButton {
-//            dismiss()
-//        }
+        .balanceCatchBackButton {
+            dismiss()
+        }
     }
 }
 
