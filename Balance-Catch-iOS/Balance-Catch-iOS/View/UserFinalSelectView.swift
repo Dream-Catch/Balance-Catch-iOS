@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct UserFinalSelectView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @Binding var path: [Route]
     
     @State private var isActivated1: Bool = false
@@ -110,6 +112,9 @@ struct UserFinalSelectView: View {
         }
         .padding(.top,100)
         .padding(.bottom,100) //임시값
+        .balanceCatchBackButton {
+            dismiss()
+        }
     }
 }
 

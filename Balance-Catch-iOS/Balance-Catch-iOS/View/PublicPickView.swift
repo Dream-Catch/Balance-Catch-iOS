@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PublicPickView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var animationAmount:CGFloat = 1
     @State private var firstIncreAmount : Double = 0.0
     @State private var secondIncreAmount : Double = 0.0
@@ -128,6 +130,9 @@ struct PublicPickView: View {
                 NavigationLink("Next", value: Route.whoIsLoserView)
                     .buttonStyle(RoundedBlueButton())
             }
+        }
+        .balanceCatchBackButton {
+            dismiss()
         }
     }
 }

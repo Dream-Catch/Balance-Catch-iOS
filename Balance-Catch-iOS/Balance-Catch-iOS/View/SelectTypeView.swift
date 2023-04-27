@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SelectTypeView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @State
     public var selectedTheme: String
     @Binding var path: [Route]
@@ -57,6 +59,9 @@ struct SelectTypeView: View {
             .buttonStyle(RoundedBlueButton())
             .disabled(!isActivated1 && !isActivated2)
         } //Vstack
+        .balanceCatchBackButton {
+            dismiss()
+        }
     } //body
 }
 

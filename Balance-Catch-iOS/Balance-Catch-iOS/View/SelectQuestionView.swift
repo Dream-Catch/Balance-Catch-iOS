@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SelectQuestionView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @State var isRandomPick: Bool
     @State var selectedIndex: Int
     @State var isRetryButtonEnabled = false
@@ -39,7 +41,7 @@ struct SelectQuestionView: View {
                     .disabled(!isRetryButtonEnabled)
                 } else { EmptyView() }
                 
-                if !isRetryButtonEnabled {
+                if isRandomPick && !isRetryButtonEnabled {
                     Button("Next") { }
                         .buttonStyle(RoundedBlueButton())
                 } else {
@@ -55,6 +57,9 @@ struct SelectQuestionView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 isRetryButtonEnabled = true
             }
+        }
+        .balanceCatchBackButton {
+            dismiss()
         }
     }
     
