@@ -73,7 +73,7 @@ struct PlayerNameInputView: View {
                 if scrollViewHeight == ViewHeightKey.maxValue { Spacer() }
                 else { Spacer().frame(height: 34) }
                 
-                NavigationLink("Next", value: Route.selectQuestionThemeView)
+                NavigationLink("Next", value: Route.selectTypeView)
                     .buttonStyle(RoundedBlueButton())
             }
         }
