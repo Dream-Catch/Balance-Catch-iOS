@@ -10,13 +10,19 @@ import Foundation
 
 struct UserFirstSelectView: View {
     let selectedQuestion: Question
+    @Binding var path: [Route]
+    
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
     
-    init(selectedQuestion: Question) {
+
+    
+    init(selectedQuestion: Question, path: Binding<[Route]>) {
+
         self.selectedQuestion = selectedQuestion
         questionArray = selectedQuestion.text.components(separatedBy: "vs")
+        _path = path
     }
     
     var questionArray: [String]
@@ -125,15 +131,9 @@ struct UserFirstSelectView: View {
                 
                 
             }
-            
-            NavigationLink("Next") {
-                TimerView()
-            }
-            .disabled(!isActivated1 && !isActivated2)
-            .buttonStyle(RoundedBlueButton())
-            
-            
-            
+
+            NavigationLink("Next", value: Route.timerView)
+                .buttonStyle(RoundedBlueButton())
         }
         .task {
             withAnimation(.easeInOut(duration: 1)) {
@@ -151,6 +151,6 @@ struct UserFirstSelectView: View {
 
 struct UserFirstSelect_Previews: PreviewProvider {
     static var previews: some View {
-        UserFirstSelectView(selectedQuestion: .init(text: "test"))
+        UserFirstSelectView(selectedQuestion: .init(text: "test"), path: Binding.constant([]))
     }
 }

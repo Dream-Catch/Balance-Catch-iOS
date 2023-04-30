@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BeforePlayRuleDescriptionView: View {
+    @Binding var path: [Route]
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .center) {
@@ -19,17 +21,14 @@ struct BeforePlayRuleDescriptionView: View {
                     
                     Spacer()
                     
-                    NavigationLink("Next") {
-                        PlayerNumberInputView()
-                    }
-                    .buttonStyle(RoundedBlueButton())
+                    NavigationLink("Next", value: Route.playerNumberInputView)
+                        .buttonStyle(RoundedBlueButton())
                     
                     Spacer()
                 }
                 .frame (width: geometry.size.width * 0.9)
                 .background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 4))
                 .frame (width: geometry.size.width, height: geometry.size.height)
-                
             }
         }
     }
@@ -37,6 +36,6 @@ struct BeforePlayRuleDescriptionView: View {
 
 struct BeforePlayRuleDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        BeforePlayRuleDescriptionView()
+        BeforePlayRuleDescriptionView(path: Binding.constant([]))
     }
 }

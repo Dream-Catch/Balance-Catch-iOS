@@ -10,22 +10,27 @@ import Combine
 
 final class TimerManager: ObservableObject {
     
-    let objectWillChange = PassthroughSubject<Void, Never>()
+    var totalTime: Int
     
-    var counter: Int // 사람 수 * 일정 시간 을 받아와서 시간 설정을 해야할 듯
+    @Published var counter: Int = 0 // 사람 수 * 일정 시간 을 받아와서 시간 설정을 해야할 듯
+    @Published var shouldShowAlert: Bool = false
     var cancellable: Cancellable?
     
-    init(counter: Int) {
-        self.counter = counter
+    init(totalTime: Int) {
+        self.totalTime = totalTime
     }
     
     func start() {
-        self.cancellable = Timer.publish(every: 1, on: .main, in: .common)
+        cancellable = Timer.publish(every: 1, on: .main, in: .common)
             .autoconnect()
-            .sink(receiveValue: { _ in
-                self.counter -= 1
-                self.objectWillChange.send()
-            })
+            .scan(totalTime) { time, _ in time - 1 }
+            .prefix(while: { $0 > -1 })
+            .sink { time in
+                withAnimation {
+                    self.counter = time
+                }
+                if self.counter == 0 { self.shouldShowAlert = true }
+            }
     }
     
     func pause() {

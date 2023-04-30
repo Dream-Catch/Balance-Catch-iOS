@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UserFinalSelectView: View {
+    @Binding var path: [Route]
     
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
@@ -99,11 +100,10 @@ struct UserFinalSelectView: View {
                     .padding(.bottom, 25)
             }
             
-            NavigationLink("Next") {
-                RecommandOrNotView()
-            }
-            .disabled(!isActivated1 && !isActivated2)
-            .buttonStyle(RoundedBlueButton())
+
+            NavigationLink("Next", value: Route.recommandOrNotView)
+                .buttonStyle(RoundedBlueButton())
+
         }
         .task {
             withAnimation(.easeInOut(duration: 1)) {
@@ -117,6 +117,6 @@ struct UserFinalSelectView: View {
 
 struct UserFinalSelect_Previews: PreviewProvider {
     static var previews: some View {
-        UserFinalSelectView()
+        UserFinalSelectView(path: Binding.constant([]))
     }
 }
