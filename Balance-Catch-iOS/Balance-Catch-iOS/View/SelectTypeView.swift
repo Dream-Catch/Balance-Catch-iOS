@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct SelectTypeView: View {
-<<<<<<< HEAD
-    @State
-    public var selectedTheme: String
     @Binding var path: [Route]
     
     @State
@@ -18,15 +15,9 @@ struct SelectTypeView: View {
     @State
     private var isActivated2: Bool = false
     
-    var body: some View {
-        //        let _ = print("이동 후: " + selectedTheme)
-=======
     @EnvironmentObject var playerList: PlayerList
-    @State private var isActivated1: Bool = false
-    @State private var isActivated2: Bool = false
     
     var body: some View {
->>>>>>> 8484015 (Transfer Data)
         VStack{
             VStack {
                 ForEach(playerList.players, id: \.id) { player in
@@ -74,6 +65,6 @@ struct SelectTypeView: View {
 
 struct SelectTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectTypeView(selectedTheme:"커플", path: Binding.constant([]))
+        SelectTypeView(path: Binding.constant([]))
     }
 }

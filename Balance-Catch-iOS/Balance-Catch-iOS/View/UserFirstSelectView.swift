@@ -18,12 +18,7 @@ struct UserFirstSelectView: View {
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
     
-<<<<<<< HEAD
-    init(selectedQuestion: Question) {
-=======
-    
     init(selectedQuestion: Question, path: Binding<[Route]>) {
->>>>>>> 0765021 ([#28]Feat: 마지막 화면에서 New Game 혹은 Replay 클릭 시, 스택 날리기)
         self.selectedQuestion = selectedQuestion
         questionArray = selectedQuestion.text.components(separatedBy: "vs")
         _path = path
