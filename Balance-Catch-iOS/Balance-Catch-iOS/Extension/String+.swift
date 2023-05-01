@@ -8,5 +8,6 @@
 extension String {
     
     // Image Name
+    static let back = "Back"
     static let logo = "Logo"
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BeforePlayRuleDescriptionView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @Binding var path: [Route]
     
     var body: some View {
@@ -30,6 +32,9 @@ struct BeforePlayRuleDescriptionView: View {
                 .background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 4))
                 .frame (width: geometry.size.width, height: geometry.size.height)
             }
+        }
+        .balanceCatchBackButton {
+            dismiss()
         }
     }
 }
