@@ -69,7 +69,7 @@ struct PublicPickView: View {
                     animationAmount += 0.02
                 }
             }
-            .overlay(Text(firstAmount > secondAmount ? "WIN" : "LOSE" ).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
+            .overlay(StrokeText(text: firstAmount > secondAmount ? "WIN" : "LOSE" ,width: 2, color: firstAmount > secondAmount ? Color("BalanceCatchBlue") : Color.lightBlue).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
             .scaleEffect(firstAmount > secondAmount ? animationAmount : 1)
             .animation(.easeIn(duration: 1).delay(1), value: animationAmount)
             .padding(30)
@@ -103,7 +103,7 @@ struct PublicPickView: View {
             .frame(width: 300, height: 130, alignment: .leading)
             .overlay(RoundedRectangle(cornerRadius: 20)
                 .stroke(firstAmount < secondAmount ? Color.balanceCatchBlue : Color.lightBlue, lineWidth: 4))
-            .overlay(Text(firstAmount < secondAmount ? "WIN" : "LOSE" ).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
+            .overlay(StrokeText(text: firstAmount < secondAmount ? "WIN" : "LOSE",width: 2, color: firstAmount < secondAmount ? Color("BalanceCatchBlue") : Color.lightBlue).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
             .scaleEffect(firstAmount < secondAmount ? animationAmount : 1)
             .animation(.easeIn(duration: 1).delay(1), value: animationAmount)
             .onReceive(timer) { _ in
