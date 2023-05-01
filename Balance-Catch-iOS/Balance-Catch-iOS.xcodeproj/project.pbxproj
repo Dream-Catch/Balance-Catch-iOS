@@ -40,6 +40,7 @@
 		565FCBD729ED149300A27305 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FCBD629ED149300A27305 /* Route.swift */; };
 		56807DBB29CAE36E005441D4 /* QuestionTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56807DBA29CAE36E005441D4 /* QuestionTexts.swift */; };
 		56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56930FD229D59861006CEA3F /* QuestionPickerView.swift */; };
+		56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */; };
 		56D2730E29CACA6E00E4EF76 /* QuestionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */; };
 		56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49B29C037160023095C /* RoundedBlueButton.swift */; };
 		56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49E29C03B050023095C /* CGFloat+.swift */; };
@@ -105,6 +106,7 @@
 		565FCBD629ED149300A27305 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		56807DBA29CAE36E005441D4 /* QuestionTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTexts.swift; sourceTree = "<group>"; };
 		56930FD229D59861006CEA3F /* QuestionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPickerView.swift; sourceTree = "<group>"; };
+		56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCatchBackButton.swift; sourceTree = "<group>"; };
 		56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemView.swift; sourceTree = "<group>"; };
 		56E2E49B29C037160023095C /* RoundedBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBlueButton.swift; sourceTree = "<group>"; };
 		56E2E49E29C03B050023095C /* CGFloat+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+.swift"; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		561665C329F94D3F00CFA1E4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5624C4B129BFF7D2008C7898 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		5624C4A129BFF7CE008C7898 = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +181,7 @@
 				56E2E49D29C03AC90023095C /* Extension */,
 				56E2E49A29C037000023095C /* Custom */,
 				5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */,
-				5624C4B129BFF7D2008C7898 /* Assets.xcassets */,
+				561665C329F94D3F00CFA1E4 /* SupportingFiles */,
 				5624C4B329BFF7D2008C7898 /* Preview Content */,
 			);
 			path = "Balance-Catch-iOS";
@@ -236,6 +246,14 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
+		56C0A19329FA13C7000406CE /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 		56D2730C29CAC8DD00E4EF76 /* WheelStylePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +266,7 @@
 		56E2E49A29C037000023095C /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				56C0A19329FA13C7000406CE /* Modifier */,
 				563DF22E29E649F400297A43 /* Timer */,
 				56D2730C29CAC8DD00E4EF76 /* WheelStylePicker */,
 				56EC27A929DFEF4B00951070 /* ThemeButtonStyle.swift */,
@@ -431,6 +450,7 @@
 				33FCD2AB29E07AFD006E2131 /* CustomProgressView.swift in Sources */,
 				39A1561A29DC1899000968CA /* VSstyle.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
+				56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */,
 				56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */,
 				563FBD5C29C96F3500847390 /* Question.swift in Sources */,
 				56D2730E29CACA6E00E4EF76 /* QuestionItemView.swift in Sources */,

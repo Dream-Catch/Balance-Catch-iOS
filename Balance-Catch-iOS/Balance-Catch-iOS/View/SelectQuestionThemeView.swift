@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SelectQuestionThemeView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     let questionThemes = ["커플", "직장인", "솔로", "음식", "학생", "극과극", "생활"]
     @State private var selectedTheme: String = ""
     @Binding var path: [Route]
@@ -44,6 +46,9 @@ struct SelectQuestionThemeView: View {
                 .disabled(selectedTheme.isEmpty)
         }
         .padding()
+        .balanceCatchBackButton {
+            dismiss()
+        }
     }
 }
 
