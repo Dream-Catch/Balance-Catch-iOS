@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PlayerNameInputView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @State public var numberOfPeople: Int
     @State private var playerNames: [String] = []
     @State private var scrollViewHeight: CGFloat = 0
@@ -79,6 +81,9 @@ struct PlayerNameInputView: View {
         }
         .onAppear {
             self.playerNames = Array(repeating: "", count: numberOfPeople)
+        }
+        .balanceCatchBackButton {
+            dismiss()
         }
     }
 }

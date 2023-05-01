@@ -9,6 +9,8 @@ import SwiftUI
 import Foundation
 
 struct UserFirstSelectView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     let selectedQuestion: Question
     @Binding var path: [Route]
     
@@ -143,6 +145,9 @@ struct UserFirstSelectView: View {
         
         .padding(.top,100)
         .padding(.bottom,100) //임시값
+        .balanceCatchBackButton {
+            dismiss()
+        }
     }
     
 }
