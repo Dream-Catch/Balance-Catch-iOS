@@ -9,9 +9,6 @@ import SwiftUI
 
 struct SelectTypeView: View {
     @Environment(\.dismiss) private var dismiss
-    
-    @State
-    public var selectedTheme: String
     @Binding var path: [Route]
     
     @State
@@ -20,7 +17,6 @@ struct SelectTypeView: View {
     private var isActivated2: Bool = false
     
     var body: some View {
-        //        let _ = print("이동 후: " + selectedTheme)
         VStack{
             
             
@@ -67,6 +63,6 @@ struct SelectTypeView: View {
 
 struct SelectTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectTypeView(selectedTheme:"커플", path: Binding.constant([]))
+        SelectTypeView(path: Binding.constant([]))
     }
 }

@@ -34,10 +34,8 @@ struct LaunchScreenView: View {
                 case .playerNameInputView(let numberOfPeople):
                     PlayerNameInputView(numberOfPeople: numberOfPeople,
                                         path: $path)
-                case .selectQuestionThemeView:
-                    SelectQuestionThemeView(path: $path)
                 case .selectTypeView:
-                    SelectTypeView(selectedTheme: "", path: $path)
+                    SelectTypeView(path: $path)
                 case .selectQuestionView(let isRandomPick):
                     SelectQuestionView(isRandomPick: isRandomPick,
                                        path: $path)
