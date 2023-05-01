@@ -9,21 +9,25 @@ import SwiftUI
 
 struct PublicPickView: View {
     @State private var animationAmount:CGFloat = 1
-    @State private var firstAmount : Double = 30.0
-    @State private var secondAmount : Double = 70.0
     @State private var firstIncreAmount : Double = 0.0
     @State private var secondIncreAmount : Double = 0.0
     @Binding var path: [Route]
     
-    func whatIsPick(firstPer:Int,secondPer:Int )->Double
-    {
-        if firstAmount>secondAmount {
-            return firstAmount
-        }
-        else{
-            return secondAmount
-        }
-    }
+    @State var firstQuestion = (question: "잠수이별", amount: 40.0)
+    @State var secondQuestion = (question: "환승이별", amount: 60.0)
+    
+    
+  
+    
+//    func whatIsPick(firstPer:Int,secondPer:Int )->Double
+//    {
+//        if firstAmount>secondAmount {
+//            return firstAmount
+//        }
+//        else{
+//            return secondAmount
+//        }
+//    }
     
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
@@ -34,7 +38,7 @@ struct PublicPickView: View {
                 .bold()
                 .padding(.bottom,90)
             VStack(alignment: .leading) {
-                Text("잠수이별")
+                Text(firstQuestion.amount > secondQuestion.amount ? firstQuestion.question : secondQuestion.question)
                     .font(.system(size: 24, weight: .bold))
                     .bold()
                     .padding(.leading,32)
@@ -42,14 +46,14 @@ struct PublicPickView: View {
                 
                 HStack(alignment: .center){
                     ProgressView("", value: firstIncreAmount, total: 100)
-                        .progressViewStyle(CustomProgressView(isWin: firstAmount > secondAmount))
+                        .progressViewStyle(CustomProgressView(isWin: true ))
                         .padding(.top,20)
                         .padding(.trailing,10)
                         .padding(.bottom,28)
-                        .accentColor(firstAmount > secondAmount ? Color.balanceCatchBlue : Color.lightBlue)
+                        .accentColor(firstQuestion.amount > secondQuestion.amount ? Color.balanceCatchBlue : Color.lightBlue)
                         .scaleEffect(CGSize(width: 1.0, height: 3.5))
                     
-                    Text("\(Int(firstAmount))%")
+                    Text(firstQuestion.amount > secondQuestion.amount ? "\(Int(firstQuestion.amount))%" : "\(Int(secondQuestion.amount))%")
                         .font(.body)
                         .bold()
                         .padding(.bottom,28)
@@ -60,9 +64,11 @@ struct PublicPickView: View {
             }
             .frame(width: 300, height: 130, alignment: .leading)
             .overlay(RoundedRectangle(cornerRadius: 20)
-                .stroke(firstAmount > secondAmount ? Color.balanceCatchBlue : Color.lightBlue, lineWidth: 4))
+                .stroke(Color.balanceCatchBlue, lineWidth: 4)
+                .shadow(color: .black.opacity(0.25), radius: 20, x: 0, y: 100)
+            )
             .onReceive(timer) { _ in
-                if firstIncreAmount < firstAmount {
+                if firstIncreAmount < (firstQuestion.amount > secondQuestion.amount ? firstQuestion.amount : secondQuestion.amount){
                     firstIncreAmount += 8
                 }
                 if animationAmount < 1.2 {
@@ -75,8 +81,12 @@ struct PublicPickView: View {
             .padding(30)
             
             
+            
+            
+            
+            
             VStack(alignment: .leading) {
-                Text("환승이별")
+                Text(firstQuestion.amount < secondQuestion.amount ? firstQuestion.question : secondQuestion.question)
                     .font(.system(size: 24, weight: .bold))
                     .bold()
                     .padding(.leading,32)
@@ -84,14 +94,14 @@ struct PublicPickView: View {
                 
                 HStack(alignment: .center){
                     ProgressView("", value: secondIncreAmount, total: 100)
-                        .progressViewStyle(CustomProgressView(isWin: firstAmount < secondAmount))
+                        .progressViewStyle(CustomProgressView(isWin: false))
                         .padding(.top,20)
                         .padding(.trailing,10)
                         .padding(.bottom,28)
-                        .accentColor(firstAmount < secondAmount ? Color.balanceCatchBlue : Color.lightBlue)
+                        .accentColor(firstQuestion.amount < secondQuestion.amount ? Color.balanceCatchBlue : Color.lightBlue)
                         .scaleEffect(CGSize(width: 1.0, height: 3.5))
                     
-                    Text("\(Int(secondAmount))%")
+                    Text(firstQuestion.amount < secondQuestion.amount ? "\(Int(firstQuestion.amount))%" : "\(Int(secondQuestion.amount))%")
                         .font(.body)
                         .bold()
                         .padding(.bottom,28)
@@ -107,7 +117,7 @@ struct PublicPickView: View {
             .scaleEffect(firstAmount < secondAmount ? animationAmount : 1)
             .animation(.easeIn(duration: 1).delay(1), value: animationAmount)
             .onReceive(timer) { _ in
-                if secondIncreAmount < secondAmount {
+                if secondIncreAmount < (firstQuestion.amount < secondQuestion.amount ? firstQuestion.amount : secondQuestion.amount) {
                     secondIncreAmount += 8
                 }
             }

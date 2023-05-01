@@ -24,7 +24,6 @@
 		39A1561829DC0F7F000968CA /* FirstTeamSpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561729DC0F7F000968CA /* FirstTeamSpeakingView.swift */; };
 		39A1561A29DC1899000968CA /* StorkeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561929DC1899000968CA /* StorkeText.swift */; };
 		39A1565129DE4846000968CA /* CircleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565029DE4846000968CA /* CircleTimer.swift */; };
-		39A1565329E3CB84000968CA /* FinalCircleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565229E3CB84000968CA /* FinalCircleTimer.swift */; };
 		39A1565529E47B96000968CA /* SecondTeamSpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */; };
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
 		53A7B0AF29C334B000B99211 /* SelectQuestionThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */; };
@@ -88,7 +87,6 @@
 		39A1561729DC0F7F000968CA /* FirstTeamSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTeamSpeakingView.swift; sourceTree = "<group>"; };
 		39A1561929DC1899000968CA /* StorkeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorkeText.swift; sourceTree = "<group>"; };
 		39A1565029DE4846000968CA /* CircleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimer.swift; sourceTree = "<group>"; };
-		39A1565229E3CB84000968CA /* FinalCircleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCircleTimer.swift; sourceTree = "<group>"; };
 		39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTeamSpeakingView.swift; sourceTree = "<group>"; };
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
 		53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionThemeView.swift; sourceTree = "<group>"; };
@@ -263,8 +261,12 @@
 				33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */,
 				33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */,
 				33FCD2AA29E07AFD006E2131 /* CustomProgressView.swift */,
+<<<<<<< HEAD
 				39A1561929DC1899000968CA /* StorkeText.swift */,
 				39A1565229E3CB84000968CA /* FinalCircleTimer.swift */,
+=======
+				39A1561929DC1899000968CA /* VSstyle.swift */,
+>>>>>>> develop
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -463,7 +465,6 @@
 				33E60C9F29CC6F3B005EC0AF /* WhoIsLoserView.swift in Sources */,
 				5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */,
 				56E2E4A329C03C900023095C /* String+.swift in Sources */,
-				39A1565329E3CB84000968CA /* FinalCircleTimer.swift in Sources */,
 				33E60C9729CC1B28005EC0AF /* PublicPickView.swift in Sources */,
 				56E2E4AB29C056BE0023095C /* PlayerNumberInputView.swift in Sources */,
 				565FCBD729ED149300A27305 /* Route.swift in Sources */,
