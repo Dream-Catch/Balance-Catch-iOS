@@ -280,12 +280,7 @@
 				33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */,
 				33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */,
 				33FCD2AA29E07AFD006E2131 /* CustomProgressView.swift */,
-<<<<<<< HEAD
 				39A1561929DC1899000968CA /* StorkeText.swift */,
-				39A1565229E3CB84000968CA /* FinalCircleTimer.swift */,
-=======
-				39A1561929DC1899000968CA /* VSstyle.swift */,
->>>>>>> develop
 			);
 			path = Custom;
 			sourceTree = "<group>";
