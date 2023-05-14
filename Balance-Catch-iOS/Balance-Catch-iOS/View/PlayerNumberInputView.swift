@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct PlayerNumberInputView: View {
-    @Environment(\.dismiss) private var dismiss
-    
     @State private var numberOfPeople = 2
     @State private var showAlert = false
     @Binding var path: [Route]
@@ -49,9 +47,6 @@ struct PlayerNumberInputView: View {
                         }
                     }
             }
-        }
-        .balanceCatchBackButton {
-            dismiss()
         }
     }
 }
