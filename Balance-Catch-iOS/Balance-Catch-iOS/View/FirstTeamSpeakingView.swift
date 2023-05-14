@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FirstTeamSpeakingView: View {
     @Binding var path: [Route]
-    
     @State var isStartButtonPressed = false
     @State var circleTimerId = UUID()
     
