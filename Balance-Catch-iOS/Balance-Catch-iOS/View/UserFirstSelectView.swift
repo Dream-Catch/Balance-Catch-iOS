@@ -23,14 +23,14 @@ struct UserFirstSelectView: View {
     init(selectedQuestion: Question, path: Binding<[Route]>) {
 
         self.selectedQuestion = selectedQuestion
-        questionArray = selectedQuestion.text.components(separatedBy: "vs")
+        questionArray = selectedQuestion.text.components(separatedBy: " vs ")
         _path = path
     }
     
     var questionArray: [String]
     
     mutating func onAppear() {
-        questionArray = selectedQuestion.text.components(separatedBy: "vs")
+        questionArray = selectedQuestion.text.components(separatedBy: " vs ")
     }
     
     var first: String {
