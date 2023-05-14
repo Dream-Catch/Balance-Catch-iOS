@@ -9,15 +9,14 @@ import SwiftUI
 import Foundation
 
 struct UserFirstSelectView: View {
-    @Environment(\.dismiss) private var dismiss
-    
+// MARK: - Player 데이터 가져오기
+    @EnvironmentObject var playerList: PlayerList
     let selectedQuestion: Question
     @Binding var path: [Route]
     
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
-    
     
     init(selectedQuestion: Question, path: Binding<[Route]>) {
         self.selectedQuestion = selectedQuestion
@@ -47,6 +46,13 @@ struct UserFirstSelectView: View {
                 .padding(.bottom, 51)
             
             // Player 1 제리
+            
+// MARK: - Player 데이터 가져오기
+            VStack {
+                ForEach(playerList.players, id: \.id) { player in
+                    Text(player.name)
+                }
+            }
             HStack{
                 Text("Player 1")
                     .font(.system(size:24))
@@ -144,9 +150,6 @@ struct UserFirstSelectView: View {
         
         .padding(.top,100)
         .padding(.bottom,100) //임시값
-        .balanceCatchBackButton {
-            dismiss()
-        }
     }
     
 }
