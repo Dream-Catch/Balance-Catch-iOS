@@ -9,7 +9,6 @@ enum Route: Hashable {
     case beforePlayRuleDescriptionView
     case playerNumberInputView
     case playerNameInputView(numberOfPeople: Int)
-    case selectQuestionThemeView
     case selectTypeView
     case selectQuestionView(isRandomPick: Bool)
     case userFirstSelectView(selectedQuestion: Question)

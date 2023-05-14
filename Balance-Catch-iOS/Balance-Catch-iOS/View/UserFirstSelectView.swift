@@ -133,9 +133,12 @@ struct UserFirstSelectView: View {
                 
                 
             }
-
+            
             NavigationLink("Next", value: Route.timerView)
                 .buttonStyle(RoundedBlueButton())
+                .disabled(!isActivated1 && !isActivated2)
+            
+        
         }
         .task {
             withAnimation(.easeInOut(duration: 1)) {

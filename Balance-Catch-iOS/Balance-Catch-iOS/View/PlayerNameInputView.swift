@@ -43,8 +43,7 @@ struct PlayerNameInputView: View {
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 30.0)
                                     .padding(.vertical, 30.0)
-                                    .cornerRadius(20)
-                                    .background(
+                                    /*.background(
                                         RoundedRectangle(cornerRadius: 20)
                                             .inset(by: 3)
                                             .stroke(
@@ -52,9 +51,15 @@ struct PlayerNameInputView: View {
                                                         .balanceCatchBlue,
                                                 lineWidth: 5
                                             )
-                                    )
+                                    )*/
+                                    .background(Color.white)
+                                    .cornerRadius(20)
+                                    .shadow(color:.gray,radius:2,x:3,y:3)
+                                    .overlay(RoundedRectangle(cornerRadius: 20)
+                                        .stroke(self.playerNames[index].isEmpty ? Color.gray:Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
                                 
                             }
+                            .padding(.bottom,5)
                             
                         }
                         
@@ -77,7 +82,7 @@ struct PlayerNameInputView: View {
                 if scrollViewHeight == ViewHeightKey.maxValue { Spacer() }
                 else { Spacer().frame(height: 34) }
                 
-                NavigationLink("Next", value: Route.selectQuestionThemeView)
+                NavigationLink("Next", value: Route.selectTypeView)
                     .buttonStyle(RoundedBlueButton())
             }
         }

@@ -22,6 +22,8 @@ struct PlayerNumberInputView: View {
                     .fontWeight(.bold)
                     .shadow(color:.gray,radius:2,x:3,y:3)
                 
+                
+                
                 TextField(
                     "",
                     value: $numberOfPeople,
@@ -29,7 +31,13 @@ struct PlayerNumberInputView: View {
                 ).font(Font.custom("Arial", size: 60))
                     .padding()
                     .multilineTextAlignment(.center)
-                    .background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 5))
+                    //.background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 5))
+                    .background(Color.white)
+                    .cornerRadius(20)
+                    .shadow(color:.gray,radius:2,x:3,y:3)
+                    .overlay(RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color("BalanceCatchBlue")
+                            .opacity(1),lineWidth: 4))
                     .padding(.horizontal, 45.0)
                     .padding(.vertical, 27.0)
                 
