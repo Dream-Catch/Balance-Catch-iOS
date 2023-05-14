@@ -12,13 +12,19 @@ struct CustomProgressView: ProgressViewStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         ZStack(alignment: .leading){
-            RoundedRectangle(cornerRadius: isWin ? 100 : 50)
+            Rectangle()
+                .cornerRadius(40)
                 .frame(width: 160, height: 5)
                 .foregroundColor(.white)
+                
             
-            RoundedRectangle(cornerRadius: isWin ? 100 : 50)
+            Rectangle()
+                .cornerRadius(40)
                 .frame(width: CGFloat(configuration.fractionCompleted ?? 0)*160, height: 5)
                 .foregroundColor(isWin ? .balanceCatchBlue : .lightBlue)
+                
         }
     }
 }
+
+

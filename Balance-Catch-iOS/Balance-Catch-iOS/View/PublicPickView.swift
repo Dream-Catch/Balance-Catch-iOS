@@ -4,19 +4,16 @@
 //
 //  Created by 허은정 on 2023/03/23.
 //
-
 import SwiftUI
 
 struct PublicPickView: View {
-    @Environment(\.dismiss) private var dismiss
-    
     @State private var animationAmount:CGFloat = 1
     @State private var firstIncreAmount : Double = 0.0
     @State private var secondIncreAmount : Double = 0.0
     @Binding var path: [Route]
     
-    @State var firstQuestion = (question: "잠수이별", amount: 40.0)
-    @State var secondQuestion = (question: "환승이별", amount: 60.0)
+    @State var firstQuestion = (question: "잠수이별", amount: 60.0)
+    @State var secondQuestion = (question: "환승이별", amount: 40.0)
     
     
   
@@ -35,10 +32,11 @@ struct PublicPickView: View {
     
     var body: some View {
         VStack{
-            Text("대중 pick 결과")
-                .font(.title)
-                .bold()
-                .padding(.bottom,90)
+            Text("대중 PICK 결과")
+                .font(Font.custom("Arial", size: 24))
+                .fontWeight(.bold)
+                .shadow(color:.gray,radius:2,x:3,y:3)
+                .padding(.bottom,70)
             VStack(alignment: .leading) {
                 Text(firstQuestion.amount > secondQuestion.amount ? firstQuestion.question : secondQuestion.question)
                     .font(.system(size: 24, weight: .bold))
@@ -56,9 +54,9 @@ struct PublicPickView: View {
                         .scaleEffect(CGSize(width: 1.0, height: 3.5))
                     
                     Text(firstQuestion.amount > secondQuestion.amount ? "\(Int(firstQuestion.amount))%" : "\(Int(secondQuestion.amount))%")
-                        .font(.body)
-                        .bold()
+                        .font(.system(size: 18, weight: .bold))
                         .padding(.bottom,28)
+                        
                     
                 }
                 .padding(.leading,32)
@@ -77,12 +75,14 @@ struct PublicPickView: View {
                     animationAmount += 0.02
                 }
             }
-            .overlay(StrokeText(text: firstQuestion.amount > secondQuestion.amount ? "WIN" : "LOSE" ,width: 2, color: firstQuestion.amount > secondQuestion.amount ? Color("BalanceCatchBlue") : Color.lightBlue).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
-            .scaleEffect(firstQuestion.amount > secondQuestion.amount ? animationAmount : 1)
+            //.overlay(Text("WIN").position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
+            .overlay(StrokeText(text: "WIN",width: 2, color: Color.balanceCatchBlue).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
+            .scaleEffect(animationAmount)
             .animation(.easeIn(duration: 1).delay(1), value: animationAmount)
             .padding(30)
             
             
+        
             
             
             
@@ -104,8 +104,7 @@ struct PublicPickView: View {
                         .scaleEffect(CGSize(width: 1.0, height: 3.5))
                     
                     Text(firstQuestion.amount < secondQuestion.amount ? "\(Int(firstQuestion.amount))%" : "\(Int(secondQuestion.amount))%")
-                        .font(.body)
-                        .bold()
+                        .font(.system(size: 18, weight: .bold))
                         .padding(.bottom,28)
                     
                 }
@@ -114,9 +113,9 @@ struct PublicPickView: View {
             }
             .frame(width: 300, height: 130, alignment: .leading)
             .overlay(RoundedRectangle(cornerRadius: 20)
-                .stroke(firstQuestion.amount < secondQuestion.amount ? Color.balanceCatchBlue : Color.lightBlue, lineWidth: 4))
-            .overlay(StrokeText(text: firstQuestion.amount < secondQuestion.amount ? "WIN" : "LOSE",width: 2, color: firstQuestion.amount < secondQuestion.amount ? Color("BalanceCatchBlue") : Color.lightBlue).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
-            .scaleEffect(firstQuestion.amount < secondQuestion.amount ? animationAmount : 1)
+                .stroke(Color.lightBlue, lineWidth: 4))
+            .overlay(StrokeText(text: "LOSE",width: 2, color: Color.lightBlue).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
+            .scaleEffect(1)
             .animation(.easeIn(duration: 1).delay(1), value: animationAmount)
             .onReceive(timer) { _ in
                 if secondIncreAmount < (firstQuestion.amount < secondQuestion.amount ? firstQuestion.amount : secondQuestion.amount) {
@@ -124,15 +123,12 @@ struct PublicPickView: View {
                 }
             }
             .padding(30)
-            
+           
             
             ZStack {
                 NavigationLink("Next", value: Route.whoIsLoserView)
                     .buttonStyle(RoundedBlueButton())
             }
-        }
-        .balanceCatchBackButton {
-            dismiss()
         }
     }
 }

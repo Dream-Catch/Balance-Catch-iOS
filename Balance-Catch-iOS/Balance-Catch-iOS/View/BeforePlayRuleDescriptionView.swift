@@ -28,8 +28,9 @@ struct BeforePlayRuleDescriptionView: View {
                     
                     Spacer()
                 }
-                .frame (width: geometry.size.width * 0.9)
+                .frame (width: geometry.size.width * 0.87)
                 .background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 4))
+                .padding(.top,20)
                 .frame (width: geometry.size.width, height: geometry.size.height)
             }
         }

@@ -36,6 +36,7 @@ struct WhoIsLoserView: View {
                     .stroke(Color.balanceCatchBlue, lineWidth: 4))
                 .foregroundColor(.black)
             }
+            
             HStack{
                 Text("player 3")
                 

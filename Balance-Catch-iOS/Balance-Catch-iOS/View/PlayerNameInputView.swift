@@ -53,7 +53,9 @@ struct PlayerNameInputView: View {
                                                 lineWidth: 5
                                             )
                                     )
+                                
                             }
+                            
                         }
                         
                     }
