@@ -9,15 +9,25 @@ import SwiftUI
 
 struct PublicPickView: View {
     
-    @State private var animationAmount:CGFloat = 1
+    @State private var animationAmount: CGFloat = 1
     @State private var firstIncreAmount : Double = 0.0
     @State private var secondIncreAmount : Double = 0.0
     
-    @State var firstQuestion = (question: "잠수이별", amount: 40.0)
-    @State var secondQuestion = (question: "환승이별", amount: 60.0)
+    @State var firstQuestion = (question: "잠수이별", amount: 50.0)
+    @State var secondQuestion = (question: "환승이별", amount: 50.0)
     
     
-  
+  func IsFirstWinner(firstPer:Double,secondPer:Double) -> Bool
+    {
+        if firstQuestion.amount >= secondQuestion.amount{
+            return true
+        }
+        else{
+            return false
+        }
+            
+    }
+    
     
 //    func whatIsPick(firstPer:Int,secondPer:Int )->Double
 //    {
@@ -38,7 +48,7 @@ struct PublicPickView: View {
                 .bold()
                 .padding(.bottom,90)
             VStack(alignment: .leading) {
-                Text(firstQuestion.amount > secondQuestion.amount ? firstQuestion.question : secondQuestion.question)
+                Text(IsFirstWinner(firstPer:firstQuestion.amount, secondPer:secondQuestion.amount) ? firstQuestion.question : secondQuestion.question)
                     .font(.system(size: 24, weight: .bold))
                     .bold()
                     .padding(.leading,32)
@@ -50,10 +60,10 @@ struct PublicPickView: View {
                         .padding(.top,20)
                         .padding(.trailing,10)
                         .padding(.bottom,28)
-                        .accentColor(firstQuestion.amount > secondQuestion.amount ? Color.balanceCatchBlue : Color.lightBlue)
+                        .accentColor(IsFirstWinner(firstPer:firstQuestion.amount, secondPer:secondQuestion.amount) ? Color.balanceCatchBlue : Color.lightBlue)
                         .scaleEffect(CGSize(width: 1.0, height: 3.5))
                     
-                    Text(firstQuestion.amount > secondQuestion.amount ? "\(Int(firstQuestion.amount))%" : "\(Int(secondQuestion.amount))%")
+                    Text(IsFirstWinner(firstPer:firstQuestion.amount, secondPer:secondQuestion.amount) ? "\(Int(firstQuestion.amount))%" : "\(Int(secondQuestion.amount))%")
                         .font(.body)
                         .bold()
                         .padding(.bottom,28)

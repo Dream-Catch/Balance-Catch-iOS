@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct WhoIsLoserView: View {
+    @State private var showingAlert = false
     var body: some View {
+        
+        
         VStack
         {
+            Button("i"){
+                self.showingAlert.toggle()
+            }
+            .padding(.top,30)
+            .offset(x: 150, y: -160)
+            .buttonStyle(InformationButton())
+            .alert(isPresented: $showingAlert){
+                Alert(title: Text("당첨 이유"), message: nil, dismissButton: .default(Text("확인")))
+            }
             Text("벌칙 당첨자💣")
                 .font(.system(size: 36, weight: .bold))
                 .shadow(color:.gray,radius:2,x:3,y:3)
@@ -34,6 +46,10 @@ struct WhoIsLoserView: View {
             }
             HStack{
                 Text("player 3")
+                    .shadow(color: .black.opacity(0.25),
+                            radius: 2,
+                            x: 0,
+                            y: 4)
                 
                     .padding(21)
                     .font(.subTitle)
@@ -41,6 +57,7 @@ struct WhoIsLoserView: View {
                 ZStack{
                     Text("소낙")
                         .font(.system(size: 24, weight: .bold))
+                    
                 }
                 .frame(width: 150, height: 62, alignment: .center)
                 .overlay(RoundedRectangle(cornerRadius: 20)
