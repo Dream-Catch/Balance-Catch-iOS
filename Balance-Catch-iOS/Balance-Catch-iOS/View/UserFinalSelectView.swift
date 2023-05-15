@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UserFinalSelectView: View {
+    @Environment(\.dismiss) private var dismiss
     @Binding var path: [Route]
     
     @State private var isActivated1: Bool = false
@@ -100,8 +101,11 @@ struct UserFinalSelectView: View {
                     .padding(.bottom, 25)
             }
             
+
             NavigationLink("Next", value: Route.recommandOrNotView)
                 .buttonStyle(RoundedBlueButton())
+                .disabled(!isActivated1 && !isActivated2)
+
         }
         .task {
             withAnimation(.easeInOut(duration: 1)) {
@@ -110,6 +114,10 @@ struct UserFinalSelectView: View {
         }
         .padding(.top,100)
         .padding(.bottom,100) //임시값
+        
+        .balanceCatchBackButton {
+                   dismiss()
+               }
     }
 }
 

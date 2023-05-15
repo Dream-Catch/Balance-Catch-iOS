@@ -9,6 +9,7 @@ import SwiftUI
 import Foundation
 
 struct UserFirstSelectView: View {
+    @Environment(\.dismiss) private var dismiss
 // MARK: - Player 데이터 가져오기
     @EnvironmentObject var playerList: PlayerList
     let selectedQuestion: Question
@@ -19,15 +20,16 @@ struct UserFirstSelectView: View {
     @State var showingSubview = false
     
     init(selectedQuestion: Question, path: Binding<[Route]>) {
+
         self.selectedQuestion = selectedQuestion
-        questionArray = selectedQuestion.text.components(separatedBy: "vs")
+        questionArray = selectedQuestion.text.components(separatedBy: " vs ")
         _path = path
     }
     
     var questionArray: [String]
     
     mutating func onAppear() {
-        questionArray = selectedQuestion.text.components(separatedBy: "vs")
+        questionArray = selectedQuestion.text.components(separatedBy: " vs ")
     }
     
     var first: String {
@@ -108,7 +110,6 @@ struct UserFirstSelectView: View {
                         if isActivated1 {
                             self.isActivated1 = false
                         }
-                        
                         self.isActivated2.toggle()
                     }) {
                         Text("\(second)")
@@ -141,6 +142,9 @@ struct UserFirstSelectView: View {
             
             NavigationLink("Next", value: Route.timerView)
                 .buttonStyle(RoundedBlueButton())
+                .disabled(!isActivated1 && !isActivated2)
+            
+        
         }
         .task {
             withAnimation(.easeInOut(duration: 1)) {
@@ -150,9 +154,14 @@ struct UserFirstSelectView: View {
         
         .padding(.top,100)
         .padding(.bottom,100) //임시값
+        .balanceCatchBackButton {
+                   dismiss()
+               }
     }
     
 }
+
+
 
 struct UserFirstSelect_Previews: PreviewProvider {
     static var previews: some View {

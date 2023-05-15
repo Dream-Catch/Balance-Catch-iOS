@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FirstTeamSpeakingView: View {
+    @Environment(\.dismiss) private var dismiss
     @Binding var path: [Route]
     @State var isStartButtonPressed = false
     @State var circleTimerId = UUID()
@@ -24,28 +25,20 @@ struct FirstTeamSpeakingView: View {
                 .padding(.bottom, 35)
                 .padding(.top,-10)
             
-            HStack{
-                Text("Player 1")
-                    .font(.system(size:28))
-                    .fontWeight(.bold)
-                    .shadow(color:.gray,radius:3,x:2,y:2)
-                
-                Text("제리") // 나중에 질문 값 받아와야 함
-                    .font(.system(size: 22, weight: .bold))
-                    .minimumScaleFactor(0.5)
-                    .padding(.bottom, 10)
-                    .padding(.top, 10)
-                    .padding(.leading, 5)
-                    .padding(.trailing, 5)
-                    .frame(width: 150, height: 56)
-                    .background(Color.white)
-                    .cornerRadius(20)
-                    .shadow(color:.gray,radius:2,x:3,y:3)
-                    .overlay(RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
-                    .padding(.leading, 24)
-                
-            }.padding(.bottom, 40)
+            Text("잠수이별") // 나중에 질문 값 받아와야 함
+                .font(.system(size: 22, weight: .bold))
+                .minimumScaleFactor(0.5)
+                .padding(.bottom, 10)
+                .padding(.top, 10)
+                .padding(.leading, 5)
+                .padding(.trailing, 5)
+                .frame(width: 300, height: 56)
+                .background(Color.white)
+                .cornerRadius(20)
+                .shadow(color:.gray,radius:2,x:3,y:3)
+                .overlay(RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
+                .padding(.bottom, 40)
             
             CircleTimer(timerManager: TimerManager(totalTime: 15),
                         nextPath: Route.secondTeamSpeakingView,
@@ -69,7 +62,12 @@ struct FirstTeamSpeakingView: View {
             isStartButtonPressed = false
         }
         
+        
         Spacer()
+        
+            .balanceCatchBackButton {
+                       dismiss()
+                   }
         
     }
     

@@ -25,9 +25,9 @@ struct LaunchScreenView: View {
                     Image(.logo)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: CGFloat.superViewFrameWidth / 2,
+                        .frame(width: CGFloat.superViewFrameWidth / 1.5,
                                alignment: .center)
-                        .padding(.bottom, 74)
+                        .padding(.bottom, 65)
                     NavigationLink("Start!", value: Route.beforePlayRuleDescriptionView)
                         .buttonStyle(RoundedBlueButton())
                 }

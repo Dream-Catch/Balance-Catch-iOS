@@ -22,7 +22,7 @@
 		3950658329CC94AF00A9C925 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658229CC94AF00A9C925 /* SelectButton.swift */; };
 		3950658529CC961300A9C925 /* TimerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658429CC961300A9C925 /* TimerCode.swift */; };
 		39A1561829DC0F7F000968CA /* FirstTeamSpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561729DC0F7F000968CA /* FirstTeamSpeakingView.swift */; };
-		39A1561A29DC1899000968CA /* VSstyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561929DC1899000968CA /* VSstyle.swift */; };
+		39A1561A29DC1899000968CA /* StorkeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561929DC1899000968CA /* StorkeText.swift */; };
 		39A1565129DE4846000968CA /* CircleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565029DE4846000968CA /* CircleTimer.swift */; };
 		39A1565529E47B96000968CA /* SecondTeamSpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */; };
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
@@ -85,7 +85,7 @@
 		3950658229CC94AF00A9C925 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		3950658429CC961300A9C925 /* TimerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCode.swift; sourceTree = "<group>"; };
 		39A1561729DC0F7F000968CA /* FirstTeamSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTeamSpeakingView.swift; sourceTree = "<group>"; };
-		39A1561929DC1899000968CA /* VSstyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSstyle.swift; sourceTree = "<group>"; };
+		39A1561929DC1899000968CA /* StorkeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorkeText.swift; sourceTree = "<group>"; };
 		39A1565029DE4846000968CA /* CircleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimer.swift; sourceTree = "<group>"; };
 		39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTeamSpeakingView.swift; sourceTree = "<group>"; };
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 				33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */,
 				33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */,
 				33FCD2AA29E07AFD006E2131 /* CustomProgressView.swift */,
-				39A1561929DC1899000968CA /* VSstyle.swift */,
+				39A1561929DC1899000968CA /* StorkeText.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -448,7 +448,7 @@
 				56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */,
 				3950657D29CC943B00A9C925 /* TimerView.swift in Sources */,
 				33FCD2AB29E07AFD006E2131 /* CustomProgressView.swift in Sources */,
-				39A1561A29DC1899000968CA /* VSstyle.swift in Sources */,
+				39A1561A29DC1899000968CA /* StorkeText.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
 				56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */,
 				56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */,

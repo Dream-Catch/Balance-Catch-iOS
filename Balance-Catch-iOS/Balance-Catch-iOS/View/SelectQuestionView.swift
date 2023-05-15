@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct SelectQuestionView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @State var isRandomPick: Bool
     @State var selectedIndex: Int
-    @State var isRetryButtonEnabled = true
+    @State var isRetryButtonEnabled = false
     @State var questionViewId = UUID()
     @Binding var path: [Route]
     
@@ -30,19 +32,34 @@ struct SelectQuestionView: View {
             .id(questionViewId)
             
             HStack(alignment: .center, spacing: 20) {
-                isRandomPick ?
-                Button("Reset") {
-                    questionViewId = UUID()
-                    tappedResetButton()
-                }
-                .buttonStyle(RoundedBlueButton())
-                .disabled(!isRetryButtonEnabled) : nil
+                if isRandomPick {
+                    Button("Reset") {
+                        questionViewId = UUID()
+                        tappedResetButton()
+                    }
+                    .buttonStyle(RoundedBlueButton())
+                    .disabled(!isRetryButtonEnabled)
+                } else { EmptyView() }
                 
-                NavigationLink("Next",
-                               value:
-                                Route.userFirstSelectView(selectedQuestion: questions[selectedIndex]))
-                .buttonStyle(RoundedBlueButton())
+                if isRandomPick && !isRetryButtonEnabled {
+                    Button("Next") { }
+                        .buttonStyle(RoundedBlueButton())
+                } else {
+                    NavigationLink("Next",
+                                   value:
+                                    Route.userFirstSelectView(selectedQuestion: questions[selectedIndex]))
+                    .buttonStyle(RoundedBlueButton())
+                }
             }
+        }
+        .onAppear() {
+            isRetryButtonEnabled = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                isRetryButtonEnabled = true
+            }
+        }
+        .balanceCatchBackButton {
+            dismiss()
         }
     }
     
@@ -55,7 +72,6 @@ struct SelectQuestionView: View {
         }
     }
 }
-
 
 func getNewQuestionList() -> [Question] {
     let qustionTexts = QuestionTexts().list

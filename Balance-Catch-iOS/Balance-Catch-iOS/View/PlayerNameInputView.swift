@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PlayerNameInputView: View {
+    @Environment(\.dismiss) private var dismiss
     @State public var numberOfPeople: Int
     @State private var playerNames: [String] = []
     @State private var scrollViewHeight: CGFloat = 0
@@ -41,8 +42,7 @@ struct PlayerNameInputView: View {
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 30.0)
                                     .padding(.vertical, 30.0)
-                                    .cornerRadius(20)
-                                    .background(
+                                    /*.background(
                                         RoundedRectangle(cornerRadius: 20)
                                             .inset(by: 3)
                                             .stroke(
@@ -50,8 +50,16 @@ struct PlayerNameInputView: View {
                                                         .balanceCatchBlue,
                                                 lineWidth: 5
                                             )
-                                    )
+                                    )*/
+                                    .background(Color.white)
+                                    .cornerRadius(20)
+                                    .shadow(color:.gray,radius:2,x:3,y:3)
+                                    .overlay(RoundedRectangle(cornerRadius: 20)
+                                        .stroke(self.playerNames[index].isEmpty ? Color.gray:Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
+                                
                             }
+                            .padding(.bottom,5)
+                            
                         }
                         
                     }
@@ -101,6 +109,9 @@ struct PlayerNameInputView: View {
             self.playerList.players = []
             self.playerNames = Array(repeating: "", count: numberOfPeople)
         }
+        .balanceCatchBackButton {
+                   dismiss()
+               }
     }
 }
 
