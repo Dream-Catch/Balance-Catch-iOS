@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RecommandOrNotView: View {
     @Environment(\.dismiss) private var dismiss
-    
     @State  var tag:Int? = nil
     @Binding var path: [Route]
     
@@ -39,10 +38,11 @@ struct RecommandOrNotView: View {
                 }
                 
             }
+            
         }
         .balanceCatchBackButton {
-            dismiss()
-        }
+                   dismiss()
+               }
     }
 }
 

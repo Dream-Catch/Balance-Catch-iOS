@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct PublicPickView: View {
+    @Environment(\.dismiss) private var dismiss
     @State private var animationAmount:CGFloat = 1
     @State private var firstIncreAmount : Double = 0.0
     @State private var secondIncreAmount : Double = 0.0
@@ -16,17 +17,17 @@ struct PublicPickView: View {
     @State var secondQuestion = (question: "환승이별", amount: 40.0)
     
     
-  
     
-//    func whatIsPick(firstPer:Int,secondPer:Int )->Double
-//    {
-//        if firstAmount>secondAmount {
-//            return firstAmount
-//        }
-//        else{
-//            return secondAmount
-//        }
-//    }
+    
+    //    func whatIsPick(firstPer:Int,secondPer:Int )->Double
+    //    {
+    //        if firstAmount>secondAmount {
+    //            return firstAmount
+    //        }
+    //        else{
+    //            return secondAmount
+    //        }
+    //    }
     
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
@@ -56,7 +57,7 @@ struct PublicPickView: View {
                     Text(firstQuestion.amount > secondQuestion.amount ? "\(Int(firstQuestion.amount))%" : "\(Int(secondQuestion.amount))%")
                         .font(.system(size: 18, weight: .bold))
                         .padding(.bottom,28)
-                        
+                    
                     
                 }
                 .padding(.leading,32)
@@ -82,7 +83,7 @@ struct PublicPickView: View {
             .padding(30)
             
             
-        
+            
             
             
             
@@ -123,12 +124,15 @@ struct PublicPickView: View {
                 }
             }
             .padding(30)
-           
+            
             
             ZStack {
                 NavigationLink("Next", value: Route.whoIsLoserView)
                     .buttonStyle(RoundedBlueButton())
             }
+        }
+        .balanceCatchBackButton {
+            dismiss()
         }
     }
 }

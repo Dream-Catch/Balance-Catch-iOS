@@ -9,9 +9,7 @@ import SwiftUI
 
 struct FirstTeamSpeakingView: View {
     @Environment(\.dismiss) private var dismiss
-    
     @Binding var path: [Route]
-    
     @State var isStartButtonPressed = false
     @State var circleTimerId = UUID()
     
@@ -63,11 +61,13 @@ struct FirstTeamSpeakingView: View {
         .onAppear() {
             isStartButtonPressed = false
         }
-        .balanceCatchBackButton {
-            dismiss()
-        }
+        
         
         Spacer()
+        
+            .balanceCatchBackButton {
+                       dismiss()
+                   }
         
     }
     

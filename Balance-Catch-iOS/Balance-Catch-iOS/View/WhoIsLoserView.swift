@@ -9,7 +9,6 @@ import SwiftUI
 
 struct WhoIsLoserView: View {
     @Environment(\.dismiss) private var dismiss
-    
     @Binding var path: [Route]
     
     var body: some View {
@@ -73,8 +72,9 @@ struct WhoIsLoserView: View {
             }
         }
         .balanceCatchBackButton {
-            dismiss()
-        }
+                   dismiss()
+               }
+        
     }
     
     private func moveToPlayerNumberInputView() {

@@ -9,13 +9,12 @@ import SwiftUI
 
 struct PlayerNameInputView: View {
     @Environment(\.dismiss) private var dismiss
-    
     @State public var numberOfPeople: Int
     @State private var playerNames: [String] = []
     @State private var scrollViewHeight: CGFloat = 0
     @Binding var path: [Route]
     
-    @ObservedObject var playerList = PlayerList()
+    @EnvironmentObject var playerList: PlayerList
     
     var body: some View {
         ZStack {
@@ -82,16 +81,37 @@ struct PlayerNameInputView: View {
                 if scrollViewHeight == ViewHeightKey.maxValue { Spacer() }
                 else { Spacer().frame(height: 34) }
                 
+                
+                
                 NavigationLink("Next", value: Route.selectTypeView)
                     .buttonStyle(RoundedBlueButton())
+                    .simultaneousGesture(
+                        TapGesture()
+                            .onEnded {
+                                if playerNames.allSatisfy({ $0.isEmpty == false }) {
+                                    print("Filled", playerNames)
+                                    for name in playerNames {
+                                        playerList.addPlayer(name: name)
+                                    }
+                                }
+                                else {
+                                    print("Not Filled", playerNames)
+                                    for i in 1...numberOfPeople {
+                                        let playerName = "Player \(i)"
+                                        playerList.addPlayer(name: playerName)
+                                    }
+                                }
+                            }
+                    )
             }
         }
         .onAppear {
+            self.playerList.players = []
             self.playerNames = Array(repeating: "", count: numberOfPeople)
         }
         .balanceCatchBackButton {
-            dismiss()
-        }
+                   dismiss()
+               }
     }
 }
 

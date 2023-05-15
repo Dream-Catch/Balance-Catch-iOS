@@ -16,9 +16,15 @@ struct SelectTypeView: View {
     @State
     private var isActivated2: Bool = false
     
+    @EnvironmentObject var playerList: PlayerList
+    
     var body: some View {
         VStack{
-            
+            VStack {
+                ForEach(playerList.players, id: \.id) { player in
+                    Text(player.name)
+                }
+            }
             
             Text("질문 선택하기")
                 .font(.system(size:24))
@@ -56,8 +62,8 @@ struct SelectTypeView: View {
             .disabled(!isActivated1 && !isActivated2)
         } //Vstack
         .balanceCatchBackButton {
-            dismiss()
-        }
+                   dismiss()
+               }
     } //body
 }
 

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SecondTeamSpeakingView: View {
     @Environment(\.dismiss) private var dismiss
-    
     @Binding var path: [Route]
     
     @State var isStartButtonPressed = false
@@ -64,12 +63,12 @@ struct SecondTeamSpeakingView: View {
         .onAppear() {
             isStartButtonPressed = false
         }
-        .balanceCatchBackButton {
-            dismiss()
-        }
         
         Spacer()
         
+            .balanceCatchBackButton {
+                       dismiss()
+                   }
     }
     
 }

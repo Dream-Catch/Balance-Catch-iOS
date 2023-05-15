@@ -9,7 +9,6 @@ import SwiftUI
 
 struct BeforePlayRuleDescriptionView: View {
     @Environment(\.dismiss) private var dismiss
-    
     @Binding var path: [Route]
     
     var body: some View {
@@ -38,25 +37,18 @@ struct BeforePlayRuleDescriptionView: View {
                 
                 Spacer()
             }
-            /*
-             .frame(width: 380, height: 200)
-             .frame (width: geometry.size.width * 0.87)
-             .background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 4))
-             .padding(40)
-             .frame (width: geometry.size.width, height: geometry.size.height)*/
-            
-            
-            
-            
-        //}
-        .balanceCatchBackButton {
-            dismiss()
-        }
+            .balanceCatchBackButton {
+                       dismiss()
+                   }
+
    }
+
 }
+
 
 struct BeforePlayRuleDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
         BeforePlayRuleDescriptionView(path: Binding.constant([]))
     }
 }
+

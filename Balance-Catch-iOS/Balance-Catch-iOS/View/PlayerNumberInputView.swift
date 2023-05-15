@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PlayerNumberInputView: View {
     @Environment(\.dismiss) private var dismiss
-    
     @State private var numberOfPeople = 2
     @State private var showAlert = false
     @Binding var path: [Route]
@@ -31,7 +30,7 @@ struct PlayerNumberInputView: View {
                 ).font(Font.custom("Arial", size: 60))
                     .padding()
                     .multilineTextAlignment(.center)
-                    //.background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 5))
+                //.background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 5))
                     .background(Color.white)
                     .cornerRadius(20)
                     .shadow(color:.gray,radius:2,x:3,y:3)
@@ -62,6 +61,7 @@ struct PlayerNumberInputView: View {
             dismiss()
         }
     }
+    
 }
 
 struct PlayerNumberInputView_Previews: PreviewProvider {
