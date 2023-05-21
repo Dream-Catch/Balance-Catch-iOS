@@ -9,11 +9,14 @@ import SwiftUI
 
 struct UserFinalSelectView: View {
     @Environment(\.dismiss) private var dismiss
+    // MARK: - Player 데이터 가져오기
+    @EnvironmentObject var playerList: PlayerList
     @Binding var path: [Route]
     
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
+    @State var index = 0
     
     var body: some View {
         VStack{
@@ -25,12 +28,13 @@ struct UserFinalSelectView: View {
             
             // Player 1 제리
             HStack{
-                Text("Player 1")
+                Text("Player \(index + 1) \(playerList.players[index].select)")
+                Text("Player \(index + 1)")
                     .font(.system(size:24))
                     .fontWeight(.bold)
                     .shadow(color:.gray,radius:2,x:3,y:3)
                 
-                Text("제리")
+                Text(playerList.players[index].name)
                     .font(.system(size:20))
                     .fontWeight(.bold)
                     .frame(width: 150, height: 56)
@@ -48,13 +52,11 @@ struct UserFinalSelectView: View {
                 
                 VStack{
                     Button(action: {
-                        if(isActivated2==true){
-                            self.isActivated1.toggle()
+                        if isActivated2 {
                             self.isActivated2 = false
                         }
-                        else{
-                            self.isActivated1.toggle()
-                        }
+                        self.isActivated1.toggle()
+                        playerList.players[index].select = 0
                     })
                     {
                         Text("받아온 질문")
@@ -76,8 +78,8 @@ struct UserFinalSelectView: View {
                         if isActivated1 {
                             self.isActivated1 = false
                         }
-                        
                         self.isActivated2.toggle()
+                        playerList.players[index].select = 1
                     }) {
                         Text("받아온 질문")
                             .font(.system(size: 27, weight: .bold))
@@ -99,27 +101,39 @@ struct UserFinalSelectView: View {
                     .font(.system(size: 64, weight: .black))
                     .shadow(color:.gray,radius:2, x: 1, y:1)
                     .padding(.bottom, 25)
+                
+                
+            }
+            .task {
+                withAnimation(.easeInOut(duration: 1)) {
+                    showingSubview = true
+                }
             }
             
-
-            NavigationLink("Next", value: Route.recommandOrNotView)
+            if index < playerList.players.count - 1 {
+                Button("Next") {
+                    self.index += 1
+                    isActivated1 = false
+                    isActivated2 = false
+                }
                 .buttonStyle(RoundedBlueButton())
                 .disabled(!isActivated1 && !isActivated2)
-
-        }
-        .task {
-            withAnimation(.easeInOut(duration: 1)) {
-                showingSubview = true
+            } else {
+                NavigationLink("Next", value: Route.recommandOrNotView)
+                    .buttonStyle(RoundedBlueButton())
+                    .disabled(!isActivated1 && !isActivated2)
             }
         }
+        
         .padding(.top,100)
         .padding(.bottom,100) //임시값
         
         .balanceCatchBackButton {
-                   dismiss()
-               }
+            dismiss()
+        }
     }
 }
+
 
 struct UserFinalSelect_Previews: PreviewProvider {
     static var previews: some View {

@@ -46,8 +46,8 @@ struct LaunchScreenView: View {
                 case .selectQuestionView(let isRandomPick):
                     SelectQuestionView(isRandomPick: isRandomPick,
                                        path: $path)
-                case .userFirstSelectView(let selectedQuestion):
-                    UserFirstSelectView(selectedQuestion: selectedQuestion,
+                case .userFirstSelectView(let selectedQuestion,let index):
+                    UserFirstSelectView(selectedQuestion: selectedQuestion, index: index,
                                         path: $path)
                 case .timerView:
                     TimerView(path: $path)

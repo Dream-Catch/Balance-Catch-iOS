@@ -47,7 +47,7 @@ struct SelectQuestionView: View {
                 } else {
                     NavigationLink("Next",
                                    value:
-                                    Route.userFirstSelectView(selectedQuestion: questions[selectedIndex]))
+                                    Route.userFirstSelectView(selectedQuestion: questions[selectedIndex],index: 0))
                     .buttonStyle(RoundedBlueButton())
                 }
             }

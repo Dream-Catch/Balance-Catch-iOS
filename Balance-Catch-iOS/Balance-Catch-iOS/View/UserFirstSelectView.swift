@@ -13,18 +13,20 @@ struct UserFirstSelectView: View {
     // MARK: - Player 데이터 가져오기
     @EnvironmentObject var playerList: PlayerList
     let selectedQuestion: Question
+    let index: Int
     @Binding var path: [Route]
     
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
     
-    init(selectedQuestion: Question, path: Binding<[Route]>) {
-        
+    init(selectedQuestion: Question, index: Int, path: Binding<[Route]>) {
         self.selectedQuestion = selectedQuestion
+        self.index = index
         questionArray = selectedQuestion.text.components(separatedBy: " vs ")
         _path = path
     }
+
     
     var questionArray: [String]
     
@@ -38,7 +40,7 @@ struct UserFirstSelectView: View {
     var second: String {
         questionArray.last ?? ""
     }
-    @State var index = 0
+    
     var body: some View {
         VStack{
             Text("1차 선택")
@@ -50,7 +52,7 @@ struct UserFirstSelectView: View {
             // MARK: - Player 데이터 가져오기
             
             HStack{
-                //Text("Player \(index + 1) \(playerList.players[index].select)") 확인용
+                Text("Player \(index + 1) \(playerList.players[index].select)")
                 Text("Player \(index + 1)")
                     .font(.system(size:24))
                     .fontWeight(.bold)
@@ -138,13 +140,9 @@ struct UserFirstSelectView: View {
             }
             
             if index < playerList.players.count - 1 {
-                Button("Next") {
-                    self.index += 1
-                    isActivated1 = false
-                    isActivated2 = false
-                }
-                .buttonStyle(RoundedBlueButton())
-                .disabled(!isActivated1 && !isActivated2)
+                NavigationLink("Next", value: Route.userFirstSelectView(selectedQuestion: self.selectedQuestion,index: index + 1))
+                    .buttonStyle(RoundedBlueButton())
+                    .disabled(!isActivated1 && !isActivated2)
             } else {
                 NavigationLink("Next", value: Route.timerView)
                     .buttonStyle(RoundedBlueButton())
@@ -166,6 +164,6 @@ struct UserFirstSelectView: View {
 
 struct UserFirstSelect_Previews: PreviewProvider {
     static var previews: some View {
-        UserFirstSelectView(selectedQuestion: .init(text: "test"), path: Binding.constant([]))
+        UserFirstSelectView(selectedQuestion: .init(text: "test"), index: 0, path: Binding.constant([]))
     }
 }
