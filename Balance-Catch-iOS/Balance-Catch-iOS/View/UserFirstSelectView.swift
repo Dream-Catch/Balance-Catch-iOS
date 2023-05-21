@@ -10,7 +10,7 @@ import Foundation
 
 struct UserFirstSelectView: View {
     @Environment(\.dismiss) private var dismiss
-// MARK: - Player 데이터 가져오기
+    // MARK: - Player 데이터 가져오기
     @EnvironmentObject var playerList: PlayerList
     let selectedQuestion: Question
     @Binding var path: [Route]
@@ -20,7 +20,7 @@ struct UserFirstSelectView: View {
     @State var showingSubview = false
     
     init(selectedQuestion: Question, path: Binding<[Route]>) {
-
+        
         self.selectedQuestion = selectedQuestion
         questionArray = selectedQuestion.text.components(separatedBy: " vs ")
         _path = path
@@ -38,7 +38,7 @@ struct UserFirstSelectView: View {
     var second: String {
         questionArray.last ?? ""
     }
-    
+    @State var index = 0
     var body: some View {
         VStack{
             Text("1차 선택")
@@ -47,21 +47,16 @@ struct UserFirstSelectView: View {
                 .shadow(color:.gray,radius:2,x:3,y:3)
                 .padding(.bottom, 51)
             
-            // Player 1 제리
+            // MARK: - Player 데이터 가져오기
             
-// MARK: - Player 데이터 가져오기
-            VStack {
-                ForEach(playerList.players, id: \.id) { player in
-                    Text(player.name)
-                }
-            }
             HStack{
-                Text("Player 1")
+                //Text("Player \(index + 1) \(playerList.players[index].select)") 확인용
+                Text("Player \(index + 1)")
                     .font(.system(size:24))
                     .fontWeight(.bold)
                     .shadow(color:.gray,radius:2,x:3,y:3)
                 
-                Text("제리")
+                Text(playerList.players[index].name)
                     .font(.system(size:20))
                     .fontWeight(.bold)
                     .frame(width: 150, height: 56)
@@ -72,21 +67,17 @@ struct UserFirstSelectView: View {
                         .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
                     .padding(.leading, 24)
                 
-            }.padding(.bottom, 40)
-            
-            
+            }.padding(.bottom, 40) //HStack
             
             ZStack{
                 
                 VStack{
                     Button(action: {
-                        if(isActivated2==true){
-                            self.isActivated1.toggle()
+                        if isActivated2 {
                             self.isActivated2 = false
                         }
-                        else{
-                            self.isActivated1.toggle()
-                        }
+                        self.isActivated1.toggle()
+                        playerList.players[index].select = 0
                     })
                     {
                         Text("\(first)")
@@ -111,6 +102,7 @@ struct UserFirstSelectView: View {
                             self.isActivated1 = false
                         }
                         self.isActivated2.toggle()
+                        playerList.players[index].select = 1
                     }) {
                         Text("\(second)")
                             .font(.system(size: 27, weight: .bold))
@@ -139,26 +131,35 @@ struct UserFirstSelectView: View {
                 
                 
             }
+            .task {
+                withAnimation(.easeInOut(duration: 1)) {
+                    showingSubview = true
+                }
+            }
             
-            NavigationLink("Next", value: Route.timerView)
+            if index < playerList.players.count - 1 {
+                Button("Next") {
+                    self.index += 1
+                    isActivated1 = false
+                    isActivated2 = false
+                }
                 .buttonStyle(RoundedBlueButton())
                 .disabled(!isActivated1 && !isActivated2)
-            
-        
-        }
-        .task {
-            withAnimation(.easeInOut(duration: 1)) {
-                showingSubview = true
+            } else {
+                NavigationLink("Next", value: Route.timerView)
+                    .buttonStyle(RoundedBlueButton())
+                    .disabled(!isActivated1 && !isActivated2)
             }
+            
+            
         }
         
         .padding(.top,100)
         .padding(.bottom,100) //임시값
         .balanceCatchBackButton {
-                   dismiss()
-               }
+            dismiss()
+        }
     }
-    
 }
 
 
