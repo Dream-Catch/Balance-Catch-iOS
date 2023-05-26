@@ -40,7 +40,7 @@ struct FirstTeamSpeakingView: View {
                     .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
                 .padding(.bottom, 40)
             
-            CircleTimer(timerManager: TimerManager(totalTime: 15),
+            CircleTimer(timerManager: TimerManager(totalTime: 20),
                         nextPath: Route.secondTeamSpeakingView,
                         alertMessageType: .firstTeam,
                         isStartButtonPressed: $isStartButtonPressed)

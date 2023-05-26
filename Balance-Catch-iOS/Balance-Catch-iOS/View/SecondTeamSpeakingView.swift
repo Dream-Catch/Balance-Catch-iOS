@@ -10,6 +10,7 @@ import SwiftUI
 struct SecondTeamSpeakingView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var path: [Route]
+    @EnvironmentObject var userQuestion: UserQuestion
     
     @State var isStartButtonPressed = false
     @State var circleTimerId = UUID()
@@ -42,8 +43,8 @@ struct SecondTeamSpeakingView: View {
                     .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
                 .padding(.bottom, 40)
             
-            CircleTimer(timerManager: TimerManager(totalTime: 15),
-                        nextPath: Route.userFinalSelectView,
+            CircleTimer(timerManager: TimerManager(totalTime: 20),
+                        nextPath: Route.userFinalSelectView(questionArray: userQuestion.playQuestion.components(separatedBy: " vs "),index: 0),
                         alertMessageType: .secondTeam,
                         isStartButtonPressed: $isStartButtonPressed)
             .id(circleTimerId)
@@ -56,7 +57,7 @@ struct SecondTeamSpeakingView: View {
                 }
                 .buttonStyle(RoundedBlueButton())
             } else {
-                NavigationLink("Next", value: Route.userFinalSelectView)
+                NavigationLink("Next", value: Route.userFinalSelectView(questionArray: userQuestion.playQuestion.components(separatedBy: " vs "),index: 0))
                     .buttonStyle(RoundedBlueButton())
             }
         }//Vstack

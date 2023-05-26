@@ -16,6 +16,7 @@ struct SelectQuestionView: View {
     @State var questionViewId = UUID()
     @Binding var path: [Route]
     
+    
     var questions: [Question] = getNewQuestionList()
     
     init(isRandomPick: Bool, selectedIndex: Int = 0, path: Binding<[Route]>) {
@@ -49,6 +50,7 @@ struct SelectQuestionView: View {
                                    value:
                                     Route.userFirstSelectView(selectedQuestion: questions[selectedIndex],index: 0))
                     .buttonStyle(RoundedBlueButton())
+
                 }
             }
         }

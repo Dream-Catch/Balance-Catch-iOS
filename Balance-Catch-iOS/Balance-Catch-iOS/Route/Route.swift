@@ -15,7 +15,7 @@ enum Route: Hashable {
     case timerView
     case firstTeamSpeakingView
     case secondTeamSpeakingView
-    case userFinalSelectView
+    case userFinalSelectView(questionArray: [String],index: Int)
     case recommandOrNotView
     case publicPickView
     case whoIsLoserView

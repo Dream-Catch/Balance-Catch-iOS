@@ -10,15 +10,18 @@ import Foundation
 
 struct UserFirstSelectView: View {
     @Environment(\.dismiss) private var dismiss
-    // MARK: - Player 데이터 가져오기
+
     @EnvironmentObject var playerList: PlayerList
+    @EnvironmentObject var userQuestion: UserQuestion
     let selectedQuestion: Question
     let index: Int
-    @Binding var path: [Route]
     
+    
+    @Binding var path: [Route]
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
+    
     
     init(selectedQuestion: Question, index: Int, path: Binding<[Route]>) {
         self.selectedQuestion = selectedQuestion
@@ -26,7 +29,6 @@ struct UserFirstSelectView: View {
         questionArray = selectedQuestion.text.components(separatedBy: " vs ")
         _path = path
     }
-
     
     var questionArray: [String]
     
@@ -40,8 +42,15 @@ struct UserFirstSelectView: View {
     var second: String {
         questionArray.last ?? ""
     }
+
+    
+    
+    
     
     var body: some View {
+        
+        
+        
         VStack{
             Text("1차 선택")
                 .font(.system(size:24))
@@ -49,9 +58,8 @@ struct UserFirstSelectView: View {
                 .shadow(color:.gray,radius:2,x:3,y:3)
                 .padding(.bottom, 51)
             
-            // MARK: - Player 데이터 가져오기
-            
             HStack{
+                // 선택지 왼쪽일 때 0, 오른쪽일 때 1 확인용
                 Text("Player \(index + 1) \(playerList.players[index].select)")
                 Text("Player \(index + 1)")
                     .font(.system(size:24))
@@ -80,6 +88,7 @@ struct UserFirstSelectView: View {
                         }
                         self.isActivated1.toggle()
                         playerList.players[index].select = 0
+
                     })
                     {
                         Text("\(first)")
@@ -151,9 +160,11 @@ struct UserFirstSelectView: View {
             
             
         }
-        
         .padding(.top,100)
         .padding(.bottom,100) //임시값
+        .onAppear {
+            self.userQuestion.playQuestion += selectedQuestion.text
+        }
         .balanceCatchBackButton {
             dismiss()
         }
