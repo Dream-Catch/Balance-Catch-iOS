@@ -32,8 +32,8 @@ struct TimerView: View {
                 .shadow(color:.gray,radius:2,x:3,y:3)
                 .padding(.bottom, 45)
             
-            CircleTimer(timerManager: TimerManager(totalTime: 180),
-                        nextPath: Route.firstTeamSpeakingView(questionArray: questionArray),
+            CircleTimer(timerManager: TimerManager(totalTime: 3),
+                        nextPath: Route.firstTeamSpeakingView(questionArray: userQuestion.playQuestion.components(separatedBy: " vs ")),
                         alertMessageType: .whole,
                         isStartButtonPressed: $isStartButtonPressed)
             .id(circleTimerId)
