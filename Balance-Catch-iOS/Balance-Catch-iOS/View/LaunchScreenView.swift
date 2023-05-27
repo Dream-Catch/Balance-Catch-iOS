@@ -51,10 +51,10 @@ struct LaunchScreenView: View {
                                         path: $path)
                 case .timerView:
                     TimerView(path: $path)
-                case .firstTeamSpeakingView:
-                    FirstTeamSpeakingView(path: $path)
-                case .secondTeamSpeakingView:
-                    SecondTeamSpeakingView(path: $path)
+                case .firstTeamSpeakingView(let questionArray):
+                    FirstTeamSpeakingView(questionArray: questionArray, path: $path)
+                case .secondTeamSpeakingView(let questionArray):
+                    SecondTeamSpeakingView(questionArray: questionArray, path: $path)
                 case .userFinalSelectView(let questionArray,let index):
                     UserFinalSelectView(questionArray: questionArray, index: index, path: $path)
                 case .recommandOrNotView:

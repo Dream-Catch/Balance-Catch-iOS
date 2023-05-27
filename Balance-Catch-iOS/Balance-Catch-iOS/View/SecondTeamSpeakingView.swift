@@ -11,14 +11,26 @@ struct SecondTeamSpeakingView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var path: [Route]
     @EnvironmentObject var userQuestion: UserQuestion
+    let questionArray: [String]
     
     @State var isStartButtonPressed = false
     @State var circleTimerId = UUID()
     
+    init(questionArray: [String], path: Binding<[Route]>) {
+        self.questionArray = questionArray
+        _path = path
+        
+    }
+    
+    var second: String {
+        questionArray.last ?? ""
+    }
+    
+    
     var body: some View{
         
         Spacer()
-        
+
         VStack{
             Text("최후 변론 TIME")
                 .font(.system(size:36))
@@ -28,7 +40,7 @@ struct SecondTeamSpeakingView: View {
                 .padding(.top,-10)
             
             
-            Text("환승이별") // 나중에 질문 값 받아와야 함
+            Text("\(second)") // 나중에 질문 값 받아와야 함
                 .font(.system(size: 22, weight: .bold))
                 .minimumScaleFactor(0.5)
                 .padding(.bottom, 10)
@@ -77,6 +89,6 @@ struct SecondTeamSpeakingView: View {
 
 struct SecondTeamSpeakingView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondTeamSpeakingView(path: Binding.constant([]))
+        SecondTeamSpeakingView(questionArray: [], path: Binding.constant([]))
     }
 }

@@ -10,13 +10,22 @@ import SwiftUI
 struct TimerView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var path: [Route]
+    @EnvironmentObject var userQuestion: UserQuestion
     
     @State var isStartButtonPressed = false
     @State var circleTimerId = UUID()
+
+    init(path: Binding<[Route]>){
+        questionArray = []
+        _path = path
+    }
+    
+    var questionArray: [String]
     
     var body: some View{
         
         VStack{
+            
             Text("전체 토론 TIME")
                 .font(.system(size:36))
                 .fontWeight(.bold)
@@ -24,7 +33,7 @@ struct TimerView: View {
                 .padding(.bottom, 45)
             
             CircleTimer(timerManager: TimerManager(totalTime: 180),
-                        nextPath: Route.firstTeamSpeakingView,
+                        nextPath: Route.firstTeamSpeakingView(questionArray: questionArray),
                         alertMessageType: .whole,
                         isStartButtonPressed: $isStartButtonPressed)
             .id(circleTimerId)
@@ -37,7 +46,7 @@ struct TimerView: View {
                 }
                 .buttonStyle(RoundedBlueButton())
             } else {
-                NavigationLink("Next", value: Route.firstTeamSpeakingView)
+                NavigationLink("Next", value: Route.firstTeamSpeakingView(questionArray: userQuestion.playQuestion.components(separatedBy: " vs ")))
                     .buttonStyle(RoundedBlueButton())
             }
         }//Vstack

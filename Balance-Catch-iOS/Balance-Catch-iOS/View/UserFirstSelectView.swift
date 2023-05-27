@@ -8,6 +8,8 @@
 import SwiftUI
 import Foundation
 
+
+
 struct UserFirstSelectView: View {
     @Environment(\.dismiss) private var dismiss
 
@@ -22,7 +24,6 @@ struct UserFirstSelectView: View {
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
     
-    
     init(selectedQuestion: Question, index: Int, path: Binding<[Route]>) {
         self.selectedQuestion = selectedQuestion
         self.index = index
@@ -31,17 +32,14 @@ struct UserFirstSelectView: View {
     }
     
     var questionArray: [String]
-    
-    mutating func onAppear() {
-        questionArray = selectedQuestion.text.components(separatedBy: " vs ")
-    }
-    
+
     var first: String {
         questionArray.first ?? ""
     }
     var second: String {
         questionArray.last ?? ""
     }
+    
 
     
     
@@ -61,11 +59,11 @@ struct UserFirstSelectView: View {
             HStack{
                 // 선택지 왼쪽일 때 0, 오른쪽일 때 1 확인용
                 Text("Player \(index + 1) \(playerList.players[index].select)")
+               
                 Text("Player \(index + 1)")
                     .font(.system(size:24))
                     .fontWeight(.bold)
                     .shadow(color:.gray,radius:2,x:3,y:3)
-                
                 Text(playerList.players[index].name)
                     .font(.system(size:20))
                     .fontWeight(.bold)
@@ -76,9 +74,10 @@ struct UserFirstSelectView: View {
                     .overlay(RoundedRectangle(cornerRadius: 20)
                         .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
                     .padding(.leading, 24)
+            
                 
             }.padding(.bottom, 40) //HStack
-            
+
             ZStack{
                 
                 VStack{
@@ -152,6 +151,8 @@ struct UserFirstSelectView: View {
                 NavigationLink("Next", value: Route.userFirstSelectView(selectedQuestion: self.selectedQuestion,index: index + 1))
                     .buttonStyle(RoundedBlueButton())
                     .disabled(!isActivated1 && !isActivated2)
+                    .simultaneousGesture(TapGesture().onEnded{
+                     })
             } else {
                 NavigationLink("Next", value: Route.timerView)
                     .buttonStyle(RoundedBlueButton())
@@ -163,7 +164,7 @@ struct UserFirstSelectView: View {
         .padding(.top,100)
         .padding(.bottom,100) //임시값
         .onAppear {
-            self.userQuestion.playQuestion += selectedQuestion.text
+            self.userQuestion.playQuestion = selectedQuestion.text
         }
         .balanceCatchBackButton {
             dismiss()
