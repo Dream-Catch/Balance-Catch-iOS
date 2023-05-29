@@ -74,7 +74,7 @@ struct CircleTimer: View {
                 presenting: alertMessageType) { _ in
             NavigationLink("Close", value: nextPath)
         } message: { alertMessageType in
-            Text(alertMessageType.title)
+            Text(alertMessageType.message)
         }
         .onAppear() {
             timerManager.counter = 0

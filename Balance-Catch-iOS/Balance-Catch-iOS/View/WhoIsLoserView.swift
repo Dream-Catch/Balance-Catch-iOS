@@ -61,10 +61,21 @@ struct WhoIsLoserView: View {
             .padding(.bottom,56)
             
             HStack{
-                Button("New Game") {
+                Button("Plus Person gogo") {
                     moveToPlayerNumberInputView()
                 }
-                .buttonStyle(BiggerRoundedBlueButton())
+                .frame(width: 220,
+                       height: 56,
+                       alignment: .center)
+                .font(.system(size: 20, weight: .bold))
+                .foregroundColor(.white)
+                .background(.balanceCatchBlue)
+                .cornerRadius(25)
+                .shadow(color: .black.opacity(0.25),
+                        radius: 2,
+                        x: 0,
+                        y: 4)
+
                 Button("Replay") {
                     moveToSelectTypeView()
                 }
