@@ -7,11 +7,27 @@
 
 import SwiftUI
 
+
+
 struct FirstTeamSpeakingView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var path: [Route]
     @State var isStartButtonPressed = false
     @State var circleTimerId = UUID()
+    @EnvironmentObject var userQuestion: UserQuestion
+    let questionArray: [String]
+    
+    
+    init(questionArray: [String], path: Binding<[Route]>) {
+        self.questionArray = questionArray
+        _path = path
+        
+    }
+    
+    var first: String {
+        questionArray.first ?? ""
+    }
+    
     
     var body: some View{
         
@@ -24,8 +40,8 @@ struct FirstTeamSpeakingView: View {
                 .shadow(color:.gray,radius:2,x:3,y:3)
                 .padding(.bottom, 35)
                 .padding(.top,-10)
-            
-            Text("잠수이별") // 나중에 질문 값 받아와야 함
+
+            Text("\(first)") // 나중에 질문 값 받아와야 함
                 .font(.system(size: 22, weight: .bold))
                 .minimumScaleFactor(0.5)
                 .padding(.bottom, 10)
@@ -40,8 +56,8 @@ struct FirstTeamSpeakingView: View {
                     .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
                 .padding(.bottom, 40)
             
-            CircleTimer(timerManager: TimerManager(totalTime: 15),
-                        nextPath: Route.secondTeamSpeakingView,
+            CircleTimer(timerManager: TimerManager(totalTime: 20),
+                        nextPath: Route.secondTeamSpeakingView(questionArray: userQuestion.playQuestion.components(separatedBy: " vs ")),
                         alertMessageType: .firstTeam,
                         isStartButtonPressed: $isStartButtonPressed)
             .id(circleTimerId)
@@ -54,7 +70,7 @@ struct FirstTeamSpeakingView: View {
                 }
                 .buttonStyle(RoundedBlueButton())
             } else {
-                NavigationLink("Next", value: Route.secondTeamSpeakingView)
+                NavigationLink("Next", value: Route.secondTeamSpeakingView(questionArray: userQuestion.playQuestion.components(separatedBy: " vs ")))
                     .buttonStyle(RoundedBlueButton())
             }
         }//Vstack
@@ -66,8 +82,8 @@ struct FirstTeamSpeakingView: View {
         Spacer()
         
             .balanceCatchBackButton {
-                       dismiss()
-                   }
+                dismiss()
+            }
         
     }
     
@@ -76,6 +92,6 @@ struct FirstTeamSpeakingView: View {
 
 struct FirstTeamSpeakingView_Previews: PreviewProvider {
     static var previews: some View {
-        FirstTeamSpeakingView(path: Binding.constant([]))
+        FirstTeamSpeakingView(questionArray: [],path: Binding.constant([]))
     }
 }
