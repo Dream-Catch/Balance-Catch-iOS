@@ -8,20 +8,18 @@
 import SwiftUI
 
 struct WhoIsLoserView: View {
-    @State private var showingAlert = false
+
     var body: some View {
         
         
         VStack
         {
             Button("i"){
-                self.showingAlert.toggle()
             }
             .padding(.top,30)
             .offset(x: 150, y: -160)
             .buttonStyle(InformationButton())
-            .alert(isPresented: $showingAlert){
-                Alert(title: Text("당첨 이유"), message: nil, dismissButton: .default(Text("확인")))
+        
             }
             Text("벌칙 당첨자💣")
                 .font(.system(size: 36, weight: .bold))
@@ -66,25 +64,21 @@ struct WhoIsLoserView: View {
             }
             .padding(.bottom,56)
             
-            // 고치기~~~~~~~~~~~~~~~~  
+            // 고치기~~~~~~~~~~~~~~~~
             HStack{
-                ZStack {
-                    NavigationLink("New Game") {
-                        
-                    }
-                    .buttonStyle(BiggerRoundedBlueButton())
+                Button("New Game") {
+                    moveToPlayerNumberInputView()
                 }
-                ZStack {
-                    NavigationLink("Replay") {
-                        SelectQuestionThemeView()
-                    }
-                    .buttonStyle(BiggerRoundedBlueButton())
+                .buttonStyle(BiggerRoundedBlueButton())
+                Button("Replay") {
+                    moveToSelectTypeView()
                 }
+                .buttonStyle(BiggerRoundedBlueButton())
             }
         }
         
-    }
-}
+    } 
+
 
 struct WhoIsLoserView_Previews: PreviewProvider {
     static var previews: some View {

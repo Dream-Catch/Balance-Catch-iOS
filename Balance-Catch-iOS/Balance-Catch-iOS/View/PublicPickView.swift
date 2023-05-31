@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct PublicPickView: View {
+<<<<<<< HEAD
     
     @State private var animationAmount: CGFloat = 1
+=======
+    @State private var animationAmount:CGFloat = 1
+>>>>>>> 1d4cb13c350953411a0eb8044b5eeb1507bf1037
     @State private var firstIncreAmount : Double = 0.0
     @State private var secondIncreAmount : Double = 0.0
+    @Binding var path: [Route]
     
     @State var firstQuestion = (question: "잠수이별", amount: 50.0)
     @State var secondQuestion = (question: "환승이별", amount: 50.0)
@@ -135,10 +140,8 @@ struct PublicPickView: View {
             
             
             ZStack {
-                NavigationLink("Next") {
-                    WhoIsLoserView()
-                }
-                .buttonStyle(RoundedBlueButton())
+                NavigationLink("Next", value: Route.whoIsLoserView)
+                    .buttonStyle(RoundedBlueButton())
             }
         }
     }
@@ -146,6 +149,6 @@ struct PublicPickView: View {
 
 struct PublicPickView_Previews: PreviewProvider {
     static var previews: some View {
-        PublicPickView()
+        PublicPickView(path: Binding.constant([]))
     }
 }
