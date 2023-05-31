@@ -8,12 +8,9 @@
 import SwiftUI
 
 struct PublicPickView: View {
-<<<<<<< HEAD
     
     @State private var animationAmount: CGFloat = 1
-=======
-    @State private var animationAmount:CGFloat = 1
->>>>>>> 1d4cb13c350953411a0eb8044b5eeb1507bf1037
+
     @State private var firstIncreAmount : Double = 0.0
     @State private var secondIncreAmount : Double = 0.0
     @Binding var path: [Route]
