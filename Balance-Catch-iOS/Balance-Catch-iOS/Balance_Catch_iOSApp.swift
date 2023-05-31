@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct Balance_Catch_iOSApp: App {
     @StateObject var playerList = PlayerList(players: [])
+    @StateObject var selectQuestionViewModel = SelectQuestionViewModel()
     
     var body: some Scene {
         WindowGroup {
             LaunchScreenView()
                 .environmentObject(playerList)
+                .environmentObject(selectQuestionViewModel)
         }
     }
 }

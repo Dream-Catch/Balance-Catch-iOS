@@ -36,11 +36,16 @@
 		5624C4CB29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */; };
 		563DF23029E64A0100297A43 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DF22F29E64A0100297A43 /* TimerManager.swift */; };
 		563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBD4A29C9444400847390 /* SelectQuestionView.swift */; };
-		563FBD5C29C96F3500847390 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBD5B29C96F3500847390 /* Question.swift */; };
+		5640B0FC2A0378990041AB5A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640B0FB2A0378990041AB5A /* NetworkManager.swift */; };
+		5640B0FF2A037DB40041AB5A /* QuestionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640B0FE2A037DB40041AB5A /* QuestionDataModel.swift */; };
+		5640B1022A038A1C0041AB5A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5640B1012A038A1C0041AB5A /* Alamofire */; };
+		5640B1042A038AB60041AB5A /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640B1032A038AB60041AB5A /* ServerModel.swift */; };
 		565FCBD729ED149300A27305 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FCBD629ED149300A27305 /* Route.swift */; };
+		5675DD942A2201B30094E2D1 /* SelectQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5675DD932A2201B30094E2D1 /* SelectQuestionViewModel.swift */; };
 		56807DBB29CAE36E005441D4 /* QuestionTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56807DBA29CAE36E005441D4 /* QuestionTexts.swift */; };
 		56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56930FD229D59861006CEA3F /* QuestionPickerView.swift */; };
 		56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */; };
+		56CE463C2A04CC2400E95EF5 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE463B2A04CC2400E95EF5 /* CancelBag.swift */; };
 		56D2730E29CACA6E00E4EF76 /* QuestionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */; };
 		56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49B29C037160023095C /* RoundedBlueButton.swift */; };
 		56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49E29C03B050023095C /* CGFloat+.swift */; };
@@ -102,11 +107,15 @@
 		5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance_Catch_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		563DF22F29E64A0100297A43 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		563FBD4A29C9444400847390 /* SelectQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionView.swift; sourceTree = "<group>"; };
-		563FBD5B29C96F3500847390 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		5640B0FB2A0378990041AB5A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5640B0FE2A037DB40041AB5A /* QuestionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataModel.swift; sourceTree = "<group>"; };
+		5640B1032A038AB60041AB5A /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
 		565FCBD629ED149300A27305 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		5675DD932A2201B30094E2D1 /* SelectQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionViewModel.swift; sourceTree = "<group>"; };
 		56807DBA29CAE36E005441D4 /* QuestionTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTexts.swift; sourceTree = "<group>"; };
 		56930FD229D59861006CEA3F /* QuestionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPickerView.swift; sourceTree = "<group>"; };
 		56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCatchBackButton.swift; sourceTree = "<group>"; };
+		56CE463B2A04CC2400E95EF5 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemView.swift; sourceTree = "<group>"; };
 		56E2E49B29C037160023095C /* RoundedBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBlueButton.swift; sourceTree = "<group>"; };
 		56E2E49E29C03B050023095C /* CGFloat+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+.swift"; sourceTree = "<group>"; };
@@ -123,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5640B1022A038A1C0041AB5A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +184,8 @@
 		5624C4AC29BFF7CE008C7898 /* Balance-Catch-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				56CE463D2A04E1B200E95EF5 /* ViewModel */,
+				5640B0FA2A03788C0041AB5A /* NetworkManager */,
 				565FCBD529ED148600A27305 /* Route */,
 				56807DB929CAE366005441D4 /* Strings */,
 				563FBD5929C96F1B00847390 /* Model */,
@@ -224,10 +236,27 @@
 		563FBD5929C96F1B00847390 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				563FBD5B29C96F3500847390 /* Question.swift */,
+				5640B0FD2A037A4B0041AB5A /* Response */,
 				53D1488429D9672C003EAD5A /* PlayerModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5640B0FA2A03788C0041AB5A /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				5640B0FB2A0378990041AB5A /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		5640B0FD2A037A4B0041AB5A /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				5640B0FE2A037DB40041AB5A /* QuestionDataModel.swift */,
+				5640B1032A038AB60041AB5A /* ServerModel.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		565FCBD529ED148600A27305 /* Route */ = {
@@ -252,6 +281,14 @@
 				56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */,
 			);
 			path = Modifier;
+			sourceTree = "<group>";
+		};
+		56CE463D2A04E1B200E95EF5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5675DD932A2201B30094E2D1 /* SelectQuestionViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		56D2730C29CAC8DD00E4EF76 /* WheelStylePicker */ = {
@@ -290,6 +327,7 @@
 				56E2E4A029C03BB30023095C /* ShapeStyle+.swift */,
 				56E2E4A229C03C900023095C /* String+.swift */,
 				56E2E4A529C03E040023095C /* Font+.swift */,
+				56CE463B2A04CC2400E95EF5 /* CancelBag.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -331,6 +369,9 @@
 			dependencies = (
 			);
 			name = "Balance-Catch-iOS";
+			packageProductDependencies = (
+				5640B1012A038A1C0041AB5A /* Alamofire */,
+			);
 			productName = "Balance-Catch-iOS";
 			productReference = 5624C4AA29BFF7CE008C7898 /* Balance-Catch-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -403,6 +444,9 @@
 				Base,
 			);
 			mainGroup = 5624C4A129BFF7CE008C7898;
+			packageReferences = (
+				5640B1002A038A1C0041AB5A /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 5624C4AB29BFF7CE008C7898 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -447,12 +491,14 @@
 			files = (
 				56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */,
 				3950657D29CC943B00A9C925 /* TimerView.swift in Sources */,
+				5640B0FF2A037DB40041AB5A /* QuestionDataModel.swift in Sources */,
 				33FCD2AB29E07AFD006E2131 /* CustomProgressView.swift in Sources */,
 				39A1561A29DC1899000968CA /* StorkeText.swift in Sources */,
+				5640B0FC2A0378990041AB5A /* NetworkManager.swift in Sources */,
+				5675DD942A2201B30094E2D1 /* SelectQuestionViewModel.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
 				56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */,
 				56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */,
-				563FBD5C29C96F3500847390 /* Question.swift in Sources */,
 				56D2730E29CACA6E00E4EF76 /* QuestionItemView.swift in Sources */,
 				3950658129CC949600A9C925 /* SelectBox.swift in Sources */,
 				3950657B29CC940700A9C925 /* UserFirstSelectView.swift in Sources */,
@@ -469,6 +515,8 @@
 				56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */,
 				563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */,
 				56EC27AA29DFEF4B00951070 /* ThemeButtonStyle.swift in Sources */,
+				56CE463C2A04CC2400E95EF5 /* CancelBag.swift in Sources */,
+				5640B1042A038AB60041AB5A /* ServerModel.swift in Sources */,
 				53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */,
 				39A1565129DE4846000968CA /* CircleTimer.swift in Sources */,
 				56807DBB29CAE36E005441D4 /* QuestionTexts.swift in Sources */,
@@ -809,6 +857,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5640B1002A038A1C0041AB5A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5640B1012A038A1C0041AB5A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5640B1002A038A1C0041AB5A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5624C4A229BFF7CE008C7898 /* Project object */;
 }

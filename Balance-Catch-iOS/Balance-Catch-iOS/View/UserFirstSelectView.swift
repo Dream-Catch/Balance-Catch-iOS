@@ -12,32 +12,35 @@ struct UserFirstSelectView: View {
     @Environment(\.dismiss) private var dismiss
 // MARK: - Player 데이터 가져오기
     @EnvironmentObject var playerList: PlayerList
-    let selectedQuestion: Question
+    @EnvironmentObject var selectQuestionViewModel: SelectQuestionViewModel
+//    let selectedQuestion: String
     @Binding var path: [Route]
     
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
     
-    init(selectedQuestion: Question, path: Binding<[Route]>) {
+    @State var questionArray: [String] = ["", ""]
+    
+    init(path: Binding<[Route]>) {
 
-        self.selectedQuestion = selectedQuestion
-        questionArray = selectedQuestion.text.components(separatedBy: " vs ")
+//        self.selectedQuestion = selectedQuestion
         _path = path
+//        guard let selectedQuestionData = selectQuestionViewModel.selectedQuestionData else { return }
+        
+//        questionArray = selectedQuestionData.question.components(separatedBy: " vs ")
     }
     
-    var questionArray: [String]
+//    mutating func onAppear() {
+//        questionArray = selectedQuestion.text.components(separatedBy: " vs ")
+//    }
     
-    mutating func onAppear() {
-        questionArray = selectedQuestion.text.components(separatedBy: " vs ")
-    }
-    
-    var first: String {
-        questionArray.first ?? ""
-    }
-    var second: String {
-        questionArray.last ?? ""
-    }
+//    var first: String {
+//        questionArray.first ?? ""
+//    }
+//    var second: String {
+//        questionArray.last ?? ""
+//    }
     
     var body: some View {
         VStack{
@@ -89,7 +92,7 @@ struct UserFirstSelectView: View {
                         }
                     })
                     {
-                        Text("\(first)")
+                        Text("\(questionArray[0])")
                             .font(.system(size: 27, weight: .bold))
                             .minimumScaleFactor(0.5)
                             .padding(.leading, 35)
@@ -112,7 +115,7 @@ struct UserFirstSelectView: View {
                         }
                         self.isActivated2.toggle()
                     }) {
-                        Text("\(second)")
+                        Text("\(questionArray[1])")
                             .font(.system(size: 27, weight: .bold))
                             .minimumScaleFactor(0.5)
                             .padding(.trailing, 35)
@@ -146,6 +149,10 @@ struct UserFirstSelectView: View {
             
         
         }
+        .onAppear() {
+            guard let selectedQuestionData = selectQuestionViewModel.selectedQuestionData else { return }
+            questionArray = selectedQuestionData.question.components(separatedBy: " vs ")
+        }
         .task {
             withAnimation(.easeInOut(duration: 1)) {
                 showingSubview = true
@@ -165,6 +172,6 @@ struct UserFirstSelectView: View {
 
 struct UserFirstSelect_Previews: PreviewProvider {
     static var previews: some View {
-        UserFirstSelectView(selectedQuestion: .init(text: "test"), path: Binding.constant([]))
+        UserFirstSelectView(path: Binding.constant([]))
     }
 }
