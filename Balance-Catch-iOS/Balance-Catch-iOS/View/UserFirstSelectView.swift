@@ -8,27 +8,31 @@
 import SwiftUI
 import Foundation
 
+
+
 struct UserFirstSelectView: View {
+    @Environment(\.dismiss) private var dismiss
+
+    @EnvironmentObject var playerList: PlayerList
+    @EnvironmentObject var userQuestion: UserQuestion
     let selectedQuestion: Question
-    @Binding var path: [Route]
+    let index: Int
     
+    
+    @Binding var path: [Route]
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
     
-    
-    init(selectedQuestion: Question, path: Binding<[Route]>) {
+    init(selectedQuestion: Question, index: Int, path: Binding<[Route]>) {
         self.selectedQuestion = selectedQuestion
-        questionArray = selectedQuestion.text.components(separatedBy: "vs")
+        self.index = index
+        questionArray = selectedQuestion.text.components(separatedBy: " vs ")
         _path = path
     }
     
     var questionArray: [String]
-    
-    mutating func onAppear() {
-        questionArray = selectedQuestion.text.components(separatedBy: "vs")
-    }
-    
+
     var first: String {
         questionArray.first ?? ""
     }
@@ -36,7 +40,15 @@ struct UserFirstSelectView: View {
         questionArray.last ?? ""
     }
     
+
+    
+    
+    
+    
     var body: some View {
+        
+        
+        
         VStack{
             Text("1차 선택")
                 .font(.system(size:24))
@@ -44,14 +56,15 @@ struct UserFirstSelectView: View {
                 .shadow(color:.gray,radius:2,x:3,y:3)
                 .padding(.bottom, 51)
             
-            // Player 1 제리
             HStack{
-                Text("Player 1")
+                // 선택지 왼쪽일 때 0, 오른쪽일 때 1 확인용
+                Text("Player \(index + 1) \(playerList.players[index].select)")
+               
+                Text("Player \(index + 1)")
                     .font(.system(size:24))
                     .fontWeight(.bold)
                     .shadow(color:.gray,radius:2,x:3,y:3)
-                
-                Text("제리")
+                Text(playerList.players[index].name)
                     .font(.system(size:20))
                     .fontWeight(.bold)
                     .frame(width: 150, height: 56)
@@ -61,22 +74,20 @@ struct UserFirstSelectView: View {
                     .overlay(RoundedRectangle(cornerRadius: 20)
                         .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
                     .padding(.leading, 24)
+            
                 
-            }.padding(.bottom, 40)
-            
-            
-            
+            }.padding(.bottom, 40) //HStack
+
             ZStack{
                 
                 VStack{
                     Button(action: {
-                        if(isActivated2==true){
-                            self.isActivated1.toggle()
+                        if isActivated2 {
                             self.isActivated2 = false
                         }
-                        else{
-                            self.isActivated1.toggle()
-                        }
+                        self.isActivated1.toggle()
+                        playerList.players[index].select = 0
+
                     })
                     {
                         Text("\(first)")
@@ -100,8 +111,8 @@ struct UserFirstSelectView: View {
                         if isActivated1 {
                             self.isActivated1 = false
                         }
-                        
                         self.isActivated2.toggle()
+                        playerList.players[index].select = 1
                     }) {
                         Text("\(second)")
                             .font(.system(size: 27, weight: .bold))
@@ -130,24 +141,41 @@ struct UserFirstSelectView: View {
                 
                 
             }
-            
-            NavigationLink("Next", value: Route.timerView)
-                .buttonStyle(RoundedBlueButton())
-        }
-        .task {
-            withAnimation(.easeInOut(duration: 1)) {
-                showingSubview = true
+            .task {
+                withAnimation(.easeInOut(duration: 1)) {
+                    showingSubview = true
+                }
             }
+            
+            if index < playerList.players.count - 1 {
+                NavigationLink("Next", value: Route.userFirstSelectView(selectedQuestion: self.selectedQuestion,index: index + 1))
+                    .buttonStyle(RoundedBlueButton())
+                    .disabled(!isActivated1 && !isActivated2)
+                    .simultaneousGesture(TapGesture().onEnded{
+                     })
+            } else {
+                NavigationLink("Next", value: Route.timerView)
+                    .buttonStyle(RoundedBlueButton())
+                    .disabled(!isActivated1 && !isActivated2)
+            }
+            
+            
         }
-        
         .padding(.top,100)
         .padding(.bottom,100) //임시값
+        .onAppear {
+            self.userQuestion.playQuestion = selectedQuestion.text
+        }
+        .balanceCatchBackButton {
+            dismiss()
+        }
     }
-    
 }
+
+
 
 struct UserFirstSelect_Previews: PreviewProvider {
     static var previews: some View {
-        UserFirstSelectView(selectedQuestion: .init(text: "test"), path: Binding.constant([]))
+        UserFirstSelectView(selectedQuestion: .init(text: "test"), index: 0, path: Binding.constant([]))
     }
 }

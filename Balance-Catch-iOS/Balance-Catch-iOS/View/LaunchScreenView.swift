@@ -25,9 +25,9 @@ struct LaunchScreenView: View {
                     Image(.logo)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: CGFloat.superViewFrameWidth / 2,
+                        .frame(width: CGFloat.superViewFrameWidth / 1.5,
                                alignment: .center)
-                        .padding(.bottom, 74)
+                        .padding(.bottom, 65)
                     NavigationLink("Start!", value: Route.beforePlayRuleDescriptionView)
                         .buttonStyle(RoundedBlueButton())
                 }
@@ -41,24 +41,22 @@ struct LaunchScreenView: View {
                 case .playerNameInputView(let numberOfPeople):
                     PlayerNameInputView(numberOfPeople: numberOfPeople,
                                         path: $path)
-                case .selectQuestionThemeView:
-                    SelectQuestionThemeView(path: $path)
                 case .selectTypeView:
-                    SelectTypeView(selectedTheme: "", path: $path)
+                    SelectTypeView(path: $path)
                 case .selectQuestionView(let isRandomPick):
                     SelectQuestionView(isRandomPick: isRandomPick,
                                        path: $path)
-                case .userFirstSelectView(let selectedQuestion):
-                    UserFirstSelectView(selectedQuestion: selectedQuestion,
+                case .userFirstSelectView(let selectedQuestion,let index):
+                    UserFirstSelectView(selectedQuestion: selectedQuestion, index: index,
                                         path: $path)
                 case .timerView:
                     TimerView(path: $path)
-                case .firstTeamSpeakingView:
-                    FirstTeamSpeakingView(path: $path)
-                case .secondTeamSpeakingView:
-                    SecondTeamSpeakingView(path: $path)
-                case .userFinalSelectView:
-                    UserFinalSelectView(path: $path)
+                case .firstTeamSpeakingView(let questionArray):
+                    FirstTeamSpeakingView(questionArray: questionArray, path: $path)
+                case .secondTeamSpeakingView(let questionArray):
+                    SecondTeamSpeakingView(questionArray: questionArray, path: $path)
+                case .userFinalSelectView(let questionArray,let index):
+                    UserFinalSelectView(questionArray: questionArray, index: index, path: $path)
                 case .recommandOrNotView:
                     RecommandOrNotView(path: $path)
                 case .publicPickView:

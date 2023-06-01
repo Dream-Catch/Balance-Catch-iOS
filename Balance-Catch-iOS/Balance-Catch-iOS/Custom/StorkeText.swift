@@ -1,5 +1,5 @@
 //
-//  VSstyle.swift
+//  StrokeText.swift
 //  Balance-Catch-iOS
 //
 //  Created by 민지은 on 2023/04/04.

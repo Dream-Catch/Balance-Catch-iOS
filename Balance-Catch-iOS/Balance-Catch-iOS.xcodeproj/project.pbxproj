@@ -22,12 +22,12 @@
 		3950658129CC949600A9C925 /* SelectBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658029CC949600A9C925 /* SelectBox.swift */; };
 		3950658329CC94AF00A9C925 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658229CC94AF00A9C925 /* SelectButton.swift */; };
 		3950658529CC961300A9C925 /* TimerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658429CC961300A9C925 /* TimerCode.swift */; };
+		3993D76C2A20E3EA006821B6 /* UserQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3993D76B2A20E3EA006821B6 /* UserQuestion.swift */; };
 		39A1561829DC0F7F000968CA /* FirstTeamSpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561729DC0F7F000968CA /* FirstTeamSpeakingView.swift */; };
-		39A1561A29DC1899000968CA /* VSstyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561929DC1899000968CA /* VSstyle.swift */; };
+		39A1561A29DC1899000968CA /* StorkeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561929DC1899000968CA /* StorkeText.swift */; };
 		39A1565129DE4846000968CA /* CircleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565029DE4846000968CA /* CircleTimer.swift */; };
 		39A1565529E47B96000968CA /* SecondTeamSpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */; };
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
-		53A7B0AF29C334B000B99211 /* SelectQuestionThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */; };
 		53D1488529D9672D003EAD5A /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D1488429D9672C003EAD5A /* PlayerModel.swift */; };
 		5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */; };
 		5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AF29BFF7CE008C7898 /* LaunchScreenView.swift */; };
@@ -42,6 +42,7 @@
 		565FCBD729ED149300A27305 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FCBD629ED149300A27305 /* Route.swift */; };
 		56807DBB29CAE36E005441D4 /* QuestionTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56807DBA29CAE36E005441D4 /* QuestionTexts.swift */; };
 		56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56930FD229D59861006CEA3F /* QuestionPickerView.swift */; };
+		56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */; };
 		56D2730E29CACA6E00E4EF76 /* QuestionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */; };
 		56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49B29C037160023095C /* RoundedBlueButton.swift */; };
 		56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49E29C03B050023095C /* CGFloat+.swift */; };
@@ -86,12 +87,12 @@
 		3950658029CC949600A9C925 /* SelectBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBox.swift; sourceTree = "<group>"; };
 		3950658229CC94AF00A9C925 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		3950658429CC961300A9C925 /* TimerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCode.swift; sourceTree = "<group>"; };
+		3993D76B2A20E3EA006821B6 /* UserQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestion.swift; sourceTree = "<group>"; };
 		39A1561729DC0F7F000968CA /* FirstTeamSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTeamSpeakingView.swift; sourceTree = "<group>"; };
-		39A1561929DC1899000968CA /* VSstyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSstyle.swift; sourceTree = "<group>"; };
+		39A1561929DC1899000968CA /* StorkeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorkeText.swift; sourceTree = "<group>"; };
 		39A1565029DE4846000968CA /* CircleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimer.swift; sourceTree = "<group>"; };
 		39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTeamSpeakingView.swift; sourceTree = "<group>"; };
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
-		53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionThemeView.swift; sourceTree = "<group>"; };
 		53D1488429D9672C003EAD5A /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		5624C4AA29BFF7CE008C7898 /* Balance-Catch-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balance-Catch-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance_Catch_iOSApp.swift; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		565FCBD629ED149300A27305 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		56807DBA29CAE36E005441D4 /* QuestionTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTexts.swift; sourceTree = "<group>"; };
 		56930FD229D59861006CEA3F /* QuestionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPickerView.swift; sourceTree = "<group>"; };
+		56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCatchBackButton.swift; sourceTree = "<group>"; };
 		56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemView.swift; sourceTree = "<group>"; };
 		56E2E49B29C037160023095C /* RoundedBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBlueButton.swift; sourceTree = "<group>"; };
 		56E2E49E29C03B050023095C /* CGFloat+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+.swift"; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		561665C329F94D3F00CFA1E4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5624C4B129BFF7D2008C7898 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		5624C4A129BFF7CE008C7898 = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +185,7 @@
 				56E2E49D29C03AC90023095C /* Extension */,
 				56E2E49A29C037000023095C /* Custom */,
 				5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */,
-				5624C4B129BFF7D2008C7898 /* Assets.xcassets */,
+				561665C329F94D3F00CFA1E4 /* SupportingFiles */,
 				5624C4B329BFF7D2008C7898 /* Preview Content */,
 			);
 			path = "Balance-Catch-iOS";
@@ -220,6 +230,7 @@
 			children = (
 				563FBD5B29C96F3500847390 /* Question.swift */,
 				53D1488429D9672C003EAD5A /* PlayerModel.swift */,
+				3993D76B2A20E3EA006821B6 /* UserQuestion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,6 +251,14 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
+		56C0A19329FA13C7000406CE /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 		56D2730C29CAC8DD00E4EF76 /* WheelStylePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +271,7 @@
 		56E2E49A29C037000023095C /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				56C0A19329FA13C7000406CE /* Modifier */,
 				563DF22E29E649F400297A43 /* Timer */,
 				56D2730C29CAC8DD00E4EF76 /* WheelStylePicker */,
 				56EC27A929DFEF4B00951070 /* ThemeButtonStyle.swift */,
@@ -263,8 +283,8 @@
 				33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */,
 				33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */,
 				33FCD2AA29E07AFD006E2131 /* CustomProgressView.swift */,
-				39A1561929DC1899000968CA /* VSstyle.swift */,
 				33A46BB329EAD81900F19050 /* InformationButton.swift */,
+				39A1561929DC1899000968CA /* StorkeText.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -287,7 +307,6 @@
 				56E2E4A829C055730023095C /* BeforePlayRuleDescriptionView.swift */,
 				56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */,
 				53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */,
-				53A7B0AE29C334B000B99211 /* SelectQuestionThemeView.swift */,
 				3950657829CC93AF00A9C925 /* SelectTypeView.swift */,
 				563FBD4A29C9444400847390 /* SelectQuestionView.swift */,
 				3950657A29CC940700A9C925 /* UserFirstSelectView.swift */,
@@ -433,10 +452,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */,
+				3993D76C2A20E3EA006821B6 /* UserQuestion.swift in Sources */,
 				3950657D29CC943B00A9C925 /* TimerView.swift in Sources */,
 				33FCD2AB29E07AFD006E2131 /* CustomProgressView.swift in Sources */,
-				39A1561A29DC1899000968CA /* VSstyle.swift in Sources */,
+				39A1561A29DC1899000968CA /* StorkeText.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
+				56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */,
 				56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */,
 				563FBD5C29C96F3500847390 /* Question.swift in Sources */,
 				56D2730E29CACA6E00E4EF76 /* QuestionItemView.swift in Sources */,
@@ -453,7 +474,6 @@
 				3950657F29CC945E00A9C925 /* UserFinalSelectView.swift in Sources */,
 				56E2E4A929C055730023095C /* BeforePlayRuleDescriptionView.swift in Sources */,
 				56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */,
-				53A7B0AF29C334B000B99211 /* SelectQuestionThemeView.swift in Sources */,
 				563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */,
 				56EC27AA29DFEF4B00951070 /* ThemeButtonStyle.swift in Sources */,
 				33A46BB429EAD81900F19050 /* InformationButton.swift in Sources */,
@@ -558,7 +578,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -613,7 +633,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

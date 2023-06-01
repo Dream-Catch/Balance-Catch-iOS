@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct SelectTypeView: View {
-    @State
-    public var selectedTheme: String
+    @Environment(\.dismiss) private var dismiss
     @Binding var path: [Route]
     
     @State
@@ -17,10 +16,15 @@ struct SelectTypeView: View {
     @State
     private var isActivated2: Bool = false
     
+    @EnvironmentObject var playerList: PlayerList
+    
     var body: some View {
-        //        let _ = print("이동 후: " + selectedTheme)
         VStack{
-            
+            VStack {
+                ForEach(playerList.players, id: \.id) { player in
+                    Text(player.name)
+                }
+            }
             
             Text("질문 선택하기")
                 .font(.system(size:24))
@@ -57,11 +61,14 @@ struct SelectTypeView: View {
             .buttonStyle(RoundedBlueButton())
             .disabled(!isActivated1 && !isActivated2)
         } //Vstack
+        .balanceCatchBackButton {
+                   dismiss()
+               }
     } //body
 }
 
 struct SelectTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectTypeView(selectedTheme:"커플", path: Binding.constant([]))
+        SelectTypeView(path: Binding.constant([]))
     }
 }

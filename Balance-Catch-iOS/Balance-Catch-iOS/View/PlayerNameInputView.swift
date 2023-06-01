@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct PlayerNameInputView: View {
+    @Environment(\.dismiss) private var dismiss
     @State public var numberOfPeople: Int
     @State private var playerNames: [String] = []
     @State private var scrollViewHeight: CGFloat = 0
     @Binding var path: [Route]
     
-    @ObservedObject var playerList = PlayerList()
+    @EnvironmentObject var playerList: PlayerList
     
     var body: some View {
         ZStack {
@@ -41,17 +42,24 @@ struct PlayerNameInputView: View {
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 30.0)
                                     .padding(.vertical, 30.0)
+                                /*.background(
+                                 RoundedRectangle(cornerRadius: 20)
+                                 .inset(by: 3)
+                                 .stroke(
+                                 self.playerNames[index].isEmpty ? Color.gray:
+                                 .balanceCatchBlue,
+                                 lineWidth: 5
+                                 )
+                                 )*/
+                                    .background(Color.white)
                                     .cornerRadius(20)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .inset(by: 3)
-                                            .stroke(
-                                                self.playerNames[index].isEmpty ? Color.gray:
-                                                        .balanceCatchBlue,
-                                                lineWidth: 5
-                                            )
-                                    )
+                                    .shadow(color:.gray,radius:2,x:3,y:3)
+                                    .overlay(RoundedRectangle(cornerRadius: 20)
+                                        .stroke(self.playerNames[index].isEmpty ? Color.gray:Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
+                                
                             }
+                            .padding(.bottom,5)
+                            
                         }
                         
                     }
@@ -73,12 +81,36 @@ struct PlayerNameInputView: View {
                 if scrollViewHeight == ViewHeightKey.maxValue { Spacer() }
                 else { Spacer().frame(height: 34) }
                 
-                NavigationLink("Next", value: Route.selectQuestionThemeView)
+                
+                
+                NavigationLink("Next", value: Route.selectTypeView)
                     .buttonStyle(RoundedBlueButton())
+                    .simultaneousGesture(
+                        TapGesture()
+                            .onEnded {
+                                if playerNames.allSatisfy({ $0.isEmpty == false }) {
+                                    print("Filled", playerNames)
+                                    for name in playerNames {
+                                        playerList.addPlayer(name: name)
+                                    }
+                                }
+                                else {
+                                    print("Not Filled", playerNames)
+                                    for i in 1...numberOfPeople {
+                                        let playerName = "Player \(i)"
+                                        playerList.addPlayer(name: playerName)
+                                    }
+                                }
+                            }
+                    )
             }
         }
         .onAppear {
+            self.playerList.players = []
             self.playerNames = Array(repeating: "", count: numberOfPeople)
+        }
+        .balanceCatchBackButton {
+            dismiss()
         }
     }
 }

@@ -7,21 +7,25 @@
 
 import Foundation
 
-struct Player {
-    var id: Int
+struct Player: Identifiable {
+    let id = UUID()
     var name: String
+    var select: Int
 }
 
 class PlayerList: ObservableObject {
-    @Published var players: [Player] = []
+    @Published var players: [Player]
 
+    init(players: [Player] = []) {
+        self.players = players
+    }
+    
     func addPlayer(name: String) {
-        let id = players.count
-        let player = Player(id: id, name: name)
+        let player = Player(name: name,select : -1)
         players.append(player)
     }
-
-    func resetPlayers(count: Int) {
-        players = (0..<count).map { Player(id: $0, name: "Player \($0 + 1)") }
+    
+    func resetPlayers() {
+        players.removeAll()
     }
 }

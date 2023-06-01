@@ -12,8 +12,7 @@ struct BiggerRoundedBlueButton: ButtonStyle {
             .frame(width: 140,
                    height: 56,
                    alignment: .center)
-            .font(.system(size: 20))
-            .font(.subTitle)
+            .font(.system(size: 20, weight: .bold))
             .foregroundColor(.white)
             .background(.balanceCatchBlue)
             .cornerRadius(25)
