@@ -9,25 +9,17 @@ import SwiftUI
 struct PublicPickView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var animationAmount:CGFloat = 1
-    @State private var firstIncreAmount : Double = 0.0
-    @State private var secondIncreAmount : Double = 0.0
+    @State private var firstIncreAmount: Double = 0.0
+    @State private var secondIncreAmount: Double = 0.0
     @Binding var path: [Route]
     
-    @State var firstQuestion = (question: "잠수이별", amount: 60.0)
-    @State var secondQuestion = (question: "환승이별", amount: 40.0)
+    @State var firstQuestion = (question: "잠수이별", amount: 50.0)
+    @State var secondQuestion = (question: "환승이별", amount: 50.0)
     
-    
-    
-    
-    //    func whatIsPick(firstPer:Int,secondPer:Int )->Double
-    //    {
-    //        if firstAmount>secondAmount {
-    //            return firstAmount
-    //        }
-    //        else{
-    //            return secondAmount
-    //        }
-    //    }
+    func checkWinner(_ firstQuestionScore: Double,
+                     _ secondQuestionScore: Double) -> Bool {
+        return firstQuestionScore >= secondQuestionScore
+    }
     
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
@@ -39,7 +31,8 @@ struct PublicPickView: View {
                 .shadow(color:.gray,radius:2,x:3,y:3)
                 .padding(.bottom,70)
             VStack(alignment: .leading) {
-                Text(firstQuestion.amount > secondQuestion.amount ? firstQuestion.question : secondQuestion.question)
+                Text(checkWinner(firstQuestion.amount,
+                                 secondQuestion.amount) ? firstQuestion.question : secondQuestion.question)
                     .font(.system(size: 24, weight: .bold))
                     .bold()
                     .padding(.leading,32)
@@ -51,11 +44,14 @@ struct PublicPickView: View {
                         .padding(.top,20)
                         .padding(.trailing,10)
                         .padding(.bottom,28)
-                        .accentColor(firstQuestion.amount > secondQuestion.amount ? Color.balanceCatchBlue : Color.lightBlue)
+                        .accentColor(checkWinner(firstQuestion.amount,
+                                                 secondQuestion.amount) ? Color.balanceCatchBlue : Color.lightBlue)
                         .scaleEffect(CGSize(width: 1.0, height: 3.5))
                     
-                    Text(firstQuestion.amount > secondQuestion.amount ? "\(Int(firstQuestion.amount))%" : "\(Int(secondQuestion.amount))%")
-                        .font(.system(size: 18, weight: .bold))
+                    Text(checkWinner(firstQuestion.amount,
+                                     secondQuestion.amount) ? "\(Int(firstQuestion.amount))%" : "\(Int(secondQuestion.amount))%")
+                        .font(.body)
+                        .bold()
                         .padding(.bottom,28)
                     
                     
@@ -81,12 +77,6 @@ struct PublicPickView: View {
             .scaleEffect(animationAmount)
             .animation(.easeIn(duration: 1).delay(1), value: animationAmount)
             .padding(30)
-            
-            
-            
-            
-            
-            
             
             VStack(alignment: .leading) {
                 Text(firstQuestion.amount < secondQuestion.amount ? firstQuestion.question : secondQuestion.question)
