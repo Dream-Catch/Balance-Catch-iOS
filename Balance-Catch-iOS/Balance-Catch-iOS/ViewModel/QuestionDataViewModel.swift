@@ -11,11 +11,13 @@ import Combine
 final class QuestionDataViewModel: ObservableObject {
     
     var isAlreadyFetch = CurrentValueSubject<Bool, Never>(false)
+    var isLoading = PassthroughSubject<Bool, Never>()
     var questionDataList = CurrentValueSubject<[QuestionDataModel], Never>([])
     var selectedQuestionData: QuestionDataModel? = nil
     var cancelBag = CancelBag()
     
     func getQuestionMetaData() {
+        isLoading.send(true)
         NetworkManager.shared.getQuestionMetaData()
             .receive(on: DispatchQueue.main)
             .sink { result in
@@ -24,6 +26,7 @@ final class QuestionDataViewModel: ObservableObject {
                     print("데이터 응답 성공!")
                 case .failure(let error):
                     print("error - \(error.localizedDescription)")
+                    self.isLoading.send(false)
                 }
             } receiveValue: { data in
                 print("data - \(data)")
@@ -32,6 +35,7 @@ final class QuestionDataViewModel: ObservableObject {
                     QuestionDataModel(response: questionDataResponseModel)
                 }
                 self.questionDataList.send(data)
+                self.isLoading.send(false)
             }
             .cancel(with: cancelBag)
     }
@@ -39,6 +43,7 @@ final class QuestionDataViewModel: ObservableObject {
     func putQuestionLike() {
         guard let selectedQuestionData = selectedQuestionData else { return }
         
+        isLoading.send(true)
         NetworkManager.shared.putQuestionLike(id: selectedQuestionData.id,
                                               good: selectedQuestionData.good,
                                               bad: selectedQuestionData.bad,
@@ -51,9 +56,11 @@ final class QuestionDataViewModel: ObservableObject {
                 print("수정 성공!")
             case .failure(let error):
                 print("error - \(error)")
+                self.isLoading.send(false)
             }
         } receiveValue: { data in
             print("data - \(data)")
+            self.isLoading.send(false)
         }
         .cancel(with: cancelBag)
     }
