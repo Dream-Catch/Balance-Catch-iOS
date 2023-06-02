@@ -10,10 +10,10 @@ import Foundation
 struct QuestionDataModel {
     let id: String
     let question: String
-    let good: Int
-    let bad: Int
-    let firstQuestionScore: Int
-    let secondQuestionScore: Int
+    var good: Int
+    var bad: Int
+    var firstQuestionScore: Int
+    var secondQuestionScore: Int
     let firstQuestion: String
     let secondQuestion: String
     

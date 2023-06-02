@@ -9,6 +9,9 @@ import SwiftUI
 
 struct RecommandOrNotView: View {
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var playerList: PlayerList
+    @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
+    
     @State  var tag:Int? = nil
     @Binding var path: [Route]
     
@@ -29,20 +32,40 @@ struct RecommandOrNotView: View {
                     NavigationLink("👍🏻", value: Route.publicPickView)
                         .font(.system(size: 35, weight: .bold))
                         .buttonStyle(RoundedButton())
+                        .simultaneousGesture(TapGesture().onEnded({
+                            questionDataViewModel
+                                .selectedQuestionData?
+                                .good += 1
+                            questionDataViewModel.putQuestionLike()
+                        }))
                 }
                 
                 ZStack{
                     NavigationLink("👎🏻", value: Route.publicPickView)
                         .font(.system(size: 35, weight: .bold))
                         .buttonStyle(RoundedButton())
+                        .simultaneousGesture(TapGesture().onEnded({
+                            questionDataViewModel
+                                .selectedQuestionData?
+                                .bad += 1
+                            questionDataViewModel.putQuestionLike()
+                        }))
                 }
                 
             }
             
         }
+        .onAppear() {
+            questionDataViewModel
+                .selectedQuestionData?
+                .firstQuestionScore += playerList.players.filter { $0.select == 0 }.count
+            questionDataViewModel
+                .selectedQuestionData?
+                .secondQuestionScore += playerList.players.filter { $0.select == 1 }.count
+        }
         .balanceCatchBackButton {
-                   dismiss()
-               }
+            dismiss()
+        }
     }
 }
 

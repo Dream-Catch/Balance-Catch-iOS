@@ -29,6 +29,11 @@ struct APIData<T: Decodable>: Decodable {
     var data: T
 }
 
+struct EmptyData: Codable {
+//    var statusCode: Int
+//    var message: String
+}
+
 struct QuestionDataResponseModel: Decodable {
     let id: String
     let question: String
