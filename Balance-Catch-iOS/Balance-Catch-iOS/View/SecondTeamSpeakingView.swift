@@ -9,21 +9,16 @@ import SwiftUI
 
 struct SecondTeamSpeakingView: View {
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
+    
     @Binding var path: [Route]
-    @EnvironmentObject var userQuestion: UserQuestion
-    let questionArray: [String]
     
     @State var isStartButtonPressed = false
     @State var circleTimerId = UUID()
     
-    init(questionArray: [String], path: Binding<[Route]>) {
-        self.questionArray = questionArray
-        _path = path
-        
-    }
     
-    var second: String {
-        questionArray.last ?? ""
+    init(path: Binding<[Route]>) {
+        _path = path
     }
     
     
@@ -40,7 +35,9 @@ struct SecondTeamSpeakingView: View {
                 .padding(.top,-10)
             
             
-            Text("\(second)") // 나중에 질문 값 받아와야 함
+            Text(questionDataViewModel
+                .selectedQuestionData?
+                .secondQuestion ?? "") // 나중에 질문 값 받아와야 함
                 .font(.system(size: 22, weight: .bold))
                 .minimumScaleFactor(0.5)
                 .padding(.bottom, 10)
@@ -56,7 +53,7 @@ struct SecondTeamSpeakingView: View {
                 .padding(.bottom, 40)
             
             CircleTimer(timerManager: TimerManager(totalTime: 20),
-                        nextPath: Route.userFinalSelectView(questionArray: userQuestion.playQuestion.components(separatedBy: " vs "),index: 0),
+                        nextPath: Route.userFinalSelectView(index: 0),
                         alertMessageType: .secondTeam,
                         isStartButtonPressed: $isStartButtonPressed)
             .id(circleTimerId)
@@ -69,13 +66,11 @@ struct SecondTeamSpeakingView: View {
                 }
                 .buttonStyle(RoundedBlueButton())
             } else {
-                NavigationLink("Next", value: Route.userFinalSelectView(questionArray: userQuestion.playQuestion.components(separatedBy: " vs "),index: 0))
+                NavigationLink("Next", value: Route.userFinalSelectView(index: 0))
                     .buttonStyle(RoundedBlueButton())
             }
         }//Vstack
-        .onAppear() {
-            isStartButtonPressed = false
-        }
+        
         
         Spacer()
         
@@ -89,6 +84,6 @@ struct SecondTeamSpeakingView: View {
 
 struct SecondTeamSpeakingView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondTeamSpeakingView(questionArray: [], path: Binding.constant([]))
+        SecondTeamSpeakingView(path: Binding.constant([]))
     }
 }

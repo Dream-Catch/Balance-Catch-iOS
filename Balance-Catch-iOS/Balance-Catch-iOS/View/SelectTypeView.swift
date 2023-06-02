@@ -9,14 +9,13 @@ import SwiftUI
 
 struct SelectTypeView: View {
     @Environment(\.dismiss) private var dismiss
-    @Binding var path: [Route]
-    
-    @State
-    private var isActivated1: Bool = false
-    @State
-    private var isActivated2: Bool = false
-    
+    @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
     @EnvironmentObject var playerList: PlayerList
+    
+    @State private var isActivated1: Bool = false
+    @State private var isActivated2: Bool = false
+    @Binding var path: [Route]
+    var cancelBag = CancelBag()
     
     var body: some View {
         VStack{
@@ -61,10 +60,25 @@ struct SelectTypeView: View {
             .buttonStyle(RoundedBlueButton())
             .disabled(!isActivated1 && !isActivated2)
         } //Vstack
+        .onAppear() {
+            bindCombine()
+        }
         .balanceCatchBackButton {
-                   dismiss()
-               }
+            dismiss()
+        }
     } //body
+    
+    private func bindCombine() {
+        questionDataViewModel.isAlreadyFetch
+            .receive(on: DispatchQueue.main)
+            .sink { flag in
+                if !flag {
+                    questionDataViewModel.fetchQuestionMetaData()
+                    questionDataViewModel.isAlreadyFetch.value = true
+                }
+            }
+            .cancel(with: cancelBag)
+    }
 }
 
 struct SelectTypeView_Previews: PreviewProvider {
