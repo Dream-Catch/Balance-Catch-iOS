@@ -12,48 +12,53 @@ struct RecommandOrNotView: View {
     @EnvironmentObject var playerList: PlayerList
     @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
     
-    @State  var tag:Int? = nil
     @Binding var path: [Route]
     
+    @State var isLoading = false
+    var cancelBag = CancelBag()
+    
     var body: some View {
-        VStack{
-            
-            Text("잠수이별 VS 환승이별")
-                .font(.system(size:24))
-                .fontWeight(.bold)
-                .shadow(color:.gray,radius:2,x:3,y:3)
-                .padding()
-            Text("재미있는 질문이였나요?")
-                .font(.subTitle)
-                .padding(.bottom,31)
-            
-            HStack{
-                ZStack{
-                    NavigationLink("👍🏻", value: Route.publicPickView)
-                        .font(.system(size: 35, weight: .bold))
-                        .buttonStyle(RoundedButton())
-                        .simultaneousGesture(TapGesture().onEnded({
-                            questionDataViewModel
-                                .selectedQuestionData?
-                                .good += 1
-                            questionDataViewModel.putQuestionLike()
-                        }))
-                }
+        ZStack {
+            VStack{
                 
-                ZStack{
-                    NavigationLink("👎🏻", value: Route.publicPickView)
-                        .font(.system(size: 35, weight: .bold))
-                        .buttonStyle(RoundedButton())
-                        .simultaneousGesture(TapGesture().onEnded({
-                            questionDataViewModel
-                                .selectedQuestionData?
-                                .bad += 1
-                            questionDataViewModel.putQuestionLike()
-                        }))
-                }
+                Text("잠수이별 VS 환승이별")
+                    .font(.system(size:24))
+                    .fontWeight(.bold)
+                    .shadow(color:.gray,radius:2,x:3,y:3)
+                    .padding()
+                Text("재미있는 질문이였나요?")
+                    .font(.subTitle)
+                    .padding(.bottom,31)
                 
+                HStack{
+                    ZStack{
+                        NavigationLink("👍🏻", value: Route.publicPickView)
+                            .font(.system(size: 35, weight: .bold))
+                            .buttonStyle(RoundedButton())
+                            .simultaneousGesture(TapGesture().onEnded({
+                                questionDataViewModel
+                                    .selectedQuestionData?
+                                    .good += 1
+                                questionDataViewModel.putQuestionLike()
+                            }))
+                    }
+                    
+                    ZStack{
+                        NavigationLink("👎🏻", value: Route.publicPickView)
+                            .font(.system(size: 35, weight: .bold))
+                            .buttonStyle(RoundedButton())
+                            .simultaneousGesture(TapGesture().onEnded({
+                                questionDataViewModel
+                                    .selectedQuestionData?
+                                    .bad += 1
+                                questionDataViewModel.putQuestionLike()
+                            }))
+                    }
+                }
             }
             
+            if isLoading { LoadingView() }
+            else { EmptyView() }
         }
         .onAppear() {
             questionDataViewModel
@@ -66,6 +71,16 @@ struct RecommandOrNotView: View {
         .balanceCatchBackButton {
             dismiss()
         }
+    }
+    
+    private func bindCombine() {
+        questionDataViewModel.isLoading
+            .receive(on: DispatchQueue.main)
+            .sink { value in
+                if value { self.isLoading = true }
+                else { self.isLoading = false }
+            }
+            .cancel(with: cancelBag)
     }
 }
 

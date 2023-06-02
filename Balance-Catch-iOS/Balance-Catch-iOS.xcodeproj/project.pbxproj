@@ -41,6 +41,7 @@
 		5640B0FF2A037DB40041AB5A /* QuestionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640B0FE2A037DB40041AB5A /* QuestionDataModel.swift */; };
 		5640B1022A038A1C0041AB5A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5640B1012A038A1C0041AB5A /* Alamofire */; };
 		5640B1042A038AB60041AB5A /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640B1032A038AB60041AB5A /* ServerModel.swift */; };
+		564E11732A2A25A200CE6118 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E11722A2A25A200CE6118 /* LoadingView.swift */; };
 		565FCBD729ED149300A27305 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FCBD629ED149300A27305 /* Route.swift */; };
 		5675DD942A2201B30094E2D1 /* QuestionDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5675DD932A2201B30094E2D1 /* QuestionDataViewModel.swift */; };
 		56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56930FD229D59861006CEA3F /* QuestionPickerView.swift */; };
@@ -111,6 +112,7 @@
 		5640B0FB2A0378990041AB5A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5640B0FE2A037DB40041AB5A /* QuestionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataModel.swift; sourceTree = "<group>"; };
 		5640B1032A038AB60041AB5A /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
+		564E11722A2A25A200CE6118 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		565FCBD629ED149300A27305 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		5675DD932A2201B30094E2D1 /* QuestionDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataViewModel.swift; sourceTree = "<group>"; };
 		56930FD229D59861006CEA3F /* QuestionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPickerView.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				33FCD2AA29E07AFD006E2131 /* CustomProgressView.swift */,
 				33A46BB329EAD81900F19050 /* InformationButton.swift */,
 				39A1561929DC1899000968CA /* StorkeText.swift */,
+				564E11722A2A25A200CE6118 /* LoadingView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				56CE463C2A04CC2400E95EF5 /* CancelBag.swift in Sources */,
 				5640B1042A038AB60041AB5A /* ServerModel.swift in Sources */,
 				33A46BB429EAD81900F19050 /* InformationButton.swift in Sources */,
+				564E11732A2A25A200CE6118 /* LoadingView.swift in Sources */,
 				53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */,
 				39A1565129DE4846000968CA /* CircleTimer.swift in Sources */,
 				33E60CA329CC88DE005EC0AF /* NameBoxButton.swift in Sources */,
