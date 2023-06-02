@@ -80,7 +80,6 @@ struct FirstTeamSpeakingView: View {
         
         Spacer()
     }
-    
 }
 
 

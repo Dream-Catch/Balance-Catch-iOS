@@ -144,11 +144,8 @@ struct UserFinalSelectView: View {
 }
 
 
-
-
 struct UserFinalSelect_Previews: PreviewProvider {
     static var previews: some View {
         UserFinalSelectView(index: 0, path: Binding.constant([]))
-        
     }
 }

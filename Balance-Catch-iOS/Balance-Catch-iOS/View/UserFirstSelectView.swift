@@ -8,6 +8,8 @@
 import SwiftUI
 import Foundation
 
+
+
 struct UserFirstSelectView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var playerList: PlayerList
@@ -20,13 +22,14 @@ struct UserFirstSelectView: View {
     @State private var isActivated2: Bool = false
     @State var showingSubview = false
     
+    
     init(index: Int, path: Binding<[Route]>) {
         self.index = index
         _path = path
     }
     
+    
     var body: some View {
-        
         
         VStack{
             Text("1차 선택")
@@ -53,8 +56,6 @@ struct UserFirstSelectView: View {
                     .overlay(RoundedRectangle(cornerRadius: 20)
                         .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
                     .padding(.leading, 24)
-                
-                
             }.padding(.bottom, 40) //HStack
             
             ZStack{
@@ -72,12 +73,12 @@ struct UserFirstSelectView: View {
                         Text(questionDataViewModel
                             .selectedQuestionData?
                             .firstQuestion ?? "")
-                            .font(.system(size: 27, weight: .bold))
-                            .minimumScaleFactor(0.5)
-                            .padding(.leading, 35)
-                            .padding(.bottom, 10)
-                            .padding(.top, 10)
-                            .frame(width:250,height:150)
+                        .font(.system(size: 27, weight: .bold))
+                        .minimumScaleFactor(0.5)
+                        .padding(.leading, 35)
+                        .padding(.bottom, 10)
+                        .padding(.top, 10)
+                        .frame(width:250,height:150)
                     }
                     .offset(x: showingSubview ? 0 : -150, y: 0)
                     .buttonStyle(SelectButton(isActivated: $isActivated1))
@@ -85,7 +86,6 @@ struct UserFirstSelectView: View {
                     .offset(x:-90)
                     .padding(.bottom, 23)
                                         
-                    
                     Button(action: {
                         if isActivated1 {
                             self.isActivated1 = false
@@ -96,13 +96,12 @@ struct UserFirstSelectView: View {
                         Text(questionDataViewModel
                             .selectedQuestionData?
                             .secondQuestion ?? "")
-                            .font(.system(size: 27, weight: .bold))
-                            .minimumScaleFactor(0.5)
-                            .padding(.trailing, 35)
-                            .padding(.bottom, 10)
-                            .padding(.top, 10)
-                        
-                            .frame(width:250,height:150)
+                        .font(.system(size: 27, weight: .bold))
+                        .minimumScaleFactor(0.5)
+                        .padding(.trailing, 35)
+                        .padding(.bottom, 10)
+                        .padding(.top, 10)
+                        .frame(width:250,height:150)
                         
                     }
                     .buttonStyle(SelectButton(isActivated: $isActivated2))
@@ -142,6 +141,7 @@ struct UserFirstSelectView: View {
         }
         .padding(.top,100)
         .padding(.bottom,100) //임시값
+        
         .balanceCatchBackButton {
             dismiss()
         }
