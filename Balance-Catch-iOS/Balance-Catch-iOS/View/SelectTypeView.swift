@@ -73,7 +73,7 @@ struct SelectTypeView: View {
             .receive(on: DispatchQueue.main)
             .sink { flag in
                 if !flag {
-                    questionDataViewModel.fetchQuestionMetaData()
+                    questionDataViewModel.getQuestionMetaData()
                     questionDataViewModel.isAlreadyFetch.value = true
                 }
             }

@@ -17,12 +17,19 @@ final class NetworkManager {
     // MARK: - Questions
     private let questions = "/questions"
     
-//    func getQuestionMetaData() -> AnyPublisher<APIData<[QuestionDataModel]>, APIError> {
+    //    func getQuestionMetaData() -> AnyPublisher<APIData<[QuestionDataModel]>, APIError> {
     func getQuestionMetaData() -> AnyPublisher<[QuestionDataResponseModel], APIError> {
         let request = getRequest(URL(string: baseURL + questions))
         
         return run(request)
-            .print()
+            .map(\.value)
+            .eraseToAnyPublisher()
+    }
+    
+    func putQuestionLike(id: String, good: Int, bad: Int, firstQuestionScore: Int, secondQuestionScore: Int) -> AnyPublisher<EmptyData, APIError> {
+        let request = putRequest(URL(string: baseURL + questions + "/\(id)"), paramters: ["good": good, "bad": bad, "firstQuestionScore": firstQuestionScore, "secondQuestionScore": secondQuestionScore])
+        
+        return run(request)
             .map(\.value)
             .eraseToAnyPublisher()
     }
@@ -34,6 +41,20 @@ extension NetworkManager {
         let headers: HTTPHeaders = [
             "Content-Type": "application/json;charset=UTF-8"]
         let request = AF.request(url!, method: .get, parameters: paramters, headers: headers)
+        return request
+    }
+    
+    func putRequest(_ url: URL?, paramters: [String: Any] = [:]) -> DataRequest {
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json;charset=UTF-8"]
+        let request = AF.request(url!, method: .put, parameters: paramters, encoding: JSONEncoding.default, headers: headers)
+        return request
+    }
+    
+    func patchRequest(_ url: URL?, paramters: [String: Any] = [:]) -> DataRequest {
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json;charset=UTF-8"]
+        let request = AF.request(url!, method: .patch, parameters: paramters, headers: headers)
         return request
     }
     
