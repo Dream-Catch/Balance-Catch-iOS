@@ -9,95 +9,111 @@ import SwiftUI
 
 struct WhoIsLoserView: View {
     @Environment(\.dismiss) private var dismiss
+    @State private var showDetails = false
     @Binding var path: [Route]
     
     var body: some View {
-        VStack
-        {
-            Button("i"){
+        VStack{
+            VStack
+            {
+                Button("i"){
+                    self.showDetails.toggle()
+                }
+                .padding(.top,30)
+                .offset(x: 150, y: -160)
+                .buttonStyle(InformationButton())
+                .overlay(
+                    ZStack{
+                        if showDetails {
+                            Text("벌칙 기준")
+                                .font(.system(size: 15))
+                                .fontWeight(.black)
+                                .frame(width: 340, height: 70)
+                                .background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 4))
+                                .padding(.bottom, 160)
+                        }
+                    }
+                )
             }
-            .padding(.top,30)
-            .offset(x: 150, y: -160)
-            .buttonStyle(InformationButton())
-
-        }
-        Text("벌칙 당첨자💣")
-            .font(.system(size: 36, weight: .bold))
-            .shadow(color:.gray,radius:2,x:3,y:3)
-            .padding(.bottom,96)
-        
-        
-        HStack{
-            Text("player 2")
-                .font(.subTitle)
-                .padding(21)
-                .shadow(color: .black.opacity(0.25),
-                        radius: 2,
-                        x: 0,
-                        y: 4)
-            
-            Text("윌")
-                .font(.system(size: 24, weight: .bold))
-                .frame(width: 150, height: 62, alignment: .center)
-                .background(Color.white)
-                .cornerRadius(20)
+            Text("벌칙 당첨자💣")
+                .font(.system(size: 36, weight: .bold))
                 .shadow(color:.gray,radius:2,x:3,y:3)
-                .overlay(RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
+                .padding(.bottom,96)
             
-        }
-        
-        HStack{
-            Text("player 3")
-                .padding(21)
-                .font(.subTitle)
-                .shadow(color: .black.opacity(0.25),
-                        radius: 2,
-                        x: 0,
-                        y: 4)
-            Text("소낙")
-                .font(.system(size: 24, weight: .bold))
-                .frame(width: 150, height: 62, alignment: .center)
-                .background(Color.white)
-                .cornerRadius(20)
-                .shadow(color:.gray,radius:2,x:3,y:3)
-                .overlay(RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
-        }
-        .padding(.bottom,56)
-        
-        
-        HStack(spacing: 16){
-            Button("Home") {
-                moveToPlayerNumberInputView()
+            
+            HStack{
+                Text("player 2")
+                    .font(.subTitle)
+                    .padding(21)
+                    .shadow(color: .black.opacity(0.25),
+                            radius: 2,
+                            x: 0,
+                            y: 4)
+                
+                Text("윌")
+                    .font(.system(size: 24, weight: .bold))
+                    .frame(width: 150, height: 62, alignment: .center)
+                    .background(Color.white)
+                    .cornerRadius(20)
+                    .shadow(color:.gray,radius:2,x:3,y:3)
+                    .overlay(RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
+                
             }
-            .buttonStyle(BiggerRoundedBlueButton())
-                        
-            Button("Replay") {
-                moveToSelectTypeView()
+            
+            HStack{
+                Text("player 3")
+                    .padding(21)
+                    .font(.subTitle)
+                    .shadow(color: .black.opacity(0.25),
+                            radius: 2,
+                            x: 0,
+                            y: 4)
+                Text("소낙")
+                    .font(.system(size: 24, weight: .bold))
+                    .frame(width: 150, height: 62, alignment: .center)
+                    .background(Color.white)
+                    .cornerRadius(20)
+                    .shadow(color:.gray,radius:2,x:3,y:3)
+                    .overlay(RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
             }
-            .buttonStyle(BiggerRoundedBlueButton())
-        }
-        .balanceCatchBackButton {
-            dismiss()
+            .padding(.bottom,56)
+            
+            
+            HStack(spacing: 16){
+                Button("Home") {
+                    moveToPlayerNumberInputView()
+                }
+                .buttonStyle(BiggerRoundedBlueButton())
+                
+                Button("Replay") {
+                    moveToSelectTypeView()
+                }
+                .buttonStyle(BiggerRoundedBlueButton())
+            }
+            .balanceCatchBackButton {
+                dismiss()
+            }
         }
     }
+        
+        private func moveToPlayerNumberInputView() {
+            for route in path.reversed() {
+                if route == .playerNumberInputView {
+                    return
+                } else { path.removeLast() }
+            }
+        }
+        
+        private func moveToSelectTypeView() {
+            for route in path.reversed() {
+                if route == .selectTypeView {
+                    return
+                } else { path.removeLast() }
+            }
+        }
     
-    private func moveToPlayerNumberInputView() {
-        for route in path.reversed() {
-            if route == .playerNumberInputView {
-                return
-            } else { path.removeLast() }
-        }
-    }
-    
-    private func moveToSelectTypeView() {
-        for route in path.reversed() {
-            if route == .selectTypeView {
-                return
-            } else { path.removeLast() }
-        }
-    }
 }
 
 struct WhoIsLoserView_Previews: PreviewProvider {
