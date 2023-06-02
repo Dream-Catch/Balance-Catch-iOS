@@ -18,7 +18,7 @@ final class NetworkManager {
     private let questions = "/questions"
     
 //    func getQuestionMetaData() -> AnyPublisher<APIData<[QuestionDataModel]>, APIError> {
-    func getQuestionMetaData() -> AnyPublisher<[QuestionDataModel], APIError> {
+    func getQuestionMetaData() -> AnyPublisher<[QuestionDataResponseModel], APIError> {
         let request = getRequest(URL(string: baseURL + questions))
         
         return run(request)

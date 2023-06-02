@@ -10,14 +10,20 @@ import SwiftUI
 struct SecondTeamSpeakingView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var path: [Route]
+    @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
     
     @State var isStartButtonPressed = false
     @State var circleTimerId = UUID()
     
+    init(path: Binding<[Route]>) {
+        _path = path
+    }
+    
+    
     var body: some View{
         
         Spacer()
-        
+
         VStack{
             Text("최후 변론 TIME")
                 .font(.system(size:36))
@@ -27,7 +33,9 @@ struct SecondTeamSpeakingView: View {
                 .padding(.top,-10)
             
             
-            Text("환승이별") // 나중에 질문 값 받아와야 함
+            Text(questionDataViewModel
+                .selectedQuestionData?
+                .secondQuestion ?? "") // 나중에 질문 값 받아와야 함
                 .font(.system(size: 22, weight: .bold))
                 .minimumScaleFactor(0.5)
                 .padding(.bottom, 10)
@@ -42,8 +50,8 @@ struct SecondTeamSpeakingView: View {
                     .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
                 .padding(.bottom, 40)
             
-            CircleTimer(timerManager: TimerManager(totalTime: 15),
-                        nextPath: Route.userFinalSelectView,
+            CircleTimer(timerManager: TimerManager(totalTime: 20),
+                        nextPath: Route.userFinalSelectView(index: 0),
                         alertMessageType: .secondTeam,
                         isStartButtonPressed: $isStartButtonPressed)
             .id(circleTimerId)
@@ -56,13 +64,11 @@ struct SecondTeamSpeakingView: View {
                 }
                 .buttonStyle(RoundedBlueButton())
             } else {
-                NavigationLink("Next", value: Route.userFinalSelectView)
+                NavigationLink("Next", value: Route.userFinalSelectView(index: 0))
                     .buttonStyle(RoundedBlueButton())
             }
         }//Vstack
-        .onAppear() {
-            isStartButtonPressed = false
-        }
+        
         
         Spacer()
         

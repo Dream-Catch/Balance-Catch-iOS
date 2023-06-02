@@ -11,11 +11,11 @@ enum Route: Hashable {
     case playerNameInputView(numberOfPeople: Int)
     case selectTypeView
     case selectQuestionView(isRandomPick: Bool)
-    case userFirstSelectView
+    case userFirstSelectView(index: Int)
     case timerView
     case firstTeamSpeakingView
     case secondTeamSpeakingView
-    case userFinalSelectView
+    case userFinalSelectView(index: Int)
     case recommandOrNotView
     case publicPickView
     case whoIsLoserView

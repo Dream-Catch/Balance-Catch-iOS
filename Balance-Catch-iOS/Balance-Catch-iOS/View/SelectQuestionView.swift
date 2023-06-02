@@ -12,7 +12,7 @@ import Foundation
 
 struct SelectQuestionView: View {
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var viewModel: SelectQuestionViewModel
+    @EnvironmentObject var viewModel: QuestionDataViewModel
     
     @State var isRandomPick: Bool
     @State var selectedIndex: Int = 0
@@ -48,8 +48,9 @@ struct SelectQuestionView: View {
                 } else {
                     NavigationLink("Next",
                                    value:
-                                    Route.userFirstSelectView)
+                                    Route.userFirstSelectView(index: 0))
                     .buttonStyle(RoundedBlueButton())
+
                 }
             }
         }

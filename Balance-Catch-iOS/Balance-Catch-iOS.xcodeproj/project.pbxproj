@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33A46BB429EAD81900F19050 /* InformationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A46BB329EAD81900F19050 /* InformationButton.swift */; };
 		33A83C7F29CA375700C0FA16 /* RecommandOrNotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */; };
 		33E60C9529CB6768005EC0AF /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9429CB6768005EC0AF /* RoundedButton.swift */; };
 		33E60C9729CC1B28005EC0AF /* PublicPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9629CC1B28005EC0AF /* PublicPickView.swift */; };
@@ -21,6 +22,7 @@
 		3950658129CC949600A9C925 /* SelectBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658029CC949600A9C925 /* SelectBox.swift */; };
 		3950658329CC94AF00A9C925 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658229CC94AF00A9C925 /* SelectButton.swift */; };
 		3950658529CC961300A9C925 /* TimerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950658429CC961300A9C925 /* TimerCode.swift */; };
+		3993D76C2A20E3EA006821B6 /* UserQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3993D76B2A20E3EA006821B6 /* UserQuestion.swift */; };
 		39A1561829DC0F7F000968CA /* FirstTeamSpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561729DC0F7F000968CA /* FirstTeamSpeakingView.swift */; };
 		39A1561A29DC1899000968CA /* StorkeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561929DC1899000968CA /* StorkeText.swift */; };
 		39A1565129DE4846000968CA /* CircleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565029DE4846000968CA /* CircleTimer.swift */; };
@@ -41,8 +43,7 @@
 		5640B1022A038A1C0041AB5A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5640B1012A038A1C0041AB5A /* Alamofire */; };
 		5640B1042A038AB60041AB5A /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640B1032A038AB60041AB5A /* ServerModel.swift */; };
 		565FCBD729ED149300A27305 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FCBD629ED149300A27305 /* Route.swift */; };
-		5675DD942A2201B30094E2D1 /* SelectQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5675DD932A2201B30094E2D1 /* SelectQuestionViewModel.swift */; };
-		56807DBB29CAE36E005441D4 /* QuestionTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56807DBA29CAE36E005441D4 /* QuestionTexts.swift */; };
+		5675DD942A2201B30094E2D1 /* QuestionDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5675DD932A2201B30094E2D1 /* QuestionDataViewModel.swift */; };
 		56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56930FD229D59861006CEA3F /* QuestionPickerView.swift */; };
 		56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */; };
 		56CE463C2A04CC2400E95EF5 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE463B2A04CC2400E95EF5 /* CancelBag.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33A46BB329EAD81900F19050 /* InformationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationButton.swift; sourceTree = "<group>"; };
 		33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandOrNotView.swift; sourceTree = "<group>"; };
 		33E60C9429CB6768005EC0AF /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		33E60C9629CC1B28005EC0AF /* PublicPickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicPickView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		3950658029CC949600A9C925 /* SelectBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBox.swift; sourceTree = "<group>"; };
 		3950658229CC94AF00A9C925 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		3950658429CC961300A9C925 /* TimerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCode.swift; sourceTree = "<group>"; };
+		3993D76B2A20E3EA006821B6 /* UserQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestion.swift; sourceTree = "<group>"; };
 		39A1561729DC0F7F000968CA /* FirstTeamSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTeamSpeakingView.swift; sourceTree = "<group>"; };
 		39A1561929DC1899000968CA /* StorkeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorkeText.swift; sourceTree = "<group>"; };
 		39A1565029DE4846000968CA /* CircleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimer.swift; sourceTree = "<group>"; };
@@ -111,8 +114,7 @@
 		5640B0FE2A037DB40041AB5A /* QuestionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataModel.swift; sourceTree = "<group>"; };
 		5640B1032A038AB60041AB5A /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
 		565FCBD629ED149300A27305 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		5675DD932A2201B30094E2D1 /* SelectQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionViewModel.swift; sourceTree = "<group>"; };
-		56807DBA29CAE36E005441D4 /* QuestionTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTexts.swift; sourceTree = "<group>"; };
+		5675DD932A2201B30094E2D1 /* QuestionDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataViewModel.swift; sourceTree = "<group>"; };
 		56930FD229D59861006CEA3F /* QuestionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPickerView.swift; sourceTree = "<group>"; };
 		56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCatchBackButton.swift; sourceTree = "<group>"; };
 		56CE463B2A04CC2400E95EF5 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
@@ -187,7 +189,6 @@
 				56CE463D2A04E1B200E95EF5 /* ViewModel */,
 				5640B0FA2A03788C0041AB5A /* NetworkManager */,
 				565FCBD529ED148600A27305 /* Route */,
-				56807DB929CAE366005441D4 /* Strings */,
 				563FBD5929C96F1B00847390 /* Model */,
 				56E2E4A729C054350023095C /* View */,
 				56E2E49D29C03AC90023095C /* Extension */,
@@ -238,6 +239,7 @@
 			children = (
 				5640B0FD2A037A4B0041AB5A /* Response */,
 				53D1488429D9672C003EAD5A /* PlayerModel.swift */,
+				3993D76B2A20E3EA006821B6 /* UserQuestion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,14 +269,6 @@
 			path = Route;
 			sourceTree = "<group>";
 		};
-		56807DB929CAE366005441D4 /* Strings */ = {
-			isa = PBXGroup;
-			children = (
-				56807DBA29CAE36E005441D4 /* QuestionTexts.swift */,
-			);
-			path = Strings;
-			sourceTree = "<group>";
-		};
 		56C0A19329FA13C7000406CE /* Modifier */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,7 +280,7 @@
 		56CE463D2A04E1B200E95EF5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5675DD932A2201B30094E2D1 /* SelectQuestionViewModel.swift */,
+				5675DD932A2201B30094E2D1 /* QuestionDataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -315,6 +309,7 @@
 				33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */,
 				33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */,
 				33FCD2AA29E07AFD006E2131 /* CustomProgressView.swift */,
+				33A46BB329EAD81900F19050 /* InformationButton.swift */,
 				39A1561929DC1899000968CA /* StorkeText.swift */,
 			);
 			path = Custom;
@@ -490,12 +485,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */,
+				3993D76C2A20E3EA006821B6 /* UserQuestion.swift in Sources */,
 				3950657D29CC943B00A9C925 /* TimerView.swift in Sources */,
 				5640B0FF2A037DB40041AB5A /* QuestionDataModel.swift in Sources */,
 				33FCD2AB29E07AFD006E2131 /* CustomProgressView.swift in Sources */,
 				39A1561A29DC1899000968CA /* StorkeText.swift in Sources */,
 				5640B0FC2A0378990041AB5A /* NetworkManager.swift in Sources */,
-				5675DD942A2201B30094E2D1 /* SelectQuestionViewModel.swift in Sources */,
+				5675DD942A2201B30094E2D1 /* QuestionDataViewModel.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
 				56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */,
 				56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */,
@@ -517,9 +513,9 @@
 				56EC27AA29DFEF4B00951070 /* ThemeButtonStyle.swift in Sources */,
 				56CE463C2A04CC2400E95EF5 /* CancelBag.swift in Sources */,
 				5640B1042A038AB60041AB5A /* ServerModel.swift in Sources */,
+				33A46BB429EAD81900F19050 /* InformationButton.swift in Sources */,
 				53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */,
 				39A1565129DE4846000968CA /* CircleTimer.swift in Sources */,
-				56807DBB29CAE36E005441D4 /* QuestionTexts.swift in Sources */,
 				33E60CA329CC88DE005EC0AF /* NameBoxButton.swift in Sources */,
 				33E60C9F29CC6F3B005EC0AF /* WhoIsLoserView.swift in Sources */,
 				5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */,

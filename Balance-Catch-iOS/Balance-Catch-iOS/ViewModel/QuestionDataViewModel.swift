@@ -1,5 +1,5 @@
 //
-//  SelectQuestionViewModel.swift
+//  QuestionDataViewModel.swift
 //  Balance-Catch-iOS
 //
 //  Created by SeungMin on 2023/05/27.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-final class SelectQuestionViewModel: ObservableObject {
+final class QuestionDataViewModel: ObservableObject {
         
     var isAlreadyFetch = CurrentValueSubject<Bool, Never>(false)
     var questionDataList = CurrentValueSubject<[QuestionDataModel], Never>([])
@@ -23,10 +23,14 @@ final class SelectQuestionViewModel: ObservableObject {
                 case .failure(let error):
                     print("error - \(error.localizedDescription)")
                 case .finished:
-                    print("에러 발생!")
+                    print("데이터 응답 성공!")
                 }
             }, receiveValue: { data in
                 print("data - \(data)")
+                
+                let data = data.compactMap { questionDataResponseModel in
+                    QuestionDataModel(response: questionDataResponseModel)
+                }
                 self.questionDataList.send(data)
             })
             .cancel(with: cancelBag)

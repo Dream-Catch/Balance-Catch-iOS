@@ -28,3 +28,12 @@ struct APIData<T: Decodable>: Decodable {
 //    var message: String
     var data: T
 }
+
+struct QuestionDataResponseModel: Decodable {
+    let id: String
+    let question: String
+    let good: Int
+    let bad: Int
+    let firstQuestionScore: Int
+    let secondQuestionScore: Int
+}

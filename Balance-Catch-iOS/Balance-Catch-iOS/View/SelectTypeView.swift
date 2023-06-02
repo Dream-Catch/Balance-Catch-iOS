@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectTypeView: View {
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var viewModel: SelectQuestionViewModel
+    @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
     @EnvironmentObject var playerList: PlayerList
     
     @State private var isActivated1: Bool = false
@@ -69,12 +69,12 @@ struct SelectTypeView: View {
     } //body
     
     private func bindCombine() {
-        viewModel.isAlreadyFetch
+        questionDataViewModel.isAlreadyFetch
             .receive(on: DispatchQueue.main)
             .sink { flag in
                 if !flag {
-                    viewModel.fetchQuestionMetaData()
-                    viewModel.isAlreadyFetch.value = true
+                    questionDataViewModel.fetchQuestionMetaData()
+                    questionDataViewModel.isAlreadyFetch.value = true
                 }
             }
             .cancel(with: cancelBag)
