@@ -42,15 +42,15 @@ struct PlayerNameInputView: View {
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 30.0)
                                     .padding(.vertical, 30.0)
-                                    /*.background(
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .inset(by: 3)
-                                            .stroke(
-                                                self.playerNames[index].isEmpty ? Color.gray:
-                                                        .balanceCatchBlue,
-                                                lineWidth: 5
-                                            )
-                                    )*/
+                                /*.background(
+                                 RoundedRectangle(cornerRadius: 20)
+                                 .inset(by: 3)
+                                 .stroke(
+                                 self.playerNames[index].isEmpty ? Color.gray:
+                                 .balanceCatchBlue,
+                                 lineWidth: 5
+                                 )
+                                 )*/
                                     .background(Color.white)
                                     .cornerRadius(20)
                                     .shadow(color:.gray,radius:2,x:3,y:3)
@@ -110,8 +110,8 @@ struct PlayerNameInputView: View {
             self.playerNames = Array(repeating: "", count: numberOfPeople)
         }
         .balanceCatchBackButton {
-                   dismiss()
-               }
+            dismiss()
+        }
     }
 }
 

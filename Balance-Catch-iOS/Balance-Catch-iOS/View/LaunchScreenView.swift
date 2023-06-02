@@ -46,16 +46,17 @@ struct LaunchScreenView: View {
                 case .selectQuestionView(let isRandomPick):
                     SelectQuestionView(isRandomPick: isRandomPick,
                                        path: $path)
-                case .userFirstSelectView:
-                    UserFirstSelectView(path: $path)
+                case .userFirstSelectView(let index):
+                    UserFirstSelectView(index: index,
+                                        path: $path)
                 case .timerView:
                     TimerView(path: $path)
                 case .firstTeamSpeakingView:
                     FirstTeamSpeakingView(path: $path)
                 case .secondTeamSpeakingView:
                     SecondTeamSpeakingView(path: $path)
-                case .userFinalSelectView:
-                    UserFinalSelectView(path: $path)
+                case .userFinalSelectView(let index):
+                    UserFinalSelectView(index: index, path: $path)
                 case .recommandOrNotView:
                     RecommandOrNotView(path: $path)
                 case .publicPickView:

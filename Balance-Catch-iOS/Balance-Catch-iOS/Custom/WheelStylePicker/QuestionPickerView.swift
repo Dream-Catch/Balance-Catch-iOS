@@ -14,8 +14,6 @@ protocol randomPickAnimation {
 }
 
 struct QuestionPickerView: View {
-    @EnvironmentObject var viewModel: SelectQuestionViewModel
-    
     let questionMetaDataList: [QuestionDataModel]
     let isRandomPick: Bool
     let serialQueue = DispatchQueue(label: "serialQueue")
