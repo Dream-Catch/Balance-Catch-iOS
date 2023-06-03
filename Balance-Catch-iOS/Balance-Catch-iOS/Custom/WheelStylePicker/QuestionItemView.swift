@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct QuestionItemView: View {
-    var question: Question
+    var text: String
     
     var body: some View {
-        Text(question.text)
+        Text(text)
             .font(.headline)
             .lineLimit(1)
     }
