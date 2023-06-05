@@ -124,13 +124,17 @@ struct PublicPickView: View {
             
             var secondQuestionScore = Double(self.questionDataViewModel.selectedQuestionData?.secondQuestionScore ?? 0)
             
+            var firstPercentage = firstQuestionScore / (firstQuestionScore + secondQuestionScore) * 100
+            
+            var secondPercentage = secondQuestionScore / (firstQuestionScore + secondQuestionScore) * 100
+            
             if firstQuestionScore > secondQuestionScore {
-                firstQuestion = (question: self.questionDataViewModel.selectedQuestionData?.firstQuestion ?? "", amount: firstQuestionScore)
-                secondQuestion = (question: self.questionDataViewModel.selectedQuestionData?.secondQuestion ?? "", amount: secondQuestionScore)
+                firstQuestion = (question: self.questionDataViewModel.selectedQuestionData?.firstQuestion ?? "", amount: firstPercentage)
+                secondQuestion = (question: self.questionDataViewModel.selectedQuestionData?.secondQuestion ?? "", amount: secondPercentage)
             }
             else {
-                firstQuestion = (question: self.questionDataViewModel.selectedQuestionData?.secondQuestion ?? "", amount: secondQuestionScore)
-                secondQuestion = (question: self.questionDataViewModel.selectedQuestionData?.firstQuestion ?? "", amount: firstQuestionScore)
+                firstQuestion = (question: self.questionDataViewModel.selectedQuestionData?.secondQuestion ?? "", amount: secondPercentage)
+                secondQuestion = (question: self.questionDataViewModel.selectedQuestionData?.firstQuestion ?? "", amount: firstPercentage)
             }
         }
     }
