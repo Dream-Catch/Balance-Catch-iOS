@@ -15,7 +15,7 @@ struct Player: Identifiable {
 
 class PlayerList: ObservableObject {
     @Published var players: [Player]
-
+    
     init(players: [Player] = []) {
         self.players = players
     }

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct WhoIsLoserView: View {
     @Environment(\.dismiss) private var dismiss
+
     @State private var showDetails = false
+    @EnvironmentObject private var questionDataViewModel: QuestionDataViewModel
     @Binding var path: [Route]
     
     var body: some View {
@@ -98,22 +100,25 @@ struct WhoIsLoserView: View {
         }
     }
         
-        private func moveToPlayerNumberInputView() {
-            for route in path.reversed() {
-                if route == .playerNumberInputView {
-                    return
-                } else { path.removeLast() }
-            }
+
+    private func moveToPlayerNumberInputView() {
+        for route in path.reversed() {
+            if route == .playerNumberInputView {
+                questionDataViewModel.isAlreadyFetch.value = false
+                break
+            } else { path.removeLast() }
         }
-        
-        private func moveToSelectTypeView() {
-            for route in path.reversed() {
-                if route == .selectTypeView {
-                    return
-                } else { path.removeLast() }
-            }
-        }
+    }
     
+    private func moveToSelectTypeView() {
+        for route in path.reversed() {
+            if route == .selectTypeView {
+                questionDataViewModel.isAlreadyFetch.value = false
+                break
+            } else { path.removeLast() }
+        }
+    }
+
 }
 
 struct WhoIsLoserView_Previews: PreviewProvider {

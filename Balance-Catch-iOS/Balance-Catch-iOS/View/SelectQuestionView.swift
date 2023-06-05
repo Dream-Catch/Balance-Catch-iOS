@@ -6,28 +6,28 @@
 //
 
 import SwiftUI
+import UIKit
+import Combine
+import Foundation
 
 struct SelectQuestionView: View {
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var viewModel: QuestionDataViewModel
     
     @State var isRandomPick: Bool
-    @State var selectedIndex: Int
+    @State var selectedIndex: Int = 0
     @State var isRetryButtonEnabled = false
     @State var questionViewId = UUID()
     @Binding var path: [Route]
     
-    
-    var questions: [Question] = getNewQuestionList()
-    
     init(isRandomPick: Bool, selectedIndex: Int = 0, path: Binding<[Route]>) {
         _isRandomPick = State(initialValue: isRandomPick)
-        _selectedIndex = State(initialValue: isRandomPick ? (0..<questions.count).randomElement() ?? 0 : 0)
         _path = path
     }
     
     var body: some View {
         VStack(spacing: 16) {
-            QuestionPickerView(questions: questions,
+            QuestionPickerView(questionMetaDataList: viewModel.questionDataList.value,
                                isRandomPick: isRandomPick,
                                selectedIndex: $selectedIndex)
             .id(questionViewId)
@@ -48,42 +48,48 @@ struct SelectQuestionView: View {
                 } else {
                     NavigationLink("Next",
                                    value:
-                                    Route.userFirstSelectView(selectedQuestion: questions[selectedIndex],index: 0))
+                                    Route.userFirstSelectView(index: 0))
                     .buttonStyle(RoundedBlueButton())
 
                 }
             }
         }
         .onAppear() {
+            changeSelectedQuestionData()
+            
             isRetryButtonEnabled = false
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 isRetryButtonEnabled = true
             }
         }
+        .onChange(of: selectedIndex, perform: { index in
+            if !viewModel.questionDataList.value.isEmpty {
+                viewModel.selectedQuestionData = viewModel.questionDataList.value[selectedIndex]
+            }
+        })
         .balanceCatchBackButton {
             dismiss()
         }
     }
     
-    private func tappedResetButton() {
-        isRetryButtonEnabled = false
-        selectedIndex = (0..<questions.count).randomElement() ?? 0
+    private func changeSelectedQuestionData() {
+        if isRandomPick {
+            selectedIndex = (0..<viewModel.questionDataList.value.count).randomElement() ?? 0
+        }
         
+        if !viewModel.questionDataList.value.isEmpty {
+            viewModel.selectedQuestionData = viewModel.questionDataList.value[selectedIndex]
+        }
+    }
+    
+    private func tappedResetButton() {
+        changeSelectedQuestionData()
+        
+        isRetryButtonEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             isRetryButtonEnabled = true
         }
     }
-}
-
-func getNewQuestionList() -> [Question] {
-    let qustionTexts = QuestionTexts().list
-    var newQuestionList: [Question] = []
-    
-    qustionTexts.forEach { questionText in
-        let newQuestion = Question(text: questionText)
-        newQuestionList.append(newQuestion)
-    }
-    return newQuestionList
 }
 
 struct SelectQuestionView_Previews: PreviewProvider {

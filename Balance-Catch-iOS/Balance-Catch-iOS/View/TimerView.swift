@@ -9,18 +9,16 @@ import SwiftUI
 
 struct TimerView: View {
     @Environment(\.dismiss) private var dismiss
+    
     @Binding var path: [Route]
-    @EnvironmentObject var userQuestion: UserQuestion
     
     @State var isStartButtonPressed = false
     @State var circleTimerId = UUID()
-
+    
+    
     init(path: Binding<[Route]>){
-        questionArray = []
         _path = path
     }
-    
-    var questionArray: [String]
     
     var body: some View{
         
@@ -33,7 +31,7 @@ struct TimerView: View {
                 .padding(.bottom, 45)
             
             CircleTimer(timerManager: TimerManager(totalTime: 180),
-                        nextPath: Route.firstTeamSpeakingView(questionArray: userQuestion.playQuestion.components(separatedBy: " vs ")),
+                        nextPath: Route.firstTeamSpeakingView,
                         alertMessageType: .whole,
                         isStartButtonPressed: $isStartButtonPressed)
             .id(circleTimerId)
@@ -46,7 +44,7 @@ struct TimerView: View {
                 }
                 .buttonStyle(RoundedBlueButton())
             } else {
-                NavigationLink("Next", value: Route.firstTeamSpeakingView(questionArray: userQuestion.playQuestion.components(separatedBy: " vs ")))
+                NavigationLink("Next", value: Route.firstTeamSpeakingView)
                     .buttonStyle(RoundedBlueButton())
             }
         }//Vstack
@@ -54,8 +52,8 @@ struct TimerView: View {
             isStartButtonPressed = false
         }
         .balanceCatchBackButton {
-                   dismiss()
-               }
+            dismiss()
+        }
     }
 }
 

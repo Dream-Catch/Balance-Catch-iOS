@@ -11,8 +11,7 @@ struct UserFinalSelectView: View {
     @Environment(\.dismiss) private var dismiss
 
     @EnvironmentObject var playerList: PlayerList
-    @EnvironmentObject var userQuestion: UserQuestion
-    let questionArray: [String]
+    @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
     let index: Int
     
     @Binding var path: [Route]
@@ -22,18 +21,9 @@ struct UserFinalSelectView: View {
     @State var showingSubview = false
     
     
-    init(questionArray: [String], index: Int, path: Binding<[Route]>) {
-        self.questionArray = questionArray
+    init(index: Int, path: Binding<[Route]>) {
         self.index = index
         _path = path
-        
-    }
-
-    var first: String {
-        questionArray.first ?? ""
-    }
-    var second: String {
-        questionArray.last ?? ""
     }
     
     var body: some View {
@@ -77,7 +67,9 @@ struct UserFinalSelectView: View {
                         playerList.players[index].select = 0
                     })
                     {
-                        Text("\(first)")
+                        Text(questionDataViewModel
+                            .selectedQuestionData?
+                            .firstQuestion ?? "")
                             .font(.system(size: 27, weight: .bold))
                             .minimumScaleFactor(0.5)
                             .padding(.leading, 30)
@@ -99,7 +91,9 @@ struct UserFinalSelectView: View {
                         self.isActivated2.toggle()
                         playerList.players[index].select = 1
                     }) {
-                        Text("\(second)")
+                        Text(questionDataViewModel
+                            .selectedQuestionData?
+                            .secondQuestion ?? "")
                             .font(.system(size: 27, weight: .bold))
                             .minimumScaleFactor(0.5)
                             .padding(.trailing, 30)
@@ -129,7 +123,7 @@ struct UserFinalSelectView: View {
             }
           
             if index < playerList.players.count - 1 {
-                NavigationLink("Next", value: Route.userFinalSelectView(questionArray: userQuestion.playQuestion.components(separatedBy: " vs "),index: index + 1))
+                NavigationLink("Next", value: Route.userFinalSelectView(index: index + 1))
                     .buttonStyle(RoundedBlueButton())
                     .disabled(!isActivated1 && !isActivated2)
             } else {
@@ -150,11 +144,8 @@ struct UserFinalSelectView: View {
 }
 
 
-
-
 struct UserFinalSelect_Previews: PreviewProvider {
     static var previews: some View {
-        UserFinalSelectView(questionArray: [],index: 0, path: Binding.constant([]))
-        
+        UserFinalSelectView(index: 0, path: Binding.constant([]))
     }
 }
