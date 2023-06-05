@@ -21,7 +21,7 @@ struct RecommandOrNotView: View {
         ZStack {
             VStack{
                 
-                Text("잠수이별 VS 환승이별")
+                Text(questionDataViewModel.selectedQuestionData?.question ?? "")
                     .font(.system(size:24))
                     .fontWeight(.bold)
                     .shadow(color:.gray,radius:2,x:3,y:3)
