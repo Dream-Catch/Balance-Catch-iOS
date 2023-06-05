@@ -120,13 +120,13 @@ struct PublicPickView: View {
         .navigationBarBackButtonHidden()
         .onAppear {
             
-            var firstQuestionScore = Double(self.questionDataViewModel.selectedQuestionData?.firstQuestionScore ?? 0)
+            let firstQuestionScore = Double(self.questionDataViewModel.selectedQuestionData?.firstQuestionScore ?? 0)
             
-            var secondQuestionScore = Double(self.questionDataViewModel.selectedQuestionData?.secondQuestionScore ?? 0)
+            let secondQuestionScore = Double(self.questionDataViewModel.selectedQuestionData?.secondQuestionScore ?? 0)
             
-            var firstPercentage = firstQuestionScore / (firstQuestionScore + secondQuestionScore) * 100
+            let firstPercentage = firstQuestionScore / (firstQuestionScore + secondQuestionScore) * 100
             
-            var secondPercentage = secondQuestionScore / (firstQuestionScore + secondQuestionScore) * 100
+            let secondPercentage = secondQuestionScore / (firstQuestionScore + secondQuestionScore) * 100
             
             if firstQuestionScore > secondQuestionScore {
                 firstQuestion = (question: self.questionDataViewModel.selectedQuestionData?.firstQuestion ?? "", amount: firstPercentage)
