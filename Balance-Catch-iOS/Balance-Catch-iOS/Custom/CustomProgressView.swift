@@ -9,8 +9,7 @@ import SwiftUI
 
 struct CustomProgressView: ProgressViewStyle {
     var isWin: Bool
-    var firstAmount: Double
-    var secondAmount: Double
+    var isDraw: Bool
     
     func makeBody(configuration: Configuration) -> some View {
         ZStack(alignment: .leading){
@@ -29,7 +28,7 @@ struct CustomProgressView: ProgressViewStyle {
     }
     
     func graphColor() -> Color {
-        if(firstAmount == secondAmount){
+        if isDraw {
             return Color.drawBlue
         }
         else{

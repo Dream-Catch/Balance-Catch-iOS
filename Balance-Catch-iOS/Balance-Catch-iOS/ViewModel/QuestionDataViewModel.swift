@@ -29,8 +29,6 @@ final class QuestionDataViewModel: ObservableObject {
                     self.isLoading.send(false)
                 }
             } receiveValue: { data in
-                print("data - \(data)")
-                
                 let data = data.compactMap { questionDataResponseModel in
                     QuestionDataModel(response: questionDataResponseModel)
                 }
@@ -59,7 +57,6 @@ final class QuestionDataViewModel: ObservableObject {
                 self.isLoading.send(false)
             }
         } receiveValue: { data in
-            print("data - \(data)")
             self.isLoading.send(false)
         }
         .cancel(with: cancelBag)

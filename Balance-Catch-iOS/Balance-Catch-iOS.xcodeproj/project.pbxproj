@@ -28,6 +28,7 @@
 		39A1565529E47B96000968CA /* SecondTeamSpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */; };
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
 		53D1488529D9672D003EAD5A /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D1488429D9672C003EAD5A /* PlayerModel.swift */; };
+		5616A3E92A2F28B1003DBDF2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616A3E82A2F28B1003DBDF2 /* ScoreView.swift */; };
 		5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */; };
 		5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AF29BFF7CE008C7898 /* LaunchScreenView.swift */; };
 		5624C4B229BFF7D2008C7898 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5624C4B129BFF7D2008C7898 /* Assets.xcassets */; };
@@ -98,6 +99,7 @@
 		39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTeamSpeakingView.swift; sourceTree = "<group>"; };
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
 		53D1488429D9672C003EAD5A /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		5616A3E82A2F28B1003DBDF2 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		5624C4AA29BFF7CE008C7898 /* Balance-Catch-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balance-Catch-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance_Catch_iOSApp.swift; sourceTree = "<group>"; };
 		5624C4AF29BFF7CE008C7898 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,14 @@
 				5624C4B129BFF7D2008C7898 /* Assets.xcassets */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		5616A3E72A2F2822003DBDF2 /* PublicPickScoreView */ = {
+			isa = PBXGroup;
+			children = (
+				5616A3E82A2F28B1003DBDF2 /* ScoreView.swift */,
+			);
+			path = PublicPickScoreView;
 			sourceTree = "<group>";
 		};
 		5624C4A129BFF7CE008C7898 = {
@@ -298,6 +308,7 @@
 		56E2E49A29C037000023095C /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				5616A3E72A2F2822003DBDF2 /* PublicPickScoreView */,
 				56C0A19329FA13C7000406CE /* Modifier */,
 				563DF22E29E649F400297A43 /* Timer */,
 				56D2730C29CAC8DD00E4EF76 /* WheelStylePicker */,
@@ -514,6 +525,7 @@
 				56EC27AA29DFEF4B00951070 /* ThemeButtonStyle.swift in Sources */,
 				56CE463C2A04CC2400E95EF5 /* CancelBag.swift in Sources */,
 				5640B1042A038AB60041AB5A /* ServerModel.swift in Sources */,
+				5616A3E92A2F28B1003DBDF2 /* ScoreView.swift in Sources */,
 				33A46BB429EAD81900F19050 /* InformationButton.swift in Sources */,
 				564E11732A2A25A200CE6118 /* LoadingView.swift in Sources */,
 				53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */,
