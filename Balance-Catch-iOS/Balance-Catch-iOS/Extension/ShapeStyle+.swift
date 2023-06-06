@@ -11,4 +11,5 @@ extension ShapeStyle where Self == Color {
     
     static var balanceCatchBlue: Color { return Color("BalanceCatchBlue") }
     static var lightBlue: Color { return Color("LightBlue") }
+    static var drawBlue: Color { return Color("DrawColor")}
 }

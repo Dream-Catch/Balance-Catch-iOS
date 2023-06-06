@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CustomProgressView: ProgressViewStyle {
     var isWin: Bool
+    var firstAmount: Double
+    var secondAmount: Double
     
     func makeBody(configuration: Configuration) -> some View {
         ZStack(alignment: .leading){
@@ -21,8 +23,22 @@ struct CustomProgressView: ProgressViewStyle {
             Rectangle()
                 .cornerRadius(40)
                 .frame(width: CGFloat(configuration.fractionCompleted ?? 0)*160, height: 5)
-                .foregroundColor(isWin ? .balanceCatchBlue : .lightBlue)
+                .foregroundColor(graphColor())
                 
+        }
+    }
+    
+    func graphColor() -> Color {
+        if(firstAmount == secondAmount){
+            return Color.drawBlue
+        }
+        else{
+            if isWin {
+                return Color.balanceCatchBlue
+            }
+            else {
+                return Color.lightBlue
+            }
         }
     }
 }

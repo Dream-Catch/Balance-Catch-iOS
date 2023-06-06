@@ -20,11 +20,14 @@ struct RecommandOrNotView: View {
     var body: some View {
         ZStack {
             VStack{
-                
-                Text("잠수이별 VS 환승이별")
-                    .font(.system(size:24))
+           
+                Text("잠수이별환승이별환승이별환승이별 VS 환승이별환승이별환승이별")
+                    .font(.system(size:24, weight: .bold))
+                    .minimumScaleFactor(0.5)
                     .fontWeight(.bold)
                     .shadow(color:.gray,radius:2,x:3,y:3)
+                    .padding(.leading,5)
+                    .padding(.trailing,5)
                     .padding()
                 Text("재미있는 질문이였나요?")
                     .font(.subTitle)
