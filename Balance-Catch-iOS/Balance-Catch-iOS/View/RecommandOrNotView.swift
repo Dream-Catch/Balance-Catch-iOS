@@ -20,15 +20,34 @@ struct RecommandOrNotView: View {
     var body: some View {
         ZStack {
             VStack{
-           
-                Text("잠수이별환승이별환승이별환승이별 VS 환승이별환승이별환승이별")
+                
+                Text(textQuestion(isFirst: true))
                     .font(.system(size:24, weight: .bold))
                     .minimumScaleFactor(0.5)
-                    .fontWeight(.bold)
+                    .shadow(color:.gray,radius:2,x:3,y:3)
+                    .multilineTextAlignment(.center)
+                    .padding(.leading,5)
+                    .padding(.trailing,5)
+                    .padding(.bottom,10)
+                    
+                Text("vs")
+                    .font(.system(size:24, weight: .bold))
                     .shadow(color:.gray,radius:2,x:3,y:3)
                     .padding(.leading,5)
                     .padding(.trailing,5)
-                    .padding()
+                    .padding(.bottom,10)
+                
+                Text(textQuestion(isFirst: false))
+                    .font(.system(size:24, weight: .bold))
+                    .minimumScaleFactor(0.5)
+                    .shadow(color:.gray,radius:2,x:3,y:3)
+                    .multilineTextAlignment(.center)
+                    .padding(.leading,5)
+                    .padding(.trailing,5)
+                    .padding(.bottom,10)
+
+                    
+ 
                 Text("재미있는 질문이였나요?")
                     .font(.subTitle)
                     .padding(.bottom,31)
@@ -74,6 +93,17 @@ struct RecommandOrNotView: View {
         .balanceCatchBackButton {
             dismiss()
         }
+    }
+    
+    func textQuestion(isFirst: Bool) -> String {
+        
+        let components = (questionDataViewModel.selectedQuestionData?.question ?? "").components(separatedBy: "vs")
+
+        if isFirst {
+            return components[0]
+        }
+        return components[1]
+        
     }
     
     private func bindCombine() {
