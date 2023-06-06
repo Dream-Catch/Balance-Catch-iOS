@@ -22,11 +22,6 @@ struct SelectTypeView: View {
     var body: some View {
         ZStack {
             VStack{
-                VStack {
-                    ForEach(playerList.players, id: \.id) { player in
-                        Text(player.name)
-                    }
-                }
                 
                 Text("질문 선택하기")
                     .font(.system(size:24))
