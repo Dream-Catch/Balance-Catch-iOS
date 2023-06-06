@@ -4,116 +4,43 @@
 //
 //  Created by 허은정 on 2023/03/23.
 //
+
 import SwiftUI
 
+struct Question {
+    var text: String
+    var percent: Double
+}
+
 struct PublicPickView: View {
-    @State private var animationAmount:CGFloat = 1
-    @State private var firstIncreAmount: Double = 0.0
-    @State private var secondIncreAmount: Double = 0.0
+    @EnvironmentObject private var viewModel: QuestionDataViewModel
     @Binding var path: [Route]
     
-    @State var firstQuestion = (question: "잠수이별", amount: 50.0)
-    @State var secondQuestion = (question: "환승이별", amount: 50.0)
+    @State var winner = Question(text: "", percent: 0)
+    @State var loser = Question(text: "", percent: 0)
     
-    func checkWinner(_ firstQuestionScore: Double,
-                     _ secondQuestionScore: Double) -> Bool {
-        return firstQuestionScore >= secondQuestionScore
-    }
-    
-    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+    @State var winViewId = UUID()
+    @State var loseViewId = UUID()
     
     var body: some View {
-        VStack{
+        VStack {
             Text("대중 PICK 결과")
                 .font(Font.custom("Arial", size: 24))
                 .fontWeight(.bold)
-                .shadow(color:.gray,radius:2,x:3,y:3)
-                .padding(.bottom,70)
-            VStack(alignment: .leading) {
-                Text(checkWinner(firstQuestion.amount,
-                                 secondQuestion.amount) ? firstQuestion.question : secondQuestion.question)
-                    .font(.system(size: 24, weight: .bold))
-                    .bold()
-                    .padding(.leading,32)
-                    .padding(.top,30)
-                
-                HStack(alignment: .center){
-                    ProgressView("", value: firstIncreAmount, total: 100)
-                        .progressViewStyle(CustomProgressView(isWin: true ))
-                        .padding(.top,20)
-                        .padding(.trailing,10)
-                        .padding(.bottom,28)
-                        .accentColor(checkWinner(firstQuestion.amount,
-                                                 secondQuestion.amount) ? Color.balanceCatchBlue : Color.lightBlue)
-                        .scaleEffect(CGSize(width: 1.0, height: 3.5))
-                    
-                    Text(checkWinner(firstQuestion.amount,
-                                     secondQuestion.amount) ? "\(Int(firstQuestion.amount))%" : "\(Int(secondQuestion.amount))%")
-                        .font(.body)
-                        .bold()
-                        .padding(.bottom,28)
-                    
-                    
-                }
-                .padding(.leading,32)
-                .padding(.trailing, 48)
-            }
-            .frame(width: 300, height: 130, alignment: .leading)
-            .overlay(RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.balanceCatchBlue, lineWidth: 4)
-                .shadow(color: .black.opacity(0.25), radius: 20, x: 0, y: 100)
-            )
-            .onReceive(timer) { _ in
-                if firstIncreAmount < (firstQuestion.amount > secondQuestion.amount ? firstQuestion.amount : secondQuestion.amount){
-                    firstIncreAmount += 8
-                }
-                if animationAmount < 1.2 {
-                    animationAmount += 0.02
-                }
-            }
-            //.overlay(Text("WIN").position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
-            .overlay(StrokeText(text: "WIN",width: 2, color: Color.balanceCatchBlue).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
-            .scaleEffect(animationAmount)
-            .animation(.easeIn(duration: 1).delay(1), value: animationAmount)
-            .padding(30)
+                .shadow(color: .gray, radius: 2, x: 3, y: 3)
+                .padding(.bottom, 50)
             
-            VStack(alignment: .leading) {
-                Text(firstQuestion.amount < secondQuestion.amount ? firstQuestion.question : secondQuestion.question)
-                    .font(.system(size: 24, weight: .bold))
-                    .bold()
-                    .padding(.leading,32)
-                    .padding(.top,23)
-                
-                HStack(alignment: .center){
-                    ProgressView("", value: secondIncreAmount, total: 100)
-                        .progressViewStyle(CustomProgressView(isWin: false))
-                        .padding(.top,20)
-                        .padding(.trailing,10)
-                        .padding(.bottom,28)
-                        .accentColor(firstQuestion.amount < secondQuestion.amount ? Color.balanceCatchBlue : Color.lightBlue)
-                        .scaleEffect(CGSize(width: 1.0, height: 3.5))
-                    
-                    Text(firstQuestion.amount < secondQuestion.amount ? "\(Int(firstQuestion.amount))%" : "\(Int(secondQuestion.amount))%")
-                        .font(.system(size: 18, weight: .bold))
-                        .padding(.bottom,28)
-                    
-                }
-                .padding(.leading,32)
-                .padding(.trailing, 48)
-            }
-            .frame(width: 300, height: 130, alignment: .leading)
-            .overlay(RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.lightBlue, lineWidth: 4))
-            .overlay(StrokeText(text: "LOSE",width: 2, color: Color.lightBlue).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
-            .scaleEffect(1)
-            .animation(.easeIn(duration: 1).delay(1), value: animationAmount)
-            .onReceive(timer) { _ in
-                if secondIncreAmount < (firstQuestion.amount < secondQuestion.amount ? firstQuestion.amount : secondQuestion.amount) {
-                    secondIncreAmount += 8
-                }
-            }
-            .padding(30)
+            ScoreView(isWin: true,
+                      text: winner.text,
+                      percent: winner.percent)
+            .id(winViewId)
             
+            ScoreView(isWin: false,
+                      text: loser.text,
+                      percent: loser.percent)
+            .id(loseViewId)
+            
+            .padding(30)
             
             ZStack {
                 NavigationLink("Next", value: Route.whoIsLoserView)
@@ -121,8 +48,32 @@ struct PublicPickView: View {
             }
         }
         .navigationBarBackButtonHidden()
+        .onAppear {
+            setupData()
+        }
+    }
+    
+    func setupData() {
+        guard let selectedQuestionData = viewModel.selectedQuestionData else { return }
+        
+        if selectedQuestionData.firstQuestionScore >= selectedQuestionData.secondQuestionScore {
+            winner.text = selectedQuestionData.firstQuestion
+            loser.text = selectedQuestionData.secondQuestion
+        } else {
+            winner.text = selectedQuestionData.secondQuestion
+            loser.text = selectedQuestionData.firstQuestion
+        }
+        
+        let maxValue = Double(max(selectedQuestionData.firstQuestionScore, selectedQuestionData.secondQuestionScore))
+        let minValue = Double(min(selectedQuestionData.firstQuestionScore, selectedQuestionData.secondQuestionScore))
+        winner.percent = (maxValue / (maxValue + minValue) * 100).rounded(.toNearestOrEven)
+        loser.percent = (minValue / (maxValue + minValue) * 100).rounded(.toNearestOrEven)
+        
+        winViewId = UUID()
+        loseViewId = UUID()
     }
 }
+
 
 struct PublicPickView_Previews: PreviewProvider {
     static var previews: some View {
