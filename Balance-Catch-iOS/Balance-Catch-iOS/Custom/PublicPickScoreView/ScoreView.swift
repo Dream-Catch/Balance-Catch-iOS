@@ -35,14 +35,15 @@ enum GameResult {
 }
 
 struct ScoreView: View {
-    @State var gameResult: GameResult
+    @State var title: String
     @State var percent: Double
+    @State var gameResult: GameResult
     @State var fromPercent: Double = 0.0
     @State var scale: Double = 1.0
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(gameResult.text)
+            Text(title)
                 .font(.system(size: 24, weight: .bold))
                 .bold()
                 .minimumScaleFactor(0.5)

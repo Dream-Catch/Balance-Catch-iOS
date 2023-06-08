@@ -7,19 +7,22 @@
 
 import SwiftUI
 
-struct Question {
-    var gameResult: GameResult
+struct QuestionData {
+    var title: String
     var percent: Double
+    var gameResult: GameResult
 }
 
 struct PublicPickView: View {
     @EnvironmentObject private var viewModel: QuestionDataViewModel
     @Binding var path: [Route]
     
-    @State var winner = Question(gameResult: .draw,
-                                 percent: 50.0)
-    @State var loser = Question(gameResult: .draw,
-                                percent: 50.0)
+    @State var winner = QuestionData(title: "",
+                                     percent: 50,
+                                     gameResult: .draw)
+    @State var loser = QuestionData(title: "",
+                                     percent: 50,
+                                     gameResult: .draw)
     @State var winViewId = UUID()
     @State var loseViewId = UUID()
     
@@ -32,13 +35,15 @@ struct PublicPickView: View {
                 .shadow(color: .gray, radius: 2, x: 3, y: 3)
                 .padding(.bottom, 50)
             
-            ScoreView(gameResult: winner.gameResult,
-                      percent: winner.percent)
+            ScoreView(title: winner.title,
+                      percent: winner.percent,
+                      gameResult: winner.gameResult)
             .id(winViewId)
             
             
-            ScoreView(gameResult: loser.gameResult,
-                      percent: loser.percent)
+            ScoreView(title: loser.title,
+                      percent: loser.percent,
+                      gameResult: loser.gameResult)
             .id(loseViewId)
             
             .padding(30)
@@ -57,12 +62,21 @@ struct PublicPickView: View {
     func setupData() {
         guard let selectedQuestionData = viewModel.selectedQuestionData else { return }
         
-        if selectedQuestionData.firstQuestionScore == selectedQuestionData.secondQuestionScore {
-            winner.gameResult = .draw
-            loser.gameResult = .draw
-        } else {
+        if selectedQuestionData.firstQuestionScore > selectedQuestionData.secondQuestionScore {
             winner.gameResult = .win
+            winner.title = selectedQuestionData.firstQuestion
             loser.gameResult = .lose
+            loser.title = selectedQuestionData.secondQuestion
+        } else if selectedQuestionData.firstQuestionScore < selectedQuestionData.secondQuestionScore {
+            winner.gameResult = .win
+            winner.title = selectedQuestionData.secondQuestion
+            loser.gameResult = .lose
+            loser.title = selectedQuestionData.firstQuestion
+        } else {
+            winner.gameResult = .draw
+            winner.title = selectedQuestionData.firstQuestion
+            loser.gameResult = .draw
+            loser.title = selectedQuestionData.secondQuestion
         }
         
         let maxValue = Double(max(selectedQuestionData.firstQuestionScore, selectedQuestionData.secondQuestionScore))
