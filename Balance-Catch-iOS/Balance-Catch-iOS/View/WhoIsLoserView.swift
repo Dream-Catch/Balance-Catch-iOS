@@ -20,7 +20,7 @@ struct WhoIsLoserView: View {
             .padding(.top,30)
             .offset(x: 150, y: -160)
             .buttonStyle(InformationButton())
-
+            
         }
         Text("벌칙 당첨자💣")
             .font(.system(size: 36, weight: .bold))
@@ -73,7 +73,7 @@ struct WhoIsLoserView: View {
                 moveToPlayerNumberInputView()
             }
             .buttonStyle(BiggerRoundedBlueButton())
-                        
+            
             Button("Replay") {
                 moveToSelectTypeView()
             }
@@ -87,7 +87,6 @@ struct WhoIsLoserView: View {
     private func moveToPlayerNumberInputView() {
         for route in path.reversed() {
             if route == .playerNumberInputView {
-                questionDataViewModel.isAlreadyFetch.value = false
                 break
             } else { path.removeLast() }
         }
@@ -96,7 +95,6 @@ struct WhoIsLoserView: View {
     private func moveToSelectTypeView() {
         for route in path.reversed() {
             if route == .selectTypeView {
-                questionDataViewModel.isAlreadyFetch.value = false
                 break
             } else { path.removeLast() }
         }

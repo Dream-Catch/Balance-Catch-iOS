@@ -20,7 +20,6 @@ struct RecommandOrNotView: View {
     var body: some View {
         ZStack {
             VStack{
-            
                 Text("재미있는 질문이였나요?")
                     .font(.subTitle)
                     .shadow(color:.gray,radius:2,x:3,y:3)
@@ -53,7 +52,7 @@ struct RecommandOrNotView: View {
                 }
             }
             
-            if isLoading { LoadingView() }
+            if questionDataViewModel.isLoading { LoadingView() }
             else { EmptyView() }
         }
         .onAppear() {
@@ -67,27 +66,6 @@ struct RecommandOrNotView: View {
         .balanceCatchBackButton {
             dismiss()
         }
-    }
-    
-    func textQuestion(isFirst: Bool) -> String {
-        
-        let components = (questionDataViewModel.selectedQuestionData?.question ?? "").components(separatedBy: "vs")
-
-        if isFirst {
-            return components[0]
-        }
-        return components[1]
-        
-    }
-    
-    private func bindCombine() {
-        questionDataViewModel.isLoading
-            .receive(on: DispatchQueue.main)
-            .sink { value in
-                if value { self.isLoading = true }
-                else { self.isLoading = false }
-            }
-            .cancel(with: cancelBag)
     }
 }
 

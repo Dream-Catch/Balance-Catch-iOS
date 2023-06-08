@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CustomProgressView: ProgressViewStyle {
-    var isWin: Bool
-    var isDraw: Bool
+    var foregroundColor: Color
     
     func makeBody(configuration: Configuration) -> some View {
         ZStack(alignment: .leading){
@@ -22,22 +21,8 @@ struct CustomProgressView: ProgressViewStyle {
             Rectangle()
                 .cornerRadius(40)
                 .frame(width: CGFloat(configuration.fractionCompleted ?? 0)*160, height: 5)
-                .foregroundColor(graphColor())
+                .foregroundColor(self.foregroundColor)
                 
-        }
-    }
-    
-    func graphColor() -> Color {
-        if isDraw {
-            return Color.drawBlue
-        }
-        else{
-            if isWin {
-                return Color.balanceCatchBlue
-            }
-            else {
-                return Color.lightBlue
-            }
         }
     }
 }

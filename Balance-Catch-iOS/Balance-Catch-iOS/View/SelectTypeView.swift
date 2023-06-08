@@ -9,14 +9,13 @@ import SwiftUI
 
 struct SelectTypeView: View {
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
     @EnvironmentObject var playerList: PlayerList
+    @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
     
     @Binding var path: [Route]
     
     @State private var isActivated1: Bool = false
     @State private var isActivated2: Bool = false
-    @State private var isLoading: Bool = false
     var cancelBag = CancelBag()
     
     var body: some View {
@@ -59,35 +58,19 @@ struct SelectTypeView: View {
                 .disabled(!isActivated1 && !isActivated2)
             } //Vstack
             .onAppear() {
-                bindCombine()
+                fetchData()
             }
             .balanceCatchBackButton {
                 dismiss()
             }
             
-            if isLoading { LoadingView() }
+            if questionDataViewModel.isLoading { LoadingView() }
             else { EmptyView() }
         }
     } //body
     
-    private func bindCombine() {
-        questionDataViewModel.isAlreadyFetch
-            .receive(on: DispatchQueue.main)
-            .sink { value in
-                if !value {
-                    questionDataViewModel.getQuestionMetaData()
-                    questionDataViewModel.isAlreadyFetch.value = true
-                }
-            }
-            .cancel(with: cancelBag)
-        
-        questionDataViewModel.isLoading
-            .receive(on: DispatchQueue.main)
-            .sink { value in
-                if value { self.isLoading = true }
-                else { self.isLoading = false }
-            }
-            .cancel(with: cancelBag)
+    private func fetchData() {
+        questionDataViewModel.getQuestionMetaData()
     }
 }
 
