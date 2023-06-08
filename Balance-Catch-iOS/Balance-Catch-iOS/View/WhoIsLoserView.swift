@@ -87,7 +87,6 @@ struct WhoIsLoserView: View {
     private func moveToPlayerNumberInputView() {
         for route in path.reversed() {
             if route == .playerNumberInputView {
-                questionDataViewModel.isAlreadyFetch.value = false
                 break
             } else { path.removeLast() }
         }
@@ -96,7 +95,6 @@ struct WhoIsLoserView: View {
     private func moveToSelectTypeView() {
         for route in path.reversed() {
             if route == .selectTypeView {
-                questionDataViewModel.isAlreadyFetch.value = false
                 break
             } else { path.removeLast() }
         }

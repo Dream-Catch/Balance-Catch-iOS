@@ -57,7 +57,7 @@ struct RecommandOrNotView: View {
                 }
             }
             
-            if isLoading { LoadingView() }
+            if questionDataViewModel.isLoading { LoadingView() }
             else { EmptyView() }
         }
         .onAppear() {
@@ -71,16 +71,6 @@ struct RecommandOrNotView: View {
         .balanceCatchBackButton {
             dismiss()
         }
-    }
-    
-    private func bindCombine() {
-        questionDataViewModel.isLoading
-            .receive(on: DispatchQueue.main)
-            .sink { value in
-                if value { self.isLoading = true }
-                else { self.isLoading = false }
-            }
-            .cancel(with: cancelBag)
     }
 }
 
