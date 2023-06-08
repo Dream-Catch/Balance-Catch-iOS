@@ -20,36 +20,10 @@ struct RecommandOrNotView: View {
     var body: some View {
         ZStack {
             VStack{
-                
-                Text(textQuestion(isFirst: true))
-                    .font(.system(size:24, weight: .bold))
-                    .minimumScaleFactor(0.5)
-                    .shadow(color:.gray,radius:2,x:3,y:3)
-                    .multilineTextAlignment(.center)
-                    .padding(.leading,5)
-                    .padding(.trailing,5)
-                    .padding(.bottom,10)
-                    
-                Text("vs")
-                    .font(.system(size:24, weight: .bold))
-                    .shadow(color:.gray,radius:2,x:3,y:3)
-                    .padding(.leading,5)
-                    .padding(.trailing,5)
-                    .padding(.bottom,10)
-                
-                Text(textQuestion(isFirst: false))
-                    .font(.system(size:24, weight: .bold))
-                    .minimumScaleFactor(0.5)
-                    .shadow(color:.gray,radius:2,x:3,y:3)
-                    .multilineTextAlignment(.center)
-                    .padding(.leading,5)
-                    .padding(.trailing,5)
-                    .padding(.bottom,10)
-
-                    
- 
+            
                 Text("재미있는 질문이였나요?")
                     .font(.subTitle)
+                    .shadow(color:.gray,radius:2,x:3,y:3)
                     .padding(.bottom,31)
                 
                 HStack{
