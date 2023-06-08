@@ -18,12 +18,14 @@ struct WhoIsLoserView: View {
         VStack{
             VStack
             {
-                Button("i"){
+                Button(action: {
                     self.showDetails.toggle()
+                }){
+                    Image("Parchment")
+                        .resizable()
+                        .frame(width: 50,height: 50)
+                        
                 }
-                .padding(.top,30)
-                .offset(x: 150, y: -160)
-                .buttonStyle(InformationButton())
                 .overlay(
                     ZStack{
                         if showDetails {
@@ -83,20 +85,9 @@ struct WhoIsLoserView: View {
             .padding(.bottom,56)
             
             
-            HStack(spacing: 16){
-                Button("Home") {
-                    moveToPlayerNumberInputView()
-                }
-                .buttonStyle(BiggerRoundedBlueButton())
-                
-                Button("Replay") {
-                    moveToSelectTypeView()
-                }
-                .buttonStyle(BiggerRoundedBlueButton())
-            }
-            .balanceCatchBackButton {
-                dismiss()
-            }
+            Button("Replay") {
+                moveToSelectTypeView()
+            }.buttonStyle(RoundedBlueButton())
         }
     }
         
@@ -104,7 +95,6 @@ struct WhoIsLoserView: View {
     private func moveToPlayerNumberInputView() {
         for route in path.reversed() {
             if route == .playerNumberInputView {
-                questionDataViewModel.isAlreadyFetch.value = false
                 break
             } else { path.removeLast() }
         }
@@ -113,7 +103,6 @@ struct WhoIsLoserView: View {
     private func moveToSelectTypeView() {
         for route in path.reversed() {
             if route == .selectTypeView {
-                questionDataViewModel.isAlreadyFetch.value = false
                 break
             } else { path.removeLast() }
         }

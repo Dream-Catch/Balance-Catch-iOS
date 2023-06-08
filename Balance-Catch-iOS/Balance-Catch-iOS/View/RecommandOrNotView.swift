@@ -20,14 +20,9 @@ struct RecommandOrNotView: View {
     var body: some View {
         ZStack {
             VStack{
-                
-                Text("잠수이별 VS 환승이별")
-                    .font(.system(size:24))
-                    .fontWeight(.bold)
-                    .shadow(color:.gray,radius:2,x:3,y:3)
-                    .padding()
                 Text("재미있는 질문이였나요?")
                     .font(.subTitle)
+                    .shadow(color:.gray,radius:2,x:3,y:3)
                     .padding(.bottom,31)
                 
                 HStack{
@@ -57,7 +52,7 @@ struct RecommandOrNotView: View {
                 }
             }
             
-            if isLoading { LoadingView() }
+            if questionDataViewModel.isLoading { LoadingView() }
             else { EmptyView() }
         }
         .onAppear() {
@@ -71,16 +66,6 @@ struct RecommandOrNotView: View {
         .balanceCatchBackButton {
             dismiss()
         }
-    }
-    
-    private func bindCombine() {
-        questionDataViewModel.isLoading
-            .receive(on: DispatchQueue.main)
-            .sink { value in
-                if value { self.isLoading = true }
-                else { self.isLoading = false }
-            }
-            .cancel(with: cancelBag)
     }
 }
 

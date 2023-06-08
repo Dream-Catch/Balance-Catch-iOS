@@ -35,8 +35,7 @@ struct UserFinalSelectView: View {
                 .padding(.bottom, 51)
             
             HStack{
-                // 선택지 왼쪽일 때 0, 오른쪽일 때 1 확인용
-                Text("Player \(index + 1) \(playerList.players[index].select)")
+     
                 Text("Player \(index + 1)")
                     .font(.system(size:24))
                     .fontWeight(.bold)
