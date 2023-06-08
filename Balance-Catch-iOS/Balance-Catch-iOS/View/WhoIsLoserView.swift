@@ -20,7 +20,7 @@ struct WhoIsLoserView: View {
             .padding(.top,30)
             .offset(x: 150, y: -160)
             .buttonStyle(InformationButton())
-
+            
         }
         Text("벌칙 당첨자💣")
             .font(.system(size: 36, weight: .bold))
@@ -73,7 +73,7 @@ struct WhoIsLoserView: View {
                 moveToPlayerNumberInputView()
             }
             .buttonStyle(BiggerRoundedBlueButton())
-                        
+            
             Button("Replay") {
                 moveToSelectTypeView()
             }

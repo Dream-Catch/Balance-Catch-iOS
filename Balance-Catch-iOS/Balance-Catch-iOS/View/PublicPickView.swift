@@ -7,22 +7,27 @@
 
 import SwiftUI
 
-struct Question {
-    var text: String
+struct QuestionData {
+    var title: String
     var percent: Double
+    var gameResult: GameResult
 }
 
 struct PublicPickView: View {
     @EnvironmentObject private var viewModel: QuestionDataViewModel
     @Binding var path: [Route]
     
-    @State var winner = Question(text: "", percent: 0)
-    @State var loser = Question(text: "", percent: 0)
-    
+    @State var winner = QuestionData(title: "",
+                                     percent: 50,
+                                     gameResult: .draw)
+    @State var loser = QuestionData(title: "",
+                                     percent: 50,
+                                     gameResult: .draw)
     @State var winViewId = UUID()
     @State var loseViewId = UUID()
     
     var body: some View {
+        
         VStack {
             Text("대중 PICK 결과")
                 .font(Font.custom("Arial", size: 24))
@@ -30,14 +35,15 @@ struct PublicPickView: View {
                 .shadow(color: .gray, radius: 2, x: 3, y: 3)
                 .padding(.bottom, 50)
             
-            ScoreView(isWin: true,
-                      text: winner.text,
-                      percent: winner.percent)
+            ScoreView(title: winner.title,
+                      percent: winner.percent,
+                      gameResult: winner.gameResult)
             .id(winViewId)
             
-            ScoreView(isWin: false,
-                      text: loser.text,
-                      percent: loser.percent)
+            
+            ScoreView(title: loser.title,
+                      percent: loser.percent,
+                      gameResult: loser.gameResult)
             .id(loseViewId)
             
             .padding(30)
@@ -56,12 +62,21 @@ struct PublicPickView: View {
     func setupData() {
         guard let selectedQuestionData = viewModel.selectedQuestionData else { return }
         
-        if selectedQuestionData.firstQuestionScore >= selectedQuestionData.secondQuestionScore {
-            winner.text = selectedQuestionData.firstQuestion
-            loser.text = selectedQuestionData.secondQuestion
+        if selectedQuestionData.firstQuestionScore > selectedQuestionData.secondQuestionScore {
+            winner.gameResult = .win
+            winner.title = selectedQuestionData.firstQuestion
+            loser.gameResult = .lose
+            loser.title = selectedQuestionData.secondQuestion
+        } else if selectedQuestionData.firstQuestionScore < selectedQuestionData.secondQuestionScore {
+            winner.gameResult = .win
+            winner.title = selectedQuestionData.secondQuestion
+            loser.gameResult = .lose
+            loser.title = selectedQuestionData.firstQuestion
         } else {
-            winner.text = selectedQuestionData.secondQuestion
-            loser.text = selectedQuestionData.firstQuestion
+            winner.gameResult = .draw
+            winner.title = selectedQuestionData.firstQuestion
+            loser.gameResult = .draw
+            loser.title = selectedQuestionData.secondQuestion
         }
         
         let maxValue = Double(max(selectedQuestionData.firstQuestionScore, selectedQuestionData.secondQuestionScore))
@@ -73,7 +88,6 @@ struct PublicPickView: View {
         loseViewId = UUID()
     }
 }
-
 
 struct PublicPickView_Previews: PreviewProvider {
     static var previews: some View {
