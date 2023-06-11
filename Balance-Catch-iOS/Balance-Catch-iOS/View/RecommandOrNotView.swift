@@ -11,6 +11,7 @@ struct RecommandOrNotView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var playerList: PlayerList
     @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
+    @EnvironmentObject var interstitialAd: InterstitialAd
     
     @Binding var path: [Route]
     
@@ -35,6 +36,7 @@ struct RecommandOrNotView: View {
                                     .selectedQuestionData?
                                     .good += 1
                                 questionDataViewModel.putQuestionLike()
+                                interstitialAd.show()
                             }))
                     }
                     
@@ -47,6 +49,7 @@ struct RecommandOrNotView: View {
                                     .selectedQuestionData?
                                     .bad += 1
                                 questionDataViewModel.putQuestionLike()
+                                interstitialAd.show()
                             }))
                     }
                 }
