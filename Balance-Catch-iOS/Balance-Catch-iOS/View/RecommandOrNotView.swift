@@ -14,9 +14,7 @@ struct RecommandOrNotView: View {
     @EnvironmentObject var interstitialAd: InterstitialAd
     
     @Binding var path: [Route]
-    
     @State var isLoading = false
-    var cancelBag = CancelBag()
     
     var body: some View {
         ZStack {
@@ -28,29 +26,31 @@ struct RecommandOrNotView: View {
                 
                 HStack{
                     ZStack{
-                        NavigationLink("👍🏻", value: Route.publicPickView)
-                            .font(.system(size: 35, weight: .bold))
-                            .buttonStyle(RoundedButton())
-                            .simultaneousGesture(TapGesture().onEnded({
-                                questionDataViewModel
-                                    .selectedQuestionData?
-                                    .good += 1
-                                questionDataViewModel.putQuestionLike()
-                                interstitialAd.show()
-                            }))
+                        NavigationLink("👍🏻",
+                                       value: Route.publicPickView)
+                        .font(.system(size: 35, weight: .bold))
+                        .buttonStyle(RoundedButton())
+                        .simultaneousGesture(TapGesture().onEnded({
+                            questionDataViewModel
+                                .selectedQuestionData?
+                                .good += 1
+                            questionDataViewModel.putQuestionLike()
+                            interstitialAd.show()
+                        }))
                     }
                     
                     ZStack{
-                        NavigationLink("👎🏻", value: Route.publicPickView)
-                            .font(.system(size: 35, weight: .bold))
-                            .buttonStyle(RoundedButton())
-                            .simultaneousGesture(TapGesture().onEnded({
-                                questionDataViewModel
-                                    .selectedQuestionData?
-                                    .bad += 1
-                                questionDataViewModel.putQuestionLike()
-                                interstitialAd.show()
-                            }))
+                        NavigationLink("👎🏻",
+                                       value: Route.publicPickView)
+                        .font(.system(size: 35, weight: .bold))
+                        .buttonStyle(RoundedButton())
+                        .simultaneousGesture(TapGesture().onEnded({
+                            questionDataViewModel
+                                .selectedQuestionData?
+                                .bad += 1
+                            questionDataViewModel.putQuestionLike()
+                            interstitialAd.show()
+                        }))
                     }
                 }
             }

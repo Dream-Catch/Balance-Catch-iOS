@@ -10,21 +10,26 @@ import SwiftUI
 struct QuestionData {
     var title: String
     var percent: Double
+    var scale: Double
     var gameResult: GameResult
 }
 
 struct PublicPickView: View {
     @EnvironmentObject private var viewModel: QuestionDataViewModel
+    @EnvironmentObject private var interstitialAd: InterstitialAd
     @Binding var path: [Route]
     
     @State var winner = QuestionData(title: "",
-                                     percent: 50,
+                                     percent: 50.0,
+                                     scale: 1.0,
                                      gameResult: .draw)
     @State var loser = QuestionData(title: "",
-                                     percent: 50,
-                                     gameResult: .draw)
+                                    percent: 50.0,
+                                    scale: 1.0,
+                                    gameResult: .draw)
     @State var winViewId = UUID()
     @State var loseViewId = UUID()
+    @State var isActive = false
     
     var body: some View {
         
@@ -37,12 +42,14 @@ struct PublicPickView: View {
             
             ScoreView(title: winner.title,
                       percent: winner.percent,
+                      scale: winner.scale,
                       gameResult: winner.gameResult)
             .id(winViewId)
             
             
             ScoreView(title: loser.title,
                       percent: loser.percent,
+                      scale: loser.scale,
                       gameResult: loser.gameResult)
             .id(loseViewId)
             
@@ -57,9 +64,16 @@ struct PublicPickView: View {
         .onAppear {
             setupData()
         }
+        .onReceive(interstitialAd.$isDismiss) { value in
+            if value {
+                winner.scale = 1.2
+                winViewId = UUID()
+                loseViewId = UUID()
+            }
+        }
     }
     
-    func setupData() {
+    private func setupData() {
         guard let selectedQuestionData = viewModel.selectedQuestionData else { return }
         
         if selectedQuestionData.firstQuestionScore > selectedQuestionData.secondQuestionScore {

@@ -79,9 +79,7 @@ struct WhoIsLoserView: View {
             }
             .buttonStyle(BiggerRoundedBlueButton())
         }
-        .balanceCatchBackButton {
-            dismiss()
-        }
+        .navigationBarBackButtonHidden()
     }
     
     private func moveToPlayerNumberInputView() {

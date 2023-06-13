@@ -1,18 +1,14 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
+#use_frameworks!
 
-def shared_pods
+target 'Balance-Catch-iOS' do
   use_frameworks!
   pod 'Google-Mobile-Ads-SDK'
 end
 
-target 'Balance-Catch-iOS' do
-  shared_pods
-end
-
 target 'Balance-Catch-iOSTests' do
-  inherit! :search_paths
-    # Pods for testing
+  # Pods for testing
 end
 
 target 'Balance-Catch-iOSUITests' do

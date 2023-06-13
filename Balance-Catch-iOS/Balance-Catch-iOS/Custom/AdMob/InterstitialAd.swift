@@ -12,6 +12,7 @@ final class InterstitialAd: NSObject, GADFullScreenContentDelegate, ObservableOb
     
     private let appUnitId = "ca-app-pub-7789747740418821/9601686839"
     var ad: GADInterstitialAd?
+    @Published var isDismiss = false
     
     override init() {
         super.init()
@@ -59,10 +60,12 @@ extension InterstitialAd {
     /// Tells the delegate that the ad will present full screen content.
     func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         print("Ad will present full screen content.")
+        isDismiss = false
     }
     
     /// Tells the delegate that the ad dismissed full screen content.
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         print("Ad did dismiss full screen content.")
+        isDismiss = true
     }
 }

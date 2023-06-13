@@ -2,17 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Background color</key>
-	<string></string>
-	<key>UILaunchScreen</key>
-	<dict>
-		<key>UIColorName</key>
-		<string> Color.white</string>
-		<key>UIImageName</key>
-		<string>Logo</string>	
-		<key>UILaunchScreen</key>
-		<dict/>
-	</dict>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-7789747740418821~4545048691</string>
 	<key>SKAdNetworkItems</key>

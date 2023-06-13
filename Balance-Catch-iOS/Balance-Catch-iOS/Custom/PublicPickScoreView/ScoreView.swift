@@ -37,9 +37,10 @@ enum GameResult {
 struct ScoreView: View {
     @State var title: String
     @State var percent: Double
+    @State var scale: Double
     @State var gameResult: GameResult
     @State var fromPercent: Double = 0.0
-    @State var scale: Double = 1.0
+    @State var fromScale: Double = 1.0
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -77,7 +78,7 @@ struct ScoreView: View {
         .overlay(StrokeText(text: gameResult.text,
                             width: 2,
                             color: gameResult.color).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
-        .scaleEffect(gameResult == .draw ? 1 : scale)
+        .scaleEffect(gameResult == .draw ? 1 : fromScale)
         .animation(.easeIn(duration: 1).delay(0.2), value: fromPercent)
         .padding(20)
         .onAppear() {
@@ -86,9 +87,7 @@ struct ScoreView: View {
     }
     
     private func updateData() {
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            if gameResult == .win { scale = 1.2 }
-            fromPercent = percent
-        }
+        if gameResult == .win { fromScale = scale }
+        fromPercent = percent
     }
 }

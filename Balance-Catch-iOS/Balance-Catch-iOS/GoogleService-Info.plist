@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>315697388419-d44jgm9utbjg6va8d85ui4svdtvi561d.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.315697388419-d44jgm9utbjg6va8d85ui4svdtvi561d</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCEBGBQQWSyAdoy_KeVmwZ8IVGqN6uS_do</string>
+	<key>GCM_SENDER_ID</key>
+	<string>315697388419</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dreamcatch.balancecatch</string>
+	<key>PROJECT_ID</key>
+	<string>balancecatch-581bc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>balancecatch-581bc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:315697388419:ios:cdb63eeff699aff7bdf4b6</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-7789747740418821~4545048691</string>
+</dict>
+</plist>

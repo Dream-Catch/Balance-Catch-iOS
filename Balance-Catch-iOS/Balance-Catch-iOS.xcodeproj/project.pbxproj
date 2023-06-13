@@ -26,6 +26,7 @@
 		39A1561A29DC1899000968CA /* StorkeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561929DC1899000968CA /* StorkeText.swift */; };
 		39A1565129DE4846000968CA /* CircleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565029DE4846000968CA /* CircleTimer.swift */; };
 		39A1565529E47B96000968CA /* SecondTeamSpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */; };
+		4267D1F48FEB79B5E45CE82C /* libPods-Balance-Catch-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 260A8CBAA09DA1E59BBF2FE1 /* libPods-Balance-Catch-iOSTests.a */; };
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
 		53D1488529D9672D003EAD5A /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D1488429D9672C003EAD5A /* PlayerModel.swift */; };
 		5616A3E92A2F28B1003DBDF2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616A3E82A2F28B1003DBDF2 /* ScoreView.swift */; };
@@ -63,9 +64,8 @@
 		56E2E4A929C055730023095C /* BeforePlayRuleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A829C055730023095C /* BeforePlayRuleDescriptionView.swift */; };
 		56E2E4AB29C056BE0023095C /* PlayerNumberInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */; };
 		56EC27AA29DFEF4B00951070 /* ThemeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC27A929DFEF4B00951070 /* ThemeButtonStyle.swift */; };
-		90BDC7E40E268A141DE78998 /* Pods_Balance_Catch_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337D3E2103E7E878B91E0F8A /* Pods_Balance_Catch_iOS.framework */; };
-		B86127F72EFF0A67D2B21CF8 /* libPods-Balance-Catch-iOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D4C8949A26520C3FAACA99 /* libPods-Balance-Catch-iOSUITests.a */; };
-		C210BF35FFAB1CE062D72503 /* libPods-Balance-Catch-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B08E0BC85E9E06D5C6B78D /* libPods-Balance-Catch-iOSTests.a */; };
+		7167E719D33F7BC65621D457 /* Pods_Balance_Catch_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4852A0F878891D4D2943655 /* Pods_Balance_Catch_iOS.framework */; };
+		9F484326C205631CC8C89828 /* libPods-Balance-Catch-iOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD5EC6E488F01D3C72F9567 /* libPods-Balance-Catch-iOSUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +86,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		337D3E2103E7E878B91E0F8A /* Pods_Balance_Catch_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Balance_Catch_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BBE6AC6F11D801E1DF6410C /* Pods-Balance-Catch-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSUITests/Pods-Balance-Catch-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2245C71350E295C22ACF1D2C /* Pods-Balance-Catch-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOS.release.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		260A8CBAA09DA1E59BBF2FE1 /* libPods-Balance-Catch-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Balance-Catch-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A46BB329EAD81900F19050 /* InformationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationButton.swift; sourceTree = "<group>"; };
 		33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandOrNotView.swift; sourceTree = "<group>"; };
 		33E60C9429CB6768005EC0AF /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -107,7 +109,6 @@
 		39A1561929DC1899000968CA /* StorkeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorkeText.swift; sourceTree = "<group>"; };
 		39A1565029DE4846000968CA /* CircleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimer.swift; sourceTree = "<group>"; };
 		39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTeamSpeakingView.swift; sourceTree = "<group>"; };
-		528C660F16076EE91A5ED335 /* Pods-Balance-Catch-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSUITests/Pods-Balance-Catch-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
 		53D1488429D9672C003EAD5A /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		5616A3E82A2F28B1003DBDF2 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
@@ -144,13 +145,12 @@
 		56E2E4A829C055730023095C /* BeforePlayRuleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforePlayRuleDescriptionView.swift; sourceTree = "<group>"; };
 		56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNumberInputView.swift; sourceTree = "<group>"; };
 		56EC27A929DFEF4B00951070 /* ThemeButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButtonStyle.swift; sourceTree = "<group>"; };
-		70FFB6398355F74BB14AE55F /* Pods-Balance-Catch-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOS.release.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		72B08E0BC85E9E06D5C6B78D /* libPods-Balance-Catch-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Balance-Catch-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DE914F4661CE661B6AD26D6 /* Pods-Balance-Catch-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		9510D9FF18226E6C2A64C16C /* Pods-Balance-Catch-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSTests/Pods-Balance-Catch-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A7D4C8949A26520C3FAACA99 /* libPods-Balance-Catch-iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Balance-Catch-iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6D823BD3E4DC73F8DF15322 /* Pods-Balance-Catch-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSTests/Pods-Balance-Catch-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		CD7C916EC1C5070E45A149DD /* Pods-Balance-Catch-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSUITests/Pods-Balance-Catch-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		70A0185671401B81B9D8F5B9 /* Pods-Balance-Catch-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSTests/Pods-Balance-Catch-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		7ED71144ADCF04DBD9D33D89 /* Pods-Balance-Catch-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSTests/Pods-Balance-Catch-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8AEAEC31989D3B8D6B601E2B /* Pods-Balance-Catch-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		9BD5EC6E488F01D3C72F9567 /* libPods-Balance-Catch-iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Balance-Catch-iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4852A0F878891D4D2943655 /* Pods_Balance_Catch_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Balance_Catch_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D63F7B4DA4617C553B8C5164 /* Pods-Balance-Catch-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSUITests/Pods-Balance-Catch-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,7 @@
 				562BC5762A345EDF00F22236 /* FirebaseCrashlytics in Frameworks */,
 				562BC5742A345EDF00F22236 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				5640B1022A038A1C0041AB5A /* Alamofire in Frameworks */,
-				90BDC7E40E268A141DE78998 /* Pods_Balance_Catch_iOS.framework in Frameworks */,
+				7167E719D33F7BC65621D457 /* Pods_Balance_Catch_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C210BF35FFAB1CE062D72503 /* libPods-Balance-Catch-iOSTests.a in Frameworks */,
+				4267D1F48FEB79B5E45CE82C /* libPods-Balance-Catch-iOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,32 +178,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B86127F72EFF0A67D2B21CF8 /* libPods-Balance-Catch-iOSUITests.a in Frameworks */,
+				9F484326C205631CC8C89828 /* libPods-Balance-Catch-iOSUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		028499E1526BCC24686A7172 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				337D3E2103E7E878B91E0F8A /* Pods_Balance_Catch_iOS.framework */,
-				72B08E0BC85E9E06D5C6B78D /* libPods-Balance-Catch-iOSTests.a */,
-				A7D4C8949A26520C3FAACA99 /* libPods-Balance-Catch-iOSUITests.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		1098294A3B2627ACA7F8E633 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7DE914F4661CE661B6AD26D6 /* Pods-Balance-Catch-iOS.debug.xcconfig */,
-				70FFB6398355F74BB14AE55F /* Pods-Balance-Catch-iOS.release.xcconfig */,
-				9510D9FF18226E6C2A64C16C /* Pods-Balance-Catch-iOSTests.debug.xcconfig */,
-				C6D823BD3E4DC73F8DF15322 /* Pods-Balance-Catch-iOSTests.release.xcconfig */,
-				528C660F16076EE91A5ED335 /* Pods-Balance-Catch-iOSUITests.debug.xcconfig */,
-				CD7C916EC1C5070E45A149DD /* Pods-Balance-Catch-iOSUITests.release.xcconfig */,
+				8AEAEC31989D3B8D6B601E2B /* Pods-Balance-Catch-iOS.debug.xcconfig */,
+				2245C71350E295C22ACF1D2C /* Pods-Balance-Catch-iOS.release.xcconfig */,
+				7ED71144ADCF04DBD9D33D89 /* Pods-Balance-Catch-iOSTests.debug.xcconfig */,
+				70A0185671401B81B9D8F5B9 /* Pods-Balance-Catch-iOSTests.release.xcconfig */,
+				D63F7B4DA4617C553B8C5164 /* Pods-Balance-Catch-iOSUITests.debug.xcconfig */,
+				1BBE6AC6F11D801E1DF6410C /* Pods-Balance-Catch-iOSUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -232,7 +222,7 @@
 				5624C4C729BFF7D2008C7898 /* Balance-Catch-iOSUITests */,
 				5624C4AB29BFF7CE008C7898 /* Products */,
 				1098294A3B2627ACA7F8E633 /* Pods */,
-				028499E1526BCC24686A7172 /* Frameworks */,
+				B8C711E8CA247C3641B2174C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -424,6 +414,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B8C711E8CA247C3641B2174C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4852A0F878891D4D2943655 /* Pods_Balance_Catch_iOS.framework */,
+				260A8CBAA09DA1E59BBF2FE1 /* libPods-Balance-Catch-iOSTests.a */,
+				9BD5EC6E488F01D3C72F9567 /* libPods-Balance-Catch-iOSUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -431,11 +431,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5624C4CE29BFF7D2008C7898 /* Build configuration list for PBXNativeTarget "Balance-Catch-iOS" */;
 			buildPhases = (
-				4487C76DAF9ACC23339D93D6 /* [CP] Check Pods Manifest.lock */,
+				388E122B4AEE0AF996768F09 /* [CP] Check Pods Manifest.lock */,
 				5624C4A629BFF7CE008C7898 /* Sources */,
 				5624C4A729BFF7CE008C7898 /* Frameworks */,
 				5624C4A829BFF7CE008C7898 /* Resources */,
-				DD6BB40675AF6DD69431A7AB /* [CP] Embed Pods Frameworks */,
+				06ED0E8DEFFC742D44FAB6C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -456,7 +456,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5624C4D129BFF7D2008C7898 /* Build configuration list for PBXNativeTarget "Balance-Catch-iOSTests" */;
 			buildPhases = (
-				44438113A5AC176B7F905FE1 /* [CP] Check Pods Manifest.lock */,
+				3AD3FC8A5A637D0D65328972 /* [CP] Check Pods Manifest.lock */,
 				5624C4B629BFF7D2008C7898 /* Sources */,
 				5624C4B729BFF7D2008C7898 /* Frameworks */,
 				5624C4B829BFF7D2008C7898 /* Resources */,
@@ -475,7 +475,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5624C4D429BFF7D2008C7898 /* Build configuration list for PBXNativeTarget "Balance-Catch-iOSUITests" */;
 			buildPhases = (
-				BBB88452E068D16976848BBD /* [CP] Check Pods Manifest.lock */,
+				B8175CE38A1FDFE155720B18 /* [CP] Check Pods Manifest.lock */,
 				5624C4C029BFF7D2008C7898 /* Sources */,
 				5624C4C129BFF7D2008C7898 /* Frameworks */,
 				5624C4C229BFF7D2008C7898 /* Resources */,
@@ -565,29 +565,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		44438113A5AC176B7F905FE1 /* [CP] Check Pods Manifest.lock */ = {
+		06ED0E8DEFFC742D44FAB6C5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Balance-Catch-iOSTests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4487C76DAF9ACC23339D93D6 /* [CP] Check Pods Manifest.lock */ = {
+		388E122B4AEE0AF996768F09 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -609,7 +604,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BBB88452E068D16976848BBD /* [CP] Check Pods Manifest.lock */ = {
+		3AD3FC8A5A637D0D65328972 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Balance-Catch-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8175CE38A1FDFE155720B18 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -629,23 +646,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DD6BB40675AF6DD69431A7AB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -855,10 +855,11 @@
 		};
 		5624C4CF29BFF7D2008C7898 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DE914F4661CE661B6AD26D6 /* Pods-Balance-Catch-iOS.debug.xcconfig */;
+			baseConfigurationReference = 8AEAEC31989D3B8D6B601E2B /* Pods-Balance-Catch-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Balance-Catch-iOS/Preview Content\"";
@@ -868,9 +869,9 @@
 				INFOPLIST_FILE = "Balance-Catch-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -878,6 +879,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreamcatch.balancecatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -886,10 +888,11 @@
 		};
 		5624C4D029BFF7D2008C7898 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70FFB6398355F74BB14AE55F /* Pods-Balance-Catch-iOS.release.xcconfig */;
+			baseConfigurationReference = 2245C71350E295C22ACF1D2C /* Pods-Balance-Catch-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Balance-Catch-iOS/Preview Content\"";
@@ -899,9 +902,9 @@
 				INFOPLIST_FILE = "Balance-Catch-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -909,6 +912,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreamcatch.balancecatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -917,7 +921,7 @@
 		};
 		5624C4D229BFF7D2008C7898 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9510D9FF18226E6C2A64C16C /* Pods-Balance-Catch-iOSTests.debug.xcconfig */;
+			baseConfigurationReference = 7ED71144ADCF04DBD9D33D89 /* Pods-Balance-Catch-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -938,7 +942,7 @@
 		};
 		5624C4D329BFF7D2008C7898 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6D823BD3E4DC73F8DF15322 /* Pods-Balance-Catch-iOSTests.release.xcconfig */;
+			baseConfigurationReference = 70A0185671401B81B9D8F5B9 /* Pods-Balance-Catch-iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -959,7 +963,7 @@
 		};
 		5624C4D529BFF7D2008C7898 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 528C660F16076EE91A5ED335 /* Pods-Balance-Catch-iOSUITests.debug.xcconfig */;
+			baseConfigurationReference = D63F7B4DA4617C553B8C5164 /* Pods-Balance-Catch-iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -978,7 +982,7 @@
 		};
 		5624C4D629BFF7D2008C7898 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD7C916EC1C5070E45A149DD /* Pods-Balance-Catch-iOSUITests.release.xcconfig */;
+			baseConfigurationReference = 1BBE6AC6F11D801E1DF6410C /* Pods-Balance-Catch-iOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
