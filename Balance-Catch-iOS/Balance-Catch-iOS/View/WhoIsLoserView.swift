@@ -16,24 +16,13 @@ struct WhoIsLoserView: View {
     
     var body: some View {
         
-        ZStack{
-            if showDetails {
-                Text("벌칙 기준")
-                    .font(.system(size: 15))
-                    .fontWeight(.black)
-                    .frame(width: 340, height: 70)
-                    .background(RoundedRectangle(cornerRadius: 20).stroke(.balanceCatchBlue, lineWidth: 4))
-                    .padding(.bottom,630)
-                
-            }
+        ZStack {
             
-            
-            VStack{
+            VStack {
                 Text("벌칙 당첨자💣")
                     .font(.system(size: 36, weight: .bold))
                     .shadow(color:.gray,radius:2,x:3,y:3)
-                    .padding(.bottom,96)
-                
+                    .padding(.bottom, 85)
                 
                 HStack{
                     Text("player 2")
@@ -52,7 +41,6 @@ struct WhoIsLoserView: View {
                         .shadow(color:.gray,radius:2,x:3,y:3)
                         .overlay(RoundedRectangle(cornerRadius: 20)
                             .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
-                    
                 }
                 
                 HStack{
@@ -72,16 +60,40 @@ struct WhoIsLoserView: View {
                         .overlay(RoundedRectangle(cornerRadius: 20)
                             .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
                 }
-                .padding(.bottom,56)
+                .padding(.bottom, 56)
                 
                 
                 Button("Replay") {
                     moveToSelectTypeView()
                 }.buttonStyle(RoundedBlueButton())
             }
+            
+            if showDetails {
+                VStack {
+                    Text("대중픽을 선택한 경우 승리!\n\n모두 대중픽이면 패스~, 모두가 소수픽이면 마시기\n\n대중픽이 50:50이면 다 같이 마셔요!\n\n자~ 행운이 왔을까요~?🍀")
+                        .font(.system(size: 15))
+                        .fontWeight(.black)
+                        .frame(width: CGFloat.superViewFrameWidth -  32 - 40, alignment: .center)
+                        .multilineTextAlignment(.center)
+                        .padding(12)
+                        .background(.white)
+                        .cornerRadius(20)
+                        .shadow(color:.gray,radius:2,x:3,y:3)
+                        .overlay(RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
+                        .padding(.top, UIApplication.safeAreaInsetsTop + 20)
+                    
+                    Spacer()
+                }
+            }
         }
+        .frame(width: CGFloat.superViewFrameWidth,
+               height: CGFloat.superViewFrameHeight,
+               alignment: .center)
         .parchment {
-            self.showDetails.toggle()
+            withAnimation {
+                self.showDetails.toggle()
+            }
         }
     }
     private func moveToPlayerNumberInputView() {

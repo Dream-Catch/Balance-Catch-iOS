@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Parchment: ViewModifier {
-    var action: () -> Void 
+    var action: () -> Void
     
     func body(content: Content) -> some View {
         content
@@ -20,7 +20,8 @@ struct Parchment: ViewModifier {
                     }) {
                         Image(.parchment)
                             .resizable()
-                            .frame(width: 30, height: 30)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 44)
                     }
                 }
             })
