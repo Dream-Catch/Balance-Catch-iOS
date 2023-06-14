@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33A46BB429EAD81900F19050 /* InformationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A46BB329EAD81900F19050 /* InformationButton.swift */; };
+		330B31A62A38919A00D4E122 /* ParchmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330B31A52A38919A00D4E122 /* ParchmentButton.swift */; };
 		33A83C7F29CA375700C0FA16 /* RecommandOrNotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */; };
 		33E60C9529CB6768005EC0AF /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9429CB6768005EC0AF /* RoundedButton.swift */; };
 		33E60C9729CC1B28005EC0AF /* PublicPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9629CC1B28005EC0AF /* PublicPickView.swift */; };
@@ -29,6 +29,7 @@
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
 		53D1488529D9672D003EAD5A /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D1488429D9672C003EAD5A /* PlayerModel.swift */; };
 		5616A3E92A2F28B1003DBDF2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616A3E82A2F28B1003DBDF2 /* ScoreView.swift */; };
+		562189372A39A48800E7C6FE /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562189362A39A48800E7C6FE /* UIApplication+.swift */; };
 		5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */; };
 		5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AF29BFF7CE008C7898 /* LaunchScreenView.swift */; };
 		5624C4B229BFF7D2008C7898 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5624C4B129BFF7D2008C7898 /* Assets.xcassets */; };
@@ -77,7 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		33A46BB329EAD81900F19050 /* InformationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationButton.swift; sourceTree = "<group>"; };
+		330B31A52A38919A00D4E122 /* ParchmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParchmentButton.swift; sourceTree = "<group>"; };
 		33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandOrNotView.swift; sourceTree = "<group>"; };
 		33E60C9429CB6768005EC0AF /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		33E60C9629CC1B28005EC0AF /* PublicPickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicPickView.swift; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
 		53D1488429D9672C003EAD5A /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		5616A3E82A2F28B1003DBDF2 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		562189362A39A48800E7C6FE /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		5624C4AA29BFF7CE008C7898 /* Balance-Catch-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balance-Catch-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance_Catch_iOSApp.swift; sourceTree = "<group>"; };
 		5624C4AF29BFF7CE008C7898 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */,
+				330B31A52A38919A00D4E122 /* ParchmentButton.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -321,7 +324,6 @@
 				33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */,
 				33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */,
 				33FCD2AA29E07AFD006E2131 /* CustomProgressView.swift */,
-				33A46BB329EAD81900F19050 /* InformationButton.swift */,
 				39A1561929DC1899000968CA /* StorkeText.swift */,
 				564E11722A2A25A200CE6118 /* LoadingView.swift */,
 			);
@@ -336,6 +338,7 @@
 				56E2E4A229C03C900023095C /* String+.swift */,
 				56E2E4A529C03E040023095C /* Font+.swift */,
 				56CE463B2A04CC2400E95EF5 /* CancelBag.swift */,
+				562189362A39A48800E7C6FE /* UIApplication+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				5640B0FF2A037DB40041AB5A /* QuestionDataModel.swift in Sources */,
 				33FCD2AB29E07AFD006E2131 /* CustomProgressView.swift in Sources */,
 				39A1561A29DC1899000968CA /* StorkeText.swift in Sources */,
+				562189372A39A48800E7C6FE /* UIApplication+.swift in Sources */,
 				5640B0FC2A0378990041AB5A /* NetworkManager.swift in Sources */,
 				5675DD942A2201B30094E2D1 /* QuestionDataViewModel.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
@@ -515,6 +519,7 @@
 				39A1565529E47B96000968CA /* SecondTeamSpeakingView.swift in Sources */,
 				33E60CA129CC736C005EC0AF /* BiggerRoundBlueButton.swift in Sources */,
 				56E2E4A629C03E040023095C /* Font+.swift in Sources */,
+				330B31A62A38919A00D4E122 /* ParchmentButton.swift in Sources */,
 				39A1561829DC0F7F000968CA /* FirstTeamSpeakingView.swift in Sources */,
 				33A83C7F29CA375700C0FA16 /* RecommandOrNotView.swift in Sources */,
 				56E2E4A129C03BB30023095C /* ShapeStyle+.swift in Sources */,
@@ -526,7 +531,6 @@
 				56CE463C2A04CC2400E95EF5 /* CancelBag.swift in Sources */,
 				5640B1042A038AB60041AB5A /* ServerModel.swift in Sources */,
 				5616A3E92A2F28B1003DBDF2 /* ScoreView.swift in Sources */,
-				33A46BB429EAD81900F19050 /* InformationButton.swift in Sources */,
 				564E11732A2A25A200CE6118 /* LoadingView.swift in Sources */,
 				53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */,
 				39A1565129DE4846000968CA /* CircleTimer.swift in Sources */,
