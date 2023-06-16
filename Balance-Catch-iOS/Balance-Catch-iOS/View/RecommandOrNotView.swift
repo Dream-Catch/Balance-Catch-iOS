@@ -15,46 +15,54 @@ struct RecommandOrNotView: View {
     @Binding var path: [Route]
     
     @State var isLoading = false
-    var cancelBag = CancelBag()
     
     var body: some View {
         ZStack {
-            VStack{
+            VStack(alignment: .center) {
+                Spacer()
+                
                 Text("재미있는 질문이였나요?")
                     .font(.subTitle)
                     .shadow(color:.gray,radius:2,x:3,y:3)
                     .padding(.bottom,31)
                 
-                HStack{
-                    ZStack{
-                        NavigationLink("👍🏻", value: Route.publicPickView)
-                            .font(.system(size: 35, weight: .bold))
-                            .buttonStyle(RoundedButton())
-                            .simultaneousGesture(TapGesture().onEnded({
-                                questionDataViewModel
-                                    .selectedQuestionData?
-                                    .good += 1
-                                questionDataViewModel.putQuestionLike()
-                            }))
-                    }
+                HStack(spacing: 16) {
+                    NavigationLink("👍🏻", value: Route.publicPickView)
+                        .font(.system(size: 35, weight: .bold))
+                        .buttonStyle(RoundedButton())
+                        .simultaneousGesture(TapGesture().onEnded({
+                            questionDataViewModel
+                                .selectedQuestionData?
+                                .good += 1
+                            questionDataViewModel.putQuestionLike()
+                        }))
                     
-                    ZStack{
-                        NavigationLink("👎🏻", value: Route.publicPickView)
-                            .font(.system(size: 35, weight: .bold))
-                            .buttonStyle(RoundedButton())
-                            .simultaneousGesture(TapGesture().onEnded({
-                                questionDataViewModel
-                                    .selectedQuestionData?
-                                    .bad += 1
-                                questionDataViewModel.putQuestionLike()
-                            }))
-                    }
+                    NavigationLink("👎🏻", value: Route.publicPickView)
+                        .font(.system(size: 35, weight: .bold))
+                        .buttonStyle(RoundedButton())
+                        .simultaneousGesture(TapGesture().onEnded({
+                            questionDataViewModel
+                                .selectedQuestionData?
+                                .bad += 1
+                            questionDataViewModel.putQuestionLike()
+                        }))
                 }
+                
+                Spacer()
+                
+                NavigationLink("Skip",
+                               value: Route.publicPickView)
+                .buttonStyle(RoundedBlueButton())
+                .padding(.bottom,
+                         UIApplication.safeAreaInsetsBottom + 50)
             }
             
             if questionDataViewModel.isLoading { LoadingView() }
             else { EmptyView() }
         }
+        .frame(width: CGFloat.superViewFrameWidth,
+               height: CGFloat.superViewFrameHeight,
+               alignment: .center)
         .onAppear() {
             questionDataViewModel
                 .selectedQuestionData?
