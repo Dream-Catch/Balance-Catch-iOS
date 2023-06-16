@@ -51,7 +51,6 @@ struct WhoIsLoserView: View {
                     .padding(.bottom, 56)
                     
                 }
-                
                 Button("Replay") {
                     moveToSelectTypeView()
                 }.buttonStyle(RoundedBlueButton())
