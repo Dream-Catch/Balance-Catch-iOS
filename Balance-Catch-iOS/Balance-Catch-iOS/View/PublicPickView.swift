@@ -74,7 +74,7 @@ struct PublicPickView: View {
             winner.title = selectedQuestionData.secondQuestion
             loser.gameResult = .lose
             loser.title = selectedQuestionData.firstQuestion
-            loserQuestionIdx = 1
+            loserQuestionIdx = 0
         } else {
             winner.gameResult = .draw
             winner.title = selectedQuestionData.firstQuestion
