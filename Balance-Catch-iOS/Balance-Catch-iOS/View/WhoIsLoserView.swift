@@ -62,10 +62,15 @@ struct WhoIsLoserView: View {
                 }
                 .padding(.bottom, 56)
                 
-                
-                Button("Replay") {
-                    moveToSelectTypeView()
-                }.buttonStyle(RoundedBlueButton())
+                HStack(spacing: 16) {
+                    Button("Home") {
+                        moveToPlayerNumberInputView()
+                    }.buttonStyle(RoundedBlueButton())
+                    
+                    Button("Replay") {
+                        moveToSelectTypeView()
+                    }.buttonStyle(RoundedBlueButton())
+                }
             }
             
             if showDetails {

@@ -15,7 +15,6 @@ struct Balance_Catch_iOSApp: App {
     var body: some Scene {
         WindowGroup {
             LaunchScreenView()
-//            PublicPickView(path: Binding.constant([]))
                 .environmentObject(playerList)
                 .environmentObject(selectQuestionViewModel)
         }
