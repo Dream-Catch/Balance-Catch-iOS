@@ -335,8 +335,8 @@
 			children = (
 				56E2E49E29C03B050023095C /* CGFloat+.swift */,
 				56E2E4A029C03BB30023095C /* ShapeStyle+.swift */,
-				56E2E4A229C03C900023095C /* String+.swift */,
 				56E2E4A529C03E040023095C /* Font+.swift */,
+				56E2E4A229C03C900023095C /* String+.swift */,
 				56CE463B2A04CC2400E95EF5 /* CancelBag.swift */,
 				562189362A39A48800E7C6FE /* UIApplication+.swift */,
 			);

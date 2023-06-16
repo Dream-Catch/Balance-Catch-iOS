@@ -61,8 +61,8 @@ struct LaunchScreenView: View {
                     RecommandOrNotView(path: $path)
                 case .publicPickView:
                     PublicPickView(path: $path)
-                case .whoIsLoserView:
-                    WhoIsLoserView(path: $path)
+                case .whoIsLoserView(let loserQuestionIdx):
+                    WhoIsLoserView(loserQuestionIdx: loserQuestionIdx, path: $path)
                 }
             }
         }

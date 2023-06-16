@@ -10,58 +10,47 @@ import SwiftUI
 struct WhoIsLoserView: View {
     @Environment(\.dismiss) private var dismiss
     
+    @State public var loserQuestionIdx: Int
     @State private var showDetails = false
+    @State private var selectFirstQuestionPlayers: [(name: String, index: Int)] = []
+    @State private var selectSecondQuestionPlayers: [(name: String, index: Int)] = []
+    @State private var loserList: [(name: String, index: Int)] = []
+    
+    @EnvironmentObject var playerList: PlayerList
     @EnvironmentObject private var questionDataViewModel: QuestionDataViewModel
+    
     @Binding var path: [Route]
     
     var body: some View {
-        
+
         ZStack {
-            
             VStack {
                 Text("벌칙 당첨자💣")
                     .font(.system(size: 36, weight: .bold))
                     .shadow(color:.gray,radius:2,x:3,y:3)
                     .padding(.bottom, 85)
                 
-                HStack{
-                    Text("player 2")
-                        .font(.subTitle)
-                        .padding(21)
-                        .shadow(color: .black.opacity(0.25),
-                                radius: 2,
-                                x: 0,
-                                y: 4)
+                ForEach(0 ..< loserList.count, id: \.self) {idx in
+                    HStack{
+                        Text("Player \(loserList[idx].index + 1)")
+                            .padding(21)
+                            .font(.subTitle)
+                            .shadow(color: .black.opacity(0.25),
+                                    radius: 2,
+                                    x: 0,
+                                    y: 4)
+                        Text("\(loserList[idx].name)")
+                            .font(.system(size: 24, weight: .bold))
+                            .frame(width: 150, height: 62, alignment: .center)
+                            .background(Color.white)
+                            .cornerRadius(20)
+                            .shadow(color:.gray,radius:2,x:3,y:3)
+                            .overlay(RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
+                    }
+                    .padding(.bottom, 56)
                     
-                    Text("윌")
-                        .font(.system(size: 24, weight: .bold))
-                        .frame(width: 150, height: 62, alignment: .center)
-                        .background(Color.white)
-                        .cornerRadius(20)
-                        .shadow(color:.gray,radius:2,x:3,y:3)
-                        .overlay(RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
                 }
-                
-                HStack{
-                    Text("player 3")
-                        .padding(21)
-                        .font(.subTitle)
-                        .shadow(color: .black.opacity(0.25),
-                                radius: 2,
-                                x: 0,
-                                y: 4)
-                    Text("소낙")
-                        .font(.system(size: 24, weight: .bold))
-                        .frame(width: 150, height: 62, alignment: .center)
-                        .background(Color.white)
-                        .cornerRadius(20)
-                        .shadow(color:.gray,radius:2,x:3,y:3)
-                        .overlay(RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
-                }
-                .padding(.bottom, 56)
-                
                 
                 Button("Replay") {
                     moveToSelectTypeView()
@@ -87,6 +76,11 @@ struct WhoIsLoserView: View {
                 }
             }
         }
+        .onAppear {
+            setPlayerSelecedtList()
+            putQuestionScore()
+            setLoserPlayerList()
+        }
         .frame(width: CGFloat.superViewFrameWidth,
                height: CGFloat.superViewFrameHeight,
                alignment: .center)
@@ -96,6 +90,44 @@ struct WhoIsLoserView: View {
             }
         }
     }
+    
+    
+    private func putQuestionScore() {
+        questionDataViewModel.selectedQuestionData?.firstQuestionScore += selectFirstQuestionPlayers.count
+        questionDataViewModel.selectedQuestionData?.secondQuestionScore += selectSecondQuestionPlayers.count
+        questionDataViewModel.putQuestionLike()
+    }
+    
+    
+    private func setPlayerSelecedtList () {
+        for (index, player) in playerList.players.enumerated() {
+            if player.select == 0 {
+                selectFirstQuestionPlayers.append((name: player.name, index: index))
+            } else if player.select == 1 {
+                selectSecondQuestionPlayers.append((name: player.name, index: index))
+            }
+        }
+    }
+    
+    private func setLoserPlayerList () {
+        if loserQuestionIdx == 0 {
+            loserList = selectFirstQuestionPlayers
+        } else if loserQuestionIdx == 1 {
+            loserList = selectSecondQuestionPlayers
+        } else {
+            loserList = selectFirstQuestionPlayers + selectSecondQuestionPlayers
+        }
+        
+        // 테스트를 위한 프린트 입니다. 테스트 후 지워주세요.
+        print("------Player-------")
+        print(playerList.players)
+        print("------loser-------")
+        for loser in loserList {
+            print("Name: \(loser.name), Index: \(loser.index)")
+        }
+        // 여기까지 지워주시면 됩니다.
+    }
+    
     private func moveToPlayerNumberInputView() {
         for route in path.reversed() {
             if route == .playerNumberInputView {
@@ -116,6 +148,6 @@ struct WhoIsLoserView: View {
 
 struct WhoIsLoserView_Previews: PreviewProvider {
     static var previews: some View {
-        WhoIsLoserView(path: Binding.constant([]))
+        WhoIsLoserView(loserQuestionIdx: 1, path: Binding.constant([]))
     }
 }

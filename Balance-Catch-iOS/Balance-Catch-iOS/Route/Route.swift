@@ -18,5 +18,5 @@ enum Route: Hashable {
     case userFinalSelectView(index: Int)
     case recommandOrNotView
     case publicPickView
-    case whoIsLoserView
+    case whoIsLoserView(loserQuestionIdx: Int)
 }

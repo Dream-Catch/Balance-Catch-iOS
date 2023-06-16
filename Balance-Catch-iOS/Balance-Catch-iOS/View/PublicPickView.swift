@@ -17,6 +17,7 @@ struct PublicPickView: View {
     @EnvironmentObject private var viewModel: QuestionDataViewModel
     @Binding var path: [Route]
     
+    @State private var loserQuestionIdx = -1
     @State var winner = QuestionData(title: "",
                                      percent: 50,
                                      gameResult: .draw)
@@ -49,7 +50,7 @@ struct PublicPickView: View {
             .padding(30)
             
             ZStack {
-                NavigationLink("Next", value: Route.whoIsLoserView)
+                NavigationLink("Next", value: Route.whoIsLoserView(loserQuestionIdx: loserQuestionIdx))
                     .buttonStyle(RoundedBlueButton())
             }
         }
@@ -59,7 +60,7 @@ struct PublicPickView: View {
         }
     }
     
-    func setupData() {
+    private func setupData() {
         guard let selectedQuestionData = viewModel.selectedQuestionData else { return }
         
         if selectedQuestionData.firstQuestionScore > selectedQuestionData.secondQuestionScore {
@@ -67,16 +68,19 @@ struct PublicPickView: View {
             winner.title = selectedQuestionData.firstQuestion
             loser.gameResult = .lose
             loser.title = selectedQuestionData.secondQuestion
+            loserQuestionIdx = 1
         } else if selectedQuestionData.firstQuestionScore < selectedQuestionData.secondQuestionScore {
             winner.gameResult = .win
             winner.title = selectedQuestionData.secondQuestion
             loser.gameResult = .lose
             loser.title = selectedQuestionData.firstQuestion
+            loserQuestionIdx = 1
         } else {
             winner.gameResult = .draw
             winner.title = selectedQuestionData.firstQuestion
             loser.gameResult = .draw
             loser.title = selectedQuestionData.secondQuestion
+            loserQuestionIdx = -1
         }
         
         let maxValue = Double(max(selectedQuestionData.firstQuestionScore, selectedQuestionData.secondQuestionScore))
