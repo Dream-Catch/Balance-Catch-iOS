@@ -12,8 +12,6 @@ struct WhoIsLoserView: View {
     
     @State public var loserQuestionIdx: Int
     @State private var showDetails = false
-    @State private var selectFirstQuestionPlayers: [(name: String, index: Int)] = []
-    @State private var selectSecondQuestionPlayers: [(name: String, index: Int)] = []
     @State private var loserList: [(name: String, index: Int)] = []
     
     @EnvironmentObject var playerList: PlayerList
@@ -76,8 +74,6 @@ struct WhoIsLoserView: View {
             }
         }
         .onAppear {
-            setPlayerSelecedtList()
-            putQuestionScore()
             setLoserPlayerList()
         }
         .frame(width: CGFloat.superViewFrameWidth,
@@ -90,37 +86,19 @@ struct WhoIsLoserView: View {
         }
     }
     
-    
-    private func putQuestionScore() {
-        questionDataViewModel.selectedQuestionData?.firstQuestionScore += selectFirstQuestionPlayers.count
-        questionDataViewModel.selectedQuestionData?.secondQuestionScore += selectSecondQuestionPlayers.count
-        questionDataViewModel.putQuestionLike()
-    }
-    
-    
-    private func setPlayerSelecedtList () {
-        for (index, player) in playerList.players.enumerated() {
-            if player.select == 0 {
-                selectFirstQuestionPlayers.append((name: player.name, index: index))
-            } else if player.select == 1 {
-                selectSecondQuestionPlayers.append((name: player.name, index: index))
-            }
-        }
-    }
-    
     private func setLoserPlayerList () {
-        if loserQuestionIdx == 0 {
-            loserList = selectFirstQuestionPlayers
-        } else if loserQuestionIdx == 1 {
-            loserList = selectSecondQuestionPlayers
-        } else {
-            loserList = selectFirstQuestionPlayers + selectSecondQuestionPlayers
+        for (index, player) in playerList.players.enumerated() {
+            if player.select == loserQuestionIdx {
+                loserList.append((name: player.name, index: index))
+            } else if loserQuestionIdx == -1 {
+                loserList.append((name: player.name, index: index))
+            }
         }
         
         // 테스트를 위한 프린트 입니다. 테스트 후 지워주세요.
         print("------Player-------")
         print(playerList.players)
-        print("------loser-------")
+        print("------loser(\(loserQuestionIdx))-------")
         for loser in loserList {
             print("Name: \(loser.name), Index: \(loser.index)")
         }
