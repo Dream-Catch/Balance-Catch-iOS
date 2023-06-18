@@ -115,7 +115,7 @@ struct WhoIsLoserView: View {
         }
         .onAppear {
             setLoserPlayerList()
-            ViewHeightKey.maxValue = 92 * 4 + 46 // 벌칙자가 최대 3개까지 보이도록 설정
+            ViewHeightKey.maxValue = CGFloat.loserViewHeight * 4 + CGFloat.loserViewHeight / 2 // 벌칙자가 최대 3개까지 보이도록 설정
         }
         .frame(width: CGFloat.superViewFrameWidth,
                height: CGFloat.superViewFrameHeight,

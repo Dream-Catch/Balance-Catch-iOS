@@ -13,4 +13,5 @@ extension CGFloat {
     static let superViewFrameHeight: CGFloat = UIScreen.main.bounds.height
     static let RoundedButtonWidth: CGFloat = 130
     static let RoundedButtonHeight: CGFloat = 56
+    static let loserViewHeight: CGFloat = 92
 }
