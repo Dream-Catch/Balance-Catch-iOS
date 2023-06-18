@@ -19,8 +19,6 @@ struct RecommandOrNotView: View {
     var body: some View {
         ZStack {
             VStack(alignment: .center) {
-                Spacer()
-                
                 Text("재미있는 질문이였나요?")
                     .font(.subTitle)
                     .shadow(color:.gray,radius:2,x:3,y:3)
@@ -48,32 +46,31 @@ struct RecommandOrNotView: View {
                         }))
                 }
                 
-                Spacer()
+                Spacer().frame(height: 31)
                 
                 NavigationLink("Skip",
                                value: Route.publicPickView)
                 .buttonStyle(RoundedBlueButton())
-                .padding(.bottom,
-                         UIApplication.safeAreaInsetsBottom + 50)
             }
             
             if questionDataViewModel.isLoading { LoadingView() }
             else { EmptyView() }
         }
-        .frame(width: CGFloat.superViewFrameWidth,
-               height: CGFloat.superViewFrameHeight,
-               alignment: .center)
         .onAppear() {
-            questionDataViewModel
-                .selectedQuestionData?
-                .firstQuestionScore += playerList.players.filter { $0.select == 0 }.count
-            questionDataViewModel
-                .selectedQuestionData?
-                .secondQuestionScore += playerList.players.filter { $0.select == 1 }.count
+            updateQuestionScore()
         }
         .balanceCatchBackButton {
             dismiss()
         }
+    }
+    
+    private func updateQuestionScore() {
+        questionDataViewModel
+            .selectedQuestionData?
+            .firstQuestionScore += playerList.players.filter { $0.selectType == .first }.count
+        questionDataViewModel
+            .selectedQuestionData?
+            .secondQuestionScore += playerList.players.filter { $0.selectType == .second }.count
     }
 }
 
