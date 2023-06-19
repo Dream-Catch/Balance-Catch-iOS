@@ -19,11 +19,11 @@ struct LoserButtonStyle: ButtonStyle {
             .foregroundColor(.black)
             .background(.white)
             .cornerRadius(20)
-            .overlay(RoundedRectangle(cornerRadius: 20)
-                .stroke(.balanceCatchBlue.opacity(1),lineWidth: 4))
             .shadow(color: .black.opacity(0.25),
                     radius: 2,
                     x: 0,
                     y: 4)
+            .overlay(RoundedRectangle(cornerRadius: 20)
+                .stroke(.balanceCatchBlue.opacity(1),lineWidth: 4))
     }
 }
