@@ -19,17 +19,17 @@ struct PublicPickView: View {
     @EnvironmentObject private var interstitialAd: InterstitialAd
     @Binding var path: [Route]
     
-    @State var winner = QuestionData(title: "",
-                                     percent: 50.0,
-                                     scale: 1.0,
-                                     gameResult: .draw)
-    @State var loser = QuestionData(title: "",
-                                    percent: 50.0,
-                                    scale: 1.0,
-                                    gameResult: .draw)
-    @State var winViewId = UUID()
-    @State var loseViewId = UUID()
-    @State var isActive = false
+    @State private var loserSelectType: SelectType = .none
+    @State private var winner = QuestionData(title: "",
+                                             percent: 50,
+                                             scale: 1.0,
+                                             gameResult: .draw)
+    @State private var loser = QuestionData(title: "",
+                                            percent: 50,
+                                            scale: 1.0,
+                                            gameResult: .draw)
+    @State private var winViewId = UUID()
+    @State private var loseViewId = UUID()
     
     var body: some View {
         
@@ -56,7 +56,7 @@ struct PublicPickView: View {
             .padding(30)
             
             ZStack {
-                NavigationLink("Next", value: Route.whoIsLoserView)
+                NavigationLink("Next", value: Route.whoIsLoserView(loserSelectType: loserSelectType))
                     .buttonStyle(RoundedBlueButton())
             }
         }
@@ -81,16 +81,19 @@ struct PublicPickView: View {
             winner.title = selectedQuestionData.firstQuestion
             loser.gameResult = .lose
             loser.title = selectedQuestionData.secondQuestion
+            loserSelectType = .second
         } else if selectedQuestionData.firstQuestionScore < selectedQuestionData.secondQuestionScore {
             winner.gameResult = .win
             winner.title = selectedQuestionData.secondQuestion
             loser.gameResult = .lose
             loser.title = selectedQuestionData.firstQuestion
+            loserSelectType = .first
         } else {
             winner.gameResult = .draw
             winner.title = selectedQuestionData.firstQuestion
             loser.gameResult = .draw
             loser.title = selectedQuestionData.secondQuestion
+            loserSelectType = .none
         }
         
         let maxValue = Double(max(selectedQuestionData.firstQuestionScore, selectedQuestionData.secondQuestionScore))

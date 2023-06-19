@@ -42,21 +42,12 @@ struct PlayerNameInputView: View {
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 30.0)
                                     .padding(.vertical, 30.0)
-                                /*.background(
-                                 RoundedRectangle(cornerRadius: 20)
-                                 .inset(by: 3)
-                                 .stroke(
-                                 self.playerNames[index].isEmpty ? Color.gray:
-                                 .balanceCatchBlue,
-                                 lineWidth: 5
-                                 )
-                                 )*/
                                     .background(Color.white)
                                     .cornerRadius(20)
                                     .shadow(color:.gray,radius:2,x:3,y:3)
                                     .overlay(RoundedRectangle(cornerRadius: 20)
                                         .stroke(self.playerNames[index].isEmpty ? Color.gray:Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
-                                
+                                    .autocorrectionDisabled(true)
                             }
                             .padding(.bottom,5)
                             
@@ -88,39 +79,29 @@ struct PlayerNameInputView: View {
                     .simultaneousGesture(
                         TapGesture()
                             .onEnded {
-                                if playerNames.allSatisfy({ $0.isEmpty == false }) {
-                                    print("Filled", playerNames)
-                                    for name in playerNames {
-                                        playerList.addPlayer(name: name)
-                                    }
-                                }
-                                else {
-                                    print("Not Filled", playerNames)
-                                    for i in 1...numberOfPeople {
-                                        let playerName = "Player \(i)"
-                                        playerList.addPlayer(name: playerName)
+                                for (index, playerName) in playerNames.enumerated() {
+                                    if !playerName.isEmpty {
+                                        playerList.addPlayer(index: index + 1,
+                                                             name: playerName)
+                                    } else {
+                                        let newPlayerName = "Player \(index + 1)"
+                                        playerList.addPlayer(index: index + 1,
+                                                             name: newPlayerName)
                                     }
                                 }
                             }
                     )
             }
+            .padding(.top, UIApplication.safeAreaInsetsTop)
         }
         .onAppear {
             self.playerList.players = []
             self.playerNames = Array(repeating: "", count: numberOfPeople)
+            ViewHeightKey.maxValue = CGFloat.superViewFrameHeight * 2 / 3 - UIApplication.safeAreaInsetsTop
         }
         .balanceCatchBackButton {
             dismiss()
         }
-    }
-}
-
-struct ViewHeightKey: PreferenceKey {
-    static var defaultValue: CGFloat = 0
-    static let maxValue = CGFloat.superViewFrameHeight * 2 / 3
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        let newValue = max(value, nextValue())
-        value = maxValue >= newValue ? newValue : maxValue
     }
 }
 

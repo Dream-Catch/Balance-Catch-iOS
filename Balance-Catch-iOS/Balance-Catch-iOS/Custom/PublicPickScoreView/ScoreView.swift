@@ -8,17 +8,26 @@
 import Foundation
 import SwiftUI
 
-enum GameResult {
-    case win, lose, draw
+enum GameResult: String {
+    case win = "WIN",
+         lose = "LOSE",
+         draw = "DRAW"
     
-    var text: String {
+    var title: String {
         switch self {
         case .win:
-            return "WIN"
-        case .lose:
-            return "LOSE"
-        case .draw:
-            return "DRAW"
+            return "대중픽 적중 100%"
+        default:
+            return "대중픽 적중 0%"
+        }
+    }
+    
+    var subTitle: String {
+        switch self {
+        case .win:
+            return "전원 벌칙 면제"
+        default:
+            return "전원 벌칙 당첨"
         }
     }
     
@@ -30,6 +39,15 @@ enum GameResult {
             return .lightBlue
         case .draw:
             return .drawBlue
+        }
+    }
+    
+    var imageString: String {
+        switch self {
+        case .win:
+            return .fourLeafClover
+        default:
+            return .bomb
         }
     }
 }
@@ -75,11 +93,11 @@ struct ScoreView: View {
                 .stroke(gameResult.color, lineWidth: 4)
                 .shadow(color: .black.opacity(0.25), radius: 20, x: 0, y: 100)
         )
-        .overlay(StrokeText(text: gameResult.text,
+        .overlay(StrokeText(text: gameResult.rawValue,
                             width: 2,
                             color: gameResult.color).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
         .scaleEffect(gameResult == .draw ? 1 : fromScale)
-        .animation(.easeIn(duration: 1).delay(0.2), value: fromPercent)
+        .animation(.easeIn(duration: 0.5), value: fromPercent)
         .padding(20)
         .onAppear() {
             updateData()
@@ -87,7 +105,9 @@ struct ScoreView: View {
     }
     
     private func updateData() {
-        if gameResult == .win { fromScale = scale }
-        fromPercent = percent
+        withAnimation {
+            if gameResult == .win { fromScale = scale }
+            fromPercent = percent
+        }
     }
 }

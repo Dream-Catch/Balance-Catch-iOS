@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33A46BB429EAD81900F19050 /* InformationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A46BB329EAD81900F19050 /* InformationButton.swift */; };
+		330B31A62A38919A00D4E122 /* ParchmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330B31A52A38919A00D4E122 /* ParchmentButton.swift */; };
 		33A83C7F29CA375700C0FA16 /* RecommandOrNotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */; };
 		33E60C9529CB6768005EC0AF /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9429CB6768005EC0AF /* RoundedButton.swift */; };
 		33E60C9729CC1B28005EC0AF /* PublicPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E60C9629CC1B28005EC0AF /* PublicPickView.swift */; };
@@ -30,9 +30,9 @@
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
 		53D1488529D9672D003EAD5A /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D1488429D9672C003EAD5A /* PlayerModel.swift */; };
 		5616A3E92A2F28B1003DBDF2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616A3E82A2F28B1003DBDF2 /* ScoreView.swift */; };
+		562189372A39A48800E7C6FE /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562189362A39A48800E7C6FE /* UIApplication+.swift */; };
 		5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */; };
 		5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AF29BFF7CE008C7898 /* LaunchScreenView.swift */; };
-		5624C4B229BFF7D2008C7898 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5624C4B129BFF7D2008C7898 /* Assets.xcassets */; };
 		5624C4B529BFF7D2008C7898 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5624C4B429BFF7D2008C7898 /* Preview Assets.xcassets */; };
 		5624C4BF29BFF7D2008C7898 /* Balance_Catch_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4BE29BFF7D2008C7898 /* Balance_Catch_iOSTests.swift */; };
 		5624C4C929BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4C829BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift */; };
@@ -47,15 +47,18 @@
 		5640B0FF2A037DB40041AB5A /* QuestionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640B0FE2A037DB40041AB5A /* QuestionDataModel.swift */; };
 		5640B1022A038A1C0041AB5A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5640B1012A038A1C0041AB5A /* Alamofire */; };
 		5640B1042A038AB60041AB5A /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640B1032A038AB60041AB5A /* ServerModel.swift */; };
+		564406FC2A4037800071ACEA /* GameResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564406FB2A4037800071ACEA /* GameResultView.swift */; };
+		564406FE2A403BD00071ACEA /* LoserButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564406FD2A403BD00071ACEA /* LoserButtonStyle.swift */; };
 		564E11732A2A25A200CE6118 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E11722A2A25A200CE6118 /* LoadingView.swift */; };
+		5653E54B2A3EECA400BF7EFF /* ViewHeightKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5653E54A2A3EECA400BF7EFF /* ViewHeightKey.swift */; };
 		565D574B2A358EB70013B66B /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565D574A2A358EB70013B66B /* InterstitialAd.swift */; };
-		565D574D2A3593090013B66B /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565D574C2A3593090013B66B /* UIApplication+.swift */; };
 		565FCBD729ED149300A27305 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FCBD629ED149300A27305 /* Route.swift */; };
 		5675DD942A2201B30094E2D1 /* QuestionDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5675DD932A2201B30094E2D1 /* QuestionDataViewModel.swift */; };
 		56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56930FD229D59861006CEA3F /* QuestionPickerView.swift */; };
 		56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */; };
 		56CE463C2A04CC2400E95EF5 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE463B2A04CC2400E95EF5 /* CancelBag.swift */; };
 		56D2730E29CACA6E00E4EF76 /* QuestionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */; };
+		56E093CF2A409059004853B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5624C4B129BFF7D2008C7898 /* Assets.xcassets */; };
 		56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49B29C037160023095C /* RoundedBlueButton.swift */; };
 		56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49E29C03B050023095C /* CGFloat+.swift */; };
 		56E2E4A129C03BB30023095C /* ShapeStyle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A029C03BB30023095C /* ShapeStyle+.swift */; };
@@ -89,7 +92,7 @@
 		1BBE6AC6F11D801E1DF6410C /* Pods-Balance-Catch-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSUITests/Pods-Balance-Catch-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2245C71350E295C22ACF1D2C /* Pods-Balance-Catch-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOS.release.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		260A8CBAA09DA1E59BBF2FE1 /* libPods-Balance-Catch-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Balance-Catch-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		33A46BB329EAD81900F19050 /* InformationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationButton.swift; sourceTree = "<group>"; };
+		330B31A52A38919A00D4E122 /* ParchmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParchmentButton.swift; sourceTree = "<group>"; };
 		33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandOrNotView.swift; sourceTree = "<group>"; };
 		33E60C9429CB6768005EC0AF /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		33E60C9629CC1B28005EC0AF /* PublicPickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicPickView.swift; sourceTree = "<group>"; };
@@ -104,7 +107,6 @@
 		3950658029CC949600A9C925 /* SelectBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBox.swift; sourceTree = "<group>"; };
 		3950658229CC94AF00A9C925 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		3950658429CC961300A9C925 /* TimerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCode.swift; sourceTree = "<group>"; };
-		396C55382A2F580700206670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		39A1561729DC0F7F000968CA /* FirstTeamSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTeamSpeakingView.swift; sourceTree = "<group>"; };
 		39A1561929DC1899000968CA /* StorkeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorkeText.swift; sourceTree = "<group>"; };
 		39A1565029DE4846000968CA /* CircleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimer.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
 		53D1488429D9672C003EAD5A /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		5616A3E82A2F28B1003DBDF2 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		562189362A39A48800E7C6FE /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		5624C4AA29BFF7CE008C7898 /* Balance-Catch-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balance-Catch-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance_Catch_iOSApp.swift; sourceTree = "<group>"; };
 		5624C4AF29BFF7CE008C7898 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
@@ -128,13 +131,16 @@
 		5640B0FB2A0378990041AB5A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5640B0FE2A037DB40041AB5A /* QuestionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataModel.swift; sourceTree = "<group>"; };
 		5640B1032A038AB60041AB5A /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
+		564406FB2A4037800071ACEA /* GameResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultView.swift; sourceTree = "<group>"; };
+		564406FD2A403BD00071ACEA /* LoserButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoserButtonStyle.swift; sourceTree = "<group>"; };
 		564E11722A2A25A200CE6118 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		5653E54A2A3EECA400BF7EFF /* ViewHeightKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHeightKey.swift; sourceTree = "<group>"; };
 		565D574A2A358EB70013B66B /* InterstitialAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAd.swift; sourceTree = "<group>"; };
-		565D574C2A3593090013B66B /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		565FCBD629ED149300A27305 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		5675DD932A2201B30094E2D1 /* QuestionDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataViewModel.swift; sourceTree = "<group>"; };
 		56930FD229D59861006CEA3F /* QuestionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPickerView.swift; sourceTree = "<group>"; };
 		56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCatchBackButton.swift; sourceTree = "<group>"; };
+		56C566242A40974400BE50F2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56CE463B2A04CC2400E95EF5 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemView.swift; sourceTree = "<group>"; };
 		56E2E49B29C037160023095C /* RoundedBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBlueButton.swift; sourceTree = "<group>"; };
@@ -201,6 +207,8 @@
 		561665C329F94D3F00CFA1E4 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				56C566242A40974400BE50F2 /* Info.plist */,
+				562BC56E2A345AD600F22236 /* GoogleService-Info.plist */,
 				5624C4B129BFF7D2008C7898 /* Assets.xcassets */,
 			);
 			path = SupportingFiles;
@@ -247,8 +255,6 @@
 				56E2E49D29C03AC90023095C /* Extension */,
 				56E2E49A29C037000023095C /* Custom */,
 				5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */,
-				396C55382A2F580700206670 /* Info.plist */,
-				562BC56E2A345AD600F22236 /* GoogleService-Info.plist */,
 				561665C329F94D3F00CFA1E4 /* SupportingFiles */,
 				5624C4B329BFF7D2008C7898 /* Preview Content */,
 			);
@@ -315,6 +321,14 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		5653E5492A3EEC9000BF7EFF /* PreferenceKey */ = {
+			isa = PBXGroup;
+			children = (
+				5653E54A2A3EECA400BF7EFF /* ViewHeightKey.swift */,
+			);
+			path = PreferenceKey;
+			sourceTree = "<group>";
+		};
 		565D57492A358EA90013B66B /* AdMob */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */,
+				330B31A52A38919A00D4E122 /* ParchmentButton.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -360,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				565D57492A358EA90013B66B /* AdMob */,
+				5653E5492A3EEC9000BF7EFF /* PreferenceKey */,
 				5616A3E72A2F2822003DBDF2 /* PublicPickScoreView */,
 				56C0A19329FA13C7000406CE /* Modifier */,
 				563DF22E29E649F400297A43 /* Timer */,
@@ -373,9 +389,10 @@
 				33E60CA029CC736C005EC0AF /* BiggerRoundBlueButton.swift */,
 				33E60CA229CC88DE005EC0AF /* NameBoxButton.swift */,
 				33FCD2AA29E07AFD006E2131 /* CustomProgressView.swift */,
-				33A46BB329EAD81900F19050 /* InformationButton.swift */,
 				39A1561929DC1899000968CA /* StorkeText.swift */,
 				564E11722A2A25A200CE6118 /* LoadingView.swift */,
+				564406FB2A4037800071ACEA /* GameResultView.swift */,
+				564406FD2A403BD00071ACEA /* LoserButtonStyle.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -385,10 +402,10 @@
 			children = (
 				56E2E49E29C03B050023095C /* CGFloat+.swift */,
 				56E2E4A029C03BB30023095C /* ShapeStyle+.swift */,
-				56E2E4A229C03C900023095C /* String+.swift */,
 				56E2E4A529C03E040023095C /* Font+.swift */,
+				56E2E4A229C03C900023095C /* String+.swift */,
 				56CE463B2A04CC2400E95EF5 /* CancelBag.swift */,
-				565D574C2A3593090013B66B /* UIApplication+.swift */,
+				562189362A39A48800E7C6FE /* UIApplication+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -542,8 +559,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56E093CF2A409059004853B3 /* Assets.xcassets in Resources */,
 				5624C4B529BFF7D2008C7898 /* Preview Assets.xcassets in Resources */,
-				5624C4B229BFF7D2008C7898 /* Assets.xcassets in Resources */,
 				562BC56F2A345AD600F22236 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,6 +677,7 @@
 				5640B0FF2A037DB40041AB5A /* QuestionDataModel.swift in Sources */,
 				33FCD2AB29E07AFD006E2131 /* CustomProgressView.swift in Sources */,
 				39A1561A29DC1899000968CA /* StorkeText.swift in Sources */,
+				562189372A39A48800E7C6FE /* UIApplication+.swift in Sources */,
 				5640B0FC2A0378990041AB5A /* NetworkManager.swift in Sources */,
 				5675DD942A2201B30094E2D1 /* QuestionDataViewModel.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
@@ -671,9 +689,10 @@
 				3950658329CC94AF00A9C925 /* SelectButton.swift in Sources */,
 				53D1488529D9672D003EAD5A /* PlayerModel.swift in Sources */,
 				39A1565529E47B96000968CA /* SecondTeamSpeakingView.swift in Sources */,
-				565D574D2A3593090013B66B /* UIApplication+.swift in Sources */,
 				33E60CA129CC736C005EC0AF /* BiggerRoundBlueButton.swift in Sources */,
 				56E2E4A629C03E040023095C /* Font+.swift in Sources */,
+				5653E54B2A3EECA400BF7EFF /* ViewHeightKey.swift in Sources */,
+				330B31A62A38919A00D4E122 /* ParchmentButton.swift in Sources */,
 				39A1561829DC0F7F000968CA /* FirstTeamSpeakingView.swift in Sources */,
 				33A83C7F29CA375700C0FA16 /* RecommandOrNotView.swift in Sources */,
 				56E2E4A129C03BB30023095C /* ShapeStyle+.swift in Sources */,
@@ -682,15 +701,16 @@
 				56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */,
 				563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */,
 				56EC27AA29DFEF4B00951070 /* ThemeButtonStyle.swift in Sources */,
+				564406FE2A403BD00071ACEA /* LoserButtonStyle.swift in Sources */,
 				56CE463C2A04CC2400E95EF5 /* CancelBag.swift in Sources */,
 				5640B1042A038AB60041AB5A /* ServerModel.swift in Sources */,
 				5616A3E92A2F28B1003DBDF2 /* ScoreView.swift in Sources */,
-				33A46BB429EAD81900F19050 /* InformationButton.swift in Sources */,
 				564E11732A2A25A200CE6118 /* LoadingView.swift in Sources */,
 				53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */,
 				39A1565129DE4846000968CA /* CircleTimer.swift in Sources */,
 				33E60CA329CC88DE005EC0AF /* NameBoxButton.swift in Sources */,
 				33E60C9F29CC6F3B005EC0AF /* WhoIsLoserView.swift in Sources */,
+				564406FC2A4037800071ACEA /* GameResultView.swift in Sources */,
 				5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */,
 				565D574B2A358EB70013B66B /* InterstitialAd.swift in Sources */,
 				56E2E4A329C03C900023095C /* String+.swift in Sources */,
@@ -866,7 +886,7 @@
 				DEVELOPMENT_TEAM = 3KZP62644C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Balance-Catch-iOS/Info.plist";
+				INFOPLIST_FILE = "Balance-Catch-iOS/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -899,7 +919,7 @@
 				DEVELOPMENT_TEAM = 3KZP62644C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Balance-Catch-iOS/Info.plist";
+				INFOPLIST_FILE = "Balance-Catch-iOS/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

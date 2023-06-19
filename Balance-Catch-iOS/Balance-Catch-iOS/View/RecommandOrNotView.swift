@@ -18,16 +18,14 @@ struct RecommandOrNotView: View {
     
     var body: some View {
         ZStack {
-            VStack{
+            VStack(alignment: .center) {
                 Text("재미있는 질문이였나요?")
                     .font(.subTitle)
                     .shadow(color:.gray,radius:2,x:3,y:3)
                     .padding(.bottom,31)
                 
-                HStack{
-                    ZStack{
-                        NavigationLink("👍🏻",
-                                       value: Route.publicPickView)
+                HStack(spacing: 16) {
+                    NavigationLink("👍🏻", value: Route.publicPickView)
                         .font(.system(size: 35, weight: .bold))
                         .buttonStyle(RoundedButton())
                         .simultaneousGesture(TapGesture().onEnded({
@@ -37,7 +35,6 @@ struct RecommandOrNotView: View {
                             questionDataViewModel.putQuestionLike()
                             interstitialAd.show()
                         }))
-                    }
                     
                     ZStack{
                         NavigationLink("👎🏻",
@@ -53,22 +50,36 @@ struct RecommandOrNotView: View {
                         }))
                     }
                 }
+                
+                Spacer().frame(height: 31)
+                
+                NavigationLink("Skip",
+                               value: Route.publicPickView)
+                .buttonStyle(RoundedBlueButton())
+                .simultaneousGesture(TapGesture().onEnded({
+                    interstitialAd.show()
+                }))
             }
             
             if questionDataViewModel.isLoading { LoadingView() }
             else { EmptyView() }
         }
+        .navigationBarBackButtonHidden()
         .onAppear() {
-            questionDataViewModel
-                .selectedQuestionData?
-                .firstQuestionScore += playerList.players.filter { $0.select == 0 }.count
-            questionDataViewModel
-                .selectedQuestionData?
-                .secondQuestionScore += playerList.players.filter { $0.select == 1 }.count
+            updateQuestionScore()
         }
         .balanceCatchBackButton {
             dismiss()
         }
+    }
+    
+    private func updateQuestionScore() {
+        questionDataViewModel
+            .selectedQuestionData?
+            .firstQuestionScore += playerList.players.filter { $0.selectType == .first }.count
+        questionDataViewModel
+            .selectedQuestionData?
+            .secondQuestionScore += playerList.players.filter { $0.selectType == .second }.count
     }
 }
 
