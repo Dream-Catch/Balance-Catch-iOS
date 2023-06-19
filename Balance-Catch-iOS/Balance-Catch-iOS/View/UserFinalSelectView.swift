@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserFinalSelectView: View {
     @Environment(\.dismiss) private var dismiss
-
+    
     @EnvironmentObject var playerList: PlayerList
     @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
     let index: Int
@@ -35,7 +35,7 @@ struct UserFinalSelectView: View {
                 .padding(.bottom, 51)
             
             HStack{
-     
+                
                 Text("Player \(index + 1)")
                     .font(.system(size:24))
                     .fontWeight(.bold)
@@ -63,16 +63,16 @@ struct UserFinalSelectView: View {
                             self.isActivated2 = false
                         }
                         self.isActivated1.toggle()
-                        playerList.players[index].select = 0
+                        playerList.players[index].selectType = .first
                     })
                     {
                         Text(questionDataViewModel
                             .selectedQuestionData?
                             .firstQuestion ?? "")
-                            .font(.system(size: 27, weight: .bold))
-                            .minimumScaleFactor(0.5)
-                            .padding(.leading, 30)
-                            .frame(width:250,height:150)
+                        .font(.system(size: 27, weight: .bold))
+                        .minimumScaleFactor(0.5)
+                        .padding(.leading, 30)
+                        .frame(width:250,height:150)
                     }
                     .offset(x: showingSubview ? 0 : -150, y: 0)
                     .buttonStyle(SelectButton(isActivated: $isActivated1))
@@ -88,15 +88,15 @@ struct UserFinalSelectView: View {
                             self.isActivated1 = false
                         }
                         self.isActivated2.toggle()
-                        playerList.players[index].select = 1
+                        playerList.players[index].selectType = .second
                     }) {
                         Text(questionDataViewModel
                             .selectedQuestionData?
                             .secondQuestion ?? "")
-                            .font(.system(size: 27, weight: .bold))
-                            .minimumScaleFactor(0.5)
-                            .padding(.trailing, 30)
-                            .frame(width:250,height:150)
+                        .font(.system(size: 27, weight: .bold))
+                        .minimumScaleFactor(0.5)
+                        .padding(.trailing, 30)
+                        .frame(width:250,height:150)
                         
                     }
                     .buttonStyle(SelectButton(isActivated: $isActivated2))
@@ -120,7 +120,7 @@ struct UserFinalSelectView: View {
                     showingSubview = true
                 }
             }
-          
+            
             if index < playerList.players.count - 1 {
                 NavigationLink("Next", value: Route.userFinalSelectView(index: index + 1))
                     .buttonStyle(RoundedBlueButton())

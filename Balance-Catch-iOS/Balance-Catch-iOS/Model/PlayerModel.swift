@@ -7,10 +7,14 @@
 
 import Foundation
 
-struct Player: Identifiable {
-    let id = UUID()
+enum SelectType {
+    case first, second, none
+}
+
+struct Player {
+    var index: Int
     var name: String
-    var select: Int
+    var selectType: SelectType
 }
 
 class PlayerList: ObservableObject {
@@ -20,8 +24,11 @@ class PlayerList: ObservableObject {
         self.players = players
     }
     
-    func addPlayer(name: String) {
-        let player = Player(name: name,select : -1)
+    func addPlayer(index: Int,
+                   name: String) {
+        let player = Player(index: index,
+                            name: name,
+                            selectType : .none)
         players.append(player)
     }
     

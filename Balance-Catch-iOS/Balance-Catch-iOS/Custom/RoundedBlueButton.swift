@@ -18,7 +18,7 @@ struct RoundedBlueButton: ButtonStyle {
             .background(configuration.isPressed ? .lightBlue : .balanceCatchBlue)
             .cornerRadius(25)
             .shadow(color: .black.opacity(0.25),
-                    radius: 2,
+                    radius: 4,
                     x: 0,
                     y: 4)
     }

@@ -9,8 +9,17 @@ import UIKit
 
 extension CGFloat {
     
+    // SuperView
     static let superViewFrameWidth: CGFloat = UIScreen.main.bounds.width
     static let superViewFrameHeight: CGFloat = UIScreen.main.bounds.height
-    static let RoundedButtonWidth: CGFloat = 130
+    
+    // View
+    static let loserViewHeight: CGFloat = 92
+    
+    // Button
+    static let RoundedButtonWidth: CGFloat = 140
     static let RoundedButtonHeight: CGFloat = 56
+    static let loserButtonWidth: CGFloat = 150
+    static let loserTitleButtonWidth: CGFloat = 320
+    static let loserTitleButtonHeight: CGFloat = 70
 }

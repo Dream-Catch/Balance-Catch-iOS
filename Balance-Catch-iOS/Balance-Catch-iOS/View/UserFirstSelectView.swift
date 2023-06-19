@@ -64,7 +64,7 @@ struct UserFirstSelectView: View {
                             self.isActivated2 = false
                         }
                         self.isActivated1.toggle()
-                        playerList.players[index].select = 0
+                        playerList.players[index].selectType = .first
                         
                     })
                     {
@@ -89,7 +89,7 @@ struct UserFirstSelectView: View {
                             self.isActivated1 = false
                         }
                         self.isActivated2.toggle()
-                        playerList.players[index].select = 1
+                        playerList.players[index].selectType = .second
                     }) {
                         Text(questionDataViewModel
                             .selectedQuestionData?
