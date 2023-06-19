@@ -11,4 +11,6 @@ extension String {
     static let back = "Back"
     static let logo = "Logo"
     static let parchment = "Parchment"
+    static let bomb = "Bomb"
+    static let fourLeafClover = "FourLeafClover"
 }

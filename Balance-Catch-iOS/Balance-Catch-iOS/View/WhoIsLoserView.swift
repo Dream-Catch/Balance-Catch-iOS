@@ -18,25 +18,21 @@ struct WhoIsLoserView: View {
     @State private var showGameRule = false
     @State private var loserList: [Player] = []
     @State private var scrollViewHeight: CGFloat = 0
-    @State private var scrollViewMaxHeigth: CGFloat = 420
     
     var body: some View {
         ZStack {
-            VStack(alignment: .center) {
+            VStack(spacing: 0) {
+                
                 // 다 걸렸을 때
                 if loserList.count == playerList.players.count || loserSelectType == .none {
-                    Text("모두 벌칙에 당첨됐습니다!")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.bottom, 14)
+                    GameResultView(gameResult: .lose)
+                        .padding(.bottom, 32)
                 }
                 
                 // 아무도 안 걸렸을 때
                 else if loserList.isEmpty {
-                    Text("다들 심리전에 고수시군요~")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.bottom, 14)
+                    GameResultView(gameResult: .win)
+                        .padding(.bottom, 32)
                 }
                 
                 // 누군가 걸렸을 때
@@ -44,7 +40,7 @@ struct WhoIsLoserView: View {
                     Text("벌칙 당첨자💣")
                         .font(.system(size: 36, weight: .bold))
                         .shadow(color:.gray,radius:2,x:3,y:3)
-                        .padding(.bottom, 46)
+                        .padding(.bottom, 48)
                     
                     ScrollView {
                         VStack {
@@ -58,14 +54,8 @@ struct WhoIsLoserView: View {
                                                 y: 4)
                                         .frame(width: 150, height: 56, alignment: .center)
                                     
-                                    Text("\(loserList[idx].name)")
-                                        .font(.system(size: 24, weight: .bold))
-                                        .frame(width: 150, height: 56, alignment: .center)
-                                        .background(Color.white)
-                                        .cornerRadius(20)
-                                        .shadow(color:.gray,radius:2,x:3,y:3)
-                                        .overlay(RoundedRectangle(cornerRadius: 20)
-                                            .stroke(Color("BalanceCatchBlue").opacity(1),lineWidth: 4))
+                                    Button("\(loserList[idx].name)") { }
+                                        .buttonStyle(LoserButtonStyle(width: CGFloat.loserButtonWidth, height: CGFloat.RoundedButtonHeight))
                                 }
                                 .padding(.horizontal, 12)
                                 .padding(.vertical, 14)
@@ -84,9 +74,8 @@ struct WhoIsLoserView: View {
                         }
                     }
                     .frame(maxHeight: scrollViewHeight)
+                    .padding(.bottom, 36)
                 }
-                
-                Spacer().frame(height: 22)
                 
                 Button("Replay") {
                     moveToSelectTypeView()
@@ -150,7 +139,6 @@ struct WhoIsLoserView: View {
             } else { path.removeLast() }
         }
     }
-    
 }
 
 struct WhoIsLoserView_Previews: PreviewProvider {
