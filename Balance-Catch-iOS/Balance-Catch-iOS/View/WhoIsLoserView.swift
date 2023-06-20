@@ -55,8 +55,7 @@ struct WhoIsLoserView: View {
                                         .frame(width: 150, height: 56, alignment: .center)
                                     
                                     Button("\(loserList[idx].name)") { }
-                                        .buttonStyle(LoserButtonStyle(width: CGFloat.loserButtonWidth, height: CGFloat.RoundedButtonHeight)
-                                            )
+                                        .buttonStyle(LoserButtonStyle(width: CGFloat.loserButtonWidth, height: CGFloat.RoundedButtonHeight))
                                         .minimumScaleFactor(0.5)
                                 }
                                 
@@ -89,7 +88,7 @@ struct WhoIsLoserView: View {
             
             if showGameRule {
                 VStack {
-                    Text("대중픽을 선택한 경우 승리!\n\n모두 대중픽이면 패스~ 모두가 소수픽이면 마시기\n\n대중픽이 50:50이면 다 같이 마셔요!\n\n자~ 행운이 왔을까요~?🍀")
+                    Text("대중픽을 선택한 경우 승리!\n\n모두 대중픽이면 패스~ 모두가 소수픽이면 전원 벌칙!\n\n대중픽이 50:50이라도 모두 벌칙~!\n\n자~ 행운이 왔을까요~?🍀")
                         .font(.system(size: 15))
                         .fontWeight(.black)
                         .frame(width: CGFloat.superViewFrameWidth -  32 - 40, alignment: .center)
