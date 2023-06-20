@@ -97,7 +97,7 @@ struct ScoreView: View {
                             width: 2,
                             color: gameResult.color).position(x: 38, y: 0).font(.system(size: 29, weight: .bold)))
         .scaleEffect(gameResult == .draw ? 1 : fromScale)
-        .animation(.easeIn(duration: 0.5), value: fromPercent)
+        .animation(.easeIn(duration: 1).delay(0.2), value: fromPercent)
         .padding(20)
         .onAppear() {
             updateData()
