@@ -55,8 +55,12 @@ struct WhoIsLoserView: View {
                                         .frame(width: 150, height: 56, alignment: .center)
                                     
                                     Button("\(loserList[idx].name)") { }
-                                        .buttonStyle(LoserButtonStyle(width: CGFloat.loserButtonWidth, height: CGFloat.RoundedButtonHeight))
+                                        .buttonStyle(LoserButtonStyle(width: CGFloat.loserButtonWidth, height: CGFloat.RoundedButtonHeight)
+                                            )
+                                        .minimumScaleFactor(0.5)
                                 }
+                                
+                                
                                 .padding(.horizontal, 12)
                                 .padding(.vertical, 14)
                             }

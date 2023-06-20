@@ -42,6 +42,7 @@ struct UserFinalSelectView: View {
                 
                 Text(playerList.players[index].name)
                     .font(.system(size:20))
+                    .minimumScaleFactor(0.5)
                     .fontWeight(.bold)
                     .frame(width: 150, height: 56)
                     .background(Color.white)

@@ -46,6 +46,7 @@ struct UserFirstSelectView: View {
                     .shadow(color:.gray,radius:2,x:3,y:3)
                 Text(playerList.players[index].name)
                     .font(.system(size:20))
+                    .minimumScaleFactor(0.5)
                     .fontWeight(.bold)
                     .frame(width: 150, height: 56)
                     .background(Color.white)
