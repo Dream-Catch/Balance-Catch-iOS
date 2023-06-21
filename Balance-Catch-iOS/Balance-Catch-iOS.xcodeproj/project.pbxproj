@@ -26,17 +26,21 @@
 		39A1561A29DC1899000968CA /* StorkeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1561929DC1899000968CA /* StorkeText.swift */; };
 		39A1565129DE4846000968CA /* CircleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565029DE4846000968CA /* CircleTimer.swift */; };
 		39A1565529E47B96000968CA /* SecondTeamSpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */; };
+		4267D1F48FEB79B5E45CE82C /* libPods-Balance-Catch-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 260A8CBAA09DA1E59BBF2FE1 /* libPods-Balance-Catch-iOSTests.a */; };
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
 		53D1488529D9672D003EAD5A /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D1488429D9672C003EAD5A /* PlayerModel.swift */; };
 		5616A3E92A2F28B1003DBDF2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616A3E82A2F28B1003DBDF2 /* ScoreView.swift */; };
 		562189372A39A48800E7C6FE /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562189362A39A48800E7C6FE /* UIApplication+.swift */; };
 		5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */; };
 		5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AF29BFF7CE008C7898 /* LaunchScreenView.swift */; };
-		5624C4B229BFF7D2008C7898 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5624C4B129BFF7D2008C7898 /* Assets.xcassets */; };
 		5624C4B529BFF7D2008C7898 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5624C4B429BFF7D2008C7898 /* Preview Assets.xcassets */; };
 		5624C4BF29BFF7D2008C7898 /* Balance_Catch_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4BE29BFF7D2008C7898 /* Balance_Catch_iOSTests.swift */; };
 		5624C4C929BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4C829BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift */; };
 		5624C4CB29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */; };
+		562BC56F2A345AD600F22236 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 562BC56E2A345AD600F22236 /* GoogleService-Info.plist */; };
+		562BC5722A345EDF00F22236 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 562BC5712A345EDF00F22236 /* FirebaseAnalytics */; };
+		562BC5742A345EDF00F22236 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 562BC5732A345EDF00F22236 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		562BC5762A345EDF00F22236 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 562BC5752A345EDF00F22236 /* FirebaseCrashlytics */; };
 		563DF23029E64A0100297A43 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DF22F29E64A0100297A43 /* TimerManager.swift */; };
 		563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBD4A29C9444400847390 /* SelectQuestionView.swift */; };
 		5640B0FC2A0378990041AB5A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640B0FB2A0378990041AB5A /* NetworkManager.swift */; };
@@ -47,12 +51,14 @@
 		564406FE2A403BD00071ACEA /* LoserButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564406FD2A403BD00071ACEA /* LoserButtonStyle.swift */; };
 		564E11732A2A25A200CE6118 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E11722A2A25A200CE6118 /* LoadingView.swift */; };
 		5653E54B2A3EECA400BF7EFF /* ViewHeightKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5653E54A2A3EECA400BF7EFF /* ViewHeightKey.swift */; };
+		565D574B2A358EB70013B66B /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565D574A2A358EB70013B66B /* InterstitialAd.swift */; };
 		565FCBD729ED149300A27305 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FCBD629ED149300A27305 /* Route.swift */; };
 		5675DD942A2201B30094E2D1 /* QuestionDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5675DD932A2201B30094E2D1 /* QuestionDataViewModel.swift */; };
 		56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56930FD229D59861006CEA3F /* QuestionPickerView.swift */; };
 		56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */; };
 		56CE463C2A04CC2400E95EF5 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE463B2A04CC2400E95EF5 /* CancelBag.swift */; };
 		56D2730E29CACA6E00E4EF76 /* QuestionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */; };
+		56E093CF2A409059004853B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5624C4B129BFF7D2008C7898 /* Assets.xcassets */; };
 		56E2E49C29C037160023095C /* RoundedBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49B29C037160023095C /* RoundedBlueButton.swift */; };
 		56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E49E29C03B050023095C /* CGFloat+.swift */; };
 		56E2E4A129C03BB30023095C /* ShapeStyle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A029C03BB30023095C /* ShapeStyle+.swift */; };
@@ -61,6 +67,8 @@
 		56E2E4A929C055730023095C /* BeforePlayRuleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A829C055730023095C /* BeforePlayRuleDescriptionView.swift */; };
 		56E2E4AB29C056BE0023095C /* PlayerNumberInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */; };
 		56EC27AA29DFEF4B00951070 /* ThemeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC27A929DFEF4B00951070 /* ThemeButtonStyle.swift */; };
+		7167E719D33F7BC65621D457 /* Pods_Balance_Catch_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4852A0F878891D4D2943655 /* Pods_Balance_Catch_iOS.framework */; };
+		9F484326C205631CC8C89828 /* libPods-Balance-Catch-iOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD5EC6E488F01D3C72F9567 /* libPods-Balance-Catch-iOSUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +89,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BBE6AC6F11D801E1DF6410C /* Pods-Balance-Catch-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSUITests/Pods-Balance-Catch-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2245C71350E295C22ACF1D2C /* Pods-Balance-Catch-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOS.release.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		260A8CBAA09DA1E59BBF2FE1 /* libPods-Balance-Catch-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Balance-Catch-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		330B31A52A38919A00D4E122 /* ParchmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParchmentButton.swift; sourceTree = "<group>"; };
 		33A83C7E29CA375700C0FA16 /* RecommandOrNotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandOrNotView.swift; sourceTree = "<group>"; };
 		33E60C9429CB6768005EC0AF /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -96,7 +107,6 @@
 		3950658029CC949600A9C925 /* SelectBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBox.swift; sourceTree = "<group>"; };
 		3950658229CC94AF00A9C925 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		3950658429CC961300A9C925 /* TimerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCode.swift; sourceTree = "<group>"; };
-		396C55382A2F580700206670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39A1561729DC0F7F000968CA /* FirstTeamSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTeamSpeakingView.swift; sourceTree = "<group>"; };
 		39A1561929DC1899000968CA /* StorkeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorkeText.swift; sourceTree = "<group>"; };
 		39A1565029DE4846000968CA /* CircleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimer.swift; sourceTree = "<group>"; };
@@ -115,6 +125,7 @@
 		5624C4C429BFF7D2008C7898 /* Balance-Catch-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Balance-Catch-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5624C4C829BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance_Catch_iOSUITests.swift; sourceTree = "<group>"; };
 		5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance_Catch_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		562BC56E2A345AD600F22236 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		563DF22F29E64A0100297A43 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		563FBD4A29C9444400847390 /* SelectQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionView.swift; sourceTree = "<group>"; };
 		5640B0FB2A0378990041AB5A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -124,10 +135,12 @@
 		564406FD2A403BD00071ACEA /* LoserButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoserButtonStyle.swift; sourceTree = "<group>"; };
 		564E11722A2A25A200CE6118 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5653E54A2A3EECA400BF7EFF /* ViewHeightKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHeightKey.swift; sourceTree = "<group>"; };
+		565D574A2A358EB70013B66B /* InterstitialAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAd.swift; sourceTree = "<group>"; };
 		565FCBD629ED149300A27305 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		5675DD932A2201B30094E2D1 /* QuestionDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataViewModel.swift; sourceTree = "<group>"; };
 		56930FD229D59861006CEA3F /* QuestionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPickerView.swift; sourceTree = "<group>"; };
 		56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCatchBackButton.swift; sourceTree = "<group>"; };
+		56C566242A40974400BE50F2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56CE463B2A04CC2400E95EF5 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		56D2730D29CACA6E00E4EF76 /* QuestionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemView.swift; sourceTree = "<group>"; };
 		56E2E49B29C037160023095C /* RoundedBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBlueButton.swift; sourceTree = "<group>"; };
@@ -138,6 +151,12 @@
 		56E2E4A829C055730023095C /* BeforePlayRuleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforePlayRuleDescriptionView.swift; sourceTree = "<group>"; };
 		56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNumberInputView.swift; sourceTree = "<group>"; };
 		56EC27A929DFEF4B00951070 /* ThemeButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButtonStyle.swift; sourceTree = "<group>"; };
+		70A0185671401B81B9D8F5B9 /* Pods-Balance-Catch-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSTests/Pods-Balance-Catch-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		7ED71144ADCF04DBD9D33D89 /* Pods-Balance-Catch-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSTests/Pods-Balance-Catch-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8AEAEC31989D3B8D6B601E2B /* Pods-Balance-Catch-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		9BD5EC6E488F01D3C72F9567 /* libPods-Balance-Catch-iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Balance-Catch-iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4852A0F878891D4D2943655 /* Pods_Balance_Catch_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Balance_Catch_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D63F7B4DA4617C553B8C5164 /* Pods-Balance-Catch-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSUITests/Pods-Balance-Catch-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +164,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				562BC5722A345EDF00F22236 /* FirebaseAnalytics in Frameworks */,
+				562BC5762A345EDF00F22236 /* FirebaseCrashlytics in Frameworks */,
+				562BC5742A345EDF00F22236 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				5640B1022A038A1C0041AB5A /* Alamofire in Frameworks */,
+				7167E719D33F7BC65621D457 /* Pods_Balance_Catch_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4267D1F48FEB79B5E45CE82C /* libPods-Balance-Catch-iOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,16 +184,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F484326C205631CC8C89828 /* libPods-Balance-Catch-iOSUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1098294A3B2627ACA7F8E633 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AEAEC31989D3B8D6B601E2B /* Pods-Balance-Catch-iOS.debug.xcconfig */,
+				2245C71350E295C22ACF1D2C /* Pods-Balance-Catch-iOS.release.xcconfig */,
+				7ED71144ADCF04DBD9D33D89 /* Pods-Balance-Catch-iOSTests.debug.xcconfig */,
+				70A0185671401B81B9D8F5B9 /* Pods-Balance-Catch-iOSTests.release.xcconfig */,
+				D63F7B4DA4617C553B8C5164 /* Pods-Balance-Catch-iOSUITests.debug.xcconfig */,
+				1BBE6AC6F11D801E1DF6410C /* Pods-Balance-Catch-iOSUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		561665C329F94D3F00CFA1E4 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				396C55382A2F580700206670 /* Info.plist */,
+				56C566242A40974400BE50F2 /* Info.plist */,
+				562BC56E2A345AD600F22236 /* GoogleService-Info.plist */,
 				5624C4B129BFF7D2008C7898 /* Assets.xcassets */,
 			);
 			path = SupportingFiles;
@@ -190,6 +229,8 @@
 				5624C4BD29BFF7D2008C7898 /* Balance-Catch-iOSTests */,
 				5624C4C729BFF7D2008C7898 /* Balance-Catch-iOSUITests */,
 				5624C4AB29BFF7CE008C7898 /* Products */,
+				1098294A3B2627ACA7F8E633 /* Pods */,
+				B8C711E8CA247C3641B2174C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -288,6 +329,14 @@
 			path = PreferenceKey;
 			sourceTree = "<group>";
 		};
+		565D57492A358EA90013B66B /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				565D574A2A358EB70013B66B /* InterstitialAd.swift */,
+			);
+			path = AdMob;
+			sourceTree = "<group>";
+		};
 		565FCBD529ED148600A27305 /* Route */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +374,7 @@
 		56E2E49A29C037000023095C /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				565D57492A358EA90013B66B /* AdMob */,
 				5653E5492A3EEC9000BF7EFF /* PreferenceKey */,
 				5616A3E72A2F2822003DBDF2 /* PublicPickScoreView */,
 				56C0A19329FA13C7000406CE /* Modifier */,
@@ -381,6 +431,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B8C711E8CA247C3641B2174C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4852A0F878891D4D2943655 /* Pods_Balance_Catch_iOS.framework */,
+				260A8CBAA09DA1E59BBF2FE1 /* libPods-Balance-Catch-iOSTests.a */,
+				9BD5EC6E488F01D3C72F9567 /* libPods-Balance-Catch-iOSUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,9 +448,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5624C4CE29BFF7D2008C7898 /* Build configuration list for PBXNativeTarget "Balance-Catch-iOS" */;
 			buildPhases = (
+				388E122B4AEE0AF996768F09 /* [CP] Check Pods Manifest.lock */,
 				5624C4A629BFF7CE008C7898 /* Sources */,
 				5624C4A729BFF7CE008C7898 /* Frameworks */,
 				5624C4A829BFF7CE008C7898 /* Resources */,
+				06ED0E8DEFFC742D44FAB6C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -399,6 +461,9 @@
 			name = "Balance-Catch-iOS";
 			packageProductDependencies = (
 				5640B1012A038A1C0041AB5A /* Alamofire */,
+				562BC5712A345EDF00F22236 /* FirebaseAnalytics */,
+				562BC5732A345EDF00F22236 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				562BC5752A345EDF00F22236 /* FirebaseCrashlytics */,
 			);
 			productName = "Balance-Catch-iOS";
 			productReference = 5624C4AA29BFF7CE008C7898 /* Balance-Catch-iOS.app */;
@@ -408,6 +473,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5624C4D129BFF7D2008C7898 /* Build configuration list for PBXNativeTarget "Balance-Catch-iOSTests" */;
 			buildPhases = (
+				3AD3FC8A5A637D0D65328972 /* [CP] Check Pods Manifest.lock */,
 				5624C4B629BFF7D2008C7898 /* Sources */,
 				5624C4B729BFF7D2008C7898 /* Frameworks */,
 				5624C4B829BFF7D2008C7898 /* Resources */,
@@ -426,6 +492,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5624C4D429BFF7D2008C7898 /* Build configuration list for PBXNativeTarget "Balance-Catch-iOSUITests" */;
 			buildPhases = (
+				B8175CE38A1FDFE155720B18 /* [CP] Check Pods Manifest.lock */,
 				5624C4C029BFF7D2008C7898 /* Sources */,
 				5624C4C129BFF7D2008C7898 /* Frameworks */,
 				5624C4C229BFF7D2008C7898 /* Resources */,
@@ -474,6 +541,7 @@
 			mainGroup = 5624C4A129BFF7CE008C7898;
 			packageReferences = (
 				5640B1002A038A1C0041AB5A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				562BC5702A345EDF00F22236 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5624C4AB29BFF7CE008C7898 /* Products */;
 			projectDirPath = "";
@@ -491,8 +559,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56E093CF2A409059004853B3 /* Assets.xcassets in Resources */,
 				5624C4B529BFF7D2008C7898 /* Preview Assets.xcassets in Resources */,
-				5624C4B229BFF7D2008C7898 /* Assets.xcassets in Resources */,
+				562BC56F2A345AD600F22236 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +580,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06ED0E8DEFFC742D44FAB6C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		388E122B4AEE0AF996768F09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Balance-Catch-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AD3FC8A5A637D0D65328972 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Balance-Catch-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8175CE38A1FDFE155720B18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Balance-Catch-iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5624C4A629BFF7CE008C7898 /* Sources */ = {
@@ -557,6 +712,7 @@
 				33E60C9F29CC6F3B005EC0AF /* WhoIsLoserView.swift in Sources */,
 				564406FC2A4037800071ACEA /* GameResultView.swift in Sources */,
 				5624C4B029BFF7CE008C7898 /* LaunchScreenView.swift in Sources */,
+				565D574B2A358EB70013B66B /* InterstitialAd.swift in Sources */,
 				56E2E4A329C03C900023095C /* String+.swift in Sources */,
 				33E60C9729CC1B28005EC0AF /* PublicPickView.swift in Sources */,
 				56E2E4AB29C056BE0023095C /* PlayerNumberInputView.swift in Sources */,
@@ -719,9 +875,11 @@
 		};
 		5624C4CF29BFF7D2008C7898 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AEAEC31989D3B8D6B601E2B /* Pods-Balance-Catch-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Balance-Catch-iOS/Preview Content\"";
@@ -731,27 +889,30 @@
 				INFOPLIST_FILE = "Balance-Catch-iOS/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.minny27.Balance-Catch-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamcatch.balancecatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5624C4D029BFF7D2008C7898 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2245C71350E295C22ACF1D2C /* Pods-Balance-Catch-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Balance-Catch-iOS/Preview Content\"";
@@ -761,24 +922,26 @@
 				INFOPLIST_FILE = "Balance-Catch-iOS/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.minny27.Balance-Catch-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamcatch.balancecatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		5624C4D229BFF7D2008C7898 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ED71144ADCF04DBD9D33D89 /* Pods-Balance-Catch-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -799,6 +962,7 @@
 		};
 		5624C4D329BFF7D2008C7898 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70A0185671401B81B9D8F5B9 /* Pods-Balance-Catch-iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -819,6 +983,7 @@
 		};
 		5624C4D529BFF7D2008C7898 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D63F7B4DA4617C553B8C5164 /* Pods-Balance-Catch-iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -837,6 +1002,7 @@
 		};
 		5624C4D629BFF7D2008C7898 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BBE6AC6F11D801E1DF6410C /* Pods-Balance-Catch-iOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -895,6 +1061,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		562BC5702A345EDF00F22236 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		5640B1002A038A1C0041AB5A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -906,6 +1080,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		562BC5712A345EDF00F22236 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 562BC5702A345EDF00F22236 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		562BC5732A345EDF00F22236 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 562BC5702A345EDF00F22236 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		562BC5752A345EDF00F22236 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 562BC5702A345EDF00F22236 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		5640B1012A038A1C0041AB5A /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5640B1002A038A1C0041AB5A /* XCRemoteSwiftPackageReference "Alamofire" */;

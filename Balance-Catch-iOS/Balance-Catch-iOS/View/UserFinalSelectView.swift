@@ -35,7 +35,6 @@ struct UserFinalSelectView: View {
                 .padding(.bottom, 51)
             
             HStack{
-                
                 Text("Player \(index + 1)")
                     .font(.system(size:24))
                     .fontWeight(.bold)
@@ -43,6 +42,7 @@ struct UserFinalSelectView: View {
                 
                 Text(playerList.players[index].name)
                     .font(.system(size:20))
+                    .minimumScaleFactor(0.5)
                     .fontWeight(.bold)
                     .frame(width: 150, height: 56)
                     .background(Color.white)
@@ -131,7 +131,6 @@ struct UserFinalSelectView: View {
                     .disabled(!isActivated1 && !isActivated2)
             }
         }
-        
         .padding(.top,100)
         .padding(.bottom,100) //임시값
         

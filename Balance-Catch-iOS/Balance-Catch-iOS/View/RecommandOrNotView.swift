@@ -11,9 +11,9 @@ struct RecommandOrNotView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var playerList: PlayerList
     @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
+    @EnvironmentObject var interstitialAd: InterstitialAd
     
     @Binding var path: [Route]
-    
     @State var isLoading = false
     
     var body: some View {
@@ -33,9 +33,12 @@ struct RecommandOrNotView: View {
                                 .selectedQuestionData?
                                 .good += 1
                             questionDataViewModel.putQuestionLike()
+                            interstitialAd.show()
                         }))
                     
-                    NavigationLink("👎🏻", value: Route.publicPickView)
+                    ZStack{
+                        NavigationLink("👎🏻",
+                                       value: Route.publicPickView)
                         .font(.system(size: 35, weight: .bold))
                         .buttonStyle(RoundedButton())
                         .simultaneousGesture(TapGesture().onEnded({
@@ -43,7 +46,9 @@ struct RecommandOrNotView: View {
                                 .selectedQuestionData?
                                 .bad += 1
                             questionDataViewModel.putQuestionLike()
+                            interstitialAd.show()
                         }))
+                    }
                 }
                 
                 Spacer().frame(height: 31)
@@ -51,11 +56,15 @@ struct RecommandOrNotView: View {
                 NavigationLink("Skip",
                                value: Route.publicPickView)
                 .buttonStyle(RoundedBlueButton())
+                .simultaneousGesture(TapGesture().onEnded({
+                    interstitialAd.show()
+                }))
             }
             
             if questionDataViewModel.isLoading { LoadingView() }
             else { EmptyView() }
         }
+        .navigationBarBackButtonHidden()
         .onAppear() {
             updateQuestionScore()
         }

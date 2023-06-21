@@ -1,0 +1,16 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+#use_frameworks!
+
+target 'Balance-Catch-iOS' do
+  use_frameworks!
+  pod 'Google-Mobile-Ads-SDK'
+end
+
+target 'Balance-Catch-iOSTests' do
+  # Pods for testing
+end
+
+target 'Balance-Catch-iOSUITests' do
+  # Pods for testing
+end

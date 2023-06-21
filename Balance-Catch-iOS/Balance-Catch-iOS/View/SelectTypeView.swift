@@ -11,6 +11,7 @@ struct SelectTypeView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var playerList: PlayerList
     @EnvironmentObject var questionDataViewModel: QuestionDataViewModel
+    @EnvironmentObject var interstitialAd: InterstitialAd
     
     @Binding var path: [Route]
     
@@ -59,6 +60,7 @@ struct SelectTypeView: View {
             } //Vstack
             .onAppear() {
                 fetchData()
+                interstitialAd.load()
             }
             .balanceCatchBackButton {
                 dismiss()

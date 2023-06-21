@@ -8,6 +8,7 @@
 #           - Also handy if you have a large number of dependant pods
 #           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
 Pods/
+podfile.lock
 
 ### macOS ###
 # General
@@ -124,7 +125,7 @@ playground.xcworkspace
 
 # Swift Package Manager
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
+Packages/
 # Package.pins
 # Package.resolved
 # *.xcodeproj
@@ -140,7 +141,7 @@ playground.xcworkspace
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 # Pods/
 # Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+*.xcworkspace
 
 # Carthage
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
@@ -164,3 +165,6 @@ Dependencies/
 
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,objective-c,macos,cocoapods
+
+# Firebase Googleservice-Info.plist
+GoogleService-Info.plist
