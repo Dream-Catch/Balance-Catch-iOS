@@ -10,7 +10,6 @@ import SwiftUI
 struct QuestionData {
     var title: String
     var percent: Double
-    var scale: Double
     var gameResult: GameResult
 }
 
@@ -22,11 +21,9 @@ struct PublicPickView: View {
     @State private var loserSelectType: SelectType = .none
     @State private var winner = QuestionData(title: "",
                                              percent: 50,
-                                             scale: 1.0,
                                              gameResult: .draw)
     @State private var loser = QuestionData(title: "",
                                             percent: 50,
-                                            scale: 1.0,
                                             gameResult: .draw)
     @State private var winViewId = UUID()
     @State private var loseViewId = UUID()
@@ -42,14 +39,12 @@ struct PublicPickView: View {
             
             ScoreView(title: winner.title,
                       percent: winner.percent,
-                      scale: winner.scale,
                       gameResult: winner.gameResult)
             .id(winViewId)
             
             
             ScoreView(title: loser.title,
                       percent: loser.percent,
-                      scale: loser.scale,
                       gameResult: loser.gameResult)
             .id(loseViewId)
             
@@ -66,7 +61,6 @@ struct PublicPickView: View {
         }
         .onReceive(interstitialAd.$isDismiss) { value in
             if value {
-                winner.scale = 1.2
                 winViewId = UUID()
                 loseViewId = UUID()
             }
