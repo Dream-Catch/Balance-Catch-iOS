@@ -31,6 +31,7 @@ struct Balance_Catch_iOSApp: App {
     var body: some Scene {
         WindowGroup {
             LaunchScreenView()
+                .environment(\.colorScheme, .light)
                 .environmentObject(playerList)
                 .environmentObject(selectQuestionViewModel)
                 .environmentObject(interstitialAd)
