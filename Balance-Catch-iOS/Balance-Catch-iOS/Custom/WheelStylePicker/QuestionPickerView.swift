@@ -6,47 +6,52 @@
 //
 
 import SwiftUI
+import UIKit
 
 protocol randomPickAnimation {
-    func scrollToEndIndex()
-    func scrollToZeroIndex()
-    func scroll(to index: Int)
+    func scrollToEnd()
+    func scrollToZero()
+    func scrollToSelected(to endIndex: Int)
 }
 
 struct QuestionPickerView: View {
-    let questionMetaDataList: [QuestionDataModel]
+    let questionDataList: [QuestionDataModel]
     let isRandomPick: Bool
+    @Binding var selectedIndex: Int
+    
     let serialQueue = DispatchQueue(label: "serialQueue")
     
-    @Binding var selectedIndex: Int
+    @State private var zeroToEndTime: Double = 0
+    let delayTime = 0.5
+    let acceleration = 0.08
     
     var body: some View {
         Picker("", selection: $selectedIndex) {
-            ForEach(0..<questionMetaDataList.count, id: \.self) { index in
-                QuestionItemView(text: questionMetaDataList[index].question)
+            ForEach(0..<questionDataList.count, id: \.self) { index in
+                QuestionItemView(text: questionDataList[index].question)
             }
         }
         .onAppear() {
             let endIndex = selectedIndex
+            zeroToEndTime = delayTime + Double(sqrt(2 * Double(questionDataList.count))) * self.acceleration
             
             if isRandomPick {
-                scrollToEndIndex()
-                scrollToZeroIndex()
-                scroll(to: endIndex)
+                scrollToEnd()
+                scrollToZero()
+                scrollToSelected(to: endIndex)
             }
         }
         .pickerStyle(WheelPickerStyle())
-        .frame(height: 200)
         .padding([.leading, .trailing], 20)
     }
 }
 
 extension QuestionPickerView: randomPickAnimation {
     
-    func scrollToEndIndex() {
+    func scrollToEnd() {
         selectedIndex = 0
-        for index in 0..<questionMetaDataList.count {
-            serialQueue.asyncAfter(deadline: .now() + Double(index) / 25) {
+        for index in 0...questionDataList.count - 1 {
+            serialQueue.asyncAfter(deadline: .now() + delayTime + 0.1 + Double(sqrt(2 * Double(index))) * acceleration) {
                 withAnimation {
                     selectedIndex = index
                 }
@@ -54,22 +59,23 @@ extension QuestionPickerView: randomPickAnimation {
         }
     }
     
-    func scrollToZeroIndex() {
-        serialQueue.asyncAfter(deadline: .now() + Double(questionMetaDataList.count) / 25 + 0.3) {
+    func scrollToZero() {
+        serialQueue.asyncAfter(deadline: .now() + zeroToEndTime + delayTime) {
             withAnimation {
                 selectedIndex = 0
             }
         }
     }
     
-    func scroll(to index: Int) {
-        let totalEndTime: Double = Double(questionMetaDataList.count) / 25 + 0.6
-        for i in 0...index {
-            serialQueue.asyncAfter(deadline: .now() + totalEndTime + Double(i) / 25) {
+    func scrollToSelected(to endIndex: Int) {
+        for index in 0...endIndex {
+            serialQueue.asyncAfter(deadline: .now() + (zeroToEndTime + delayTime * 2) + 0.1 + Double(sqrt(2 * Double(index))) * acceleration) {
                 withAnimation {
-                    selectedIndex = i
+                    selectedIndex = index
                 }
             }
         }
     }
 }
+
+

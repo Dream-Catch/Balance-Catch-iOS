@@ -1,0 +1,322 @@
+[
+    {
+        "id": "0",
+        "question": "매일 폰 검사하는 애인 vs 애인과 왕복 8시간 장거리",
+        "good": 265,
+        "bad": 226,
+        "firstQuestionScore": 237,
+        "secondQuestionScore": 885
+    },
+    {
+        "id": "1",
+        "question": "팩폭하는 애인 vs 빙빙 돌려말하는 애인",
+        "good": 33,
+        "bad": 69,
+        "firstQuestionScore": 259,
+        "secondQuestionScore": 251
+    },
+    {
+        "id": "2",
+        "question": "천천히 스며드는 사람 vs 훅 들어오는 사람",
+        "good": 73,
+        "bad": 5,
+        "firstQuestionScore": 352,
+        "secondQuestionScore": 345
+    },
+    {
+        "id": "3",
+        "question": "진지한 상황에도 항상 웃는 애인 vs 툭하면 우는 애인",
+        "good": 49,
+        "bad": 26,
+        "firstQuestionScore": 109,
+        "secondQuestionScore": 103
+    },
+    {
+        "id": "4",
+        "question": "본인이 1순위인 애인 vs 친구가 1순위인 애인",
+        "good": 37,
+        "bad": 17,
+        "firstQuestionScore": 660,
+        "secondQuestionScore": 248
+    },
+    {
+        "id": "5",
+        "question": "나랑 싸우면 베프한테 시시콜콜 얘기하는 애인 vs 나랑 싸워도 타격감 0 평소같은 애인",
+        "good": 69,
+        "bad": 86,
+        "firstQuestionScore": 463,
+        "secondQuestionScore": 333
+    },
+    {
+        "id": "6",
+        "question": "데이트 다 짜오지만 틀어지면 짜증내는 애인 vs 내 생일 빼곤 절대 안 짜오지만 다 괜찮다는 애인",
+        "good": 36,
+        "bad": 34,
+        "firstQuestionScore": 243,
+        "secondQuestionScore": 369
+    },
+    {
+        "id": "7",
+        "question": "한달 사귄 애인 이름 보이는 곳에 문신 vs 한달 사귄 애인이랑 혼인신고",
+        "good": 48,
+        "bad": 77,
+        "firstQuestionScore": 749,
+        "secondQuestionScore": 258
+    },
+    {
+        "id": "8",
+        "question": "애인이 나를 괴롭히는 상사랑 친함 vs 애인이 나랑 싸운 친구랑 친함",
+        "good": 50,
+        "bad": 20,
+        "firstQuestionScore": 348,
+        "secondQuestionScore": 882
+    },
+    {
+        "id": "9",
+        "question": "내 생일 까먹은 애인 vs 내 생일선물로 500만원짜리 명품 샀는데 사기당한 애인",
+        "good": 25,
+        "bad": 23,
+        "firstQuestionScore": 240,
+        "secondQuestionScore": 236
+    },
+    {
+        "id": "10",
+        "question": "애인이 내 지인들 안 좋아하기 vs 내 지인들이 애인을 안 좋아하기",
+        "good": 65,
+        "bad": 79,
+        "firstQuestionScore": 956,
+        "secondQuestionScore": 443
+    },
+    {
+        "id": "11",
+        "question": "데이트 할 때 그날 식사가 맛없으면 기분 안좋음 vs 데이트 할 때 그날의 인생샷 하나라도 못건지면 기분 안좋음",
+        "good": 37,
+        "bad": 17,
+        "firstQuestionScore": 237,
+        "secondQuestionScore": 263
+    },
+    {
+        "id": "12",
+        "question": "애인 이름 뚜뚜로 개명 vs 데이트 때마다 외발자전거 등장",
+        "good": 37,
+        "bad": 84,
+        "firstQuestionScore": 645,
+        "secondQuestionScore": 438
+    },
+    {
+        "id": "13",
+        "question": "무뚝뚝하고 철벽오지는데 나한테 다정한 사람 vs 능글거리고 이성 잘 가지고 노는데 나한테만 쩔쩔 매는 사람",
+        "good": 73,
+        "bad": 36,
+        "firstQuestionScore": 375,
+        "secondQuestionScore": 348
+    },
+    {
+        "id": "14",
+        "question": "12시 통금있는 애인 vs 12시 통금 만들어주는 애인",
+        "good": 3,
+        "bad": 33,
+        "firstQuestionScore": 346,
+        "secondQuestionScore": 347
+    },
+    {
+        "id": "15",
+        "question": "한번 마시면 끝없이 마시는 술꾼 vs 술이 입에 닿기만 해도 취하는 알쓰",
+        "good": 39,
+        "bad": 32,
+        "firstQuestionScore": 855,
+        "secondQuestionScore": 261
+    },
+    {
+        "id": "16",
+        "question": "완전 이상형인데 내가 더 좋아함 vs 이상형은 아닌데 완전 사랑받음",
+        "good": 38,
+        "bad": 17,
+        "firstQuestionScore": 243,
+        "secondQuestionScore": 268
+    },
+    {
+        "id": "17",
+        "question": "애인 부모님과 sns 친구하기(스토리 올리면 디엠 옴) vs 애인의 부모님과 매일 안부 전화하기",
+        "good": 44,
+        "bad": 35,
+        "firstQuestionScore": 968,
+        "secondQuestionScore": 330
+    },
+    {
+        "id": "18",
+        "question": "전애인과 친구로 지내는 애인 vs 키스했던 이성친구랑 친구로 지내는 애인",
+        "good": 86,
+        "bad": 83,
+        "firstQuestionScore": 334,
+        "secondQuestionScore": 250
+    },
+    {
+        "id": "19",
+        "question": "애인이 남사친/여사친과 단둘이 인생네컷 가능 vs 불가능",
+        "good": 50,
+        "bad": 20,
+        "firstQuestionScore": 252,
+        "secondQuestionScore": 476
+    },
+    {
+        "question": "전애인과 단둘이 밤에 영화보는 애인 vs 이성친구와 단둘이 밤에 술마시는 애인",
+        "good": 72,
+        "bad": 23,
+        "firstQuestionScore": 422,
+        "secondQuestionScore": 391,
+        "id": "21"
+    },
+    {
+        "question": "한달동안 나를 위한 이벤트를 이성이랑 준비하는 애인 된다 vs 안된다",
+        "good": 55,
+        "bad": 12,
+        "firstQuestionScore": 122,
+        "secondQuestionScore": 210,
+        "id": "22"
+    },
+    {
+        "question": "엄청난 선비 vs 엄청난 오픈마인드",
+        "good": 42,
+        "bad": 30,
+        "firstQuestionScore": 222,
+        "secondQuestionScore": 100,
+        "id": "23"
+    },
+    {
+        "question": "내가 하는거마다 다 물어보는 집착쟁이 vs 내가 뭘하든 신경쓰지않는 무관심러",
+        "good": 55,
+        "bad": 42,
+        "firstQuestionScore": 432,
+        "secondQuestionScore": 380,
+        "id": "24"
+    },
+    {
+        "question": "이성친구와 글램핑 가는 애인 vs 이성과 대화만 해도 눈치주는 애인",
+        "good": 78,
+        "bad": 14,
+        "firstQuestionScore": 432,
+        "secondQuestionScore": 502,
+        "id": "25"
+    },
+    {
+        "question": "맞춤법 틀리는 애인 vs 맞춤법 지적하는 애인",
+        "good": 18,
+        "bad": 14,
+        "firstQuestionScore": 102,
+        "secondQuestionScore": 421,
+        "id": "26"
+    },
+    {
+        "question": "평소에 연락이 잘 안되는 애인 vs 만나서 휴대폰 자주 보는 애인",
+        "good": 54,
+        "bad": 31,
+        "firstQuestionScore": 440,
+        "secondQuestionScore": 457,
+        "id": "27"
+    },
+    {
+        "question": "애인이 전애인한테 환승 vs 평소에 신경쓰이던 이성친구한테 환승",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "28"
+    },
+    {
+        "question": "애인이 전애인한테 환승 vs 평소에 신경쓰이던 이성친구한테 환승",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "28"
+    },
+    {
+        "question": "애인이 전애인한테 환승 vs 평소에 신경쓰이던 이성친구한테 환승",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "28"
+    },
+    {
+        "question": "애인이 전애인한테 환승 vs 평소에 신경쓰이던 이성친구한테 환승",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "28"
+    },
+    {
+        "question": "애인이 전애인한테 환승 vs 평소에 신경쓰이던 이성친구한테 환승",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "28"
+    },
+    {
+        "question": "애인이 전애인한테 환승 vs 평소에 신경쓰이던 이성친구한테 환승",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "28"
+    },
+    {
+        "question": "애인이 전애인한테 환승 vs 평소에 신경쓰이던 이성친구한테 환승",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "28"
+    },
+    {
+        "question": "애인이 전애인한테 환승 vs 평소에 신경쓰이던 이성친구한테 환승",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "28"
+    },
+    {
+        "question": "애인이 전애인한테 환승 vs 평소에 신경쓰이던 이성친구한테 환승",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "28"
+    },
+    {
+        "question": "애인이 전애인한테 환승 vs 평소에 신경쓰이던 이성친구한테 환승",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "28"
+    },
+    {
+        "question": "애인이 전애인한테 환승 vs 평소에 신경쓰이던 이성친구한테 환승",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "28"
+    },
+    {
+        "question": "애인이 전애인한테 환승 vs 평소에 신경쓰이던 이성친구한테 환승",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "28"
+    },
+    {
+        "question": "냉짬 vs 냉짜",
+        "good": 82,
+        "bad": 32,
+        "firstQuestionScore": 562,
+        "secondQuestionScore": 453,
+        "id": "40"
+    }
+]

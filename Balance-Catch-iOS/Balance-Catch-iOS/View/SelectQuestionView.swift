@@ -27,7 +27,7 @@ struct SelectQuestionView: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            QuestionPickerView(questionMetaDataList: viewModel.questionDataList.value,
+            QuestionPickerView(questionDataList: viewModel.questionDataList.value,
                                isRandomPick: isRandomPick,
                                selectedIndex: $selectedIndex)
             .id(questionViewId)
