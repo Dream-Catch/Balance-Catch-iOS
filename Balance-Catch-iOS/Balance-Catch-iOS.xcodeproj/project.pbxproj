@@ -29,6 +29,8 @@
 		4267D1F48FEB79B5E45CE82C /* libPods-Balance-Catch-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 260A8CBAA09DA1E59BBF2FE1 /* libPods-Balance-Catch-iOSTests.a */; };
 		53A7B0AD29C333D300B99211 /* PlayerNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */; };
 		53D1488529D9672D003EAD5A /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D1488429D9672C003EAD5A /* PlayerModel.swift */; };
+		56140B172A457177004FA938 /* QuestionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 56140B162A457177004FA938 /* QuestionData.json */; };
+		56140B192A457287004FA938 /* JsonFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56140B182A457287004FA938 /* JsonFileManager.swift */; };
 		5616A3E92A2F28B1003DBDF2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616A3E82A2F28B1003DBDF2 /* ScoreView.swift */; };
 		562189372A39A48800E7C6FE /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562189362A39A48800E7C6FE /* UIApplication+.swift */; };
 		5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */; };
@@ -113,6 +115,8 @@
 		39A1565429E47B96000968CA /* SecondTeamSpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTeamSpeakingView.swift; sourceTree = "<group>"; };
 		53A7B0AC29C333D300B99211 /* PlayerNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameInputView.swift; sourceTree = "<group>"; };
 		53D1488429D9672C003EAD5A /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		56140B162A457177004FA938 /* QuestionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = QuestionData.json; sourceTree = "<group>"; };
+		56140B182A457287004FA938 /* JsonFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonFileManager.swift; sourceTree = "<group>"; };
 		5616A3E82A2F28B1003DBDF2 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		562189362A39A48800E7C6FE /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		5624C4AA29BFF7CE008C7898 /* BalanceCatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalanceCatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +208,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		56140B152A457159004FA938 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				56140B162A457177004FA938 /* QuestionData.json */,
+				56140B182A457287004FA938 /* JsonFileManager.swift */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
 		561665C329F94D3F00CFA1E4 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +268,7 @@
 				56E2E49D29C03AC90023095C /* Extension */,
 				56E2E49A29C037000023095C /* Custom */,
 				5624C4AD29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift */,
+				56140B152A457159004FA938 /* Json */,
 				561665C329F94D3F00CFA1E4 /* SupportingFiles */,
 				5624C4B329BFF7D2008C7898 /* Preview Content */,
 			);
@@ -562,6 +576,7 @@
 				56E093CF2A409059004853B3 /* Assets.xcassets in Resources */,
 				5624C4B529BFF7D2008C7898 /* Preview Assets.xcassets in Resources */,
 				562BC56F2A345AD600F22236 /* GoogleService-Info.plist in Resources */,
+				56140B172A457177004FA938 /* QuestionData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,6 +734,7 @@
 				565FCBD729ED149300A27305 /* Route.swift in Sources */,
 				3950658529CC961300A9C925 /* TimerCode.swift in Sources */,
 				5624C4AE29BFF7CE008C7898 /* Balance_Catch_iOSApp.swift in Sources */,
+				56140B192A457287004FA938 /* JsonFileManager.swift in Sources */,
 				33E60C9529CB6768005EC0AF /* RoundedButton.swift in Sources */,
 				563DF23029E64A0100297A43 /* TimerManager.swift in Sources */,
 			);
