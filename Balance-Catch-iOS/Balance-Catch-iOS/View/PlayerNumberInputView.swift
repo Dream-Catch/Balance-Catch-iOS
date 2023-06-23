@@ -16,7 +16,7 @@ struct PlayerNumberInputView: View {
     var body: some View {
         ZStack {
             VStack{
-                Text("인원을 입력해주세요.")
+                Text("인원을 입력해주세요")
                     .font(Font.custom("Arial", size: 24))
                     .fontWeight(.bold)
                     .shadow(color:.gray,radius:2,x:3,y:3)
