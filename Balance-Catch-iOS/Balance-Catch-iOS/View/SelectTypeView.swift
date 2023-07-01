@@ -69,6 +69,9 @@ struct SelectTypeView: View {
             if questionDataViewModel.isLoading { LoadingView() }
             else { EmptyView() }
         }
+        .networkAlert(showAlert: $questionDataViewModel.showAlert) {
+            fetchData()
+        }
     } //body
     
     private func fetchData() {

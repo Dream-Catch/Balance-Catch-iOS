@@ -69,6 +69,7 @@
 		56E2E4A929C055730023095C /* BeforePlayRuleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4A829C055730023095C /* BeforePlayRuleDescriptionView.swift */; };
 		56E2E4AB29C056BE0023095C /* PlayerNumberInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */; };
 		56EC27AA29DFEF4B00951070 /* ThemeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC27A929DFEF4B00951070 /* ThemeButtonStyle.swift */; };
+		56F4BEDF2A4FE8CB000A43E3 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4BEDE2A4FE8CB000A43E3 /* View+.swift */; };
 		7167E719D33F7BC65621D457 /* Pods_Balance_Catch_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4852A0F878891D4D2943655 /* Pods_Balance_Catch_iOS.framework */; };
 		9F484326C205631CC8C89828 /* libPods-Balance-Catch-iOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD5EC6E488F01D3C72F9567 /* libPods-Balance-Catch-iOSUITests.a */; };
 /* End PBXBuildFile section */
@@ -155,6 +156,7 @@
 		56E2E4A829C055730023095C /* BeforePlayRuleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforePlayRuleDescriptionView.swift; sourceTree = "<group>"; };
 		56E2E4AA29C056BE0023095C /* PlayerNumberInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNumberInputView.swift; sourceTree = "<group>"; };
 		56EC27A929DFEF4B00951070 /* ThemeButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButtonStyle.swift; sourceTree = "<group>"; };
+		56F4BEDE2A4FE8CB000A43E3 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		70A0185671401B81B9D8F5B9 /* Pods-Balance-Catch-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSTests/Pods-Balance-Catch-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		7ED71144ADCF04DBD9D33D89 /* Pods-Balance-Catch-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOSTests/Pods-Balance-Catch-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8AEAEC31989D3B8D6B601E2B /* Pods-Balance-Catch-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance-Catch-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Balance-Catch-iOS/Pods-Balance-Catch-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				56E2E4A229C03C900023095C /* String+.swift */,
 				56CE463B2A04CC2400E95EF5 /* CancelBag.swift */,
 				562189362A39A48800E7C6FE /* UIApplication+.swift */,
+				56F4BEDE2A4FE8CB000A43E3 /* View+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -695,6 +698,7 @@
 				562189372A39A48800E7C6FE /* UIApplication+.swift in Sources */,
 				5640B0FC2A0378990041AB5A /* NetworkManager.swift in Sources */,
 				5675DD942A2201B30094E2D1 /* QuestionDataViewModel.swift in Sources */,
+				56F4BEDF2A4FE8CB000A43E3 /* View+.swift in Sources */,
 				3950657929CC93AF00A9C925 /* SelectTypeView.swift in Sources */,
 				56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */,
 				56E2E49F29C03B050023095C /* CGFloat+.swift in Sources */,
