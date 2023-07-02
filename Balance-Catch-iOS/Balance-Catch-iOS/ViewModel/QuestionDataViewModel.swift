@@ -11,36 +11,40 @@ import Combine
 final class QuestionDataViewModel: ObservableObject {
     
     @Published var isLoading = false
+    @Published var showAlert = false
     var questionDataList = CurrentValueSubject<[QuestionDataModel], Never>([])
     var selectedQuestionData: QuestionDataModel? = nil
     var cancelBag = CancelBag()
     
     func getQuestionMetaData() {
-        isLoading = true
+        self.isLoading = true
+        
         NetworkManager.shared.getQuestionMetaData()
             .receive(on: DispatchQueue.main)
             .sink { result in
+                self.isLoading = false
+                
                 switch result {
                 case .finished:
                     print("데이터 응답 성공!")
+                    self.showAlert = false
                 case .failure(let error):
                     print("error - \(error.localizedDescription)")
-                    self.isLoading = false
+                    self.showAlert = true
                 }
             } receiveValue: { data in
                 let data = data.compactMap { questionDataResponseModel in
                     QuestionDataModel(response: questionDataResponseModel)
                 }
                 self.questionDataList.send(data)
-                self.isLoading = false
             }
             .cancel(with: cancelBag)
     }
     
-    func putQuestionLike() {
+    func putQuestionData() {
         guard let selectedQuestionData = selectedQuestionData else { return }
+        self.isLoading = true
         
-        isLoading = true
         NetworkManager.shared.putQuestionLike(id: selectedQuestionData.id,
                                               good: selectedQuestionData.good,
                                               bad: selectedQuestionData.bad,
@@ -48,16 +52,17 @@ final class QuestionDataViewModel: ObservableObject {
                                               secondQuestionScore: selectedQuestionData.secondQuestionScore)
         .receive(on: DispatchQueue.main)
         .sink { result in
+            self.isLoading = false
+            
             switch result {
             case .finished:
                 print("수정 성공!")
+                self.showAlert = false
             case .failure(let error):
                 print("error - \(error)")
-                self.isLoading = false
+                self.showAlert = true
             }
-        } receiveValue: { data in
-            self.isLoading = false
-        }
-        .cancel(with: cancelBag)
+        } receiveValue: { _ in }
+            .cancel(with: cancelBag)
     }
 }

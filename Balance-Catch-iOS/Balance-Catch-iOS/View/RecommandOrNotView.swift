@@ -32,7 +32,7 @@ struct RecommandOrNotView: View {
                             questionDataViewModel
                                 .selectedQuestionData?
                                 .good += 1
-                            questionDataViewModel.putQuestionLike()
+                            questionDataViewModel.putQuestionData()
                             interstitialAd.show()
                         }))
                     
@@ -45,7 +45,7 @@ struct RecommandOrNotView: View {
                             questionDataViewModel
                                 .selectedQuestionData?
                                 .bad += 1
-                            questionDataViewModel.putQuestionLike()
+                            questionDataViewModel.putQuestionData()
                             interstitialAd.show()
                         }))
                     }
@@ -57,6 +57,7 @@ struct RecommandOrNotView: View {
                                value: Route.publicPickView)
                 .buttonStyle(RoundedBlueButton())
                 .simultaneousGesture(TapGesture().onEnded({
+                    questionDataViewModel.putQuestionData()
                     interstitialAd.show()
                 }))
             }
@@ -68,8 +69,9 @@ struct RecommandOrNotView: View {
         .onAppear() {
             updateQuestionScore()
         }
-        .balanceCatchBackButton {
-            dismiss()
+        .networkAlert(showAlert: $questionDataViewModel.showAlert) {
+            questionDataViewModel.putQuestionData()
+            interstitialAd.show()
         }
     }
     
