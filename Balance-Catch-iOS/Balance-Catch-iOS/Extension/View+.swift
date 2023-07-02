@@ -8,16 +8,17 @@
 import SwiftUI
 
 extension View {
-    func networkAlert(showAlert: Binding<Bool>, function: @escaping () -> Void) -> some View {
+    
+    func networkAlert(showAlert: Binding<Bool>, completion: @escaping () -> Void) -> some View {
         self.alert(isPresented: showAlert) {
             Alert(title: Text("네트워크 연결이 끊겼습니다."),
                   primaryButton: .default(Text("설정"),
                                           action: {
                 openSettings()
-                function()
+                completion()
             }),
                   secondaryButton: .default(Text("재시도"), action: {
-                function()
+                completion()
             }))
         }
     }

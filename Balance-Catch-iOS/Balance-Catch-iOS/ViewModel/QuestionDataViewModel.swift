@@ -41,7 +41,7 @@ final class QuestionDataViewModel: ObservableObject {
             .cancel(with: cancelBag)
     }
     
-    func putQuestionLike() {
+    func putQuestionData() {
         guard let selectedQuestionData = selectedQuestionData else { return }
         self.isLoading = true
         
