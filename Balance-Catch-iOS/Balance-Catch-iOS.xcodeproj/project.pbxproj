@@ -40,9 +40,6 @@
 		5624C4C929BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4C829BFF7D2008C7898 /* Balance_Catch_iOSUITests.swift */; };
 		5624C4CB29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624C4CA29BFF7D2008C7898 /* Balance_Catch_iOSUITestsLaunchTests.swift */; };
 		562BC56F2A345AD600F22236 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 562BC56E2A345AD600F22236 /* GoogleService-Info.plist */; };
-		562BC5722A345EDF00F22236 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 562BC5712A345EDF00F22236 /* FirebaseAnalytics */; };
-		562BC5742A345EDF00F22236 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 562BC5732A345EDF00F22236 /* FirebaseAnalyticsWithoutAdIdSupport */; };
-		562BC5762A345EDF00F22236 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 562BC5752A345EDF00F22236 /* FirebaseCrashlytics */; };
 		563DF23029E64A0100297A43 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DF22F29E64A0100297A43 /* TimerManager.swift */; };
 		563FBD4B29C9444400847390 /* SelectQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBD4A29C9444400847390 /* SelectQuestionView.swift */; };
 		5640B0FC2A0378990041AB5A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640B0FB2A0378990041AB5A /* NetworkManager.swift */; };
@@ -56,6 +53,8 @@
 		565D574B2A358EB70013B66B /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565D574A2A358EB70013B66B /* InterstitialAd.swift */; };
 		565FCBD729ED149300A27305 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FCBD629ED149300A27305 /* Route.swift */; };
 		5675DD942A2201B30094E2D1 /* QuestionDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5675DD932A2201B30094E2D1 /* QuestionDataViewModel.swift */; };
+		567EF0E92A5448DB00AE41E3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 567EF0E82A5448DB00AE41E3 /* FirebaseAnalytics */; };
+		567EF0EB2A5448DB00AE41E3 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 567EF0EA2A5448DB00AE41E3 /* FirebaseCrashlytics */; };
 		56930FD329D59861006CEA3F /* QuestionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56930FD229D59861006CEA3F /* QuestionPickerView.swift */; };
 		56C0A19529FA141F000406CE /* BalanceCatchBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C0A19429FA141F000406CE /* BalanceCatchBackButton.swift */; };
 		56CE463C2A04CC2400E95EF5 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE463B2A04CC2400E95EF5 /* CancelBag.swift */; };
@@ -170,11 +169,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				562BC5722A345EDF00F22236 /* FirebaseAnalytics in Frameworks */,
-				562BC5762A345EDF00F22236 /* FirebaseCrashlytics in Frameworks */,
-				562BC5742A345EDF00F22236 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				5640B1022A038A1C0041AB5A /* Alamofire in Frameworks */,
+				567EF0EB2A5448DB00AE41E3 /* FirebaseCrashlytics in Frameworks */,
 				7167E719D33F7BC65621D457 /* Pods_Balance_Catch_iOS.framework in Frameworks */,
+				567EF0E92A5448DB00AE41E3 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +468,7 @@
 				5624C4A729BFF7CE008C7898 /* Frameworks */,
 				5624C4A829BFF7CE008C7898 /* Resources */,
 				06ED0E8DEFFC742D44FAB6C5 /* [CP] Embed Pods Frameworks */,
+				564DA9962A52E60A000B387F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -478,9 +477,8 @@
 			name = "Balance-Catch-iOS";
 			packageProductDependencies = (
 				5640B1012A038A1C0041AB5A /* Alamofire */,
-				562BC5712A345EDF00F22236 /* FirebaseAnalytics */,
-				562BC5732A345EDF00F22236 /* FirebaseAnalyticsWithoutAdIdSupport */,
-				562BC5752A345EDF00F22236 /* FirebaseCrashlytics */,
+				567EF0E82A5448DB00AE41E3 /* FirebaseAnalytics */,
+				567EF0EA2A5448DB00AE41E3 /* FirebaseCrashlytics */,
 			);
 			productName = "Balance-Catch-iOS";
 			productReference = 5624C4AA29BFF7CE008C7898 /* BalanceCatch.app */;
@@ -558,7 +556,7 @@
 			mainGroup = 5624C4A129BFF7CE008C7898;
 			packageReferences = (
 				5640B1002A038A1C0041AB5A /* XCRemoteSwiftPackageReference "Alamofire" */,
-				562BC5702A345EDF00F22236 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				567EF0E72A5448DB00AE41E3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5624C4AB29BFF7CE008C7898 /* Products */;
 			projectDirPath = "";
@@ -660,6 +658,26 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		564DA9962A52E60A000B387F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}\n",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 		B8175CE38A1FDFE155720B18 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -903,6 +921,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Balance-Catch-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 3KZP62644C;
@@ -1087,14 +1106,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		562BC5702A345EDF00F22236 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
 		5640B1002A038A1C0041AB5A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -1103,28 +1114,31 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		567EF0E72A5448DB00AE41E3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		562BC5712A345EDF00F22236 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 562BC5702A345EDF00F22236 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		562BC5732A345EDF00F22236 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 562BC5702A345EDF00F22236 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsWithoutAdIdSupport;
-		};
-		562BC5752A345EDF00F22236 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 562BC5702A345EDF00F22236 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
 		5640B1012A038A1C0041AB5A /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5640B1002A038A1C0041AB5A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		567EF0E82A5448DB00AE41E3 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 567EF0E72A5448DB00AE41E3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		567EF0EA2A5448DB00AE41E3 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 567EF0E72A5448DB00AE41E3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

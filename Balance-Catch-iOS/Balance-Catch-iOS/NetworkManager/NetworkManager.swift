@@ -69,11 +69,11 @@ extension NetworkManager {
                 }
             }
             if let data = result.data {
-#if DEBUG
+                #if DEBUG
                 if let utf8Text = String(data: data, encoding: .utf8) {
                     print("Data: \(utf8Text)")
                 }
-#endif
+                #endif
                 let value = try decoder.decode(T.self, from: data)
                 return Response(value: value, reponse: result.response!)
             } else {
