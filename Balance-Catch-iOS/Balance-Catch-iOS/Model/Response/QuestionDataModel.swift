@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct QuestionDataModel {
+struct QuestionDataModel: Identifiable {
     let id: String
     let question: String
     var good: Int

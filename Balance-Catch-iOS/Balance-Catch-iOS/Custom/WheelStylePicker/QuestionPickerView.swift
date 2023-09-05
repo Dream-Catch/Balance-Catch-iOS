@@ -18,6 +18,7 @@ struct QuestionPickerView: View {
     let questionDataList: [QuestionDataModel]
     let isRandomPick: Bool
     @Binding var selectedIndex: Int
+    @State var isSheetPresented: Bool = false
     
     let serialQueue = DispatchQueue(label: "serialQueue")
     
@@ -31,6 +32,7 @@ struct QuestionPickerView: View {
                 QuestionItemView(text: questionDataList[index].question)
             }
         }
+        .pickerStyle(.wheel)
         .onAppear() {
             let endIndex = selectedIndex
             zeroToEndTime = delayTime + Double(sqrt(2 * Double(questionDataList.count))) * self.acceleration
@@ -41,7 +43,14 @@ struct QuestionPickerView: View {
                 scrollToSelected(to: endIndex)
             }
         }
-        .pickerStyle(WheelPickerStyle())
+        .onTapGesture {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                isSheetPresented = true
+            }
+        }
+        .alert(Text(questionDataList[selectedIndex].question),
+               isPresented: $isSheetPresented,
+               actions: {})
         .padding([.leading, .trailing], 20)
     }
 }
