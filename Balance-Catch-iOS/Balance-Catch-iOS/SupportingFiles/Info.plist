@@ -4,6 +4,8 @@
 <dict>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-7789747740418821~4545048691</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.pluspersongogo.balancecatch</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

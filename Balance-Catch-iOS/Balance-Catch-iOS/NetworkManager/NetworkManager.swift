@@ -20,8 +20,7 @@ final class NetworkManager {
     //    func getQuestionMetaData() -> AnyPublisher<APIData<[QuestionDataModel]>, APIError> {
     func getQuestionMetaData() -> AnyPublisher<[QuestionDataResponseModel], APIError> {
         let request = getRequest(URL(string: baseURL + questions))
-        
-        return run(request)
+            return run(request)
             .map(\.value)
             .eraseToAnyPublisher()
     }
