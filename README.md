@@ -18,7 +18,7 @@
 
 ## 🛠️ Tech Stack
 
-`SwiftUI`, `Combine`, `Alamofire`, `Google-Mobile-Ads-SDK`
+`SwiftUI`, `Combine`, `Alamofire`, `Google-Mobile-Ads-SDK`, `Fastlane`
 
 ## ⚙️ Architecture
 
